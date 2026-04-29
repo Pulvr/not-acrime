@@ -3,7 +3,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_vb3um"]
 size = Vector3(10, 0, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb3um"]
+albedo_color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_srgae"]
+material = SubResource("StandardMaterial3D_vb3um")
 size = Vector3(10, 0, 10)
 
 [node name="Floor" type="Node3D" unique_id=1328943470]
