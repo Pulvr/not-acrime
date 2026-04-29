@@ -3,42 +3,57 @@ extends CharacterBody3D
 @export var speed = 10
 @export var fall_acceleration = 70
 @export var jump_impulse = 10
+@export var mouse_sensitivity = 0.002
 
 var target_velocity = Vector3.ZERO
 
+# Reference the "Head" node to rotate it vertically
+@onready var head = $Head
+
+func _ready():
+	# Captures the mouse and hides it
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _input(event):
+	# Handle mouse movement
+	if event is InputEventMouseMotion:
+		# Rotate the whole player left/right (Y axis)
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		
+		# Rotate only the head up/down (X axis)
+		head.rotate_x(-event.relative.y * mouse_sensitivity)
+		
+		# Clamp the vertical rotation so you can't flip upside down
+		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+
 func _physics_process(delta):
-	var direction = Vector3.ZERO
+	# Get the input direction based on the player's CURRENT rotation
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	
+	# transform.basis allows "forward" to be wherever the player is facing
+	var direction_vector = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-	if Input.is_action_pressed("move_right"):
-		direction.x += 1
-	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("move_back"):
-		direction.z += 1
-	if Input.is_action_pressed("move_forward"):
-		direction.z -= 1
-
-	# 1. Handle Horizontal Movement
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
-		target_velocity.x = direction.x * speed
-		target_velocity.z = direction.z * speed
+	# Handle Horizontal Movement
+	if direction_vector:
+		target_velocity.x = direction_vector.x * speed
+		target_velocity.z = direction_vector.z * speed
 	else:
 		target_velocity.x = move_toward(target_velocity.x, 0, speed)
 		target_velocity.z = move_toward(target_velocity.z, 0, speed)
 
-	# 2. Handle Gravity
-	if not is_on_floor(): 
+	# Handle Gravity
+	if not is_on_floor():
 		target_velocity.y -= fall_acceleration * delta
 	else:
-		# Stop accumulating gravity when grounded
 		target_velocity.y = 0
 
-	# 3. Handle Jumping
-	# We check this separately so it overrides the "grounded" 0 velocity
+	# Handle Jumping
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		target_velocity.y = jump_impulse
+	
+	# Unlock mouse with ESC (useful for testing)
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	# 4. Moving the Character
 	velocity = target_velocity
 	move_and_slide()

@@ -1,19 +1,27 @@
 [gd_scene format=3 uid="uid://cgodu8m8qwk4j"]
 
-[ext_resource type="PackedScene" uid="uid://c7vlv8yq4s18l" path="res://scenes/level/Plane_World.tscn" id="1_7i1vd"]
-[ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://Pill.tscn" id="2_eyuud"]
+[ext_resource type="PackedScene" uid="uid://dsqa847tnoi0a" path="res://scenes/level/cell_with_assets.tscn" id="3_7i1vd"]
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
 
-[node name="Main_Scene" type="Node3D" unique_id=349355966]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
 
-[node name="Floor" parent="." unique_id=1328943470 instance=ExtResource("1_7i1vd")]
+[sub_resource type="Sky" id="Sky_7i1vd"]
+sky_material = SubResource("ProceduralSkyMaterial_rcsjo")
 
-[node name="Pill" parent="." unique_id=1046045228 instance=ExtResource("2_eyuud")]
-transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0, 1.1208497, 0)
+[sub_resource type="Environment" id="Environment_rcsjo"]
+background_mode = 2
+sky = SubResource("Sky_7i1vd")
+
+[node name="Main_Scene" type="Node" unique_id=1231392842]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=170147085]
-transform = Transform3D(-0.7071068, -4.214685e-08, 0.70710677, 0.49999997, 0.70710677, 0.50000006, -0.5, 0.7071068, -0.5, 5.5472097, 5.888022, -8.851535)
+transform = Transform3D(1, 0, 0, 0, -0.7372774, 0.67559016, 0, -0.67559016, -0.7372774, 14.795, 18.22, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28025937, 1.1374159, 2.6854727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 0)
+
+[node name="CellWithAssets" parent="." unique_id=1841889827 instance=ExtResource("3_7i1vd")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
+environment = SubResource("Environment_rcsjo")

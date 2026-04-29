@@ -4,13 +4,16 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 
-[node name="Player" type="Node3D" unique_id=1995347876]
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2030428253]
+[node name="PlayerNode" type="CharacterBody3D" unique_id=1065406681]
 script = ExtResource("1_xhfnw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=428711341]
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=428711341]
 shape = SubResource("CapsuleShape3D_wr5hl")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=2054780268]
+[node name="Head" type="Node3D" parent="." unique_id=1481642959]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=2054780268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70235276, 0)
+keep_aspect = 0
+current = true
+fov = 90.0
