@@ -9,13 +9,11 @@ height = 0.5
 height = 0.5
 radius = 1.0
 
-[node name="Sink" type="Node3D" unique_id=1475671396]
+[node name="Sink" type="StaticBody3D" unique_id=579013982]
 
-[node name="Body" type="StaticBody3D" parent="." unique_id=912511058]
-
-[node name="Mesh" type="MeshInstance3D" parent="Body" unique_id=1230298537]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1230298537]
 mesh = SubResource("CylinderMesh_e6fnn")
 
-[node name="Collider" type="CollisionShape3D" parent="Body" unique_id=627401169]
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=627401169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.013533354)
 shape = SubResource("CylinderShape3D_c8c3c")

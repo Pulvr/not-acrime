@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cgodu8m8qwk4j"]
 
 [ext_resource type="PackedScene" uid="uid://dsqa847tnoi0a" path="res://scenes/level/cell_with_assets.tscn" id="3_7i1vd"]
+[ext_resource type="PackedScene" uid="uid://w321un01bk1c" path="res://scenes/level/floor.tscn" id="3_eyuud"]
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
+[ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
+[ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
 
@@ -21,7 +24,18 @@ shadow_enabled = true
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 0)
 
-[node name="CellWithAssets" parent="." unique_id=1841889827 instance=ExtResource("3_7i1vd")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
+
+[node name="LevelAssets" type="Node" parent="." unique_id=666042714]
+
+[node name="CellWithAssets" parent="LevelAssets" unique_id=1841889827 instance=ExtResource("3_7i1vd")]
+
+[node name="Floor" parent="LevelAssets" unique_id=2107571968 instance=ExtResource("3_eyuud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="OtherCellLeft" parent="LevelAssets" unique_id=601514559 instance=ExtResource("5_iip3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -14)
+
+[node name="OtherCellRight" parent="LevelAssets" unique_id=1434795788 instance=ExtResource("5_4i6ec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -14)
