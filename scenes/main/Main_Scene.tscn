@@ -27,5 +27,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
 
-[node name="prisoner_cellmate4" parent="." unique_id=1337867089 instance=ExtResource("3_eyuud")]
-transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 3.564868, -0.72193146, -1.3290764)
+[node name="prisoner_cellmate4" parent="." unique_id=642150971 instance=ExtResource("3_eyuud")]
+transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 3.9785404, 0.06792188, -2.1276746)

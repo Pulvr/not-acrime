@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c7vlv8yq4s18l" path="res://scenes/level/OwnCell/Own_Cell.tscn" id="1_86qqa"]
 [ext_resource type="PackedScene" uid="uid://i4rnktyy5fw2" path="res://scenes/level/CellAssets/Bed.tscn" id="2_p36wa"]
 [ext_resource type="PackedScene" uid="uid://d1lo7x64jcq6a" path="res://scenes/level/CellAssets/sink.tscn" id="3_p36wa"]
+[ext_resource type="PackedScene" uid="uid://cki43yveeero7" path="res://bunkbed.glb" id="4_bnmwo"]
 
 [node name="CellWithAssets" type="Node" unique_id=1841889827]
 
@@ -10,6 +11,10 @@
 
 [node name="Bed" parent="." unique_id=591536656 instance=ExtResource("2_p36wa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3330097, 0.36378026, -1.8355689)
+visible = false
 
 [node name="Sink" parent="." unique_id=1475671396 instance=ExtResource("3_p36wa")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.9359345, 0.97909427, -2.050541)
+
+[node name="bunkbed" parent="." unique_id=423275338 instance=ExtResource("4_bnmwo")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.043283, 0.102266386, -2.282494)
