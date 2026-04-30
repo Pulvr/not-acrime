@@ -11,9 +11,26 @@ script = ExtResource("1_xhfnw")
 shape = SubResource("CapsuleShape3D_wr5hl")
 
 [node name="Head" type="Node3D" parent="." unique_id=1481642959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=2054780268]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70235276, 0)
 keep_aspect = 0
 current = true
 fov = 90.0
+
+[node name="InteractionRay" type="RayCast3D" parent="Head" unique_id=175050457]
+target_position = Vector3(0, 0, -2)
+
+[node name="Crosshair" type="CanvasLayer" parent="." unique_id=1363723202]
+
+[node name="CenterContainer" type="CenterContainer" parent="Crosshair" unique_id=1488337785]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="Crosshair/CenterContainer" unique_id=375947355]
+custom_minimum_size = Vector2(3, 3)
+layout_mode = 2
+color = Color(1, 1, 1, 0.40784314)

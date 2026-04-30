@@ -4,12 +4,10 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_18vqj"]
 
-[node name="MovingPill" type="Node3D" unique_id=1046045228]
+[node name="Pill" type="RigidBody3D" unique_id=1116768947 groups=["item_for_pickup"]]
 
-[node name="Body" type="RigidBody3D" parent="." unique_id=1116768947]
-
-[node name="Collider" type="CollisionShape3D" parent="Body" unique_id=171829990]
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=171829990]
 shape = SubResource("CapsuleShape3D_lanct")
 
-[node name="Mesh" type="MeshInstance3D" parent="Body" unique_id=1211162951]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1211162951]
 mesh = SubResource("CapsuleMesh_18vqj")
