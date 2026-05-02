@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://6f4ifjijt2wf" path="res://scenes/player/player.gd" id="1_xhfnw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
+height = 3.0
 
 [node name="PlayerNode" type="CharacterBody3D" unique_id=1065406681]
 script = ExtResource("1_xhfnw")
@@ -11,7 +12,7 @@ script = ExtResource("1_xhfnw")
 shape = SubResource("CapsuleShape3D_wr5hl")
 
 [node name="Head" type="Node3D" parent="." unique_id=1481642959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=2054780268]
 keep_aspect = 0

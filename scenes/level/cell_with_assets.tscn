@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1lo7x64jcq6a" path="res://scenes/level/CellAssets/sink.tscn" id="3_p36wa"]
 [ext_resource type="PackedScene" uid="uid://cki43yveeero7" path="res://bunkbed.glb" id="4_bnmwo"]
 
-[node name="CellWithAssets" type="Node" unique_id=1841889827]
+[node name="CellWithAssets" type="Node3D" unique_id=930626341]
 
 [node name="Own_Cell" parent="." unique_id=1328943470 instance=ExtResource("1_86qqa")]
 
