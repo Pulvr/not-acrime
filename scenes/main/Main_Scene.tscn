@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
 [ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
-[ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://Pill.tscn" id="6_4i6ec"]
+[ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/test_pill/Pill.tscn" id="6_4i6ec"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
 
@@ -24,8 +24,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 0)
-fall_acceleration = 55
-jump_impulse = 11
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")

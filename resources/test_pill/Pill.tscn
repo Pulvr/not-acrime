@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://cptb6i8wj8lhs"]
 
+[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/test_pill/pill.gd" id="1_tmrbn"]
+[ext_resource type="Resource" uid="uid://b5xdfjb6s1a5w" path="res://resources/test_pill/Pill.tres" id="2_cfdxg"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lanct"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_18vqj"]
 
 [node name="Pill" type="RigidBody3D" unique_id=1116768947 groups=["item_for_pickup"]]
+script = ExtResource("1_tmrbn")
+data = ExtResource("2_cfdxg")
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=171829990]
 shape = SubResource("CapsuleShape3D_lanct")

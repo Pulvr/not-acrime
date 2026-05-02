@@ -19,7 +19,7 @@ current = true
 fov = 90.0
 
 [node name="InteractionRay" type="RayCast3D" parent="Head" unique_id=175050457]
-target_position = Vector3(0, 0, -2)
+target_position = Vector3(0, 0, -3)
 
 [node name="Crosshair" type="CanvasLayer" parent="." unique_id=1363723202]
 
