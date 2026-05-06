@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgodu8m8qwk4j"]
 
 [ext_resource type="PackedScene" uid="uid://dsqa847tnoi0a" path="res://scenes/level/cell_with_assets.tscn" id="3_7i1vd"]
-[ext_resource type="PackedScene" uid="uid://bmcy4fpojycyn" path="res://prisoner_cellmate4.glb" id="3_eyuud"]
+[ext_resource type="PackedScene" uid="uid://bmcy4fpojycyn" path="res://models/prisoner_cellmate4.glb" id="3_eyuud"]
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cki43yveeero7"
-path="res://.godot/imported/bunkbed.glb-efcdd5f4cea015118bfb29a239699e6c.scn"
+uid="uid://bmcy4fpojycyn"
+path="res://.godot/imported/prisoner_cellmate4.glb-aaafaff6e8864d79c5f1d8d1f50251cd.scn"
 
 [deps]
 
-source_file="res://bunkbed.glb"
-dest_files=["res://.godot/imported/bunkbed.glb-efcdd5f4cea015118bfb29a239699e6c.scn"]
+source_file="res://models/prisoner_cellmate4.glb"
+dest_files=["res://.godot/imported/prisoner_cellmate4.glb-aaafaff6e8864d79c5f1d8d1f50251cd.scn"]
 
 [params]
 
@@ -18,10 +18,10 @@ nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
-nodes/import_as_skeleton_bones=false
+nodes/import_as_skeleton_bones=true
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
-meshes/ensure_tangents=false
+meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
