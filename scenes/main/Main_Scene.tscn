@@ -24,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, -0.7372774, 0.67559016, 0, -0.67559016, -0.7
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 2.2600725)
 
 [node name="CellWithAssets" parent="." unique_id=1841889827 instance=ExtResource("3_7i1vd")]
 
@@ -32,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 0)
 environment = SubResource("Environment_rcsjo")
 
 [node name="prisoner_cellmate4" parent="." unique_id=642150971 instance=ExtResource("3_eyuud")]
-transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 3.9785404, 0.06792188, -2.1276746)
+transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 1.2095406, 0.06792188, -2.1276746)
 
 [node name="LevelAssets" type="Node" parent="." unique_id=666042714]
 
