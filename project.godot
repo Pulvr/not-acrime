@@ -21,8 +21,13 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"Emilio": "res://resources/dialog/character/Emilio.dch",
+"Jowan": "res://resources/dialog/character/Jowan.dch"
+}
+directories/dtl_directory={
+"sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl"
+}
 layout/style_directory={}
 glossary/default_case_sensitive=true
 layout/style_list=[]
