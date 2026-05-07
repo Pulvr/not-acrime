@@ -14,7 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3330097, 0.36378026, -1.835
 visible = false
 
 [node name="Sink" parent="." unique_id=1475671396 instance=ExtResource("3_p36wa")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.9359345, 0.97909427, -2.050541)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8, 1, -2)
 
 [node name="bunkbed" parent="." unique_id=423275338 instance=ExtResource("4_bnmwo")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.043283, 0.102266386, -2.282494)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0.1, -2.3)
