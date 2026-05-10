@@ -1,13 +1,19 @@
-join Jowan left
-Jowan: Hello and welcome to[portrait=confused]...[pause=0.5] Wait? What is this?
+[style name="default_style"]
+if {dialog_played} == true:
+	join Prisoner center
+	Prisoner: Whoa I've heard this before
+	[end_timeline]
+join Cellmate left
+Cellmate: Hello and welcome to this Cell
 
-join Emilio (confused) right
-Emilio: Well, this is is the example timeline.
+join Prisoner right
+Prisoner: Well, this is is awkward
 
-Jowan: I thought this was a cool new feature?
+Cellmate: I thought this was a cool new feature?
 
-Emilio: Nah, sorry.
+Prisoner: Nah, sorry.
 
-Jowan: It's okay.
+Cellmate: It's okay.
+set {dialog_played} = true
 
 [end_timeline]

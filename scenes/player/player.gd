@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var fall_acceleration = 55
 @export var jump_impulse = 11
 @export var mouse_sensitivity = 0.002
+@export var can_move = false
 
 var target_velocity = Vector3.ZERO
 
@@ -16,6 +17,19 @@ var inventory: Array[ItemData]=[]
 func _ready():
 	# Captures the mouse and hides it
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+	Dialogic.timeline_started.connect(_on_timeline_started)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
+
+	Dialogic.start("sample_timeline")
+
+func _on_timeline_started():
+	can_move = false
+	pass
+
+func _on_timeline_ended():
+	can_move = true
+	pass
 
 func _input(event):
 	# Handle mouse movement
@@ -46,7 +60,7 @@ func _physics_process(delta):
 	var direction_vector = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	# Handle Horizontal Movement
-	if direction_vector:
+	if direction_vector and can_move:
 		target_velocity.x = direction_vector.x * speed
 		target_velocity.z = direction_vector.z * speed
 	else:
@@ -60,7 +74,7 @@ func _physics_process(delta):
 		target_velocity.y = 0
 
 	# Handle Jumping
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	if is_on_floor() and Input.is_action_just_pressed("jump") and can_move:
 		target_velocity.y = jump_impulse
 	
 	# Unlock mouse with ESC (useful for testing)
@@ -76,6 +90,9 @@ func check_interaction():
 
 		if collider.is_in_group("item_for_pickup"):
 			pick_up_item(collider)
+		
+		if collider.has_method("interact"):
+			collider.interact()
 
 func pick_up_item(item_node):
 	if "data" in item_node:

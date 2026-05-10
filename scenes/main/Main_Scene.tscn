@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
 [ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
-[ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/test_pill/Pill.tscn" id="6_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://w321un01bk1c" path="res://scenes/level/floor.tscn" id="6_tvwj4"]
-[ext_resource type="Script" uid="uid://do7ekbu7w3fo2" path="res://scenes/main/testingDialog.gd" id="8_btatn"]
+[ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/talk_Pill/TalkingPill.tscn" id="7_tvwj4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
 
@@ -50,8 +49,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 
 [node name="TestingNode" type="Node" parent="." unique_id=1942647575]
 
-[node name="MovingPill" parent="TestingNode" unique_id=1046045228 instance=ExtResource("6_4i6ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0692825, -5.0838313)
-
-[node name="DialogStarter" type="Node" parent="TestingNode" unique_id=350535888]
-script = ExtResource("8_btatn")
+[node name="TalkPill" parent="TestingNode" unique_id=775871583 instance=ExtResource("7_tvwj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4683266, -7.568078)
