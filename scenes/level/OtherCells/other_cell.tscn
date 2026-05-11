@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cg3owa3c1k8bj"]
 
-[ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/concrete_floor.tres" id="1_6rdtg"]
-[ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/concrete_wall.tres" id="2_6rdtg"]
+[ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/materials/concrete_floor.tres" id="1_6rdtg"]
+[ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/materials/concrete_wall.tres" id="2_6rdtg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bsw6e"]
 size = Vector3(10, 0.2, 7)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w321un01bk1c"]
 
-[ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/concrete_floor.tres" id="1_f2dhw"]
+[ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/materials/concrete_floor.tres" id="1_f2dhw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c41w6"]
 size = Vector3(30, 0.2, 4)
