@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cixrhhaycy2w0"
-path.s3tc="res://.godot/imported/concrete_floor_pixelated.png-20ce43cfddef4bf54744c3a86b7b3153.s3tc.ctex"
+uid="uid://8pgp5xwyhgrd"
+path.s3tc="res://.godot/imported/bunkbed_rust_pixelated.png-dbee69a0953c67f1d1b3a7d2bb094a2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "988e401f40f9d2d87112f3ad718e0b3c"
+}
 
 [deps]
 
-source_file="res://textures/concrete_floor_pixelated.png"
-dest_files=["res://.godot/imported/concrete_floor_pixelated.png-20ce43cfddef4bf54744c3a86b7b3153.s3tc.ctex"]
+source_file="res://models/bunkbed_rust_pixelated.png"
+dest_files=["res://.godot/imported/bunkbed_rust_pixelated.png-dbee69a0953c67f1d1b3a7d2bb094a2d.s3tc.ctex"]
 
 [params]
 

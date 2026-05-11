@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sgrxaoo17s8"
-path.s3tc="res://.godot/imported/bunkbed_sheets256.jpg-a8f45aba97dca0a243fb9fa728bc3617.s3tc.ctex"
+uid="uid://btfcp8yjtbubs"
+path.s3tc="res://.godot/imported/concrete_wall_pixelated.png-6e9652cfee28fbe0d2f7e77ca7dce3a3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "7ea73e7f8b4b2b69d7b3904c9b95493f"
-}
 
 [deps]
 
-source_file="res://textures/bunkbed_sheets256.jpg"
-dest_files=["res://.godot/imported/bunkbed_sheets256.jpg-a8f45aba97dca0a243fb9fa728bc3617.s3tc.ctex"]
+source_file="res://textures/source images/concrete_wall_pixelated.png"
+dest_files=["res://.godot/imported/concrete_wall_pixelated.png-6e9652cfee28fbe0d2f7e77ca7dce3a3.s3tc.ctex"]
 
 [params]
 

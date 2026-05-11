@@ -1,17 +1,13 @@
 [gd_scene format=3 uid="uid://cg3owa3c1k8bj"]
 
-[ext_resource type="Texture2D" uid="uid://cixrhhaycy2w0" path="res://textures/concrete_floor_pixelated.png" id="1_6qy17"]
+[ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/concrete_floor.tres" id="1_6rdtg"]
+[ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/concrete_wall.tres" id="2_6rdtg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bsw6e"]
 size = Vector3(10, 0.2, 7)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6qy17"]
 size = Vector3(10, 0.2, 7)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6hc8"]
-albedo_texture = ExtResource("1_6qy17")
-uv1_scale = Vector3(0.15, 0.15, 0.15)
-uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rdtg"]
 size = Vector3(10, 4, 0.2)
@@ -41,13 +37,14 @@ shape = SubResource("BoxShape3D_bsw6e")
 
 [node name="Mesh" type="MeshInstance3D" parent="Ground" unique_id=1700668728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+material_override = ExtResource("1_6rdtg")
 mesh = SubResource("BoxMesh_6qy17")
-surface_material_override/0 = SubResource("StandardMaterial3D_b6hc8")
 
 [node name="Wall_Back" type="StaticBody3D" parent="." unique_id=1156550562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
 
 [node name="Mesh" type="MeshInstance3D" parent="Wall_Back" unique_id=1051078114]
+material_override = ExtResource("2_6rdtg")
 mesh = SubResource("BoxMesh_6rdtg")
 
 [node name="Collider" type="CollisionShape3D" parent="Wall_Back" unique_id=227723668]
@@ -60,6 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Left_Righ_Walls/Wall_Right" unique_id=1992160947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+material_override = ExtResource("2_6rdtg")
 mesh = SubResource("BoxMesh_d78ae")
 
 [node name="Collider" type="CollisionShape3D" parent="Left_Righ_Walls/Wall_Right" unique_id=1511512054]
@@ -71,6 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Left_Righ_Walls/Wall_Left" unique_id=664732775]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+material_override = ExtResource("2_6rdtg")
 mesh = SubResource("BoxMesh_yqu7v")
 
 [node name="Collider" type="CollisionShape3D" parent="Left_Righ_Walls/Wall_Left" unique_id=15222998]

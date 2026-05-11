@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w321un01bk1c"]
 
-[ext_resource type="Texture2D" uid="uid://cixrhhaycy2w0" path="res://textures/concrete_floor_pixelated.png" id="1_f2dhw"]
+[ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/concrete_floor.tres" id="1_f2dhw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c41w6"]
 size = Vector3(30, 0.2, 4)
@@ -8,17 +8,11 @@ size = Vector3(30, 0.2, 4)
 [sub_resource type="BoxMesh" id="BoxMesh_ukw5w"]
 size = Vector3(30, 0.2, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6hc8"]
-albedo_texture = ExtResource("1_f2dhw")
-uv1_scale = Vector3(0.15, 0.15, 0.15)
-uv1_offset = Vector3(0, 0, -0.125)
-uv1_triplanar = true
-
 [node name="Floor" type="StaticBody3D" unique_id=2107571968]
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=1432540431]
 shape = SubResource("BoxShape3D_c41w6")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=2059056202]
+material_override = ExtResource("1_f2dhw")
 mesh = SubResource("BoxMesh_ukw5w")
-surface_material_override/0 = SubResource("StandardMaterial3D_b6hc8")

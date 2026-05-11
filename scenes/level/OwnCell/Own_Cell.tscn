@@ -1,18 +1,13 @@
 [gd_scene format=3 uid="uid://c7vlv8yq4s18l"]
 
-[ext_resource type="Texture2D" uid="uid://cixrhhaycy2w0" path="res://textures/concrete_floor_pixelated.png" id="1_216ls"]
+[ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/concrete_floor.tres" id="1_b6hc8"]
+[ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/concrete_wall.tres" id="2_b6hc8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vb3um"]
 size = Vector3(6, 0.2, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_srgae"]
 size = Vector3(6, 0.2, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6hc8"]
-albedo_texture = ExtResource("1_216ls")
-uv1_scale = Vector3(0.15, 0.15, 0.15)
-uv1_offset = Vector3(0, 0, -0.005)
-uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_b6hc8"]
 size = Vector3(6, 4, 0.2)
@@ -40,13 +35,20 @@ size = Vector3(0.3, 4, 10)
 shape = SubResource("BoxShape3D_vb3um")
 
 [node name="Mesh" type="MeshInstance3D" parent="Ground" unique_id=1700668728]
+material_override = ExtResource("1_b6hc8")
 mesh = SubResource("BoxMesh_srgae")
-surface_material_override/0 = SubResource("StandardMaterial3D_b6hc8")
+
+[node name="Ceiling" type="StaticBody3D" parent="." unique_id=814089332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8980105, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="Ceiling" unique_id=1316766437]
+shape = SubResource("BoxShape3D_vb3um")
 
 [node name="Wall_Back" type="StaticBody3D" parent="." unique_id=1156550562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Back" unique_id=1051078114]
+material_override = ExtResource("2_b6hc8")
 mesh = SubResource("BoxMesh_b6hc8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Back" unique_id=227723668]
@@ -58,6 +60,7 @@ shape = SubResource("BoxShape3D_88ksm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Righ_Walls/Wall_Right" unique_id=1992160947]
+material_override = ExtResource("2_b6hc8")
 mesh = SubResource("BoxMesh_216ls")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Left_Righ_Walls/Wall_Right" unique_id=1511512054]
@@ -67,6 +70,7 @@ shape = SubResource("BoxShape3D_b6hc8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Righ_Walls/Wall_Left" unique_id=664732775]
+material_override = ExtResource("2_b6hc8")
 mesh = SubResource("BoxMesh_30imb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Left_Righ_Walls/Wall_Left" unique_id=15222998]

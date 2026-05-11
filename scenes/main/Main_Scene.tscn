@@ -26,7 +26,7 @@ shadow_enabled = true
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 2.2600725)
 
-[node name="CellWithAssets" parent="." unique_id=1841889827 instance=ExtResource("3_7i1vd")]
+[node name="CellWithAssets" parent="." unique_id=930626341 instance=ExtResource("3_7i1vd")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
@@ -36,16 +36,16 @@ transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.02029
 
 [node name="LevelAssets" type="Node" parent="." unique_id=666042714]
 
-[node name="CellWithAssets" parent="LevelAssets" unique_id=1914532755 instance=ExtResource("3_7i1vd")]
+[node name="CellWithAssets" parent="LevelAssets" unique_id=772185796 instance=ExtResource("3_7i1vd")]
 
 [node name="OtherCellLeft" parent="LevelAssets" unique_id=601514559 instance=ExtResource("5_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -14)
 
 [node name="OtherCellRight" parent="LevelAssets" unique_id=1434795788 instance=ExtResource("5_4i6ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -14)
+transform = Transform3D(1.0063823, 0, 0, 0, 1.0063823, 0, 0, 0, 1.0063823, 5, 0, -14)
 
 [node name="Floor" parent="LevelAssets" unique_id=2107571968 instance=ExtResource("6_tvwj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 
 [node name="MovingPill" parent="." unique_id=1046045228 instance=ExtResource("6_4i6ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0692825, -5.0838313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0692825, -6.7805514)
