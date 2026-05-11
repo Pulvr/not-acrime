@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
 [ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/test_pill/Pill.tscn" id="6_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://w321un01bk1c" path="res://scenes/level/floor.tscn" id="6_tvwj4"]
-[ext_resource type="PackedScene" uid="uid://cfwklur56h5xj" path="res://models/cell_bars.glb" id="8_btatn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
 
@@ -26,8 +25,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 2.2600725)
-
-[node name="CellWithAssets" parent="." unique_id=930626341 instance=ExtResource("3_7i1vd")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
@@ -50,9 +47,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 
 [node name="MovingPill" parent="." unique_id=1046045228 instance=ExtResource("6_4i6ec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0692825, -6.7805514)
-
-[node name="cell_bars" parent="." unique_id=1379199702 instance=ExtResource("8_btatn")]
-transform = Transform3D(-4.371139e-08, 0, 1.115, 0, 1, 0, -1, 0, -4.8738197e-08, 2.856, 0.1, -4.947)
-
-[node name="cell_bars2" parent="." unique_id=185598091 instance=ExtResource("8_btatn")]
-transform = Transform3D(-4.371139e-08, 0, 1.115, 0, 1, 0, -1, 0, -4.8738197e-08, 0.045158267, 0.1, -4.947)
