@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
 [ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
-[ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/test_pill/Pill.tscn" id="6_4i6ec"]
+[ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/talk_Pill/TalkingPill.tscn" id="6_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://w321un01bk1c" path="res://scenes/level/floor.tscn" id="6_tvwj4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
