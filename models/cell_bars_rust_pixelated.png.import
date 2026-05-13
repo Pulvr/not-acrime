@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sgrxaoo17s8"
-path.s3tc="res://.godot/imported/bunkbed_sheets256.jpg-a8f45aba97dca0a243fb9fa728bc3617.s3tc.ctex"
+uid="uid://bivnm8nkmqqon"
+path.s3tc="res://.godot/imported/cell_bars_rust_pixelated.png-ea80b56869a9db7a453af70a0433c253.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7ea73e7f8b4b2b69d7b3904c9b95493f"
+"md5": "988e401f40f9d2d87112f3ad718e0b3c"
 }
 
 [deps]
 
-source_file="res://textures/bunkbed_sheets256.jpg"
-dest_files=["res://.godot/imported/bunkbed_sheets256.jpg-a8f45aba97dca0a243fb9fa728bc3617.s3tc.ctex"]
+source_file="res://models/cell_bars_rust_pixelated.png"
+dest_files=["res://.godot/imported/cell_bars_rust_pixelated.png-ea80b56869a9db7a453af70a0433c253.s3tc.ctex"]
 
 [params]
 

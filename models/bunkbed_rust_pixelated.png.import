@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbdo5pcfhqk85"
-path.s3tc="res://.godot/imported/bunkbed_cotton_fabric_tex.jpg-3ea3fa7a09349c7b0ef9358e96439ad4.s3tc.ctex"
+uid="uid://8pgp5xwyhgrd"
+path.s3tc="res://.godot/imported/bunkbed_rust_pixelated.png-dbee69a0953c67f1d1b3a7d2bb094a2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "97cf1012becd0b3df7485dcedc9ee2aa"
+"md5": "988e401f40f9d2d87112f3ad718e0b3c"
 }
 
 [deps]
 
-source_file="res://textures/bunkbed_cotton_fabric_tex.jpg"
-dest_files=["res://.godot/imported/bunkbed_cotton_fabric_tex.jpg-3ea3fa7a09349c7b0ef9358e96439ad4.s3tc.ctex"]
+source_file="res://models/bunkbed_rust_pixelated.png"
+dest_files=["res://.godot/imported/bunkbed_rust_pixelated.png-dbee69a0953c67f1d1b3a7d2bb094a2d.s3tc.ctex"]
 
 [params]
 
