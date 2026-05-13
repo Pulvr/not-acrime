@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cptb6i8wj8lhs"]
+
+[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/talk_Pill/dialog_interactable.gd" id="1_mw4qk"]
+[ext_resource type="Resource" uid="uid://6iey8amufy1" path="res://resources/dialog/timeline/sample_timeline.dtl" id="2_bijji"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lanct"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_18vqj"]
+
+[node name="TalkPill" type="StaticBody3D" unique_id=775871583 groups=["item_for_pickup", "talk_to"]]
+script = ExtResource("1_mw4qk")
+timeline = ExtResource("2_bijji")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=171829990]
+shape = SubResource("CapsuleShape3D_lanct")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1211162951]
+mesh = SubResource("CapsuleMesh_18vqj")

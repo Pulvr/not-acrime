@@ -1,0 +1,19 @@
+[style name="default_style"]
+if {dialog_played} == true:
+	join Prisoner center
+	Prisoner: Whoa I've heard this before
+	[end_timeline]
+join Cellmate left
+Cellmate: Hello and welcome to this Cell
+
+join Prisoner right
+Prisoner: Well, this is is awkward
+
+Cellmate: I thought this was a cool new feature?
+
+Prisoner: Nah, sorry.
+
+Cellmate: It's okay.
+set {dialog_played} = true
+
+[end_timeline]
