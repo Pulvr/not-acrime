@@ -4,7 +4,8 @@ extends CharacterBody3D
 @export var fall_acceleration = 55
 @export var jump_impulse = 11
 @export var mouse_sensitivity = 0.002
-@export var can_move = false
+@export var can_move = true
+@export var debug_mode = false
 
 var target_velocity = Vector3.ZERO
 
@@ -21,18 +22,13 @@ func _ready():
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 
-	Dialogic.start("sample_timeline")
-
 func _on_timeline_started():
 	can_move = false
-	pass
 
 func _on_timeline_ended():
 	can_move = true
-	pass
 
 func _input(event):
-	# Handle mouse movement
 	if event is InputEventMouseMotion:
 		# Rotate the whole player left/right (Y axis)
 		rotate_y(-event.relative.x * mouse_sensitivity)
@@ -53,7 +49,6 @@ func _input(event):
 	
 
 func _physics_process(delta):
-	# Get the input direction based on the player's CURRENT rotation
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
 	# transform.basis allows "forward" to be wherever the player is facing
@@ -78,7 +73,7 @@ func _physics_process(delta):
 		target_velocity.y = jump_impulse
 	
 	# Unlock mouse with ESC (useful for testing)
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") and debug_mode:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	velocity = target_velocity
