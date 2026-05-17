@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_18vqj"]
 
-[node name="MovingPill" type="RigidBody3D" unique_id=1116768947 groups=["item_for_pickup"]]
+[node name="MovingPill" type="StaticBody3D" unique_id=373162990 groups=["item_for_pickup"]]
 script = ExtResource("1_tmrbn")
 data = ExtResource("2_cfdxg")
 
@@ -15,4 +15,5 @@ data = ExtResource("2_cfdxg")
 shape = SubResource("CapsuleShape3D_lanct")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1211162951]
+layers = 3
 mesh = SubResource("CapsuleMesh_18vqj")

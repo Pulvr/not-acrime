@@ -1,3 +1,3 @@
-extends RigidBody3D
+extends StaticBody3D
 
 @export var data:ItemData

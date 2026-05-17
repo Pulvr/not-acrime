@@ -26,6 +26,7 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 2.2600725)
+debug_mode = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
@@ -49,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 [node name="testItems" type="Node" parent="." unique_id=2041686270]
 
 [node name="MovingPill" parent="testItems" unique_id=1116768947 instance=ExtResource("7_tvwj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99669635, 1.4436767, -3.3942142)
 
 [node name="TestSphere" parent="testItems" unique_id=1727667433 instance=ExtResource("8_btatn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6732521, -1.0569057)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8897612, -1.0569057)

@@ -13,7 +13,11 @@ var target_velocity = Vector3.ZERO
 @onready var head = $Head
 @onready var interaction_ray = $Head/InteractionRay
 
+@onready var hand_mesh = $UILayer/SubViewportContainer/SubViewport/HandSlot/HandMesh
+
+var selected_index: int = 0
 var inventory: Array[ItemData]=[]
+var current_item: ItemData 
 
 func _ready():
 	# Captures the mouse and hides it
@@ -46,6 +50,11 @@ func _input(event):
 		for i in inventory:
 			print(i)
 			print("Item :"+i.name+"\nDescription: "+i.description)
+
+	if event.is_action_pressed("next_item"):
+		change_selected_item(1)
+	elif event.is_action_pressed("prev_item"):
+		change_selected_item(-1)
 	
 
 func _physics_process(delta):
@@ -94,4 +103,32 @@ func pick_up_item(item_node):
 		inventory.append(item_node.data)
 		print("Picked up: ", item_node)
 		item_node.queue_free()
+
+func change_selected_item(direction: int):
+	if inventory.is_empty():
+		return
+		
+	# Cycle through inventory index safely
+	selected_index = (selected_index + direction) % inventory.size()
+	if selected_index < 0:
+		selected_index = inventory.size() - 1
+
+	update_hand_display()
+
+	if debug_mode:
+		print(inventory[selected_index].name)
+
+
+func update_hand_display():
+	current_item = inventory[selected_index]
+	if debug_mode:
+		print(current_item.item_mesh)
+	
+	if current_item and current_item.item_mesh:
+		# Just change the visual shape of the existing hand node
+		hand_mesh.mesh = current_item.item_mesh
+		hand_mesh.visible = true
+	else:
+		# Hide it if the slot is empty or has no mesh
+		hand_mesh.visible = false
 	

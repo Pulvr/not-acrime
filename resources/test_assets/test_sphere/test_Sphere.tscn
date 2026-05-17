@@ -7,7 +7,7 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_e0n1v"]
 
-[node name="TestSphere" type="RigidBody3D" unique_id=1727667433 groups=["item_for_pickup"]]
+[node name="TestSphere" type="StaticBody3D" unique_id=1487545070 groups=["item_for_pickup"]]
 script = ExtResource("1_dvbhw")
 data = ExtResource("2_aghfj")
 
@@ -15,4 +15,5 @@ data = ExtResource("2_aghfj")
 shape = SubResource("SphereShape3D_stfg5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1240660919]
+layers = 3
 mesh = SubResource("SphereMesh_e0n1v")

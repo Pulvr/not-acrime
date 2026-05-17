@@ -22,16 +22,43 @@ fov = 90.0
 [node name="InteractionRay" type="RayCast3D" parent="Head" unique_id=175050457]
 target_position = Vector3(0, 0, -3)
 
-[node name="Crosshair" type="CanvasLayer" parent="." unique_id=1363723202]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1363723202]
 
-[node name="CenterContainer" type="CenterContainer" parent="Crosshair" unique_id=1488337785]
+[node name="CenterContainer" type="CenterContainer" parent="UILayer" unique_id=1488337785]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="ColorRect" parent="Crosshair/CenterContainer" unique_id=375947355]
+[node name="TextureRect" type="ColorRect" parent="UILayer/CenterContainer" unique_id=375947355]
 custom_minimum_size = Vector2(3, 3)
 layout_mode = 2
 color = Color(1, 1, 1, 0.40784314)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UILayer" unique_id=11553593]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UILayer/SubViewportContainer" unique_id=715827172]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="SubView" type="Camera3D" parent="UILayer/SubViewportContainer/SubViewport" unique_id=298489868]
+transform = Transform3D(1, 0, 0, 0, 0.9865722, 0.16332598, 0, -0.16332598, 0.9865722, 1.725326, -33.902195, 1.8879633)
+cull_mask = 2
+current = true
+fov = 32.58673
+
+[node name="HandSlot" type="Node3D" parent="UILayer/SubViewportContainer/SubViewport" unique_id=2108169266]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.2750084, -34.350063, 0.6215571)
+
+[node name="HandMesh" type="MeshInstance3D" parent="UILayer/SubViewportContainer/SubViewport/HandSlot" unique_id=1875169817]
+layers = 2
