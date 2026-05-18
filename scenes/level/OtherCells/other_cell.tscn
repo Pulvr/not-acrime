@@ -10,19 +10,19 @@ size = Vector3(10, 0.2, 7)
 size = Vector3(10, 0.2, 7)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rdtg"]
-size = Vector3(10, 4, 0.2)
+size = Vector3(10, 4.5, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64qhh"]
 size = Vector3(10, 4, 0.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d78ae"]
-size = Vector3(0.2, 4, 7)
+size = Vector3(0.2, 4.5, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n8vus"]
 size = Vector3(0.2, 4, 7)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yqu7v"]
-size = Vector3(0.2, 4, 7)
+size = Vector3(0.2, 4.5, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5f68g"]
 size = Vector3(0.2, 4, 7)
@@ -38,6 +38,18 @@ shape = SubResource("BoxShape3D_bsw6e")
 [node name="Mesh" type="MeshInstance3D" parent="Ground" unique_id=1700668728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 material_override = ExtResource("1_6rdtg")
+mesh = SubResource("BoxMesh_6qy17")
+
+[node name="Ceiling" type="StaticBody3D" parent="." unique_id=900834304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="Ceiling" unique_id=1612406448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+shape = SubResource("BoxShape3D_bsw6e")
+
+[node name="Mesh" type="MeshInstance3D" parent="Ceiling" unique_id=1239164436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+material_override = ExtResource("2_6rdtg")
 mesh = SubResource("BoxMesh_6qy17")
 
 [node name="Wall_Back" type="StaticBody3D" parent="." unique_id=1156550562]

@@ -10,19 +10,19 @@ size = Vector3(6, 0.2, 10)
 size = Vector3(6, 0.2, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_b6hc8"]
-size = Vector3(6, 4, 0.2)
+size = Vector3(6, 4.5, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88ksm"]
 size = Vector3(6, 4, 0.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_216ls"]
-size = Vector3(0.2, 4, 10)
+size = Vector3(0.2, 4.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b6hc8"]
 size = Vector3(0.2, 4, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_30imb"]
-size = Vector3(0.2, 4, 10)
+size = Vector3(0.2, 4.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_216ls"]
 size = Vector3(0.3, 4, 10)
@@ -75,3 +75,14 @@ mesh = SubResource("BoxMesh_30imb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Left_Righ_Walls/Wall_Left" unique_id=15222998]
 shape = SubResource("BoxShape3D_216ls")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1219606833]
+
+[node name="Mesh" type="MeshInstance3D" parent="StaticBody3D" unique_id=1812997778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
+material_override = ExtResource("2_b6hc8")
+mesh = SubResource("BoxMesh_srgae")
+
+[node name="Collider" type="CollisionShape3D" parent="StaticBody3D" unique_id=1156145614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
+shape = SubResource("BoxShape3D_vb3um")

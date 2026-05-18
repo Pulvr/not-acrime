@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
 [ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/talk_Pill/TalkingPill.tscn" id="6_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://w321un01bk1c" path="res://scenes/level/floor.tscn" id="6_tvwj4"]
+[ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/materials/concrete_wall.tres" id="7_btatn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
 
@@ -15,7 +16,24 @@ sky_material = SubResource("ProceduralSkyMaterial_rcsjo")
 
 [sub_resource type="Environment" id="Environment_rcsjo"]
 background_mode = 2
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_7i1vd")
+ssil_enabled = true
+ssil_radius = 9.6
+ssil_intensity = 2.3
+ssil_sharpness = 0.58
+fog_enabled = true
+fog_light_color = Color(0.11501526, 0.12512508, 0.1211571, 1)
+fog_density = 0.0512
+
+[sub_resource type="BoxMesh" id="BoxMesh_btatn"]
+size = Vector3(12, 4.5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ctos"]
+size = Vector3(4.1, 4, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b2hkf"]
+size = Vector3(4.1, 4.5, 0.2)
 
 [node name="Main_Scene" type="Node" unique_id=1231392842]
 
@@ -42,8 +60,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -14)
 [node name="OtherCellRight" parent="LevelAssets" unique_id=1434795788 instance=ExtResource("5_4i6ec")]
 transform = Transform3D(1.0063823, 0, 0, 0, 1.0063823, 0, 0, 0, 1.0063823, 5, 0, -14)
 
-[node name="Floor" parent="LevelAssets" unique_id=2107571968 instance=ExtResource("6_tvwj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+[node name="Hallway" parent="LevelAssets" unique_id=2107571968 instance=ExtResource("6_tvwj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.7683716e-07, -7)
+
+[node name="Walls" type="StaticBody3D" parent="LevelAssets" unique_id=1156712195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.070583, 0, -9.892809)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelAssets/Walls" unique_id=255278732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.902287, 2, 5)
+material_override = ExtResource("7_btatn")
+mesh = SubResource("BoxMesh_btatn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelAssets/Walls" unique_id=2041123940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9460454, 2, 5)
+shape = SubResource("BoxShape3D_0ctos")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="LevelAssets/Walls" unique_id=474511125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.124418, 2, 5)
+material_override = ExtResource("7_btatn")
+mesh = SubResource("BoxMesh_btatn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="LevelAssets/Walls" unique_id=1484553013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.08066, 2, 5)
+shape = SubResource("BoxShape3D_0ctos")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="LevelAssets/Walls" unique_id=240539986]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9363685, 2, 2.9209561)
+material_override = ExtResource("7_btatn")
+mesh = SubResource("BoxMesh_b2hkf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="LevelAssets/Walls" unique_id=829281868]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.93613, 2, 2.9647145)
+shape = SubResource("BoxShape3D_0ctos")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="LevelAssets/Walls" unique_id=1344644492]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.099703, 2, 2.9209561)
+material_override = ExtResource("7_btatn")
+mesh = SubResource("BoxMesh_b2hkf")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="LevelAssets/Walls" unique_id=740296303]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.099941, 2, 2.9647145)
+shape = SubResource("BoxShape3D_0ctos")
 
 [node name="MovingPill" parent="." unique_id=1046045228 instance=ExtResource("6_4i6ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0692825, -6.7805514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9886432, -6.7805514)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://w321un01bk1c"]
 
 [ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/materials/concrete_floor.tres" id="1_f2dhw"]
+[ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/materials/concrete_wall.tres" id="2_mmwo4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c41w6"]
 size = Vector3(30, 0.2, 4)
@@ -15,4 +16,13 @@ shape = SubResource("BoxShape3D_c41w6")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=2059056202]
 material_override = ExtResource("1_f2dhw")
+mesh = SubResource("BoxMesh_ukw5w")
+
+[node name="CeilingCollider2" type="CollisionShape3D" parent="." unique_id=1525681768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
+shape = SubResource("BoxShape3D_c41w6")
+
+[node name="Celing_Mesh2" type="MeshInstance3D" parent="." unique_id=1921772443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
+material_override = ExtResource("2_mmwo4")
 mesh = SubResource("BoxMesh_ukw5w")

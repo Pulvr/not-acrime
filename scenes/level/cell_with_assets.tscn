@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cfwklur56h5xj" path="res://models/cell_bars.glb" id="5_btpx2"]
 [ext_resource type="PackedScene" uid="uid://ccgmst8510vwd" path="res://models/cell_door.glb" id="6_dysg5"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dysg5"]
+size = Vector3(6.022766, 4.015686, 0.12640381)
+
 [node name="CellWithAssets" type="Node3D" unique_id=930626341]
 
 [node name="Own_Cell" parent="." unique_id=1328943470 instance=ExtResource("1_86qqa")]
@@ -21,8 +24,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8
 [node name="bunkbed" parent="." unique_id=423275338 instance=ExtResource("4_bnmwo")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0.1, -2.3)
 
-[node name="cell_bars" parent="." unique_id=1407827419 instance=ExtResource("5_btpx2")]
+[node name="bars" type="StaticBody3D" parent="." unique_id=1243500493]
+
+[node name="cell_bars" parent="bars" unique_id=1407827419 instance=ExtResource("5_btpx2")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4897869, 0.10068703, -4.910336)
 
-[node name="cell_door" parent="." unique_id=189420472 instance=ExtResource("6_dysg5")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bars" unique_id=1368498590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02843666, 2.1015527, -4.906496)
+shape = SubResource("BoxShape3D_dysg5")
+
+[node name="cell_door" parent="bars" unique_id=189420472 instance=ExtResource("6_dysg5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4848301, 0.106684804, -4.9102755)
