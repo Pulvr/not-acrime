@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/materials/concrete_floor.tres" id="1_6rdtg"]
 [ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/materials/concrete_wall.tres" id="2_6rdtg"]
+[ext_resource type="PackedScene" uid="uid://bsttoujhhgchj" path="res://scenes/level/CellAssets/Ceiling_Light.tscn" id="3_64qhh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bsw6e"]
 size = Vector3(10, 0.2, 7)
@@ -87,3 +88,6 @@ mesh = SubResource("BoxMesh_yqu7v")
 [node name="Collider" type="CollisionShape3D" parent="Left_Righ_Walls/Wall_Left" unique_id=15222998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 shape = SubResource("BoxShape3D_5f68g")
+
+[node name="ceiling_light" parent="." unique_id=1823199513 instance=ExtResource("3_64qhh")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 4.2, 1.5359681)

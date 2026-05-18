@@ -9,7 +9,7 @@ size = Vector3(30, 0.2, 4)
 [sub_resource type="BoxMesh" id="BoxMesh_ukw5w"]
 size = Vector3(30, 0.2, 4)
 
-[node name="Floor" type="StaticBody3D" unique_id=2107571968]
+[node name="Hallway_Floor_and_Ceiling" type="StaticBody3D" unique_id=2107571968]
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=1432540431]
 shape = SubResource("BoxShape3D_c41w6")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bsttoujhhgchj"]
+
+[ext_resource type="PackedScene" uid="uid://b16xenbvpexq5" path="res://models/ceiling_light.glb" id="1_8ig8v"]
+[ext_resource type="Material" uid="uid://cjojovyoqmoj4" path="res://textures/materials/emissive_mat.tres" id="2_dq1u0"]
+
+[node name="ceiling_light" unique_id=1823199513 instance=ExtResource("1_8ig8v")]
+
+[node name="celing_light_tubes" parent="." index="1" unique_id=992500613]
+material_override = ExtResource("2_dq1u0")

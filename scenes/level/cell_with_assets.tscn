@@ -3,12 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c7vlv8yq4s18l" path="res://scenes/level/OwnCell/Own_Cell.tscn" id="1_86qqa"]
 [ext_resource type="PackedScene" uid="uid://i4rnktyy5fw2" path="res://scenes/level/CellAssets/Bed.tscn" id="2_p36wa"]
 [ext_resource type="PackedScene" uid="uid://d1lo7x64jcq6a" path="res://scenes/level/CellAssets/sink.tscn" id="3_p36wa"]
-[ext_resource type="PackedScene" uid="uid://cki43yveeero7" path="res://models/bunkbed.glb" id="4_bnmwo"]
-[ext_resource type="PackedScene" uid="uid://cfwklur56h5xj" path="res://models/cell_bars.glb" id="5_btpx2"]
-[ext_resource type="PackedScene" uid="uid://ccgmst8510vwd" path="res://models/cell_door.glb" id="6_dysg5"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dysg5"]
-size = Vector3(6.022766, 4.015686, 0.12640381)
+[ext_resource type="PackedScene" uid="uid://bftnbrifauhij" path="res://scenes/level/CellAssets/Cell_Bars.tscn" id="5_btpx2"]
+[ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/CellAssets/Toilet.tscn" id="5_dysg5"]
+[ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/CellAssets/Bunkbed.tscn" id="6_btpx2"]
+[ext_resource type="PackedScene" uid="uid://bsttoujhhgchj" path="res://scenes/level/CellAssets/Ceiling_Light.tscn" id="7_dysg5"]
 
 [node name="CellWithAssets" type="Node3D" unique_id=930626341]
 
@@ -21,17 +19,14 @@ visible = false
 [node name="Sink" parent="." unique_id=1475671396 instance=ExtResource("3_p36wa")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8, 1, -2)
 
-[node name="bunkbed" parent="." unique_id=423275338 instance=ExtResource("4_bnmwo")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0.1, -2.3)
+[node name="Cell_Bars" parent="." unique_id=1154751589 instance=ExtResource("5_btpx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.9181757)
 
-[node name="bars" type="StaticBody3D" parent="." unique_id=1243500493]
+[node name="Toilet" parent="." unique_id=1757528361 instance=ExtResource("5_dysg5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6867485, 0, 3.8541427)
 
-[node name="cell_bars" parent="bars" unique_id=1407827419 instance=ExtResource("5_btpx2")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4897869, 0.10068703, -4.910336)
+[node name="Bunkbed" parent="." unique_id=1708177036 instance=ExtResource("6_btpx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.1, -2.3)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bars" unique_id=1368498590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02843666, 2.1015527, -4.906496)
-shape = SubResource("BoxShape3D_dysg5")
-
-[node name="cell_door" parent="bars" unique_id=189420472 instance=ExtResource("6_dysg5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4848301, 0.106684804, -4.9102755)
+[node name="ceiling_light" parent="." unique_id=1823199513 instance=ExtResource("7_dysg5")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, 0, 4.2, 0)

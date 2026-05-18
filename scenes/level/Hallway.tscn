@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ba25gny5t6uec"]
+
+[ext_resource type="PackedScene" uid="uid://w321un01bk1c" path="res://scenes/level/floor_and_ceiling.tscn" id="1_pe3qj"]
+[ext_resource type="PackedScene" uid="uid://bwgwlugypgrr8" path="res://scenes/level/walls.tscn" id="2_pg2d7"]
+
+[node name="Hallway" type="Node3D" unique_id=91429455]
+
+[node name="Floor and Ceiling" parent="." unique_id=2107571968 instance=ExtResource("1_pe3qj")]
+
+[node name="Walls" parent="." unique_id=1495267124 instance=ExtResource("2_pg2d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.070583, 0, -2.9430456)
