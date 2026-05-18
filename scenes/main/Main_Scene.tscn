@@ -102,5 +102,9 @@ mesh = SubResource("BoxMesh_b2hkf")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.099941, 2, 2.9647145)
 shape = SubResource("BoxShape3D_0ctos")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="LevelAssets" unique_id=838070131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8027093, 0)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+
 [node name="MovingPill" parent="." unique_id=1046045228 instance=ExtResource("6_4i6ec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9886432, -6.7805514)
