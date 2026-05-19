@@ -1,20 +1,26 @@
 extends CharacterBody3D
 
-@export var speed = 10
-@export var fall_acceleration = 55
-@export var jump_impulse = 11
+@export var SPEED = 5
+@export var JUMP_VELOCITY = 4.5
+
 @export var mouse_sensitivity = 0.002
 @export var can_move = true
 @export var debug_mode = false
 
 var target_velocity = Vector3.ZERO
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-# Reference the "Head" node to rotate it vertically
+enum PLAYER_MODES {
+	WALK
+}
+var current_mode := PLAYER_MODES.WALK
+
 @onready var head = $Head
 @onready var interaction_ray = $Head/InteractionRay
+var min_camera_x = deg_to_rad(-90)
+var max_camera_x = deg_to_rad(90)
 
 @onready var hand_mesh = $UILayer/SubViewportContainer/SubViewport/HandSlot/HandMesh
-
 var selected_index: int = 0
 var inventory: Array[ItemData]=[]
 var current_item: ItemData 
@@ -34,14 +40,9 @@ func _on_timeline_ended():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		# Rotate the whole player left/right (Y axis)
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		
-		# Rotate only the head up/down (X axis)
 		head.rotate_x(-event.relative.y * mouse_sensitivity)
-		
-		# Clamp the vertical rotation so you can't flip upside down
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+		head.rotation.x = clamp(head.rotation.x, min_camera_x, max_camera_x)
 	
 	if event.is_action_pressed("interact"):
 		check_interaction()
@@ -58,34 +59,26 @@ func _input(event):
 	
 
 func _physics_process(delta):
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	
-	# transform.basis allows "forward" to be wherever the player is facing
-	var direction_vector = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	match current_mode:
+		PLAYER_MODES.WALK:
+			walk_process(delta)
 
-	# Handle Horizontal Movement
-	if direction_vector and can_move:
-		target_velocity.x = direction_vector.x * speed
-		target_velocity.z = direction_vector.z * speed
-	else:
-		target_velocity.x = move_toward(target_velocity.x, 0, speed)
-		target_velocity.z = move_toward(target_velocity.z, 0, speed)
-
-	# Handle Gravity
+func walk_process(delta):
 	if not is_on_floor():
-		target_velocity.y -= fall_acceleration * delta
-	else:
-		target_velocity.y = 0
+		velocity.y -= gravity * delta
 
-	# Handle Jumping
-	if is_on_floor() and Input.is_action_just_pressed("jump") and can_move:
-		target_velocity.y = jump_impulse
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 	
-	# Unlock mouse with ESC (useful for testing)
-	if Input.is_action_just_pressed("ui_cancel") and debug_mode:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	velocity = target_velocity
 	move_and_slide()
 
 func check_interaction():

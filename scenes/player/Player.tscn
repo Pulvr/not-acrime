@@ -52,13 +52,13 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="SubView" type="Camera3D" parent="UILayer/SubViewportContainer/SubViewport" unique_id=298489868]
-transform = Transform3D(1, 0, 0, 0, 0.9865722, 0.16332598, 0, -0.16332598, 0.9865722, 1.725326, -33.902195, 1.8879633)
+transform = Transform3D(1, 0, 0, 0, 0.99167114, 0.1287956, 0, -0.1287956, 0.99167114, 0.91, -33.755, 1.888)
 cull_mask = 2
 current = true
-fov = 32.58673
+fov = 52.0
 
 [node name="HandSlot" type="Node3D" parent="UILayer/SubViewportContainer/SubViewport" unique_id=2108169266]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.2750084, -34.350063, 0.6215571)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.85, -34.35, 0.622)
 
 [node name="HandMesh" type="MeshInstance3D" parent="UILayer/SubViewportContainer/SubViewport/HandSlot" unique_id=1875169817]
 layers = 2
