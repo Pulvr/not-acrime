@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cptb6i8wj8lhs"]
 
-[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/talk_Pill/dialog_interactable.gd" id="1_mw4qk"]
+[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/test_assets/talk_Pill/dialog_interactable.gd" id="1_mw4qk"]
 [ext_resource type="Resource" uid="uid://6iey8amufy1" path="res://resources/dialog/timeline/sample_timeline.dtl" id="2_bijji"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lanct"]
