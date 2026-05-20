@@ -24,19 +24,19 @@ target_position = Vector3(0, 0, -3)
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1363723202]
 
-[node name="CenterContainer" type="CenterContainer" parent="UILayer" unique_id=1488337785]
+[node name="CrosshairContrainer" type="CenterContainer" parent="UILayer" unique_id=1488337785]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="ColorRect" parent="UILayer/CenterContainer" unique_id=375947355]
+[node name="Crosshair" type="ColorRect" parent="UILayer/CrosshairContrainer" unique_id=375947355]
 custom_minimum_size = Vector2(3, 3)
 layout_mode = 2
 color = Color(1, 1, 1, 0.40784314)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="UILayer" unique_id=11553593]
+[node name="ItemInHandContainer" type="SubViewportContainer" parent="UILayer" unique_id=11553593]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -45,22 +45,32 @@ grow_vertical = 2
 mouse_filter = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="UILayer/SubViewportContainer" unique_id=715827172]
+[node name="ItemInHand" type="SubViewport" parent="UILayer/ItemInHandContainer" unique_id=715827172]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="HandCamera" type="Node3D" parent="UILayer/SubViewportContainer/SubViewport" unique_id=1210829881]
+[node name="HandCamera" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=1210829881]
 transform = Transform3D(1, 0, 0, 0, 0.99167114, 0.1287956, 0, -0.1287956, 0.99167114, 0.91, -33.755, 1.888)
 
-[node name="SubView" type="Camera3D" parent="UILayer/SubViewportContainer/SubViewport/HandCamera" unique_id=298489868]
+[node name="SubView" type="Camera3D" parent="UILayer/ItemInHandContainer/ItemInHand/HandCamera" unique_id=298489868]
 cull_mask = 2
 current = true
 fov = 52.0
 
-[node name="HandSlot" type="Node3D" parent="UILayer/SubViewportContainer/SubViewport" unique_id=2108169266]
+[node name="HandSlot" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=2108169266]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.85, -34.35, 0.622)
 
-[node name="HandMesh" type="MeshInstance3D" parent="UILayer/SubViewportContainer/SubViewport/HandSlot" unique_id=1875169817]
+[node name="HandMesh" type="MeshInstance3D" parent="UILayer/ItemInHandContainer/ItemInHand/HandSlot" unique_id=1875169817]
 layers = 2
+
+[node name="InventoryBar" type="MarginContainer" parent="UILayer" unique_id=892345009]
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+
+[node name="SlotContainer" type="VBoxContainer" parent="UILayer/InventoryBar" unique_id=2114373631]
+layout_mode = 2

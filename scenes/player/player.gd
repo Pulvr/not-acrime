@@ -2,33 +2,36 @@ extends CharacterBody3D
 
 @export var SPEED = 5
 @export var JUMP_VELOCITY = 4.5
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@export var can_move = true
 
 @export var mouse_sensitivity = 0.002
-@export var can_move = true
 @export var debug_mode = false
 
-var target_velocity = Vector3.ZERO
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+#Possible different Walk Modes
 enum PLAYER_MODES {
 	WALK
 }
 var current_mode := PLAYER_MODES.WALK
 
+#Head Rotation
 @onready var head = $Head
 @onready var interaction_ray = $Head/InteractionRay
+@onready var hand_mesh = $UILayer/ItemInHandContainer/ItemInHand/HandSlot/HandMesh
 var min_camera_x = deg_to_rad(-90)
 var max_camera_x = deg_to_rad(90)
 
-@onready var hand_mesh = $UILayer/SubViewportContainer/SubViewport/HandSlot/HandMesh
+#Inventory
 var selected_index: int = 0
 var inventory: Array[ItemData]=[]
 var current_item: ItemData 
+const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventorySlot.tscn")
+@onready var slot_container = $UILayer/InventoryBar/SlotContainer
 
 func _ready():
-	# Captures the mouse and hides it
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Captures the mouse and hides it
+	
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 
@@ -105,8 +108,7 @@ func change_selected_item(direction: int):
 	if inventory.is_empty():
 		return
 		
-	# Cycle through inventory index safely
-	selected_index = (selected_index + direction) % inventory.size()
+	selected_index = (selected_index + direction) % inventory.size() # Cycle through inventory index safely
 	if selected_index < 0:
 		selected_index = inventory.size() - 1
 
@@ -122,10 +124,21 @@ func update_hand_display():
 		print(current_item.item_mesh)
 	
 	if current_item and current_item.item_mesh:
-		# Just change the visual shape of the existing hand node
-		hand_mesh.mesh = current_item.item_mesh
+		hand_mesh.mesh = current_item.item_mesh #Just change the visual shape of the existing hand node
 		hand_mesh.visible = true
 	else:
-		# Hide it if the slot is empty or has no mesh
-		hand_mesh.visible = false
-	
+		hand_mesh.visible = false #Hide it if the slot is empty or has no mesh
+
+	update_inventory_ui()
+
+func update_inventory_ui():
+	for child in slot_container.get_children():
+		child.queue_free()
+
+	for i in range(inventory.size()):
+		var slot_instance = INVENTORY_SLOT_SCENE.instantiate()
+		slot_container.add_child(slot_instance)
+		
+		var is_active = (i == selected_index)
+		
+		slot_instance.display_item(inventory[i], is_active)
