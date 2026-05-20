@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dde3h81eyjbg3"]
 
 [ext_resource type="Script" uid="uid://6f4ifjijt2wf" path="res://scenes/player/player.gd" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://bnvtsx8kwmo1c" path="res://scenes/ui_scenes/ui_tooltip_pickup.tscn" id="2_gfjak"]
+[ext_resource type="PackedScene" uid="uid://d0iiaocop6n68" path="res://scenes/ui_scenes/ui_tooltip_talk.tscn" id="3_4kuee"]
+[ext_resource type="PackedScene" uid="uid://7tg48w2fy4pu" path="res://scenes/ui_scenes/ui_tooltip_interact.tscn" id="4_524rm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 height = 3.0
@@ -24,14 +27,14 @@ target_position = Vector3(0, 0, -3)
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1363723202]
 
-[node name="CrosshairContrainer" type="CenterContainer" parent="UILayer" unique_id=1488337785]
+[node name="CrosshairContainer" type="CenterContainer" parent="UILayer" unique_id=1488337785]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Crosshair" type="ColorRect" parent="UILayer/CrosshairContrainer" unique_id=375947355]
+[node name="Crosshair" type="ColorRect" parent="UILayer/CrosshairContainer" unique_id=375947355]
 custom_minimum_size = Vector2(3, 3)
 layout_mode = 2
 color = Color(1, 1, 1, 0.40784314)
@@ -77,4 +80,26 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 
 [node name="SlotContainer" type="VBoxContainer" parent="UILayer/InventoryBar" unique_id=2114373631]
+layout_mode = 2
+
+[node name="UIHints" type="CenterContainer" parent="UILayer" unique_id=2037999205]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 76.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PickupHint" parent="UILayer/UIHints" unique_id=840447008 instance=ExtResource("2_gfjak")]
+visible = false
+layout_mode = 2
+
+[node name="TalkHint" parent="UILayer/UIHints" unique_id=1345989740 instance=ExtResource("3_4kuee")]
+visible = false
+layout_mode = 2
+
+[node name="InteractHint" parent="UILayer/UIHints" unique_id=61616240 instance=ExtResource("4_524rm")]
+visible = false
 layout_mode = 2

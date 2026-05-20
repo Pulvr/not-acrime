@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dsqa847tnoi0a"]
 
 [ext_resource type="PackedScene" uid="uid://c7vlv8yq4s18l" path="res://scenes/level/OwnCell/Own_Cell.tscn" id="1_86qqa"]
-[ext_resource type="PackedScene" uid="uid://i4rnktyy5fw2" path="res://scenes/level/CellAssets/Bed.tscn" id="2_p36wa"]
 [ext_resource type="PackedScene" uid="uid://d1lo7x64jcq6a" path="res://scenes/level/CellAssets/sink.tscn" id="3_p36wa"]
 [ext_resource type="PackedScene" uid="uid://bftnbrifauhij" path="res://scenes/level/CellAssets/Cell_Bars.tscn" id="5_btpx2"]
 [ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/CellAssets/Toilet.tscn" id="5_dysg5"]
@@ -11,10 +10,6 @@
 [node name="CellWithAssets" type="Node3D" unique_id=930626341]
 
 [node name="Own_Cell" parent="." unique_id=1328943470 instance=ExtResource("1_86qqa")]
-
-[node name="Bed" parent="." unique_id=591536656 instance=ExtResource("2_p36wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3330097, 0.36378026, -1.8355689)
-visible = false
 
 [node name="Sink" parent="." unique_id=1475671396 instance=ExtResource("3_p36wa")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8, 1, -2)

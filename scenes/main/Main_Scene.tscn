@@ -45,13 +45,13 @@ debug_mode = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
 
-[node name="prisoner_cellmate4" parent="." unique_id=642150971 instance=ExtResource("3_eyuud")]
+[node name="prisoner_cellmate4" parent="." unique_id=487994148 instance=ExtResource("3_eyuud")]
 transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 1.2095406, 0.06792188, -2.1276746)
 
 [node name="LevelAssets" type="Node" parent="." unique_id=666042714]
 
 [node name="CellWithAssets" parent="LevelAssets" unique_id=772185796 instance=ExtResource("3_7i1vd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011603832, 0.007364273, -2.0325184e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0017358065, 0.0036770105, -0.0024841428)
 
 [node name="OtherCellLeft" parent="LevelAssets" unique_id=601514559 instance=ExtResource("5_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -14)
@@ -61,9 +61,6 @@ transform = Transform3D(1.0063823, 0, 0, 0, 1.0063823, 0, 0, 0, 1.0063823, 5, -0
 
 [node name="Hallway" parent="LevelAssets" unique_id=91429455 instance=ExtResource("6_tvwj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.0370703)
-
-[node name="MovingPill" parent="." unique_id=1046045228 instance=ExtResource("6_4i6ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9886432, -6.7805514)
 
 [node name="Lighting" type="Node" parent="." unique_id=491820501]
 
@@ -126,7 +123,10 @@ light_specular = 0.0
 [node name="TestNodes" type="Node" parent="." unique_id=935298810]
 
 [node name="MovingPill" parent="TestNodes" unique_id=373162990 instance=ExtResource("9_0ctos")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98287964, 1.4670234, -1.9965897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.228572, 1.4670234, -1.9965897)
 
 [node name="SharpMetalObject" parent="TestNodes" unique_id=1487545070 instance=ExtResource("9_b2hkf")]
 transform = Transform3D(0.03533553, -0.9993755, 0, 0.9993755, 0.03533553, 0, 0, 0, 1, 0, 0.13730568, 0)
+
+[node name="Node3D" parent="TestNodes" unique_id=208855058 instance=ExtResource("6_4i6ec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4819683, -2.4005606)

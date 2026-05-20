@@ -15,10 +15,13 @@ enum PLAYER_MODES {
 }
 var current_mode := PLAYER_MODES.WALK
 
-#Head Rotation
+#Player Visibility Stuff, Moving Head around, showing Items and UI Hints
 @onready var head = $Head
 @onready var interaction_ray = $Head/InteractionRay
 @onready var hand_mesh = $UILayer/ItemInHandContainer/ItemInHand/HandSlot/HandMesh
+@onready var pick_up_hint = $UILayer/UIHints/PickupHint
+@onready var talk_hint = $UILayer/UIHints/TalkHint
+@onready var interact_hint = $UILayer/UIHints/InteractHint
 var min_camera_x = deg_to_rad(-90)
 var max_camera_x = deg_to_rad(90)
 
@@ -42,7 +45,7 @@ func _on_timeline_ended():
 	can_move = true
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and can_move:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		head.rotate_x(-event.relative.y * mouse_sensitivity)
 		head.rotation.x = clamp(head.rotation.x, min_camera_x, max_camera_x)
@@ -51,9 +54,9 @@ func _input(event):
 		check_interaction()
 
 	if event.is_action_pressed("show_inventory"):
-		for i in inventory:
-			print(i)
-			print("Item :"+i.name+"\nDescription: "+i.description)
+		for item in inventory:
+			print(item)
+			print("Item :"+item.name+"\nDescription: "+item.description)
 
 	if event.is_action_pressed("next_item"):
 		change_selected_item(1)
@@ -66,16 +69,30 @@ func _physics_process(delta):
 		PLAYER_MODES.WALK:
 			walk_process(delta)
 
+	pick_up_hint.visible = false
+	talk_hint.visible = false
+	interact_hint.visible = false
+
+	if interaction_ray.is_colliding():
+		var collider = interaction_ray.get_collider()
+		if collider != null:
+			if collider.is_in_group("item_for_pickup"):
+				pick_up_hint.visible = true
+			elif collider.is_in_group("talk_to"):
+				talk_hint.visible = true
+			elif collider.is_in_group("interactable"):
+				interact_hint.visible = true
+		
 func walk_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and can_move:
 		velocity.y = JUMP_VELOCITY
 	
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if direction and can_move:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
@@ -90,6 +107,9 @@ func check_interaction():
 
 		if collider.is_in_group("item_for_pickup"):
 			pick_up_item(collider)
+		
+		if collider.has_method("startDialog"):
+			collider.startDialog()
 		
 		if collider.has_method("interact"):
 			collider.interact()

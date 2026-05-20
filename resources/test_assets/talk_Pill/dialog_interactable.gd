@@ -2,7 +2,7 @@ extends StaticBody3D
 
 @export var timeline: DialogicTimeline
 
-func interact():
+func startDialog():
 	if timeline != null:
 		Dialogic.start(timeline)
 	else:

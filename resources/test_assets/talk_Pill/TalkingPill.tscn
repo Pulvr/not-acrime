@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_18vqj"]
 
-[node name="TalkPill" type="StaticBody3D" unique_id=775871583 groups=["item_for_pickup", "talk_to"]]
+[node name="TalkPill" type="StaticBody3D" unique_id=775871583 groups=["talk_to"]]
 script = ExtResource("1_mw4qk")
 timeline = ExtResource("2_bijji")
 
