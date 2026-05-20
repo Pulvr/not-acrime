@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5xdfjb6s1a5w"]
 
 [ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/test_assets/item_data.gd" id="1_h5lhr"]
+[ext_resource type="Texture2D" uid="uid://b3i2pamap8np5" path="res://icon.svg" id="1_mhb4a"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h5lhr"]
 
 [resource]
 script = ExtResource("1_h5lhr")
 name = "Pill"
+icon = ExtResource("1_mhb4a")
 description = "Just a Pill"
 item_mesh = SubResource("CapsuleMesh_h5lhr")
 metadata/_custom_type_script = "uid://k257ssevnehw"

@@ -105,27 +105,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
 light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.0
 
-[node name="Node" type="Node" parent="." unique_id=935298810]
+[node name="LightingForHandCamera" type="Node" parent="Lighting" unique_id=252282895]
 
-[node name="TestSphere" parent="Node" unique_id=1487545070 instance=ExtResource("8_b2hkf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69152117, -0.8143916)
-
-[node name="MovingPill" parent="Node" unique_id=373162990 instance=ExtResource("9_0ctos")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98287964, 1.4670234, -1.9965897)
-
-[node name="Lighting2" type="Node" parent="." unique_id=252282895]
-
-[node name="cell_own" type="Node3D" parent="Lighting2" unique_id=608495768]
+[node name="LightForHand" type="Node3D" parent="Lighting/LightingForHandCamera" unique_id=608495768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145, -36.495, 0)
 
-[node name="own_cell_light1" type="OmniLight3D" parent="Lighting2/cell_own" unique_id=1930473725]
+[node name="own_cell_light1" type="OmniLight3D" parent="Lighting/LightingForHandCamera/LightForHand" unique_id=1930473725]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.8841338, 1.4)
 layers = 2
 light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.0
 
-[node name="own_cell_light2" type="OmniLight3D" parent="Lighting2/cell_own" unique_id=572836085]
+[node name="own_cell_light2" type="OmniLight3D" parent="Lighting/LightingForHandCamera/LightForHand" unique_id=572836085]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4.0841336, -1.4)
 layers = 2
 light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.0
+
+[node name="TestNodes" type="Node" parent="." unique_id=935298810]
+
+[node name="TestSphere" parent="TestNodes" unique_id=1487545070 instance=ExtResource("8_b2hkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69152117, -0.8143916)
+
+[node name="MovingPill" parent="TestNodes" unique_id=373162990 instance=ExtResource("9_0ctos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98287964, 1.4670234, -1.9965897)

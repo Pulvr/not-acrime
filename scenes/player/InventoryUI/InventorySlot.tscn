@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b77g6kw2quvb1"]
+
+[ext_resource type="Script" uid="uid://dhxjgqmgnorp0" path="res://scenes/player/InventoryUI/inventory_slot.gd" id="1_8pj23"]
+
+[node name="InventorySlot" type="PanelContainer" unique_id=1583056698]
+custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1_8pj23")
+highlight_color = Color(0.77978164, 0.61916006, 0.31593782, 0.9019608)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1432647248]
+layout_mode = 2
+stretch_mode = 3
