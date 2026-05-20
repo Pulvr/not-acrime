@@ -51,8 +51,10 @@ handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="SubView" type="Camera3D" parent="UILayer/SubViewportContainer/SubViewport" unique_id=298489868]
+[node name="HandCamera" type="Node3D" parent="UILayer/SubViewportContainer/SubViewport" unique_id=1210829881]
 transform = Transform3D(1, 0, 0, 0, 0.99167114, 0.1287956, 0, -0.1287956, 0.99167114, 0.91, -33.755, 1.888)
+
+[node name="SubView" type="Camera3D" parent="UILayer/SubViewportContainer/SubViewport/HandCamera" unique_id=298489868]
 cull_mask = 2
 current = true
 fov = 52.0

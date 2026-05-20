@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/test_assets/item_data.gd" id="1_h5lhr"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_h5lhr"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h5lhr"]
 
 [resource]
 script = ExtResource("1_h5lhr")
 name = "Pill"
 description = "Just a Pill"
-item_mesh = SubResource("SphereMesh_h5lhr")
+item_mesh = SubResource("CapsuleMesh_h5lhr")
 metadata/_custom_type_script = "uid://k257ssevnehw"

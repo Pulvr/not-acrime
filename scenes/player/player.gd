@@ -94,7 +94,11 @@ func check_interaction():
 func pick_up_item(item_node):
 	if "data" in item_node:
 		inventory.append(item_node.data)
-		print("Picked up: ", item_node)
+		current_item = inventory[-1]
+		change_selected_item(1)
+		if debug_mode:
+			print("Picked up: ", item_node)
+
 		item_node.queue_free()
 
 func change_selected_item(direction: int):
