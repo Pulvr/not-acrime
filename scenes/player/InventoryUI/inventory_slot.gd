@@ -15,11 +15,12 @@ func display_item(item_data: ItemData, is_selected: bool):
 		
 	# Apply a flat background color override depending on selection state
 	var style = StyleBoxFlat.new()
+	style.set_border_width_all(2) # Add a small border for the selected item
 	if is_selected:
 		style.bg_color = normal_color
-		style.set_border_width_all(2) # Add a small border for the selected item
 		style.border_color = highlight_color
 	else:
 		style.bg_color = normal_color
+		style.border_color = Color.BLACK
 		
 	add_theme_stylebox_override("panel", style)

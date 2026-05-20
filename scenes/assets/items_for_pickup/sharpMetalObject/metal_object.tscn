@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://n7n57vvs0kgm"]
+
+[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/test_assets/item.gd" id="1_dvbhw"]
+[ext_resource type="Resource" uid="uid://y072snr7rnka" path="res://scenes/assets/items_for_pickup/sharpMetalObject/metal_object.tres" id="2_aghfj"]
+[ext_resource type="ArrayMesh" uid="uid://cal7nmr1aftka" path="res://models/sharp_metal_Cube.res" id="3_aghfj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gmim"]
+
+[node name="SharpMetalObject" type="StaticBody3D" unique_id=1487545070 groups=["item_for_pickup"]]
+script = ExtResource("1_dvbhw")
+data = ExtResource("2_aghfj")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1862955955]
+transform = Transform3D(0.725, 0, 0, 0, -3.1690757e-08, -0.725, 0, 0.725, -3.1690757e-08, 0, 0.0644263, 0)
+shape = SubResource("CapsuleShape3D_8gmim")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1240660919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.33719707)
+layers = 3
+mesh = ExtResource("3_aghfj")

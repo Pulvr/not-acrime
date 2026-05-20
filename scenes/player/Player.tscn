@@ -52,25 +52,29 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="HandCamera" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=1210829881]
-transform = Transform3D(1, 0, 0, 0, 0.99167114, 0.1287956, 0, -0.1287956, 0.99167114, 0.91, -33.755, 1.888)
+transform = Transform3D(1, 0, 0, 0, 0.99167114, 0.1287956, 0, -0.1287956, 0.99167114, 0, -33.72, 1.888)
 
 [node name="SubView" type="Camera3D" parent="UILayer/ItemInHandContainer/ItemInHand/HandCamera" unique_id=298489868]
 cull_mask = 2
 current = true
-fov = 52.0
+fov = 33.6
 
 [node name="HandSlot" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=2108169266]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.85, -34.35, 0.622)
+transform = Transform3D(0.48959512, -0.019025795, -0.005886588, 0.008829322, 0.3371782, -0.35543343, 0.017851494, 0.35503367, 0.3372424, 0.62, -34.35, 0.622)
 
 [node name="HandMesh" type="MeshInstance3D" parent="UILayer/ItemInHandContainer/ItemInHand/HandSlot" unique_id=1875169817]
 layers = 2
 
 [node name="InventoryBar" type="MarginContainer" parent="UILayer" unique_id=892345009]
-anchors_preset = 9
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -20.0
+grow_horizontal = 0
 grow_vertical = 2
-theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
 
 [node name="SlotContainer" type="VBoxContainer" parent="UILayer/InventoryBar" unique_id=2114373631]
 layout_mode = 2

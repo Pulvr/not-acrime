@@ -4,9 +4,14 @@
 
 [node name="InventorySlot" type="PanelContainer" unique_id=1583056698]
 custom_minimum_size = Vector2(64, 64)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
 script = ExtResource("1_8pj23")
 highlight_color = Color(0.77978164, 0.61916006, 0.31593782, 0.9019608)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1432647248]
 layout_mode = 2
-stretch_mode = 3
