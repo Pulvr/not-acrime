@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dgftfyd3k8fyh"]
 
+[ext_resource type="Script" uid="uid://dhhyqavgh3v2m" path="res://scenes/ui_scenes/main_menu.gd" id="1_jg0sh"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_sey8n"]
 
 [node name="Main Menu" type="Control" unique_id=1012169217]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jg0sh")
 
 [node name="Background black" type="ColorRect" parent="." unique_id=624612165]
 layout_mode = 0
@@ -47,3 +49,12 @@ text = "Language"
 layout_mode = 2
 tooltip_text = "Quit game"
 text = "Quit"
+
+[node name="Label" parent="VBoxContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start/Click Logic" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
+
+[editable path="VBoxContainer/Start"]
+[editable path="VBoxContainer/Quit"]
