@@ -68,14 +68,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9886432, -6.7805514)
 [node name="Lighting" type="Node" parent="." unique_id=491820501]
 
 [node name="cell_own" type="Node3D" parent="Lighting" unique_id=442579602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="own_cell_light1" type="OmniLight3D" parent="Lighting/cell_own" unique_id=419083301]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.8841338, 1.4)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
 light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.0
 
 [node name="own_cell_light2" type="OmniLight3D" parent="Lighting/cell_own" unique_id=712101461]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4.0841336, -1.4)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -1.4)
 light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.0
 
