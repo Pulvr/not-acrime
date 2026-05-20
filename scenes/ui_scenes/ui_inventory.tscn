@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cmpyfs8qj7841"]
+
+[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="1_im5tk"]
+[ext_resource type="Texture2D" uid="uid://pvky0b312u25" path="res://resources/ui_elements/UI_inv_frame.png" id="2_ksh8l"]
+[ext_resource type="Texture2D" uid="uid://cvufcrqrlyf8c" path="res://resources/ui_elements/UI_inv_item_slim.png" id="3_xfbtv"]
+
+[node name="Control" type="Control" unique_id=1784855514]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1240018363]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -52.0
+offset_right = 126.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Background" type="NinePatchRect" parent="MarginContainer" unique_id=1605377860]
+layout_mode = 2
+texture = ExtResource("1_im5tk")
+
+[node name="Frame" type="NinePatchRect" parent="MarginContainer" unique_id=29912526]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("2_ksh8l")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Inventory Content" type="MarginContainer" parent="MarginContainer" unique_id=47914878]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Inventory Content" unique_id=51111213]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Item" type="NinePatchRect" parent="MarginContainer/Inventory Content/HBoxContainer" unique_id=1545965428]
+texture_filter = 3
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("3_xfbtv")
+
+[node name="Item2" type="NinePatchRect" parent="MarginContainer/Inventory Content/HBoxContainer" unique_id=2131425078]
+texture_filter = 3
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("3_xfbtv")
+
+[node name="Item3" type="NinePatchRect" parent="MarginContainer/Inventory Content/HBoxContainer" unique_id=1534665324]
+texture_filter = 3
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("3_xfbtv")
+
+[node name="Item4" type="NinePatchRect" parent="MarginContainer/Inventory Content/HBoxContainer" unique_id=1121397176]
+texture_filter = 3
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("3_xfbtv")
+
+[node name="Item5" type="NinePatchRect" parent="MarginContainer/Inventory Content/HBoxContainer" unique_id=1937913137]
+texture_filter = 3
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("3_xfbtv")

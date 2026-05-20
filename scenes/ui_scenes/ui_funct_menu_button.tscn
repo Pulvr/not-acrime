@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dbsjklprvdqqu"]
+
+[ext_resource type="Script" uid="uid://dhokpatv6a5p3" path="res://scenes/ui_scenes/ui_funct_menu_button.gd" id="1_jnfhn"]
+[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="1_v3cyt"]
+[ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="2_ryw3t"]
+[ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="3_ryw3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnfhn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgk7b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec1vy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcq81"]
+
+[node name="Menu Button" type="MarginContainer" unique_id=183917302]
+custom_minimum_size = Vector2(250, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnfhn")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=2051951726]
+layout_mode = 2
+texture = ExtResource("1_v3cyt")
+
+[node name="Border" type="NinePatchRect" parent="." unique_id=188039461]
+modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("2_ryw3t")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1863224066]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=1921324632]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer" unique_id=871164474]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ryw3t")
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="Click Logic" type="Button" parent="." unique_id=476664363]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jnfhn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bgk7b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ec1vy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hcq81")
+flat = true
