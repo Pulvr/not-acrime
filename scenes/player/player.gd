@@ -22,6 +22,7 @@ var current_mode := PLAYER_MODES.WALK
 @onready var pick_up_hint = $UILayer/UIHints/PickupHint
 @onready var talk_hint = $UILayer/UIHints/TalkHint
 @onready var interact_hint = $UILayer/UIHints/InteractHint
+var hint_checker = true
 var min_camera_x = deg_to_rad(-90)
 var max_camera_x = deg_to_rad(90)
 
@@ -73,7 +74,7 @@ func _physics_process(delta):
 	talk_hint.visible = false
 	interact_hint.visible = false
 
-	if interaction_ray.is_colliding():
+	if interaction_ray.is_colliding() and hint_checker:
 		var collider = interaction_ray.get_collider()
 		if collider != null:
 			if collider.is_in_group("item_for_pickup"):
@@ -111,7 +112,11 @@ func check_interaction():
 		if collider.has_method("startDialog"):
 			collider.startDialog()
 		
-		if collider.has_method("interact"):
+		if collider and collider.has_method("interact"):
+			if collider.has_signal("ToiletMiniGameStarted") and collider.has_signal("ToiletMiniGameEnded"):
+				if not collider.ToiletMiniGameStarted.is_connected(_on_toilet_mini_game_started):
+					collider.ToiletMiniGameStarted.connect(_on_toilet_mini_game_started)
+					collider.ToiletMiniGameEnded.connect(_on_toilet_mini_game_ended)
 			collider.interact()
 
 func pick_up_item(item_node):
@@ -162,3 +167,12 @@ func update_inventory_ui():
 		var is_active = (i == selected_index)
 		
 		slot_instance.display_item(inventory[i], is_active)
+
+func _on_toilet_mini_game_started():
+	can_move = false 
+	hint_checker = false
+	interact_hint.visible = false
+
+func _on_toilet_mini_game_ended():
+	can_move = true 
+	hint_checker = true

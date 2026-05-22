@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://fg6pumt5mog1"]
+
+[ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_6e8ty"]
+
+[node name="ToiletMiniGame" type="Control" unique_id=1440177789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu Button" parent="." unique_id=183917302 instance=ExtResource("1_6e8ty")]
+layout_mode = 1
+offset_left = 174.0
+offset_top = 131.0
+offset_right = 424.0
+offset_bottom = 181.0
+text = " Overcome Disgust "
+
+[node name="Label" parent="Menu Button/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
+text = " Overcome Disgust "
+
+[editable path="Menu Button"]

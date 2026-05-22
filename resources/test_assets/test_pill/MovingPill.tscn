@@ -17,3 +17,7 @@ shape = SubResource("CapsuleShape3D_lanct")
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1211162951]
 layers = 3
 mesh = SubResource("CapsuleMesh_18vqj")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1379765928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64171827, 0.76747704)
+text = "Pickup"

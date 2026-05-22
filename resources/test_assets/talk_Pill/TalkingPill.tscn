@@ -16,3 +16,7 @@ shape = SubResource("CapsuleShape3D_lanct")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1211162951]
 mesh = SubResource("CapsuleMesh_18vqj")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1625262387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42679942, 0.5236486)
+text = "TalkToMe"
