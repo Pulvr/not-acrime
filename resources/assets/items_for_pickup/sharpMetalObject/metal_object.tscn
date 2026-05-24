@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://n7n57vvs0kgm"]
 
 [ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/test_assets/item.gd" id="1_dvbhw"]
-[ext_resource type="Resource" uid="uid://y072snr7rnka" path="res://scenes/assets/items_for_pickup/sharpMetalObject/metal_object.tres" id="2_aghfj"]
+[ext_resource type="Resource" uid="uid://y072snr7rnka" path="res://resources/assets/items_for_pickup/sharpMetalObject/metal_object.tres" id="2_aghfj"]
 [ext_resource type="ArrayMesh" uid="uid://cal7nmr1aftka" path="res://models/sharp_metal_Cube.res" id="3_aghfj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gmim"]

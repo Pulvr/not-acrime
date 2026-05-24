@@ -107,6 +107,7 @@ func check_interaction():
 		var collider = interaction_ray.get_collider()
 
 		if collider.is_in_group("item_for_pickup"):
+			print(collider)
 			pick_up_item(collider)
 		
 		if collider.has_method("startDialog"):
@@ -121,12 +122,9 @@ func check_interaction():
 
 func pick_up_item(item_node):
 	if "data" in item_node:
-		inventory.append(item_node.data)
-		current_item = inventory[-1]
-		change_selected_item(1)
+		add_item(item_node.data)
 		if debug_mode:
 			print("Picked up: ", item_node)
-
 		item_node.queue_free()
 
 func change_selected_item(direction: int):
@@ -142,11 +140,15 @@ func change_selected_item(direction: int):
 	if debug_mode:
 		print(inventory[selected_index].name)
 
+func add_item(item_data:ItemData):
+	inventory.append(item_data)
+	current_item = inventory[-1]
+	change_selected_item(1)
+	update_inventory_ui()
+
 
 func update_hand_display():
 	current_item = inventory[selected_index]
-	if debug_mode:
-		print(current_item.item_mesh)
 	
 	if current_item and current_item.item_mesh:
 		hand_mesh.mesh = current_item.item_mesh #Just change the visual shape of the existing hand node
@@ -176,3 +178,5 @@ func _on_toilet_mini_game_started():
 func _on_toilet_mini_game_ended():
 	can_move = true 
 	hint_checker = true
+	var sharp_metal_object = load("res://resources/assets/items_for_pickup/sharpMetalObject/metal_object.tres")
+	add_item(sharp_metal_object)

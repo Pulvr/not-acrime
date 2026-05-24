@@ -5,14 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="2_ryw3t"]
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="3_ryw3t"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnfhn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgk7b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ec1vy"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcq81"]
-
 [node name="Menu Button" type="MarginContainer" unique_id=183917302]
 custom_minimum_size = Vector2(250, 40)
 anchors_preset = 8
@@ -52,12 +44,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ryw3t")
 theme_override_font_sizes/font_size = 32
-text = "Start"
+text = "Button"
 
 [node name="Click Logic" type="Button" parent="." unique_id=476664363]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jnfhn")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_bgk7b")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ec1vy")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hcq81")
 flat = true
