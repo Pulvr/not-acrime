@@ -38,7 +38,6 @@ grow_vertical = 2
 [node name="ProgressBar" type="ProgressBar" parent="ProgressBarContainer" unique_id=1666774917]
 layout_mode = 2
 size_flags_vertical = 1
-step = 5.0
 allow_greater = true
 fill_mode = 3
 show_percentage = false

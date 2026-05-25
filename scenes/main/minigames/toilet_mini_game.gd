@@ -4,7 +4,8 @@ extends Control
 @onready var disgustBar = $"ProgressBarContainer/ProgressBar"
 
 @export var decline_rate = 15
-var current_bar_value = 1
+@export var click_reward = 5
+var current_bar_value = 0
 
 signal ToiletMiniGameUiDeleted()
 
@@ -12,7 +13,7 @@ func _ready():
     button.pressed.connect(_on_button_pressed)
 
 func _on_button_pressed():
-    current_bar_value += disgustBar.step
+    current_bar_value += click_reward
     disgustBar.value = current_bar_value
     if disgustBar.value >= 100.0:
         endMiniGame()
