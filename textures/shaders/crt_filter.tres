@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://daeo0c1lhp1c2"]
+
+[ext_resource type="Shader" uid="uid://cwo3gxvrrqc3g" path="res://textures/shaders/crt_filter.gdshader" id="1_kgsxw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kgsxw")
+shader_parameter/pixel_size = 3.0
+shader_parameter/vhs_intensity = 3.0
+shader_parameter/noise_intensity = 0.15
+shader_parameter/opacity = 0.5

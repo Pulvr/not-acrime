@@ -2,11 +2,17 @@
 
 [ext_resource type="Script" uid="uid://6f4ifjijt2wf" path="res://scenes/player/player.gd" id="1_xhfnw"]
 [ext_resource type="PackedScene" uid="uid://bnvtsx8kwmo1c" path="res://scenes/ui_scenes/ui_tooltip_pickup.tscn" id="2_gfjak"]
+[ext_resource type="Material" uid="uid://xtfht3ymr5w5" path="res://textures/shaders/pixelation_filter.tres" id="2_tpg5x"]
 [ext_resource type="PackedScene" uid="uid://d0iiaocop6n68" path="res://scenes/ui_scenes/ui_tooltip_talk.tscn" id="3_4kuee"]
 [ext_resource type="PackedScene" uid="uid://7tg48w2fy4pu" path="res://scenes/ui_scenes/ui_tooltip_interact.tscn" id="4_524rm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 height = 3.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_c3xxp"]
+material = ExtResource("2_tpg5x")
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="PlayerNode" type="CharacterBody3D" unique_id=1065406681]
 script = ExtResource("1_xhfnw")
@@ -21,6 +27,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 keep_aspect = 0
 current = true
 fov = 90.0
+
+[node name="Screen Shader Mesh" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1291474493]
+mesh = SubResource("QuadMesh_c3xxp")
 
 [node name="InteractionRay" type="RayCast3D" parent="Head" unique_id=175050457]
 target_position = Vector3(0, 0, -3)
@@ -40,6 +49,7 @@ layout_mode = 2
 color = Color(1, 1, 1, 0.40784314)
 
 [node name="ItemInHandContainer" type="SubViewportContainer" parent="UILayer" unique_id=11553593]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -47,11 +57,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 stretch = true
+stretch_shrink = 3
 
 [node name="ItemInHand" type="SubViewport" parent="UILayer/ItemInHandContainer" unique_id=715827172]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="HandCamera" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=1210829881]

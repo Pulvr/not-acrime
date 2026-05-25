@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://xtfht3ymr5w5"]
+
+[ext_resource type="Shader" uid="uid://7hq6elcvnhu" path="res://textures/shaders/pixelation_filter.gdshader" id="1_idbf5"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_idbf5")
