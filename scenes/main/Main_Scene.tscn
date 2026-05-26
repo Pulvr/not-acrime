@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dsqa847tnoi0a" path="res://scenes/level/cell_with_assets.tscn" id="3_7i1vd"]
 [ext_resource type="PackedScene" uid="uid://bmcy4fpojycyn" path="res://models/prisoner_cellmate4.glb" id="3_eyuud"]
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
+[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/test_assets/talk_Pill/dialog_interactable.gd" id="3_r52bg"]
+[ext_resource type="Resource" uid="uid://cnrh5yyl0n8fo" path="res://resources/dialog/timeline/welcome_timeline.dtl" id="4_557sa"]
 [ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
 [ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/test_assets/talk_Pill/TalkingPill.tscn" id="6_4i6ec"]
@@ -32,6 +34,10 @@ fog_enabled = true
 fog_light_color = Color(0.11501526, 0.12512508, 0.1211571, 1)
 fog_density = 0.0512
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r52bg"]
+radius = 0.6567383
+height = 3.6547852
+
 [node name="Main_Scene" type="Node" unique_id=1231392842]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=170147085]
@@ -45,8 +51,16 @@ debug_mode = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
 
-[node name="prisoner_cellmate4" parent="." unique_id=487994148 instance=ExtResource("3_eyuud")]
-transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 1.2095406, 0.06792188, -2.1276746)
+[node name="cellmate" type="StaticBody3D" parent="." unique_id=480935697]
+transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 1.204, 0.07, -1.817)
+script = ExtResource("3_r52bg")
+timeline = ExtResource("4_557sa")
+
+[node name="prisoner_cellmate4" parent="cellmate" unique_id=487994148 instance=ExtResource("3_eyuud")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cellmate" unique_id=899533904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31027317, 3.3715672, -0.011393905)
+shape = SubResource("CapsuleShape3D_r52bg")
 
 [node name="LevelAssets" type="Node" parent="." unique_id=666042714]
 

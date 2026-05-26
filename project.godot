@@ -27,7 +27,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
-"second_timeline": "res://resources/dialog/style/second_timeline.dtl"
+"second_timeline": "res://resources/dialog/style/second_timeline.dtl",
+"welcome_timeline": "res://resources/dialog/timeline/welcome_timeline.dtl"
 }
 layout/style_directory={
 "default_style": "res://resources/dialog/style/default_style.tres"
@@ -36,7 +37,8 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://resources/dialog/style/default_style.tres"]
 layout/default_style=""
 variables={
-"dialog_played": false
+"dialog_played": false,
+"first_conversation": true
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
