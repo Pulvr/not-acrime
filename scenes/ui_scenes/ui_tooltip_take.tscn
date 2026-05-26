@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bnvtsx8kwmo1c"]
 
-[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="1_fkaw8"]
-[ext_resource type="Texture2D" uid="uid://wgpofgwb1m8g" path="res://resources/ui_elements/UI_frame.png" id="2_psodn"]
-[ext_resource type="Texture2D" uid="uid://oeguatxuj6y2" path="res://resources/ui_elements/UI_button2.png" id="3_afbbh"]
+[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/ui_background.png" id="1_fkaw8"]
+[ext_resource type="Texture2D" uid="uid://wgpofgwb1m8g" path="res://resources/ui_elements/ui_frame.png" id="2_psodn"]
+[ext_resource type="Texture2D" uid="uid://oeguatxuj6y2" path="res://resources/ui_elements/ui_button2.png" id="3_afbbh"]
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="4_xh3m3"]
 
 [node name="Interaction UI" type="MarginContainer" unique_id=840447008]

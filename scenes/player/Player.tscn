@@ -1,12 +1,23 @@
 [gd_scene format=3 uid="uid://dde3h81eyjbg3"]
 
 [ext_resource type="Script" uid="uid://6f4ifjijt2wf" path="res://scenes/player/player.gd" id="1_xhfnw"]
+[ext_resource type="AudioStream" uid="uid://bdoqldodvptee" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete1_raw.mp3" id="2_5stf6"]
+[ext_resource type="AudioStream" uid="uid://6b27nkyh5kdo" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete2_raw.mp3" id="3_180ig"]
+[ext_resource type="AudioStream" uid="uid://cjohwirsjcgub" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete3_raw.mp3" id="4_20koh"]
+[ext_resource type="AudioStream" uid="uid://m6fvpjmpglke" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete4_raw.mp3" id="5_ov1oi"]
+[ext_resource type="AudioStream" uid="uid://bc7pvu88j2wwx" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete5_raw.mp3" id="6_rn7t0"]
+[ext_resource type="AudioStream" uid="uid://3krcgvjmg73t" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete6_raw.mp3" id="7_8qjgm"]
+[ext_resource type="AudioStream" uid="uid://bkfhqix8fl6oa" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete7_raw.mp3" id="8_ejd4k"]
+[ext_resource type="AudioStream" uid="uid://2lslksnivd0u" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete8_raw.mp3" id="9_2xrq6"]
+[ext_resource type="AudioStream" uid="uid://ccblcfmwcclb0" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete9_raw.mp3" id="10_pi3ps"]
+[ext_resource type="AudioStream" uid="uid://4pcngphqpvu2" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete10_raw.mp3" id="11_kswpp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 height = 3.0
 
 [node name="PlayerNode" type="CharacterBody3D" unique_id=1065406681]
 script = ExtResource("1_xhfnw")
+footstep_sounds = Array[AudioStream]([ExtResource("2_5stf6"), ExtResource("3_180ig"), ExtResource("4_20koh"), ExtResource("5_ov1oi"), ExtResource("6_rn7t0"), ExtResource("7_8qjgm"), ExtResource("8_ejd4k"), ExtResource("9_2xrq6"), ExtResource("10_pi3ps"), ExtResource("11_kswpp")])
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=428711341]
 shape = SubResource("CapsuleShape3D_wr5hl")
@@ -62,3 +73,13 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.85, -34.35, 0.622)
 
 [node name="HandMesh" type="MeshInstance3D" parent="UILayer/SubViewportContainer/SubViewport/HandSlot" unique_id=1875169817]
 layers = 2
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=375218340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2307707, 0)
+volume_db = -17.962
+bus = &"Cell Reverb"
+
+[node name="FootstepTimer" type="Timer" parent="FootstepPlayer" unique_id=319196038]
+wait_time = 0.65
+
+[connection signal="timeout" from="FootstepPlayer/FootstepTimer" to="." method="_on_footstep_timer_timeout"]

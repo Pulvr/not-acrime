@@ -7,6 +7,8 @@ extends CharacterBody3D
 @export var can_move = true
 @export var debug_mode = false
 
+@export var footstep_sounds: Array[AudioStream] = []
+
 var target_velocity = Vector3.ZERO
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -24,6 +26,9 @@ var max_camera_x = deg_to_rad(90)
 var selected_index: int = 0
 var inventory: Array[ItemData]=[]
 var current_item: ItemData 
+
+@onready var footstep_player = $FootstepPlayer
+@onready var footstep_timer = $FootstepPlayer/FootstepTimer
 
 func _ready():
 	# Captures the mouse and hides it
@@ -80,6 +85,16 @@ func walk_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	var horizontal_velocity = Vector2(velocity.x, velocity.z)
+	
+	if is_on_floor() and horizontal_velocity.length() > 0.1:
+		if footstep_timer.is_stopped():
+			play_footstep_sound()
+			footstep_timer.start()
+	else:
+		if not footstep_timer.is_stopped():
+			footstep_timer.stop()
 
 func check_interaction():
 	if interaction_ray.is_colliding():
@@ -125,3 +140,17 @@ func update_hand_display():
 		# Hide it if the slot is empty or has no mesh
 		hand_mesh.visible = false
 	
+
+func play_footstep_sound():
+	if footstep_sounds.is_empty():
+		return
+	
+	var random_index = randi() % footstep_sounds.size()
+	var chosen_sound = footstep_sounds[random_index]
+	footstep_player.stream = chosen_sound
+	footstep_player.pitch_scale = randf_range(0.95, 1.05)
+	footstep_player.play()
+
+
+func _on_footstep_timer_timeout() -> void:
+	play_footstep_sound()
