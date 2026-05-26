@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cmpyfs8qj7841"]
 
-[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="1_im5tk"]
-[ext_resource type="Texture2D" uid="uid://pvky0b312u25" path="res://resources/ui_elements/UI_inv_frame.png" id="2_ksh8l"]
-[ext_resource type="Texture2D" uid="uid://cvufcrqrlyf8c" path="res://resources/ui_elements/UI_inv_item_slim.png" id="3_xfbtv"]
+[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/ui_background.png" id="1_im5tk"]
+[ext_resource type="Texture2D" uid="uid://pvky0b312u25" path="res://resources/ui_elements/ui_inv_frame.png" id="2_ksh8l"]
+[ext_resource type="Texture2D" uid="uid://cvufcrqrlyf8c" path="res://resources/ui_elements/ui_inv_item_slim.png" id="3_xfbtv"]
 
 [node name="Control" type="Control" unique_id=1784855514]
 layout_mode = 3

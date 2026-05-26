@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dbsjklprvdqqu"]
 
 [ext_resource type="Script" uid="uid://dhokpatv6a5p3" path="res://scenes/ui_scenes/ui_funct_menu_button.gd" id="1_jnfhn"]
-[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="1_v3cyt"]
-[ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="2_ryw3t"]
+[ext_resource type="Texture2D" uid="uid://b7qe6tdk5p5do" path="res://resources/ui_elements/ui_background_white.png" id="2_jnfhn"]
+[ext_resource type="Texture2D" uid="uid://dviqa6v5os5ck" path="res://resources/ui_elements/ui_frame_white.png" id="3_bgk7b"]
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="3_ryw3t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnfhn"]
@@ -25,16 +25,18 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jnfhn")
+disabled = null
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=2051951726]
+self_modulate = Color(0.4392157, 0.4392157, 0.4392157, 1)
 layout_mode = 2
-texture = ExtResource("1_v3cyt")
+texture = ExtResource("2_jnfhn")
 
 [node name="Border" type="NinePatchRect" parent="." unique_id=188039461]
-modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
+self_modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
 texture_filter = 3
 layout_mode = 2
-texture = ExtResource("2_ryw3t")
+texture = ExtResource("3_bgk7b")
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
@@ -52,7 +54,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ryw3t")
 theme_override_font_sizes/font_size = 32
-text = "Start"
+text = "Button"
 
 [node name="Click Logic" type="Button" parent="." unique_id=476664363]
 layout_mode = 2
@@ -61,3 +63,8 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_bgk7b")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ec1vy")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hcq81")
 flat = true
+
+[connection signal="button_down" from="Click Logic" to="." method="_on_click_logic_button_down"]
+[connection signal="button_up" from="Click Logic" to="." method="_on_click_logic_button_up"]
+[connection signal="mouse_entered" from="Click Logic" to="." method="_on_click_logic_mouse_entered"]
+[connection signal="mouse_exited" from="Click Logic" to="." method="_on_click_logic_mouse_exited"]

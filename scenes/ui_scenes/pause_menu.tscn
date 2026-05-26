@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d2gw4wfd1u8uh"]
+
+[ext_resource type="Script" uid="uid://capyg2odmtkqg" path="res://pause_menu.gd" id="1_o8qos"]
+[ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="2_ggsj7"]
+
+[node name="Pause Menu" type="Control" unique_id=551449788]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o8qos")
+
+[node name="Background black" type="ColorRect" parent="." unique_id=1098483515]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1157.0
+offset_bottom = 653.0
+color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1397513552]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 82.0
+offset_right = 125.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Continue" parent="VBoxContainer" unique_id=183917302 instance=ExtResource("2_ggsj7")]
+layout_mode = 2
+tooltip_text = "Start game"
+text = "Continue"
+disabled = false
+
+[node name="Label" parent="VBoxContainer/Continue/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
+text = "Continue"
+
+[node name="Language" parent="VBoxContainer" unique_id=1124464673 instance=ExtResource("2_ggsj7")]
+modulate = Color(1, 1, 1, 0.43529412)
+layout_mode = 2
+tooltip_text = "Select your language"
+text = "Language"
+disabled = true
+
+[node name="Quit" parent="VBoxContainer" unique_id=1186671215 instance=ExtResource("2_ggsj7")]
+layout_mode = 2
+tooltip_text = "Quit game"
+text = "Quit"
+disabled = false
+
+[node name="Label" parent="VBoxContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1186671215, 1921324632) index="0" unique_id=871164474]
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Continue/Click Logic" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
+
+[editable path="VBoxContainer/Continue"]
+[editable path="VBoxContainer/Quit"]

@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
 [ext_resource type="PackedScene" uid="uid://ba25gny5t6uec" path="res://scenes/level/Hallway.tscn" id="6_tvwj4"]
+[ext_resource type="AudioStream" uid="uid://dhp5sbuug4hw2" path="res://sounds/sfx/nac-sfx-lvl1-background_hum.mp3" id="8_0ctos"]
+[ext_resource type="AudioStream" uid="uid://bwhxc5mhrq1k2" path="res://sounds/sfx/nac-sfx-lvl1-background_lamp.mp3" id="9_r52bg"]
+[ext_resource type="AudioStream" uid="uid://beex7ljrxsww2" path="res://sounds/sfx/nac-sfx-lvl1-background_water_dripping.mp3" id="10_557sa"]
+[ext_resource type="PackedScene" uid="uid://d2gw4wfd1u8uh" path="res://scenes/ui_scenes/pause_menu.tscn" id="11_r52bg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
 
@@ -113,6 +117,32 @@ light_specular = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
 light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.0
+
+[node name="Sound" type="Node" parent="." unique_id=1437625111]
+
+[node name="Background Hum" type="AudioStreamPlayer" parent="Sound" unique_id=946446809]
+stream = ExtResource("8_0ctos")
+volume_db = -6.93
+autoplay = true
+
+[node name="Lamps" type="AudioStreamPlayer3D" parent="Sound" unique_id=69413523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050781667, 4.01021, -0.17969704)
+stream = ExtResource("9_r52bg")
+volume_db = -16.327
+autoplay = true
+bus = &"Prison Reverb"
+
+[node name="Water dripping" type="AudioStreamPlayer3D" parent="Sound" unique_id=1190629963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1392136, 1.5260719, -15.476542)
+stream = ExtResource("10_557sa")
+volume_db = -7.619
+autoplay = true
+bus = &"Prison Reverb"
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=981054026]
+
+[node name="PauseMenu" parent="PauseLayer" unique_id=551449788 instance=ExtResource("11_r52bg")]
+visible = false
 
 [node name="LightingForHandCamera" type="Node" parent="Lighting" unique_id=252282895]
 

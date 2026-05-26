@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="notAcrime"
-run/main_scene="uid://cgodu8m8qwk4j"
+run/main_scene="uid://dgftfyd3k8fyh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://b2vjjfufwycpo"
 
 [autoload]
 

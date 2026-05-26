@@ -2,12 +2,15 @@ extends CharacterBody3D
 
 @export var SPEED = 5
 @export var JUMP_VELOCITY = 4.5
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-@export var can_move = true
 
 @export var mouse_sensitivity = 0.002
+@export var can_move = true
 @export var debug_mode = false
 
+@export var footstep_sounds: Array[AudioStream] = []
+
+var target_velocity = Vector3.ZERO
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 #Possible different Walk Modes
 enum PLAYER_MODES {
@@ -32,9 +35,14 @@ var current_item: ItemData
 const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventorySlot.tscn")
 @onready var slot_container = $UILayer/InventoryBar/SlotContainer
 
+@onready var footstep_player = $FootstepPlayer
+@onready var footstep_timer = $FootstepPlayer/FootstepTimer
+
+@onready var pause_menu = $"../PauseLayer/PauseMenu"
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Captures the mouse and hides it
-	
+
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 
@@ -63,6 +71,8 @@ func _input(event):
 	elif event.is_action_pressed("prev_item"):
 		change_selected_item(-1)
 	
+	if event.is_action_pressed("ui_cancel"):
+		toggle_pause()
 
 func _physics_process(delta):
 	match current_mode:
@@ -82,7 +92,7 @@ func _physics_process(delta):
 				talk_hint.visible = true
 			elif collider.is_in_group("interactable"):
 				interact_hint.visible = true
-		
+
 func walk_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -101,6 +111,16 @@ func walk_process(delta):
 
 	move_and_slide()
 
+	var horizontal_velocity = Vector2(velocity.x, velocity.z)
+
+	if is_on_floor() and horizontal_velocity.length() > 0.1:
+		if footstep_timer.is_stopped():
+			play_footstep_sound()
+			footstep_timer.start()
+	else:
+		if not footstep_timer.is_stopped():
+			footstep_timer.stop()
+
 func check_interaction():
 	if interaction_ray.is_colliding():
 		var collider = interaction_ray.get_collider()
@@ -110,7 +130,7 @@ func check_interaction():
 		
 		if collider.has_method("startDialog"):
 			collider.startDialog()
-		
+
 		if collider.has_method("interact"):
 			collider.interact()
 
@@ -151,6 +171,32 @@ func update_hand_display():
 
 	update_inventory_ui()
 
+func play_footstep_sound():
+	if footstep_sounds.is_empty():
+		return
+
+	var random_index = randi() % footstep_sounds.size()
+	var chosen_sound = footstep_sounds[random_index]
+	footstep_player.stream = chosen_sound
+	footstep_player.pitch_scale = randf_range(0.95, 1.05)
+	footstep_player.play()
+
+
+func _on_footstep_timer_timeout() -> void:
+	play_footstep_sound()
+
+func toggle_pause():
+	var new_pause_state = !get_tree().paused
+	get_tree().paused = new_pause_state
+
+	pause_menu.visible = new_pause_state
+
+	if new_pause_state:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if has_node("FootstepTimer"): $FootstepTimer.stop()
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 func update_inventory_ui():
 	for child in slot_container.get_children():
 		child.queue_free()
@@ -158,7 +204,7 @@ func update_inventory_ui():
 	for i in range(inventory.size()):
 		var slot_instance = INVENTORY_SLOT_SCENE.instantiate()
 		slot_container.add_child(slot_instance)
-		
+
 		var is_active = (i == selected_index)
-		
+
 		slot_instance.display_item(inventory[i], is_active)
