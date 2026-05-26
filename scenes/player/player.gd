@@ -224,4 +224,5 @@ func _on_toilet_mini_game_ended():
 	can_move = true
 	hint_checker = true
 	var sharp_metal_object = load("res://resources/assets/items_for_pickup/sharpMetalObject/metal_object.tres")
+	Dialogic.VAR.set_variable("has_sharp", true)
 	add_item(sharp_metal_object)

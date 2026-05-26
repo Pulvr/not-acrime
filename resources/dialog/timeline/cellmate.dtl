@@ -1,18 +1,21 @@
+[style name="default_style"]
 join Cellmate center
 if {talked_to_cellmate_1} == false:
 	Cellmate: What do you want?
-	Cellmate: You want to break out of here? Good luck with that, little princess—just keep me out of it. I’d rather sit here and wait for my execution than work myself to death in that camp.
-	Cellmate: But you want a hot tip, sweetie?
+	Cellmate: You want to break out of here? Good luck with that, little princess—just keep me out of it.
+	Cellmate: I’d rather sit here and wait for my execution than work myself to death in this camp.
 	Cellmate: I saw something in the toilet—why don't you try fishing it out, hehe…
 	set {talked_to_cellmate_1} = true
 	[end_timeline]
-elif {talked_to_cellmate_1} == true:
-	Cellmate: I saw something in the toilet—why don't you try fishing it out, hehe…
+elif {talked_to_cellmate_with_sharp} == true:
+	Cellmate: You stink, go away!
 	[end_timeline]
 elif {has_sharp} == true:
 	Cellmate: What, did you really take that out of there?!
 	Cellmate: You sure do stink of it, though. HAHAHAHA.
 	Cellmate: Now get off my back—this stink is unbearable.
 	set {talked_to_cellmate_with_sharp} = true
-elif {talked_to_cellmate_with_sharp} == true:
-	Cellmate: You stink, go away!
+	[end_timeline]
+elif {talked_to_cellmate_1} == true:
+	Cellmate: I saw something in the toilet—why don't you try fishing it out, hehe…
+	[end_timeline]
