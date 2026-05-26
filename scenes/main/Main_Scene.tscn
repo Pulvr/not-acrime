@@ -35,7 +35,7 @@ fog_light_color = Color(0.11501526, 0.12512508, 0.1211571, 1)
 fog_density = 0.0512
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r52bg"]
-radius = 0.6567383
+radius = 0.5205078
 height = 3.6547852
 
 [node name="Main_Scene" type="Node" unique_id=1231392842]
@@ -45,13 +45,13 @@ transform = Transform3D(1, 0, 0, 0, -0.7372774, 0.67559016, 0, -0.67559016, -0.7
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.567912, 2.2600725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040748417, 2.562696, 2.2569623)
 debug_mode = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
 
-[node name="cellmate" type="StaticBody3D" parent="." unique_id=480935697]
+[node name="cellmate" type="StaticBody3D" parent="." unique_id=480935697 groups=["talk_to"]]
 transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 1.204, 0.07, -1.817)
 script = ExtResource("3_r52bg")
 timeline = ExtResource("4_557sa")
@@ -59,7 +59,7 @@ timeline = ExtResource("4_557sa")
 [node name="prisoner_cellmate4" parent="cellmate" unique_id=487994148 instance=ExtResource("3_eyuud")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cellmate" unique_id=899533904]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31027317, 3.3715672, -0.011393905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032293558, 0.7244541, 0.12283492)
 shape = SubResource("CapsuleShape3D_r52bg")
 
 [node name="LevelAssets" type="Node" parent="." unique_id=666042714]
