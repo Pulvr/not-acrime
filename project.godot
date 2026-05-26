@@ -26,6 +26,8 @@ directories/dch_directory={
 "Prisoner": "res://resources/dialog/character/Prisoner.dch"
 }
 directories/dtl_directory={
+"cellmate": "res://resources/dialog/timeline/cellmate.dtl",
+"cellmate2": "res://resources/dialog/timeline/cellmate2.dtl",
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
 "second_timeline": "res://resources/dialog/style/second_timeline.dtl"
 }
@@ -36,7 +38,10 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://resources/dialog/style/default_style.tres"]
 layout/default_style=""
 variables={
-"dialog_played": false
+"dialog_played": false,
+"has_sharp": false,
+"talked_to_cellmate_1": false,
+"talked_to_cellmate_with_sharp": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
