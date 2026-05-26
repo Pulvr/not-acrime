@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://fg6pumt5mog1"]
+
+[ext_resource type="Script" uid="uid://ce4aq7rx0o53" path="res://scenes/main/minigames/toilet_mini_game.gd" id="1_0h08m"]
+[ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_6e8ty"]
+[ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="4_64am8"]
+
+[node name="ToiletMiniGame" type="Control" unique_id=1440177789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0h08m")
+
+[node name="Menu Button" parent="." unique_id=183917302 instance=ExtResource("1_6e8ty")]
+layout_mode = 1
+offset_left = 156.0
+offset_top = 131.0
+offset_right = 456.0
+offset_bottom = 181.0
+script = null
+
+[node name="Label" parent="Menu Button/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
+text = "Overcome disgust"
+
+[node name="ProgressBarContainer" type="MarginContainer" parent="." unique_id=955068251]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 263.0
+offset_top = -169.0
+offset_right = 337.0
+offset_bottom = 182.0
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="ProgressBarContainer" unique_id=1666774917]
+layout_mode = 2
+size_flags_vertical = 1
+allow_greater = true
+fill_mode = 3
+show_percentage = false
+
+[node name="Border2" type="NinePatchRect" parent="ProgressBarContainer/ProgressBar" unique_id=424885065]
+modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
+texture_filter = 3
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 0
+offset_right = 74.0
+offset_bottom = 351.0
+texture = ExtResource("4_64am8")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[editable path="Menu Button"]

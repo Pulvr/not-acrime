@@ -30,14 +30,14 @@ func update_appearance():
 	if not is_node_ready():
 		return
 	click_logic.disabled = disabled
-	
+
 	if disabled:
 		background.self_modulate = color_background_normal
 		background.modulate.a = 0.5
 		border.self_modulate = color_frame_normal
 		border.modulate.a = 0.5
 		label.modulate.a = 0.5
-	
+
 	else:
 		background.self_modulate = color_background_normal
 		background.modulate.a = 1.0
