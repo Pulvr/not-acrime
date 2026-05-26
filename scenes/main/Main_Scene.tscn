@@ -5,10 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
 [ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
-[ext_resource type="PackedScene" uid="uid://cptb6i8wj8lhs" path="res://resources/test_assets/talk_Pill/TalkingPill.tscn" id="6_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://ba25gny5t6uec" path="res://scenes/level/Hallway.tscn" id="6_tvwj4"]
-[ext_resource type="PackedScene" uid="uid://5swl4gfer0ro" path="res://resources/test_assets/test_pill/MovingPill.tscn" id="9_0ctos"]
-[ext_resource type="PackedScene" uid="uid://n7n57vvs0kgm" path="res://resources/assets/items_for_pickup/sharpMetalObject/metal_object.tscn" id="9_b2hkf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
 
@@ -119,14 +116,3 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4
 layers = 2
 light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.0
-
-[node name="TestNodes" type="Node" parent="." unique_id=935298810]
-
-[node name="MovingPill" parent="TestNodes" unique_id=373162990 instance=ExtResource("9_0ctos")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.228572, 1.4670234, -1.9965897)
-
-[node name="SharpMetalObject" parent="TestNodes" unique_id=1487545070 instance=ExtResource("9_b2hkf")]
-transform = Transform3D(0.03533553, -0.9993755, 0, 0.9993755, 0.03533553, 0, 0, 0, 1, -1.8827313, 0.13730568, -1.476778)
-
-[node name="Node3D" parent="TestNodes" unique_id=208855058 instance=ExtResource("6_4i6ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4819683, -2.4005606)
