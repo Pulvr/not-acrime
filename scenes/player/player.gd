@@ -30,6 +30,8 @@ var current_item: ItemData
 @onready var footstep_player = $FootstepPlayer
 @onready var footstep_timer = $FootstepPlayer/FootstepTimer
 
+@onready var pause_menu = $"../PauseLayer/PauseMenu"
+
 func _ready():
 	# Captures the mouse and hides it
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -62,6 +64,8 @@ func _input(event):
 	elif event.is_action_pressed("prev_item"):
 		change_selected_item(-1)
 	
+	if event.is_action_pressed("ui_cancel"):
+		toggle_pause()
 
 func _physics_process(delta):
 	match current_mode:
@@ -154,3 +158,15 @@ func play_footstep_sound():
 
 func _on_footstep_timer_timeout() -> void:
 	play_footstep_sound()
+
+func toggle_pause():
+	var new_pause_state = !get_tree().paused
+	get_tree().paused = new_pause_state
+	
+	pause_menu.visible = new_pause_state
+	
+	if new_pause_state:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if has_node("FootstepTimer"): $FootstepTimer.stop()
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
