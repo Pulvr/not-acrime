@@ -15,10 +15,8 @@ script = ExtResource("1_o8qos")
 
 [node name="Background black" type="ColorRect" parent="." unique_id=1098483515]
 layout_mode = 0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 1157.0
-offset_bottom = 653.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1397513552]
@@ -34,6 +32,8 @@ offset_right = 125.0
 offset_bottom = 234.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(125, 0)
 theme_override_constants/separation = 16
 
 [node name="Continue" parent="VBoxContainer" unique_id=183917302 instance=ExtResource("2_ggsj7")]
