@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://c2b6ajaku4re4" path="res://resources/dialog/timeline/cellmate.dtl" id="3_557sa"]
 [ext_resource type="PackedScene" uid="uid://bmcy4fpojycyn" path="res://models/prisoner_cellmate4.glb" id="3_eyuud"]
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
-[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/test_assets/talk_Pill/dialog_interactable.gd" id="3_r52bg"]
+[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="3_r52bg"]
 [ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
 [ext_resource type="PackedScene" uid="uid://ba25gny5t6uec" path="res://scenes/level/Hallway.tscn" id="6_tvwj4"]

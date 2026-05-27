@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5swl4gfer0ro"]
 
-[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/test_assets/item.gd" id="1_tmrbn"]
+[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="1_tmrbn"]
 [ext_resource type="Resource" uid="uid://b5xdfjb6s1a5w" path="res://resources/test_assets/test_pill/Pill.tres" id="2_cfdxg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lanct"]

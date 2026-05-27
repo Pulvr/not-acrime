@@ -21,7 +21,6 @@ func _on_button_pressed():
 func _physics_process(delta: float) -> void:
     current_bar_value -= decline_rate * delta
     current_bar_value = max(current_bar_value, 0)
-    print(current_bar_value)
     disgustBar.value = current_bar_value
 
 func endMiniGame():
