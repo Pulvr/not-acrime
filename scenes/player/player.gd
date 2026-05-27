@@ -51,6 +51,10 @@ func _on_timeline_started():
 	can_move = false
 
 func _on_timeline_ended():
+	if Dialogic.VAR.talked_to_cellmate_with_sharp:
+		get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
+		return
+	
 	can_move = true
 
 func _input(event):
