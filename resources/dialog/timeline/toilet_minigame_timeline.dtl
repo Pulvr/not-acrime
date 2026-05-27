@@ -1,0 +1,8 @@
+[style name="default_style"]
+if {talked_to_cellmate_1} == false:
+	It's a rancid toilet, that looks like it hasn't been cleaned in months.
+	What did you expect?
+	[end_timeline]
+if {has_sharp} == true:
+	You still feel wet leftover residue under your nails.
+	[end_timeline]

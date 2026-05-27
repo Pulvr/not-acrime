@@ -49,9 +49,11 @@ func _ready():
 
 func _on_timeline_started():
 	can_move = false
+	hint_checker = false
 
 func _on_timeline_ended():
 	can_move = true
+	hint_checker = true
 
 func _input(event):
 	if event is InputEventMouseMotion and can_move:
