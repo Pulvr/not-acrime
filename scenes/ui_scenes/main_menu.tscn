@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhhyqavgh3v2m" path="res://scenes/ui_scenes/main_menu.gd" id="1_jg0sh"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_sey8n"]
+[ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="2_tgkk4"]
 
 [node name="Main Menu" type="Control" unique_id=1012169217]
 layout_mode = 3
@@ -17,6 +18,20 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background black" unique_id=1265678900]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -396.0
+offset_top = 320.0
+offset_right = 396.0
+offset_bottom = 426.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_tgkk4")
+theme_override_font_sizes/normal_font_size = 92
+text = "It's (not) a crime"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1580342012]
 layout_mode = 1
