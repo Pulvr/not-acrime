@@ -1,8 +1,12 @@
 [style name="default_style"]
 join Cellmate center
 if {talked_to_cellmate_1} == false:
-	Cellmate: What do you want?
-	Cellmate: You want to break out of here? Good luck with that, little princess—just keep me out of it.
+	Cellmate: Take a look at our newcomer here. Didn't expect to get another cellmate so soon.
+	Cellmate: Feel free to rot in here, like the rest of us does. If you wanna entertain the rest of us, though...
+	Cellmate: I'd suggest using [b]W, A, S[/b] and [b]D[/b] to walk around aimlessly.
+	Cellmate: Maybe you could interact with something using the [b]E[/b] key...
+	Cellmate: I would suggest you do not ask how I learned this.
+	Cellmate: ... you want to break out of here? Good luck with that, little princess—just keep me out of it.
 	Cellmate: I’d rather sit here and wait for my execution than work myself to death in this camp.
 	Cellmate: I saw something in the toilet—why don't you try fishing it out, hehe…
 	set {talked_to_cellmate_1} = true
