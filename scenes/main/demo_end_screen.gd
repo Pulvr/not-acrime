@@ -13,10 +13,10 @@ var last_visible_chars = 0
 var fade_out_time = 2.5
 var idle_time = 2.0
 
-@export var text1 = "This is the end of our playtest demo version."
+@export var text1 = "This is the end of our playtest demo."
 @export var text2 = "Thanks for playing."
 @export var text3 = "A game by Florian Wendel, Oskar Kotte and Sebastian Grewe."
-@export var text4 = "Developed using Godot and Dialogic."
+@export var text4 = "Developed using Godot 4 and Dialogic 2."
 
 func _ready():
 	text_label.text = text1
@@ -31,10 +31,10 @@ func _ready():
 	tween.tween_property(text_label, "visible_ratio", 1.0, text2_playtime)
 	tween.tween_interval(idle_time)
 	tween.tween_callback(change_to_text3)
-	tween.tween_property(text_label, "visible_ratio", 1.0, text2_playtime)
+	tween.tween_property(text_label, "visible_ratio", 1.0, text3_playtime)
 	tween.tween_interval(idle_time)
 	tween.tween_callback(change_to_text4)
-	tween.tween_property(text_label, "visible_ratio", 1.0, text2_playtime)
+	tween.tween_property(text_label, "visible_ratio", 1.0, text4_playtime)
 	tween.tween_interval(idle_time)
 	tween.tween_property(fade_overlay, "modulate:a", 1.0, fade_out_time)
 	tween.tween_interval(idle_time)
