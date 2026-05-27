@@ -1,18 +1,15 @@
 [gd_scene format=3 uid="uid://dsqa847tnoi0a"]
 
 [ext_resource type="PackedScene" uid="uid://c7vlv8yq4s18l" path="res://scenes/level/OwnCell/Own_Cell.tscn" id="1_86qqa"]
-[ext_resource type="PackedScene" uid="uid://d1lo7x64jcq6a" path="res://scenes/level/CellAssets/sink.tscn" id="3_p36wa"]
 [ext_resource type="PackedScene" uid="uid://bftnbrifauhij" path="res://scenes/level/CellAssets/Cell_Bars.tscn" id="5_btpx2"]
 [ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/CellAssets/Toilet.tscn" id="5_dysg5"]
 [ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/CellAssets/Bunkbed.tscn" id="6_btpx2"]
+[ext_resource type="PackedScene" uid="uid://c8c8c5qnfc21p" path="res://scenes/level/CellAssets/metal_sink.tscn" id="6_dysg5"]
 [ext_resource type="PackedScene" uid="uid://bsttoujhhgchj" path="res://scenes/level/CellAssets/Ceiling_Light.tscn" id="7_dysg5"]
 
 [node name="CellWithAssets" type="Node3D" unique_id=930626341]
 
 [node name="Own_Cell" parent="." unique_id=1328943470 instance=ExtResource("1_86qqa")]
-
-[node name="Sink" parent="." unique_id=1475671396 instance=ExtResource("3_p36wa")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8, 1, -2)
 
 [node name="Cell_Bars" parent="." unique_id=1154751589 instance=ExtResource("5_btpx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.9181757)
@@ -25,3 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.1, -2.3)
 
 [node name="ceiling_light" parent="." unique_id=1823199513 instance=ExtResource("7_dysg5")]
 transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, 0, 4.2, 0)
+
+[node name="Metal_Sink" parent="." unique_id=119985792 instance=ExtResource("6_dysg5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91, 1, -2)
