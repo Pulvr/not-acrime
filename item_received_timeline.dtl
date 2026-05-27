@@ -1,0 +1,6 @@
+[style name="default_style"]
+Received {item_strings.item_received}
+{item_strings.item_description}
+# Reset item name, if item_receivd or description says says "Empty" somewhere, something went wrong
+set {item_strings.item_received} = "Empty"
+set {item_strings.item_description} = "Empty"
