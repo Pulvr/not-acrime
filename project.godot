@@ -30,6 +30,8 @@ directories/dch_directory={
 "Prisoner": "res://resources/dialog/character/Prisoner.dch"
 }
 directories/dtl_directory={
+"cellmate": "res://resources/dialog/timeline/cellmate.dtl",
+"cellmate2": "res://resources/dialog/timeline/cellmate2.dtl",
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
 "second_timeline": "res://resources/dialog/style/second_timeline.dtl",
 "welcome_timeline": "res://resources/dialog/timeline/welcome_timeline.dtl"
