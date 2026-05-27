@@ -5,5 +5,7 @@ extends StaticBody3D
 func startDialog():
 	if timeline != null and Dialogic.current_timeline == null:
 		Dialogic.start(timeline)
+	elif Dialogic.current_timeline != null:
+		print("Dialog already running")
 	else:
-		print("No timeline assigned to this NPC!")
+		print("No dialog attached to this NPC")
