@@ -9,7 +9,8 @@ signal ToiletMiniGameEnded()
 var interaced_with = false
 
 func interact():
-	startMinigame()
+	if Dialogic.VAR.talked_to_cellmate_1 && !Dialogic.VAR.has_sharp:
+		startMinigame()
 
 func startMinigame():
 	ToiletMiniGameStarted.emit()
