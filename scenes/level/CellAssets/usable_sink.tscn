@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bwydqnnjb3cfv"]
+
+[ext_resource type="PackedScene" uid="uid://dukyk35lpnnlp" path="res://models/sink.glb" id="1_g05tg"]
+[ext_resource type="Texture2D" uid="uid://dv8mtnh1f1ilx" path="res://models/toilet_metal_pixelated.png" id="2_abnyp"]
+[ext_resource type="Texture2D" uid="uid://8pgp5xwyhgrd" path="res://models/bunkbed_rust_pixelated.png" id="3_t3lp0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncxwm"]
+albedo_texture = ExtResource("2_abnyp")
+metallic = 1.0
+roughness = 0.2
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4j43"]
+albedo_texture = ExtResource("3_t3lp0")
+metallic = 1.0
+roughness = 0.2
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[node name="sink" unique_id=548424249 instance=ExtResource("1_g05tg")]
+
+[node name="Att1" parent="." index="0" unique_id=888594662]
+material_override = SubResource("StandardMaterial3D_ncxwm")
+
+[node name="Pipe" parent="." index="1" unique_id=980655191]
+material_override = SubResource("StandardMaterial3D_u4j43")
