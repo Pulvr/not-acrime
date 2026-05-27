@@ -7,12 +7,16 @@ extends Control
 var main_menu_path = "res://scenes/ui_scenes/main_menu.tscn"
 var text1_playtime = 3.5
 var text2_playtime = 1.5
+var text3_playtime = 4.0
+var text4_playtime = 2.2
 var last_visible_chars = 0
 var fade_out_time = 2.5
-var idle_time = 3.0
+var idle_time = 2.0
 
 @export var text1 = "This is the end of our playtest demo version."
 @export var text2 = "Thanks for playing."
+@export var text3 = "A game by Florian Wendel, Oskar Kotte and Sebastian Grewe."
+@export var text4 = "Developed using Godot and Dialogic."
 
 func _ready():
 	text_label.text = text1
@@ -24,6 +28,12 @@ func _ready():
 	tween.tween_property(text_label, "visible_ratio", 1.0, text1_playtime)
 	tween.tween_interval(idle_time)
 	tween.tween_callback(change_to_text2)
+	tween.tween_property(text_label, "visible_ratio", 1.0, text2_playtime)
+	tween.tween_interval(idle_time)
+	tween.tween_callback(change_to_text3)
+	tween.tween_property(text_label, "visible_ratio", 1.0, text2_playtime)
+	tween.tween_interval(idle_time)
+	tween.tween_callback(change_to_text4)
 	tween.tween_property(text_label, "visible_ratio", 1.0, text2_playtime)
 	tween.tween_interval(idle_time)
 	tween.tween_property(fade_overlay, "modulate:a", 1.0, fade_out_time)
@@ -42,6 +52,16 @@ func _process(_delta):
 
 func change_to_text2():
 	text_label.text = text2
+	text_label.visible_ratio = 0.0
+	last_visible_chars = 0
+
+func change_to_text3():
+	text_label.text = text3
+	text_label.visible_ratio = 0.0
+	last_visible_chars = 0
+
+func change_to_text4():
+	text_label.text = text4
 	text_label.visible_ratio = 0.0
 	last_visible_chars = 0
 
