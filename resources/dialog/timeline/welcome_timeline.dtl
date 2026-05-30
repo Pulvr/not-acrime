@@ -1,12 +1,8 @@
 [style name="default_style"]
 join Cellmate center
-if {first_conversation} == true:
-	Cellmate: Take a look at our newcomer here. Didn't expect to get another cellmate so soon.
-	Cellmate: Feel free to rot in here, like the rest of us does. If you wanna entertain the rest of us, though...
-	Cellmate: I'd suggest using [b]W, A, S[/b] and [b]D[/b] to walk around aimlessly.
-	Cellmate: Maybe you could interact with something using the [b]E[/b] key...
-	Cellmate: I would suggest you do not ask how I learned this.
-set {first_conversation} = false
-Cellmate: For starters, maybe you can stop nagging at me and make yourself useful.
-Cellmate: I might have dropped something in the toilet, you wouldn't mind getting it ouf there, would you?
+Cellmate: Take a look at our newcomer here. Didn't expect to get another cellmate so soon.
+Cellmate: Feel free to rot in here, like the rest of us does. If you wanna entertain the rest of us, though...
+Cellmate: I'd suggest using [b]W, A, S[/b] and [b]D[/b] to walk around aimlessly.
+Cellmate: Maybe you could interact with something using the [b]E[/b] key...
+Cellmate: I would suggest you do not ask how I learned this.
 [end_timeline]

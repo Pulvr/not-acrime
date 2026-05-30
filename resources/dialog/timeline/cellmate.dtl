@@ -1,14 +1,9 @@
 [style name="default_style"]
 join Cellmate center
 if {talked_to_cellmate_1} == false:
-	Cellmate: Take a look at our newcomer here. Didn't expect to get another cellmate so soon.
-	Cellmate: Feel free to rot in here, like the rest of us does. If you wanna entertain the rest of us, though...
-	Cellmate: I'd suggest using [b]W, A, S[/b] and [b]D[/b] to walk around aimlessly.
-	Cellmate: Maybe you could interact with something using the [b]E[/b] key...
-	Cellmate: I would suggest you do not ask how I learned this.
-	Cellmate: ... you want to break out of here? Good luck with that, little princess—just keep me out of it.
+	Cellmate: ... you want to break out of here? [pause=1.0] Good luck with that, little princess—just keep me out of it.
 	Cellmate: I’d rather sit here and wait for my execution than work myself to death in this camp.
-	Cellmate: I saw something in the toilet—why don't you try fishing it out, hehe…
+	Cellmate: But I saw something in the toilet [pause=1.0] — why don't you try fishing it out, hehe…
 	set {talked_to_cellmate_1} = true
 	[end_timeline]
 elif {talked_to_cellmate_with_sharp} == true:
@@ -17,9 +12,9 @@ elif {talked_to_cellmate_with_sharp} == true:
 elif {has_sharp} == true:
 	Cellmate: What, did you really take that out of there?!
 	Cellmate: You sure do stink of it, though. HAHAHAHA.
-	Cellmate: Now get off my back—this stink is unbearable.
+	Cellmate: Now get off my back — this stink is unbearable.
 	set {talked_to_cellmate_with_sharp} = true
 	[end_timeline]
 elif {talked_to_cellmate_1} == true:
-	Cellmate: I saw something in the toilet—why don't you try fishing it out, hehe…
+	Cellmate: I saw something in the toilet [pause=1.0] — why don't you try fishing it out, hehe…
 	[end_timeline]

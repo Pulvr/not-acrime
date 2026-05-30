@@ -21,6 +21,7 @@ var color_frame_hovered = Color("D3D3D3")
 @onready var border = $Border
 @onready var click_logic = $"Click Logic"
 @onready var label = $CenterContainer/MarginContainer/Label
+@onready var hover_sound = $AudioStreamPlayer
 
 func _ready():
 	$CenterContainer/MarginContainer/Label.text = text
@@ -50,6 +51,7 @@ func _on_click_logic_mouse_entered() -> void:
 	if disabled:
 		return
 	border.self_modulate = color_frame_hovered
+	hover_sound.play()
 
 
 func _on_click_logic_mouse_exited() -> void:
