@@ -52,12 +52,15 @@ func _on_timeline_started():
 	hint_checker = false
 
 func _on_timeline_ended():
-	if Dialogic.VAR.talked_to_cellmate_with_sharp:
-		get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
-		return
+	#if Dialogic.VAR.talked_to_cellmate_with_sharp:
+	#	return_to_main_menu()
+	#	return
 	
 	can_move = true
 	hint_checker = true
+
+func return_to_main_menu():
+	get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
 
 func _input(event):
 	if event is InputEventMouseMotion and can_move:

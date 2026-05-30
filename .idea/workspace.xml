@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2625da6-2168-4048-8518-aea635569124" name="Changes" comment="" />
+    <list default="true" id="f2625da6-2168-4048-8518-aea635569124" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/intro_clip.gd" beforeDir="false" afterPath="$PROJECT_DIR$/intro_clip.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pause_menu.gd" beforeDir="false" afterPath="$PROJECT_DIR$/pause_menu.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/main/demo_end_screen.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/main/demo_end_screen.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/main/intro_clip.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/main/intro_clip.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/player/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/player/player.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/ui_scenes/main_menu.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/ui_scenes/main_menu.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/ui_scenes/main_menu.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/ui_scenes/main_menu.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/ui_scenes/pause_menu.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/ui_scenes/pause_menu.tscn" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,12 +37,12 @@
       </list>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Pulvr/not-acrime.git&quot;,
-    &quot;accountId&quot;: &quot;1c634294-b056-4d9a-81bd-cb86e6a9b256&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Pulvr/not-acrime.git",
+    "accountId": "b6fa667e-6161-48f3-a5fb-a4b45564752e"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5,
   &quot;fromUser&quot;: false
@@ -43,23 +52,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/flo/dev/godot/not-acrime&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "basti/ui-changes",
+    "last_opened_file_path": "C:/Users/grewe/Documents/Studium MS/6 Sem/MD1/NotACrime/not-acrime",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-PY-261.24374.152" />
-        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -72,6 +81,7 @@
       <updated>1777716176645</updated>
       <workItem from="1777716177729" duration="394000" />
       <workItem from="1779817468002" duration="707000" />
+      <workItem from="1780155849093" duration="29000" />
     </task>
     <servers />
   </component>

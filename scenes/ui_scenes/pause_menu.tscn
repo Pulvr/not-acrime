@@ -46,11 +46,19 @@ disabled = false
 text = "Continue"
 
 [node name="Language" parent="VBoxContainer" unique_id=1124464673 instance=ExtResource("2_ggsj7")]
-modulate = Color(1, 1, 1, 0.43529412)
 layout_mode = 2
 tooltip_text = "Select your language"
 text = "Language"
 disabled = true
+
+[node name="MainMenu" parent="VBoxContainer" unique_id=1278143999 instance=ExtResource("2_ggsj7")]
+layout_mode = 2
+tooltip_text = "Start game"
+text = "Back to main menu"
+disabled = false
+
+[node name="Label" parent="VBoxContainer/MainMenu/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1278143999, 1921324632) index="0" unique_id=871164474]
+text = "Back to main menu"
 
 [node name="Quit" parent="VBoxContainer" unique_id=1186671215 instance=ExtResource("2_ggsj7")]
 layout_mode = 2
@@ -62,7 +70,9 @@ disabled = false
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Continue/Click Logic" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu/Click Logic" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
 
 [editable path="VBoxContainer/Continue"]
+[editable path="VBoxContainer/MainMenu"]
 [editable path="VBoxContainer/Quit"]

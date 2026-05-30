@@ -60,7 +60,6 @@ disabled = false
 text = "Start"
 
 [node name="Language" parent="VBoxContainer" unique_id=1396100484 instance=ExtResource("1_sey8n")]
-modulate = Color(1, 1, 1, 0.43529412)
 layout_mode = 2
 tooltip_text = "Select your language"
 text = "Language"

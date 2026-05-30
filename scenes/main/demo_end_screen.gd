@@ -50,6 +50,12 @@ func _process(_delta):
 				audio_player.pitch_scale = randf_range(0.95, 1.05)
 				audio_player.play()
 
+func _input(event):
+	var is_skip_button = event.is_action_pressed("ui_accept") or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)
+	
+	if is_skip_button:
+		switch_to_main_menu()
+
 func change_to_text2():
 	text_label.text = text2
 	text_label.visible_ratio = 0.0
