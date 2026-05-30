@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@onready var ToiletUi = preload("res://scenes/main/minigames/ToiletMiniGame.tscn")
+@onready var ToiletUi = preload("res://scenes/ui_scenes/minigames/ToiletMiniGame.tscn")
 @onready var mainScene = get_tree().get_root().get_node("Main_Scene/Player/UILayer")
 
 signal ToiletMiniGameStarted()

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5xdfjb6s1a5w"]
 
-[ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/test_assets/item_data.gd" id="1_h5lhr"]
+[ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/scripts/itemScripts/item_data.gd" id="1_h5lhr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h5lhr"]
 

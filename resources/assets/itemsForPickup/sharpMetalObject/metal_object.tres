@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://v676nsj120as" path="res://resources/ui_elements/sharp_metal64.png" id="1_ji0xb"]
 [ext_resource type="ArrayMesh" uid="uid://cal7nmr1aftka" path="res://models/sharp_metal_Cube.res" id="1_snxxx"]
-[ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/test_assets/item_data.gd" id="1_t8ci1"]
+[ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/scripts/itemScripts/item_data.gd" id="1_t8ci1"]
 
 [resource]
 script = ExtResource("1_t8ci1")
-name = "Sharp metal object"
+name = "Sharp Metal Object"
 icon = ExtResource("1_ji0xb")
-description = "rough on the edges"
+description = "looks like it can cut something"
 item_mesh = ExtResource("1_snxxx")
 metadata/_custom_type_script = "uid://k257ssevnehw"

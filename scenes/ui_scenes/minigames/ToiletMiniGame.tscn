@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fg6pumt5mog1"]
 
-[ext_resource type="Script" uid="uid://ce4aq7rx0o53" path="res://scenes/main/minigames/toilet_mini_game.gd" id="1_0h08m"]
+[ext_resource type="Script" uid="uid://ce4aq7rx0o53" path="res://scenes/ui_scenes/minigames/toilet_mini_game.gd" id="1_0h08m"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_6e8ty"]
 [ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="4_64am8"]
 

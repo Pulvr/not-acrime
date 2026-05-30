@@ -184,7 +184,7 @@ func check_interaction():
 
 func pick_up_item(item_node):
 	if "data" in item_node:
-		add_item(item_node.data)
+		add_item_to_inventory(item_node.data)
 		if debug_mode:
 			print("Picked up: ", item_node)
 		item_node.queue_free()
@@ -202,7 +202,7 @@ func change_selected_item(direction: int):
 	if debug_mode:
 		print(inventory[selected_index].name)
 
-func add_item(item_data:ItemData):
+func add_item_to_inventory(item_data:ItemData):
 	inventory.append(item_data)
 	current_item = inventory[-1]
 	change_selected_item(1)
@@ -266,6 +266,14 @@ func _on_toilet_mini_game_started():
 func _on_toilet_mini_game_ended():
 	can_move = true
 	hint_checker = true
-	var sharp_metal_object = load("res://resources/assets/items_for_pickup/sharpMetalObject/metal_object.tres")
+	var sharp_metal_object = load("res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tres")
 	Dialogic.VAR.set_variable("has_sharp", true)
-	add_item(sharp_metal_object)
+	item_added_with_dialog(sharp_metal_object)
+		
+
+func item_added_with_dialog(item:ItemData):
+	Dialogic.VAR.set_variable("item_strings.item_received", item.name) 
+	Dialogic.VAR.set_variable("item_strings.item_description", item.description)
+	add_item_to_inventory(item)
+	if Dialogic.current_timeline == null:
+		Dialogic.start("item_received_timeline")
