@@ -46,7 +46,7 @@ transform = Transform3D(1, 0, 0, 0, -0.7372774, 0.67559016, 0, -0.67559016, -0.7
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040748417, 2.562696, 2.2569623)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040748417, 1.367195, 2.2569623)
 debug_mode = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]

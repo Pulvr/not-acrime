@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ce4aq7rx0o53" path="res://scenes/ui_scenes/minigames/toilet_mini_game.gd" id="1_0h08m"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_6e8ty"]
 [ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="4_64am8"]
+[ext_resource type="Texture2D" uid="uid://b3i2pamap8np5" path="res://icon.svg" id="4_ee4xr"]
 
 [node name="ToiletMiniGame" type="Control" unique_id=1440177789]
 layout_mode = 3
@@ -58,5 +59,40 @@ patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
+
+[node name="LeftMouse" type="TextureRect" parent="." unique_id=943707267]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -105.0
+offset_right = -288.0
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ee4xr")
+
+[node name="RightMouse" type="TextureRect" parent="." unique_id=124950886]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -182.76501
+offset_top = -105.0
+offset_right = -54.765015
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ee4xr")
+
+[connection signal="gui_input" from="Menu Button/Click Logic" to="." method="_on_click_logic_gui_input"]
 
 [editable path="Menu Button"]

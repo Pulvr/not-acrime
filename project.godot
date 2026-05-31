@@ -31,7 +31,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "cellmate": "res://resources/dialog/timeline/cellmate.dtl",
-"item_received_timeline": "res://item_received_timeline.dtl",
+"item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
 "toilet_minigame_timeline": "res://resources/dialog/timeline/toilet_minigame_timeline.dtl",
 "welcome_timeline": "res://resources/dialog/timeline/welcome_timeline.dtl"
