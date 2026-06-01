@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://f8jdklu0dey3"]
+
+[ext_resource type="PackedScene" uid="uid://bmcy4fpojycyn" path="res://models/prisoner_cellmate4.glb" id="1_80gdy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2ibt"]
+albedo_color = Color(0.99999636, 0.16787973, 0.17675635, 1)
+metallic = 0.7
+metallic_specular = 0.0
+roughness = 0.0
+
+[node name="prisoner_cellmate4" unique_id=1617834967 instance=ExtResource("1_80gdy")]
+
+[node name="Circle_001" parent="Skeleton3D/Circle_001" parent_id_path=PackedInt32Array(1806838584) index="0" unique_id=1573713486]
+material_override = SubResource("StandardMaterial3D_n2ibt")

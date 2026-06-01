@@ -5,7 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/CellAssets/Toilet.tscn" id="5_dysg5"]
 [ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/CellAssets/Bunkbed.tscn" id="6_btpx2"]
 [ext_resource type="PackedScene" uid="uid://c8c8c5qnfc21p" path="res://scenes/level/CellAssets/metal_sink.tscn" id="6_dysg5"]
+[ext_resource type="PackedScene" uid="uid://coge1kxobiu7w" path="res://scenes/level/CellAssets/cell_table.tscn" id="7_bh0qp"]
 [ext_resource type="PackedScene" uid="uid://bsttoujhhgchj" path="res://scenes/level/CellAssets/Ceiling_Light.tscn" id="7_dysg5"]
+[ext_resource type="PackedScene" uid="uid://cpcpy1d8j41fn" path="res://scenes/level/CellAssets/cell_stool.tscn" id="8_3hyd8"]
+[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="9_nrknf"]
+[ext_resource type="Resource" uid="uid://c2b6ajaku4re4" path="res://resources/dialog/timeline/cellmate.dtl" id="10_dy5ib"]
+[ext_resource type="PackedScene" uid="uid://f8jdklu0dey3" path="res://scenes/level/CellAssets/prisoner_cellmate_4.tscn" id="11_nrknf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1d6nu"]
+radius = 0.5205078
+height = 3.6547852
 
 [node name="CellWithAssets" type="Node3D" unique_id=930626341]
 
@@ -25,3 +34,20 @@ transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08
 
 [node name="Metal_Sink" parent="." unique_id=119985792 instance=ExtResource("6_dysg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91, 1, -2)
+
+[node name="Cell_Table" parent="." unique_id=1986315210 instance=ExtResource("7_bh0qp")]
+transform = Transform3D(-5.2453668e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.2453668e-08, 2.2505383, 0.66989577, 1.7045822)
+
+[node name="Cell_Stool" parent="." unique_id=1372591696 instance=ExtResource("8_3hyd8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8255761, 0.1077587, 1.7045822)
+
+[node name="cellmate" type="StaticBody3D" parent="." unique_id=579419085 groups=["talk_to"]]
+transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 1.204, 0.07, -1.817)
+script = ExtResource("9_nrknf")
+timeline = ExtResource("10_dy5ib")
+
+[node name="prisoner_cellmate" parent="cellmate" unique_id=1617834967 instance=ExtResource("11_nrknf")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cellmate" unique_id=1022954079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032293558, 0.7244541, 0.12283492)
+shape = SubResource("CapsuleShape3D_1d6nu")
