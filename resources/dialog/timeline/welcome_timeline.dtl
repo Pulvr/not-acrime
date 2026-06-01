@@ -1,4 +1,4 @@
-[style name="default_style"]
+[style]
 join Cellmate center
 if {first_conversation} == true:
 	Cellmate: Take a look at our newcomer here. Didn't expect to get another cellmate so soon.

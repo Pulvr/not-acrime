@@ -37,11 +37,12 @@ directories/dtl_directory={
 "welcome_timeline": "res://resources/dialog/timeline/welcome_timeline.dtl"
 }
 layout/style_directory={
+"": "res://resources/dialog/style/default_style.tres",
 "default_style": "res://resources/dialog/style/default_style.tres"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://resources/dialog/style/default_style.tres"]
-layout/default_style=""
+layout/default_style="res://resources/dialog/style/default_style.tres"
 variables={
 "dialog_played": false,
 "first_conversation": true,
