@@ -88,6 +88,10 @@ audio/channel_defaults={
 }
 text/input_action="dialogic_default_action"
 
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
