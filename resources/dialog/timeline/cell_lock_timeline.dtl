@@ -1,0 +1,8 @@
+if {item_strings.item_in_hand} == "":
+	It's a lock
+	[end_timeline]
+elif {item_strings.item_in_hand} == "Pill":
+	It's a Pill
+	[end_timeline]
+elif {item_strings.item_in_hand} == "Sharp Metal Object":
+	Sharp Metal Object

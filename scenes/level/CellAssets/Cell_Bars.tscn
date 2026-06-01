@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://bftnbrifauhij"]
 
+[ext_resource type="Script" uid="uid://jlryffy0myn7" path="res://resources/scripts/cell_bars.gd" id="1_66b0h"]
 [ext_resource type="PackedScene" uid="uid://cfwklur56h5xj" path="res://models/cell_bars.glb" id="1_jpeyx"]
 [ext_resource type="PackedScene" uid="uid://ccgmst8510vwd" path="res://models/cell_door.glb" id="2_66b0h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jpeyx"]
+size = Vector3(1, 1, 0.25024414)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dysg5"]
 size = Vector3(6.022766, 4.015686, 0.12640381)
 
-[node name="Cell_Bars" type="StaticBody3D" unique_id=1154751589]
+[node name="CellBarsHome" type="StaticBody3D" unique_id=898825045 groups=["interactable"]]
+script = ExtResource("1_66b0h")
 
-[node name="cell_bars" parent="." unique_id=1407827419 instance=ExtResource("1_jpeyx")]
+[node name="LockCollider" type="CollisionShape3D" parent="." unique_id=1550203559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7433406, 2.0480587, -0.018943071)
+shape = SubResource("BoxShape3D_jpeyx")
+
+[node name="Cell_Bars" type="StaticBody3D" parent="." unique_id=1154751589]
+
+[node name="cell_bars" parent="Cell_Bars" unique_id=1407827419 instance=ExtResource("1_jpeyx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4897869, 0.10068703, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2095277585]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell_Bars" unique_id=2095277585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02843666, 2.1015527, 0)
 shape = SubResource("BoxShape3D_dysg5")
 
-[node name="cell_door" parent="." unique_id=189420472 instance=ExtResource("2_66b0h")]
+[node name="cell_door" parent="Cell_Bars" unique_id=189420472 instance=ExtResource("2_66b0h")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4848301, 0.106684804, 0)
