@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://ctwb4usw0cjcy"]
 
+[ext_resource type="Script" uid="uid://biwnyfapvvlc5" path="res://scenes/ui_scenes/settings_menu.gd" id="1_ckc1e"]
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="2_jwfvh"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="3_7gtp0"]
 
-[node name="Main Menu" type="Control" unique_id=1012169217]
+[node name="Settings Menu" type="Control" unique_id=1012169217]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ckc1e")
 
 [node name="Background black" type="ColorRect" parent="." unique_id=624612165]
 layout_mode = 1
@@ -20,131 +22,124 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
-[node name="Title Label" type="RichTextLabel" parent="." unique_id=1265678900]
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=1890865153]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -396.0
-offset_top = 100.0
-offset_right = 396.0
-offset_bottom = 206.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title Label" type="RichTextLabel" parent="MainContainer" unique_id=1265678900]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.75
 theme_override_fonts/normal_font = ExtResource("2_jwfvh")
 theme_override_font_sizes/normal_font_size = 80
 text = "Settings"
+fit_content = true
+autowrap_mode = 0
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1580342012]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -426.0
-offset_top = -204.0
-offset_right = -176.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(125, -152)
+[node name="SettingsContainer" type="HBoxContainer" parent="MainContainer" unique_id=642810881]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
 theme_override_constants/separation = 16
 
-[node name="Start" parent="VBoxContainer" unique_id=183917302 instance=ExtResource("3_7gtp0")]
+[node name="LeftContainer" type="VBoxContainer" parent="MainContainer/SettingsContainer" unique_id=1580342012]
 layout_mode = 2
-tooltip_text = "Start game"
-text = "Start"
-disabled = false
-
-[node name="Label" parent="VBoxContainer/Start/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
-text = "Start"
-
-[node name="Settings" parent="VBoxContainer" unique_id=749661097 instance=ExtResource("3_7gtp0")]
-layout_mode = 2
-tooltip_text = "Change Settings"
-text = "Settings"
-disabled = false
-
-[node name="Label" parent="VBoxContainer/Settings/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(749661097, 1921324632) index="0" unique_id=871164474]
-text = "Settings"
-
-[node name="Language" parent="VBoxContainer" unique_id=1396100484 instance=ExtResource("3_7gtp0")]
-modulate = Color(1, 1, 1, 0.43529412)
-layout_mode = 2
-tooltip_text = "Select your language"
-text = "Language"
-disabled = true
-
-[node name="Quit" parent="VBoxContainer" unique_id=637283414 instance=ExtResource("3_7gtp0")]
-layout_mode = 2
-tooltip_text = "Quit game"
-text = "Quit"
-disabled = false
-
-[node name="Label" parent="VBoxContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
-text = "Quit"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1740566014]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 174.0
-offset_top = -204.0
-offset_right = 424.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(125, -152)
 theme_override_constants/separation = 16
 
-[node name="Start" parent="VBoxContainer2" unique_id=1653342739 instance=ExtResource("3_7gtp0")]
+[node name="Resolution" parent="MainContainer/SettingsContainer/LeftContainer" unique_id=183917302 instance=ExtResource("3_7gtp0")]
+custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
-tooltip_text = "Start game"
-text = "Start"
+size_flags_vertical = 0
+text = "Resolution: "
 disabled = false
 
-[node name="Label" parent="VBoxContainer2/Start/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1653342739, 1921324632) index="0" unique_id=871164474]
-text = "Start"
+[node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Resolution/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
+text = "Resolution: 1920 x 1080"
 
-[node name="Settings" parent="VBoxContainer2" unique_id=2032841200 instance=ExtResource("3_7gtp0")]
+[node name="Pointer Speed" parent="MainContainer/SettingsContainer/LeftContainer" unique_id=749661097 instance=ExtResource("3_7gtp0")]
+custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
-tooltip_text = "Change Settings"
-text = "Settings"
+size_flags_vertical = 0
+text = "Pointer Speed:"
 disabled = false
 
-[node name="Label" parent="VBoxContainer2/Settings/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(2032841200, 1921324632) index="0" unique_id=871164474]
-text = "Settings"
+[node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Pointer Speed/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(749661097, 1921324632) index="0" unique_id=871164474]
+text = "Pointer Speed: 1.0"
 
-[node name="Language" parent="VBoxContainer2" unique_id=1899547459 instance=ExtResource("3_7gtp0")]
-modulate = Color(1, 1, 1, 0.43529412)
+[node name="Language" parent="MainContainer/SettingsContainer/LeftContainer" unique_id=637283414 instance=ExtResource("3_7gtp0")]
+custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
-tooltip_text = "Select your language"
-text = "Language"
-disabled = true
-
-[node name="Quit" parent="VBoxContainer2" unique_id=1462296372 instance=ExtResource("3_7gtp0")]
-layout_mode = 2
-tooltip_text = "Quit game"
-text = "Quit"
+size_flags_vertical = 0
+text = "Language: "
 disabled = false
 
-[node name="Label" parent="VBoxContainer2/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1462296372, 1921324632) index="0" unique_id=871164474]
-text = "Quit"
+[node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Language/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
+text = "Language: English"
 
-[connection signal="pressed" from="VBoxContainer/Start/Click Logic" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="VBoxContainer2/Start/Click Logic" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer2/Quit/Click Logic" to="." method="_on_quit_pressed"]
+[node name="RightContainer" type="VBoxContainer" parent="MainContainer/SettingsContainer" unique_id=1740566014]
+layout_mode = 2
+theme_override_constants/separation = 16
 
-[editable path="VBoxContainer/Start"]
-[editable path="VBoxContainer/Settings"]
-[editable path="VBoxContainer/Quit"]
-[editable path="VBoxContainer2/Start"]
-[editable path="VBoxContainer2/Settings"]
-[editable path="VBoxContainer2/Quit"]
+[node name="Window Mode" parent="MainContainer/SettingsContainer/RightContainer" unique_id=1653342739 instance=ExtResource("3_7gtp0")]
+custom_minimum_size = Vector2(450, 50)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Window Mode: "
+disabled = false
+
+[node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Window Mode/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1653342739, 1921324632) index="0" unique_id=871164474]
+text = "Window Mode: Fullscreen"
+
+[node name="Field of View" parent="MainContainer/SettingsContainer/RightContainer" unique_id=2032841200 instance=ExtResource("3_7gtp0")]
+custom_minimum_size = Vector2(450, 50)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Field of View:"
+disabled = false
+
+[node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Field of View/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(2032841200, 1921324632) index="0" unique_id=871164474]
+text = "Field of View: 90"
+
+[node name="Volume" parent="MainContainer/SettingsContainer/RightContainer" unique_id=1462296372 instance=ExtResource("3_7gtp0")]
+custom_minimum_size = Vector2(450, 50)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Volume: "
+disabled = false
+
+[node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Volume/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1462296372, 1921324632) index="0" unique_id=871164474]
+text = "Volume: 100"
+
+[node name="Back To Menu" parent="MainContainer" unique_id=833004707 instance=ExtResource("3_7gtp0")]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.63
+text = "Back to Menu"
+disabled = false
+
+[node name="Label" parent="MainContainer/Back To Menu/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(833004707, 1921324632) index="0" unique_id=871164474]
+theme_override_font_sizes/font_size = 48
+text = "Back to Menu"
+
+[connection signal="pressed" from="MainContainer/SettingsContainer/LeftContainer/Resolution/Click Logic" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainContainer/SettingsContainer/LeftContainer/Language/Click Logic" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MainContainer/SettingsContainer/RightContainer/Window Mode/Click Logic" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainContainer/SettingsContainer/RightContainer/Volume/Click Logic" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MainContainer/Back To Menu/Click Logic" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="MainContainer/Back To Menu/Click Logic" to="." method="_on_click_logic_pressed"]
+
+[editable path="MainContainer/SettingsContainer/LeftContainer/Resolution"]
+[editable path="MainContainer/SettingsContainer/LeftContainer/Pointer Speed"]
+[editable path="MainContainer/SettingsContainer/LeftContainer/Language"]
+[editable path="MainContainer/SettingsContainer/RightContainer/Window Mode"]
+[editable path="MainContainer/SettingsContainer/RightContainer/Field of View"]
+[editable path="MainContainer/SettingsContainer/RightContainer/Volume"]
+[editable path="MainContainer/Back To Menu"]

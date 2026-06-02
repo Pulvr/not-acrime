@@ -22,75 +22,78 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
-[node name="Title Label" type="RichTextLabel" parent="." unique_id=1265678900]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -396.0
-offset_top = 100.0
-offset_right = 396.0
-offset_bottom = 206.0
-grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("2_tgkk4")
-theme_override_font_sizes/normal_font_size = 92
-text = "It's (not) a crime"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1580342012]
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=656961835]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -140.0
-offset_right = 125.0
-offset_bottom = 54.666656
+offset_left = -391.0
+offset_top = -200.0
+offset_right = 391.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(125, -152)
+
+[node name="Title Label" type="RichTextLabel" parent="MainContainer" unique_id=1265678900]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_tgkk4")
+theme_override_font_sizes/normal_font_size = 92
+text = "It's (not) a crime"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MainContainer" unique_id=1580342012]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 16
 
-[node name="Start" parent="VBoxContainer" unique_id=183917302 instance=ExtResource("1_sey8n")]
+[node name="Start" parent="MainContainer/ButtonContainer" unique_id=183917302 instance=ExtResource("1_sey8n")]
 layout_mode = 2
+size_flags_vertical = 3
 tooltip_text = "Start game"
+theme_override_constants/margin_top = 50
 text = "Start"
 disabled = false
 
-[node name="Label" parent="VBoxContainer/Start/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
+[node name="Label" parent="MainContainer/ButtonContainer/Start/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
 text = "Start"
 
-[node name="Settings" parent="VBoxContainer" unique_id=749661097 instance=ExtResource("1_sey8n")]
+[node name="Settings" parent="MainContainer/ButtonContainer" unique_id=749661097 instance=ExtResource("1_sey8n")]
 layout_mode = 2
+size_flags_vertical = 3
 tooltip_text = "Change Settings"
 text = "Settings"
 disabled = false
 
-[node name="Label" parent="VBoxContainer/Settings/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(749661097, 1921324632) index="0" unique_id=871164474]
+[node name="Label" parent="MainContainer/ButtonContainer/Settings/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(749661097, 1921324632) index="0" unique_id=871164474]
 text = "Settings"
 
-[node name="Language" parent="VBoxContainer" unique_id=1396100484 instance=ExtResource("1_sey8n")]
+[node name="Language" parent="MainContainer/ButtonContainer" unique_id=1396100484 instance=ExtResource("1_sey8n")]
+visible = false
 modulate = Color(1, 1, 1, 0.43529412)
 layout_mode = 2
+size_flags_vertical = 3
 tooltip_text = "Select your language"
 text = "Language"
 disabled = true
 
-[node name="Quit" parent="VBoxContainer" unique_id=637283414 instance=ExtResource("1_sey8n")]
+[node name="Quit" parent="MainContainer/ButtonContainer" unique_id=637283414 instance=ExtResource("1_sey8n")]
 layout_mode = 2
+size_flags_vertical = 3
 tooltip_text = "Quit game"
 text = "Quit"
 disabled = false
 
-[node name="Label" parent="VBoxContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
+[node name="Label" parent="MainContainer/ButtonContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/Start/Click Logic" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Start/Click Logic" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Settings/Click Logic" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Settings/Click Logic" to="MainContainer/ButtonContainer/Settings" method="_on_click_logic_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
 
-[editable path="VBoxContainer/Start"]
-[editable path="VBoxContainer/Settings"]
-[editable path="VBoxContainer/Quit"]
+[editable path="MainContainer/ButtonContainer/Start"]
+[editable path="MainContainer/ButtonContainer/Settings"]
+[editable path="MainContainer/ButtonContainer/Quit"]
