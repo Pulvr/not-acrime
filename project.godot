@@ -30,6 +30,7 @@ directories/dch_directory={
 "Prisoner": "res://resources/dialog/character/Prisoner.dch"
 }
 directories/dtl_directory={
+"cell_lock_timeline": "res://resources/dialog/timeline/cell_lock_timeline.dtl",
 "cellmate": "res://resources/dialog/timeline/cellmate.dtl",
 "item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
@@ -49,6 +50,7 @@ variables={
 "has_sharp": false,
 "item_strings": {
 "item_description": "",
+"item_in_hand": "",
 "item_received": ""
 },
 "talked_to_cellmate_1": false,
