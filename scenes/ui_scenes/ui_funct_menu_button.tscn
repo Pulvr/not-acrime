@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbsjklprvdqqu"]
 
 [ext_resource type="Script" uid="uid://dhokpatv6a5p3" path="res://scenes/ui_scenes/ui_funct_menu_button.gd" id="1_jnfhn"]
+[ext_resource type="AudioStream" uid="uid://dpylhnhxve8vv" path="res://sounds/sfx/nac-sfx-intro-typewriter.mp3" id="2_bgk7b"]
 [ext_resource type="Texture2D" uid="uid://b7qe6tdk5p5do" path="res://resources/ui_elements/ui_background_white.png" id="2_jnfhn"]
 [ext_resource type="Texture2D" uid="uid://dviqa6v5os5ck" path="res://resources/ui_elements/ui_frame_white.png" id="3_bgk7b"]
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="3_ryw3t"]
@@ -17,7 +18,11 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jnfhn")
-disabled = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=83761475]
+stream = ExtResource("2_bgk7b")
+volume_db = -15.476
+pitch_scale = 0.81
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=2051951726]
 self_modulate = Color(0.4392157, 0.4392157, 0.4392157, 1)

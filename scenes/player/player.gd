@@ -45,18 +45,25 @@ func _ready():
 
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	
+	await get_tree().process_frame
+	auto_start_intro_dialog()
 
 func _on_timeline_started():
 	can_move = false
 	hint_checker = false
 
 func _on_timeline_ended():
-	if Dialogic.VAR.talked_to_cellmate_with_sharp:
-		get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
-		return
+	# This code enables the demo end when the toilet game is finished and the following dialogue has been displayed:
+	#if Dialogic.VAR.talked_to_cellmate_with_sharp:
+	#	return_to_main_menu()
+	#	return
 	
 	can_move = true
 	hint_checker = true
+
+func return_to_main_menu():
+	get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
 
 func _input(event):
 	if event is InputEventMouseMotion and can_move:
@@ -77,7 +84,7 @@ func _input(event):
 	elif event.is_action_pressed("prev_item"):
 		change_selected_item(-1)
 	
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and Dialogic.current_timeline == null:
 		toggle_pause()
 
 func _physics_process(delta):
@@ -98,6 +105,36 @@ func _physics_process(delta):
 				talk_hint.visible = true
 			elif collider.is_in_group("interactable"):
 				interact_hint.visible = true
+
+func auto_start_intro_dialog():
+	var cellmate = get_tree().get_first_node_in_group("talk_to")
+	if cellmate != null:
+		look_at_target_with_offset(cellmate, 0.2)
+		if Dialogic.current_timeline == null:
+			var timeline = "welcome_timeline"
+			if "timeline_name" in cellmate:
+				timeline = cellmate.timeline_name
+			elif "timeline_default" in cellmate:
+				timeline = cellmate.timeline_default
+			Dialogic.start(timeline)
+
+func look_at_target_with_offset(target_node: Node, vertical_offset_from_top: float):
+	var collision_shape = target_node.get_node_or_null("CollisionShape3D")
+	var target_height = 0.0
+	if collision_shape:
+		target_height = collision_shape.shape.height
+	if debug_mode:
+		print("Target height: ", target_height)
+	var base_pos = target_node.global_position
+	var adjusted_target_pos = base_pos
+	adjusted_target_pos.y += (target_height / 2.0) # - (target_height * vertical_offset_from_top)
+	
+	var look_pos_player = Vector3(adjusted_target_pos.x, global_position.y, adjusted_target_pos.z)
+	if global_position.distance_to(look_pos_player) > 0.1:
+		look_at(look_pos_player, Vector3.UP)
+	var head_target = head.global_transform.affine_inverse() * adjusted_target_pos
+	var angle_x = atan2(head_target.y, -head_target.z)
+	head.rotation.x = clamp(angle_x, min_camera_x, max_camera_x)
 
 func walk_process(delta):
 	if not is_on_floor():

@@ -19,6 +19,20 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
+[node name="Title Label" type="RichTextLabel" parent="." unique_id=1265678900]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -396.0
+offset_top = 200.0
+offset_right = 396.0
+offset_bottom = 306.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_tgkk4")
+theme_override_font_sizes/normal_font_size = 92
+text = "It's (not) a crime"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1580342012]
 layout_mode = 1
 anchors_preset = 8
@@ -46,7 +60,6 @@ disabled = false
 text = "Start"
 
 [node name="Language" parent="VBoxContainer" unique_id=1396100484 instance=ExtResource("1_sey8n")]
-modulate = Color(1, 1, 1, 0.43529412)
 layout_mode = 2
 tooltip_text = "Select your language"
 text = "Language"
@@ -60,20 +73,6 @@ disabled = false
 
 [node name="Label" parent="VBoxContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
 text = "Quit"
-
-[node name="Title Label" type="RichTextLabel" parent="." unique_id=1265678900]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -396.0
-offset_top = 200.0
-offset_right = 396.0
-offset_bottom = 306.0
-grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("2_tgkk4")
-theme_override_font_sizes/normal_font_size = 92
-text = "It's (not) a crime"
 
 [connection signal="pressed" from="VBoxContainer/Start/Click Logic" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
