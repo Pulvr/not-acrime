@@ -33,10 +33,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.1, -2.3)
 transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, 0, 4.2, 0)
 
 [node name="Metal_Sink" parent="." unique_id=119985792 instance=ExtResource("6_dysg5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91, 1.3888273, -2)
 
 [node name="Cell_Table" parent="." unique_id=1986315210 instance=ExtResource("7_bh0qp")]
-transform = Transform3D(-5.2453668e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.2453668e-08, 2.2505383, 0.66989577, 1.7045822)
+transform = Transform3D(-5.2453668e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.2453668e-08, 2.2505383, 0.36408842, 1.7045822)
 
 [node name="Cell_Stool" parent="." unique_id=1372591696 instance=ExtResource("8_3hyd8")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8255761, 0.1077587, 1.7045822)
