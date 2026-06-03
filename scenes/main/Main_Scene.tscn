@@ -8,8 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://dhp5sbuug4hw2" path="res://sounds/sfx/nac-sfx-lvl1-background_hum.mp3" id="8_0ctos"]
 [ext_resource type="AudioStream" uid="uid://bwhxc5mhrq1k2" path="res://sounds/sfx/nac-sfx-lvl1-background_lamp.mp3" id="9_r52bg"]
 [ext_resource type="AudioStream" uid="uid://beex7ljrxsww2" path="res://sounds/sfx/nac-sfx-lvl1-background_water_dripping.mp3" id="10_557sa"]
-[ext_resource type="PackedScene" uid="uid://5swl4gfer0ro" path="res://resources/test_assets/test_pill/MovingPill.tscn" id="10_r52bg"]
-[ext_resource type="PackedScene" uid="uid://n7n57vvs0kgm" path="res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tscn" id="11_557sa"]
 [ext_resource type="PackedScene" uid="uid://d2gw4wfd1u8uh" path="res://scenes/ui_scenes/pause_menu.tscn" id="11_r52bg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcsjo"]
@@ -143,11 +141,3 @@ bus = &"Prison Reverb"
 
 [node name="PauseMenu" parent="PauseLayer" unique_id=551449788 instance=ExtResource("11_r52bg")]
 visible = false
-
-[node name="Node" type="Node" parent="." unique_id=798640132]
-
-[node name="SharpMetalObject" parent="Node" unique_id=1487545070 instance=ExtResource("11_557sa")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.6244199, 0.086007714, -0.7820711)
-
-[node name="MovingPill" parent="Node" unique_id=373162990 instance=ExtResource("10_r52bg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3457704, 1.3833038, 0.22568297)
