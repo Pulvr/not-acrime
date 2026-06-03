@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1ks74u3i4toy"]
+
+[ext_resource type="Texture2D" uid="uid://x2orp1srp3oa" path="res://models/cell_stool_metal_pixelated.png" id="1_hvnvw"]
+
+[resource]
+resource_name = "stool_top"
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_hvnvw")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.5

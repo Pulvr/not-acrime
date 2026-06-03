@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cixrhhaycy2w0" path="res://textures/source images/concrete_floor_pixelated.png" id="1_f2o6i"]
 
 [resource]
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
 albedo_texture = ExtResource("1_f2o6i")
+albedo_texture_force_srgb = true
 uv1_scale = Vector3(0.15, 0.15, 0.15)
 uv1_offset = Vector3(0, 0, -0.005)
 uv1_triplanar = true

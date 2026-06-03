@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://btjvy143pep5a"]
+
+[ext_resource type="Texture2D" uid="uid://dai4cy14mwcy4" path="res://models/ceiling_light_metal_pixelated.png" id="1_3ga7v"]
+
+[resource]
+resource_name = "body"
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_3ga7v")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.3
