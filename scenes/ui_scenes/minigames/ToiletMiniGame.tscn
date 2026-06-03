@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ce4aq7rx0o53" path="res://scenes/ui_scenes/minigames/toilet_mini_game.gd" id="1_0h08m"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_6e8ty"]
-[ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="4_64am8"]
+[ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/ui_frame2.png" id="4_64am8"]
 [ext_resource type="Texture2D" uid="uid://b3i2pamap8np5" path="res://icon.svg" id="4_ee4xr"]
+[ext_resource type="AudioStream" uid="uid://cyusidnsnwfmf" path="res://sounds/sfx/nac-sfx-lvl1-small-toilet-splash.ogg" id="5_txe2f"]
+[ext_resource type="AudioStream" uid="uid://iemwsnnwccch" path="res://sounds/sfx/nac-sfx-lvl1-toilet-splash.ogg" id="6_cexss"]
 
 [node name="ToiletMiniGame" type="Control" unique_id=1440177789]
 layout_mode = 3
@@ -92,6 +94,14 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ee4xr")
+
+[node name="SplashSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1019851788]
+stream = ExtResource("5_txe2f")
+volume_db = -12.923
+
+[node name="SuccessSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1430469066]
+stream = ExtResource("6_cexss")
+volume_db = -6.351
 
 [connection signal="gui_input" from="Menu Button/Click Logic" to="." method="_on_click_logic_gui_input"]
 
