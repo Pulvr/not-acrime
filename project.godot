@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://b2vjjfufwycpo"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+GlobalSettings="*uid://bk3geu78arhnf"
 
 [dialogic]
 
@@ -90,7 +91,9 @@ text/input_action="dialogic_default_action"
 
 [display]
 
+window/size/mode=3
 window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
