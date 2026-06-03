@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://cgodu8m8qwk4j"]
 
 [ext_resource type="PackedScene" uid="uid://dsqa847tnoi0a" path="res://scenes/level/cell_with_assets.tscn" id="3_7i1vd"]
-[ext_resource type="Resource" uid="uid://c2b6ajaku4re4" path="res://resources/dialog/timeline/cellmate.dtl" id="3_557sa"]
-[ext_resource type="PackedScene" uid="uid://bmcy4fpojycyn" path="res://models/prisoner_cellmate4.glb" id="3_eyuud"]
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="3_iip3i"]
-[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="3_r52bg"]
 [ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/OtherCells/other_cell_right.tscn" id="5_4i6ec"]
 [ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/OtherCells/other_cell_left.tscn" id="5_iip3i"]
 [ext_resource type="PackedScene" uid="uid://ba25gny5t6uec" path="res://scenes/level/Hallway.tscn" id="6_tvwj4"]
@@ -41,9 +38,10 @@ fog_density = 0.0512
 transform = Transform3D(1, 0, 0, 0, -0.7372774, 0.67559016, 0, -0.67559016, -0.7372774, 14.795, 18.22, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
+[node name="Player" parent="." unique_id=1995347876 node_paths=PackedStringArray("intro_target") instance=ExtResource("3_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040748417, 1.6036769, 2.2569623)
 debug_mode = true
+intro_target = NodePath("../LevelAssets/CellWithAssets/cellmate/CollisionShape3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
