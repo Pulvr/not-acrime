@@ -8,6 +8,6 @@
 script = ExtResource("1_t8ci1")
 name = "Sharp Metal Object"
 icon = ExtResource("1_ji0xb")
-description = "looks like it can cut something"
+description = "Looks like it can cut something."
 item_mesh = ExtResource("1_snxxx")
 metadata/_custom_type_script = "uid://k257ssevnehw"

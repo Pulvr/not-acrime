@@ -31,7 +31,7 @@ var max_camera_x = deg_to_rad(90)
 #Inventory
 var selected_index: int = 0
 var inventory: Array[ItemData]=[]
-var current_item: ItemData 
+var item_in_hand: ItemData 
 const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventorySlot.tscn")
 @onready var slot_container = $UILayer/InventoryBar/SlotContainer
 
@@ -200,16 +200,19 @@ func change_selected_item(direction: int):
 
 func add_item_to_inventory(item_data:ItemData):
 	inventory.append(item_data)
-	current_item = inventory[-1]
+	item_in_hand = inventory[-1]
 	change_selected_item(1)
 	update_inventory_ui()
 
 
 func update_hand_display():
-	current_item = inventory[selected_index]
+	item_in_hand = inventory[selected_index]
+	Dialogic.VAR.set_variable("item_strings.item_in_hand", item_in_hand.name) 
+	if debug_mode:
+		print(Dialogic.VAR.get('item_strings').get('item_in_hand'))
 	
-	if current_item and current_item.item_mesh:
-		hand_mesh.mesh = current_item.item_mesh #Just change the visual shape of the existing hand node
+	if item_in_hand and item_in_hand.item_mesh:
+		hand_mesh.mesh = item_in_hand.item_mesh #Just change the visual shape of the existing hand node
 		hand_mesh.visible = true
 	else:
 		hand_mesh.visible = false #Hide it if the slot is empty or has no mesh
