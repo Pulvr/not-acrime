@@ -48,7 +48,6 @@ environment = SubResource("Environment_rcsjo")
 [node name="LevelAssets" type="Node" parent="." unique_id=666042714]
 
 [node name="CellWithAssets" parent="LevelAssets" unique_id=772185796 instance=ExtResource("3_7i1vd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005703807, -0.0020813942, -0.002083838)
 
 [node name="OtherCellLeft" parent="LevelAssets" unique_id=601514559 instance=ExtResource("5_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -14)

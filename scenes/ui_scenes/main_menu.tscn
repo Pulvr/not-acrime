@@ -37,6 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Title Label" type="RichTextLabel" parent="MainContainer" unique_id=1265678900]
+clip_contents = false
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_tgkk4")
 theme_override_font_sizes/normal_font_size = 92

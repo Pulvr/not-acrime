@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://6f4ifjijt2wf" path="res://scenes/player/player.gd" id="1_xhfnw"]
 [ext_resource type="AudioStream" uid="uid://bdoqldodvptee" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete1_raw.mp3" id="2_5stf6"]
+[ext_resource type="PackedScene" uid="uid://bnvtsx8kwmo1c" path="res://scenes/ui_scenes/ui_tooltip_pickup.tscn" id="2_gfjak"]
+[ext_resource type="Material" uid="uid://xtfht3ymr5w5" path="res://textures/shaders/pixelation_filter.tres" id="2_tpg5x"]
+[ext_resource type="PackedScene" uid="uid://d0iiaocop6n68" path="res://scenes/ui_scenes/ui_tooltip_talk.tscn" id="3_4kuee"]
 [ext_resource type="AudioStream" uid="uid://6b27nkyh5kdo" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete2_raw.mp3" id="3_180ig"]
 [ext_resource type="AudioStream" uid="uid://cjohwirsjcgub" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete3_raw.mp3" id="4_20koh"]
+[ext_resource type="PackedScene" uid="uid://7tg48w2fy4pu" path="res://scenes/ui_scenes/ui_tooltip_interact.tscn" id="4_524rm"]
 [ext_resource type="AudioStream" uid="uid://m6fvpjmpglke" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete4_raw.mp3" id="5_ov1oi"]
 [ext_resource type="AudioStream" uid="uid://bc7pvu88j2wwx" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete5_raw.mp3" id="6_rn7t0"]
 [ext_resource type="AudioStream" uid="uid://3krcgvjmg73t" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete6_raw.mp3" id="7_8qjgm"]
@@ -11,10 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://2lslksnivd0u" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete8_raw.mp3" id="9_2xrq6"]
 [ext_resource type="AudioStream" uid="uid://ccblcfmwcclb0" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete9_raw.mp3" id="10_pi3ps"]
 [ext_resource type="AudioStream" uid="uid://4pcngphqpvu2" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete10_raw.mp3" id="11_kswpp"]
-[ext_resource type="PackedScene" uid="uid://bnvtsx8kwmo1c" path="res://scenes/ui_scenes/ui_tooltip_pickup.tscn" id="2_gfjak"]
-[ext_resource type="Material" uid="uid://xtfht3ymr5w5" path="res://textures/shaders/pixelation_filter.tres" id="2_tpg5x"]
-[ext_resource type="PackedScene" uid="uid://d0iiaocop6n68" path="res://scenes/ui_scenes/ui_tooltip_talk.tscn" id="3_4kuee"]
-[ext_resource type="PackedScene" uid="uid://7tg48w2fy4pu" path="res://scenes/ui_scenes/ui_tooltip_interact.tscn" id="4_524rm"]
+[ext_resource type="Script" uid="uid://btwm68x3j0p4c" path="res://scenes/player/camera_3d.gd" id="12_8qjgm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 height = 3.0
@@ -38,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 keep_aspect = 0
 current = true
 fov = 90.0
+script = ExtResource("12_8qjgm")
 
 [node name="Screen Shader Mesh" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1291474493]
 mesh = SubResource("QuadMesh_c3xxp")

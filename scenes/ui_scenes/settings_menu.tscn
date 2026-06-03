@@ -56,31 +56,42 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
-text = "Render Scale: 1.0"
+text = "Render Scale: 1.00"
 disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Render Scale/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
-text = "Render Scale: 1.0"
+text = "Render Scale: 1.00"
+metadata/_edit_lock_ = true
 
-[node name="Pointer Speed" parent="MainContainer/SettingsContainer/LeftContainer" unique_id=749661097 instance=ExtResource("3_7gtp0")]
+[node name="Mouse Sensitivity" parent="MainContainer/SettingsContainer/LeftContainer" unique_id=749661097 instance=ExtResource("3_7gtp0")]
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
-text = "Pointer Speed:"
+text = "Mouse Sensitivity: 1.00"
 disabled = false
 
-[node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Pointer Speed/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(749661097, 1921324632) index="0" unique_id=871164474]
-text = "Pointer Speed:"
+[node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Mouse Sensitivity/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(749661097, 1921324632) index="0" unique_id=871164474]
+text = "Mouse Sensitivity: 1.00"
 
 [node name="Language" parent="MainContainer/SettingsContainer/LeftContainer" unique_id=637283414 instance=ExtResource("3_7gtp0")]
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
-text = "Language: "
-disabled = false
+text = "Language: English"
+disabled = true
+
+[node name="Background" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="0" unique_id=2051951726]
+modulate = Color(1, 1, 1, 0.5)
+
+[node name="Border" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="1" unique_id=188039461]
+modulate = Color(1, 1, 1, 0.5)
 
 [node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Language/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
-text = "Language: "
+modulate = Color(1, 1, 1, 0.5)
+text = "Language: English"
+
+[node name="Click Logic" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="3" unique_id=476664363]
+disabled = true
 
 [node name="RightContainer" type="VBoxContainer" parent="MainContainer/SettingsContainer" unique_id=1740566014]
 layout_mode = 2
@@ -90,31 +101,31 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
-text = "Window Mode: Maximized"
+text = "Window Mode: Windowed"
 disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Window Mode/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1653342739, 1921324632) index="0" unique_id=871164474]
-text = "Window Mode: Fullscreen"
+text = "Window Mode: Windowed"
 
 [node name="Field of View" parent="MainContainer/SettingsContainer/RightContainer" unique_id=2032841200 instance=ExtResource("3_7gtp0")]
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
-text = "Field of View:"
+text = "Field of View: 90"
 disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Field of View/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(2032841200, 1921324632) index="0" unique_id=871164474]
-text = "Field of View:"
+text = "Field of View: 90"
 
 [node name="Volume" parent="MainContainer/SettingsContainer/RightContainer" unique_id=1559956939 instance=ExtResource("3_7gtp0")]
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
-text = "Volume:"
+text = "Volume: 50%"
 disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Volume/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1559956939, 1921324632) index="0" unique_id=871164474]
-text = "Volume:"
+text = "Volume: 50%"
 
 [node name="Back To Menu" parent="MainContainer" unique_id=833004707 instance=ExtResource("3_7gtp0")]
 custom_minimum_size = Vector2(400, 80)
@@ -129,12 +140,16 @@ disabled = false
 theme_override_font_sizes/font_size = 48
 text = "Back to Menu"
 
+[connection signal="pressed" from="MainContainer/SettingsContainer/LeftContainer/Render Scale/Click Logic" to="." method="_on_scaling_pressed"]
+[connection signal="pressed" from="MainContainer/SettingsContainer/LeftContainer/Mouse Sensitivity/Click Logic" to="." method="_on_mouse_sensitivity_pressed"]
 [connection signal="pressed" from="MainContainer/SettingsContainer/RightContainer/Window Mode/Click Logic" to="." method="_on_window_mode_pressed"]
 [connection signal="pressed" from="MainContainer/SettingsContainer/RightContainer/Window Mode/Click Logic" to="MainContainer/SettingsContainer/RightContainer/Window Mode" method="_on_click_logic_pressed"]
+[connection signal="pressed" from="MainContainer/SettingsContainer/RightContainer/Field of View/Click Logic" to="." method="_on_fov_pressed"]
+[connection signal="pressed" from="MainContainer/SettingsContainer/RightContainer/Volume/Click Logic" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MainContainer/Back To Menu/Click Logic" to="." method="_on_back_to_menu_pressed"]
 
 [editable path="MainContainer/SettingsContainer/LeftContainer/Render Scale"]
-[editable path="MainContainer/SettingsContainer/LeftContainer/Pointer Speed"]
+[editable path="MainContainer/SettingsContainer/LeftContainer/Mouse Sensitivity"]
 [editable path="MainContainer/SettingsContainer/LeftContainer/Language"]
 [editable path="MainContainer/SettingsContainer/RightContainer/Window Mode"]
 [editable path="MainContainer/SettingsContainer/RightContainer/Field of View"]

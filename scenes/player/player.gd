@@ -3,12 +3,12 @@ extends CharacterBody3D
 @export var SPEED = 5
 @export var JUMP_VELOCITY = 4.5
 
-@export var mouse_sensitivity = 0.002
 @export var can_move = true
 @export var debug_mode = false
 
 @export var footstep_sounds: Array[AudioStream] = []
 
+var mouse_sensitivity = GlobalSettings.mouse_sensitivity
 var target_velocity = Vector3.ZERO
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
