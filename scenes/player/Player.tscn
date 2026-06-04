@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://2lslksnivd0u" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete8_raw.mp3" id="9_2xrq6"]
 [ext_resource type="AudioStream" uid="uid://ccblcfmwcclb0" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete9_raw.mp3" id="10_pi3ps"]
 [ext_resource type="AudioStream" uid="uid://4pcngphqpvu2" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete10_raw.mp3" id="11_kswpp"]
+[ext_resource type="Script" uid="uid://btwm68x3j0p4c" path="res://scenes/player/camera_3d.gd" id="12_8qjgm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 height = 3.0
@@ -38,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 keep_aspect = 0
 current = true
 fov = 90.0
+script = ExtResource("12_8qjgm")
 
 [node name="Screen Shader Mesh" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1291474493]
 mesh = SubResource("QuadMesh_c3xxp")

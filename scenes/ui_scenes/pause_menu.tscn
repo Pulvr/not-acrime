@@ -14,9 +14,12 @@ grow_vertical = 2
 script = ExtResource("1_o8qos")
 
 [node name="Background black" type="ColorRect" parent="." unique_id=1098483515]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1397513552]
@@ -27,12 +30,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
-offset_top = 82.0
+offset_top = -76.0
 offset_right = 125.0
-offset_bottom = 234.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(125, 0)
 theme_override_constants/separation = 16
 
@@ -45,11 +47,15 @@ disabled = false
 [node name="Label" parent="VBoxContainer/Continue/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
 text = "Continue"
 
-[node name="Language" parent="VBoxContainer" unique_id=1124464673 instance=ExtResource("2_ggsj7")]
+[node name="Settings" parent="VBoxContainer" unique_id=750628868 instance=ExtResource("2_ggsj7")]
 layout_mode = 2
-tooltip_text = "Select your language"
-text = "Language"
-disabled = true
+size_flags_vertical = 3
+tooltip_text = "Change Settings"
+text = "Settings"
+disabled = false
+
+[node name="Label" parent="VBoxContainer/Settings/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(750628868, 1921324632) index="0" unique_id=871164474]
+text = "Settings"
 
 [node name="MainMenu" parent="VBoxContainer" unique_id=1278143999 instance=ExtResource("2_ggsj7")]
 layout_mode = 2
@@ -71,8 +77,11 @@ text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Continue/Click Logic" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenu/Click Logic" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings/Click Logic" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings/Click Logic" to="VBoxContainer/Settings" method="_on_click_logic_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
 
 [editable path="VBoxContainer/Continue"]
 [editable path="VBoxContainer/MainMenu"]
+[editable path="VBoxContainer/Settings"]
 [editable path="VBoxContainer/Quit"]
