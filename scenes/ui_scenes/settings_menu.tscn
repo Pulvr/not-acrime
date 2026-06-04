@@ -57,7 +57,6 @@ custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Render Scale: 1.00"
-disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Render Scale/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
 text = "Render Scale: 1.00"
@@ -68,7 +67,6 @@ custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Mouse Sensitivity: 1.00"
-disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Mouse Sensitivity/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(749661097, 1921324632) index="0" unique_id=871164474]
 text = "Mouse Sensitivity: 1.00"
@@ -80,17 +78,17 @@ size_flags_vertical = 0
 text = "Language: English"
 disabled = true
 
-[node name="Background" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="0" unique_id=2051951726]
+[node name="Background" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="1" unique_id=2051951726]
 modulate = Color(1, 1, 1, 0.5)
 
-[node name="Border" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="1" unique_id=188039461]
+[node name="Border" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="2" unique_id=188039461]
 modulate = Color(1, 1, 1, 0.5)
 
 [node name="Label" parent="MainContainer/SettingsContainer/LeftContainer/Language/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
 modulate = Color(1, 1, 1, 0.5)
 text = "Language: English"
 
-[node name="Click Logic" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="3" unique_id=476664363]
+[node name="Click Logic" parent="MainContainer/SettingsContainer/LeftContainer/Language" index="4" unique_id=476664363]
 disabled = true
 
 [node name="RightContainer" type="VBoxContainer" parent="MainContainer/SettingsContainer" unique_id=1740566014]
@@ -102,7 +100,6 @@ custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Window Mode: Windowed"
-disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Window Mode/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1653342739, 1921324632) index="0" unique_id=871164474]
 text = "Window Mode: Windowed"
@@ -112,7 +109,6 @@ custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Field of View: 90"
-disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Field of View/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(2032841200, 1921324632) index="0" unique_id=871164474]
 text = "Field of View: 90"
@@ -122,7 +118,6 @@ custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Volume: 50%"
-disabled = false
 
 [node name="Label" parent="MainContainer/SettingsContainer/RightContainer/Volume/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1559956939, 1921324632) index="0" unique_id=871164474]
 text = "Volume: 50%"
@@ -134,7 +129,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.63
 text = "Back to Menu"
-disabled = false
 
 [node name="Label" parent="MainContainer/Back To Menu/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(833004707, 1921324632) index="0" unique_id=871164474]
 theme_override_font_sizes/font_size = 48

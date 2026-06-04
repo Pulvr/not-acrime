@@ -31,9 +31,13 @@ func _set_label_texts():
 
 func _on_back_to_menu_pressed() -> void:
 	if GlobalSettings.last_scene == "Main Menu":
+		GlobalSettings.last_scene = "Settings Menu"
 		get_tree().change_scene_to_file("res://scenes/ui_scenes/main_menu.tscn")
+
 	elif GlobalSettings.last_scene == "Main Scene":
+		GlobalSettings.last_scene = "Settings Menu"
 		get_tree().change_scene_to_file("res://scenes/main/Main_Scene.tscn")
+
 
 func _on_scaling_pressed() -> void:
 	match get_tree().root.scaling_3d_scale:

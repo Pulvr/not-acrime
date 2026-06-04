@@ -107,6 +107,8 @@ func _physics_process(delta):
 				interact_hint.visible = true
 
 func auto_start_intro_dialog():
+	if GlobalSettings.last_scene == "Settings Menu":
+		return
 	var cellmate = get_tree().get_first_node_in_group("talk_to")
 	if cellmate != null:
 		look_at_target_with_offset(cellmate, 0.2)
