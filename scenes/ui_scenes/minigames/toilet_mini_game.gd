@@ -25,7 +25,6 @@ func _physics_process(delta: float) -> void:
 	disgustBar.value = current_bar_value
 
 func endMiniGame():
-	visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	success_player.play()
 	await success_player.finished

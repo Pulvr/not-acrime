@@ -1,20 +1,31 @@
 [gd_scene format=3 uid="uid://dos73x3yy81yw"]
 
+[ext_resource type="Script" uid="uid://cwld0gtkqgqpq" path="res://resources/scripts/pillow_minigame_starter.gd" id="1_2rpgx"]
 [ext_resource type="PackedScene" uid="uid://cki43yveeero7" path="res://models/bunkbed.glb" id="1_8ynpf"]
 [ext_resource type="PackedScene" uid="uid://0evgg2htgeij" path="res://models/bunkbed_ripped.glb" id="2_yylsn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yylsn"]
+size = Vector3(0.19873047, 1.2607574, 1.0949707)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bh0qp"]
 size = Vector3(1.8358154, 2.7472534, 3.6538696)
 
-[node name="Bunkbed" type="StaticBody3D" unique_id=1708177036]
+[node name="BedHome" type="StaticBody3D" unique_id=1627439450 groups=["interactable"]]
+script = ExtResource("1_2rpgx")
 
-[node name="bunkbed" parent="." unique_id=565169352 instance=ExtResource("1_8ynpf")]
+[node name="PillowCollider" type="CollisionShape3D" parent="." unique_id=900832844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029128611, 1.4485303, -1.4671438)
+shape = SubResource("BoxShape3D_yylsn")
+
+[node name="Bunkbed" type="StaticBody3D" parent="." unique_id=1708177036]
+
+[node name="bunkbed" parent="Bunkbed" unique_id=565169352 instance=ExtResource("1_8ynpf")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1911656725]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bunkbed" unique_id=1911656725]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80426025, 1.365267, 0.009979248)
 shape = SubResource("BoxShape3D_bh0qp")
 
-[node name="bunkbed_ripped" parent="." unique_id=1758081411 instance=ExtResource("2_yylsn")]
+[node name="bunkbed_ripped" parent="Bunkbed" unique_id=1758081411 instance=ExtResource("2_yylsn")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 visible = false

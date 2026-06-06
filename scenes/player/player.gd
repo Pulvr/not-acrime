@@ -47,7 +47,7 @@ func _ready():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 	await get_tree().process_frame
-	auto_start_intro_dialog()
+	#auto_start_intro_dialog()
 
 func _on_timeline_started():
 	can_move = false
@@ -174,10 +174,15 @@ func check_interaction():
 			collider.startDialog()
 		
 		if collider and collider.has_method("interact"):
-			if collider.has_signal("ToiletMiniGameStarted") and collider.has_signal("ToiletMiniGameEnded"):
-				if not collider.ToiletMiniGameStarted.is_connected(_on_toilet_mini_game_started):
-					collider.ToiletMiniGameStarted.connect(_on_toilet_mini_game_started)
+			if collider.has_signal("ToiletMiniGameStarted"):
+				if not collider.ToiletMiniGameStarted.is_connected(_on_minigame_started):
+					collider.ToiletMiniGameStarted.connect(_on_minigame_started)
 					collider.ToiletMiniGameEnded.connect(_on_toilet_mini_game_ended)
+
+			if collider.has_signal("PillowMiniGameStarted"):
+				if not collider.PillowMiniGameStarted.is_connected(_on_minigame_started):
+					collider.PillowMiniGameStarted.connect(_on_minigame_started)
+					collider.PillowMiniGameStarted.connect(_on_pillow_mini_game_ended)
 			collider.interact()
 
 func pick_up_item(item_node):
@@ -259,7 +264,7 @@ func update_inventory_ui():
 
 		slot_instance.display_item(inventory[i], is_active)
 
-func _on_toilet_mini_game_started():
+func _on_minigame_started():
 	can_move = false
 	hint_checker = false
 	interact_hint.visible = false
@@ -270,6 +275,14 @@ func _on_toilet_mini_game_ended():
 	var sharp_metal_object = load("res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tres")
 	Dialogic.VAR.set_variable("has_sharp", true)
 	item_added_with_dialog(sharp_metal_object)
+
+func _on_pillow_mini_game_ended():
+	can_move = true
+	hint_checker = true
+	# ---- ADD KEY item ----
+	#var sharp_metal_object = load("res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tres")
+	#Dialogic.VAR.set_variable("has_sharp", true)
+	#item_added_with_dialog(sharp_metal_object)
 		
 
 func item_added_with_dialog(item:ItemData):

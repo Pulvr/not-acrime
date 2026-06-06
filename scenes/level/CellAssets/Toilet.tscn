@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxymom34kgena"]
 
 [ext_resource type="PackedScene" uid="uid://bm3thu8ib8mg1" path="res://models/toilet.glb" id="1_k3hgb"]
-[ext_resource type="Script" uid="uid://bf6h64ei6n551" path="res://resources/scripts/toilet.gd" id="1_xp1bv"]
+[ext_resource type="Script" uid="uid://bf6h64ei6n551" path="res://resources/scripts/toilet_minigame_starter.gd" id="1_xp1bv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dysg5"]
 height = 0.77038574

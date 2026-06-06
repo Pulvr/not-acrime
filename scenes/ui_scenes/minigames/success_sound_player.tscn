@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://de5ujvqn3t45e"]
+
+[ext_resource type="AudioStream" uid="uid://iemwsnnwccch" path="res://sounds/sfx/nac-sfx-lvl1-toilet-splash.ogg" id="1_o46aq"]
+
+[node name="SuccessSoundPlayer" type="AudioStreamPlayer" unique_id=1829076226]
+stream = ExtResource("1_o46aq")
+volume_db = -6.351

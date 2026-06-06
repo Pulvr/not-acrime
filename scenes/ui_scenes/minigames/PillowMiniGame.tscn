@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bmfdg8cgjfyqf"]
+
+[ext_resource type="Script" uid="uid://dn300hnk6kt22" path="res://scenes/ui_scenes/minigames/pillow_mini_game.gd" id="1_22xrx"]
+[ext_resource type="Texture2D" uid="uid://b3i2pamap8np5" path="res://icon.svg" id="2_wcg77"]
+[ext_resource type="PackedScene" uid="uid://de5ujvqn3t45e" path="res://scenes/ui_scenes/minigames/success_sound_player.tscn" id="3_d4e38"]
+[ext_resource type="AudioStream" uid="uid://cyusidnsnwfmf" path="res://sounds/sfx/nac-sfx-lvl1-small-toilet-splash.ogg" id="4_8rt70"]
+
+[sub_resource type="Curve2D" id="Curve2D_dx5a2"]
+_data = {
+"points": PackedVector2Array(-0.49499512, 0.22743511, 0.49499512, -0.22743511, 269, 20, 0, 0, 0, 0, 319, 16, 0, 0, 0, 0, 262, 82, 0, 0, 0, 0, 284, 158, 0, 0, 0, 0, 379, 288, 0, 0, 0, 0, 229, 325, 0, 0, 0, 0, 291, 402, 0, 0, 0, 0, 401, 433, 0, 0, 0, 0, 570, 343, 0, 0, 0, 0, 601, 270, 0, 0, 0, 0, 678, 221, 0, 0, 0, 0, 699, 153, 0, 0, 0, 0, 680, 106, 0, 0, 0, 0, 640, 96, 0, 0, 0, 0, 589, 103, 0, 0, 0, 0, 544, 125, 0, 0, 0, 0, 495, 134, 0, 0, 0, 0, 544, 218, 0, 0, 0, 0, 458, 219, 0, 0, 0, 0, 449, 237)
+}
+point_count = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rt70"]
+size = Vector2(126.17865, 128.75916)
+
+[node name="Control" type="Node2D" unique_id=279312631]
+script = ExtResource("1_22xrx")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1602981177]
+position = Vector2(261, 23)
+points = PackedVector2Array(0, 0, 58, -5, 0, 62.015, 22, 138, 118, 268, -33, 306, 29, 382, 138, 412, 308, 321, 339, 249, 417, 198, 436, 133, 418, 84, 378, 75, 328, 82, 282, 103, 232, 113, 284, 199, 196, 198, 187, 216)
+default_color = Color(0, 0, 0, 1)
+
+[node name="CuttingLine" type="Path2D" parent="." unique_id=1607225608]
+curve = SubResource("Curve2D_dx5a2")
+
+[node name="FollowCuttingLine" type="PathFollow2D" parent="CuttingLine" unique_id=1093176709]
+position = Vector2(269, 20)
+rotation = -0.43070233
+
+[node name="Sprite2D" type="Sprite2D" parent="CuttingLine/FollowCuttingLine" unique_id=1970079766]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_wcg77")
+
+[node name="Area2D" type="Area2D" parent="CuttingLine/FollowCuttingLine/Sprite2D" unique_id=310385461]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingLine/FollowCuttingLine/Sprite2D/Area2D" unique_id=50092867]
+position = Vector2(0.51708984, 2.729248)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_8rt70")
+debug_color = Color(0.86997205, 0.00051076355, 0.85160697, 0.41960785)
+
+[node name="SuccessSoundPlayer" parent="." unique_id=1829076226 instance=ExtResource("3_d4e38")]
+stream = ExtResource("4_8rt70")

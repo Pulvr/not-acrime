@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_6e8ty"]
 [ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="4_8wi7n"]
 [ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="4_64am8"]
+[ext_resource type="PackedScene" uid="uid://de5ujvqn3t45e" path="res://scenes/ui_scenes/minigames/success_sound_player.tscn" id="4_fkv0n"]
 [ext_resource type="AudioStream" uid="uid://cyusidnsnwfmf" path="res://sounds/sfx/nac-sfx-lvl1-small-toilet-splash.ogg" id="5_txe2f"]
 [ext_resource type="Texture2D" uid="uid://wgpofgwb1m8g" path="res://resources/ui_elements/UI_frame.png" id="6_8wi7n"]
-[ext_resource type="AudioStream" uid="uid://iemwsnnwccch" path="res://sounds/sfx/nac-sfx-lvl1-toilet-splash.ogg" id="6_cexss"]
 [ext_resource type="Texture2D" uid="uid://dngxbtxecnpv5" path="res://resources/ui_elements/left-click.svg" id="6_n22yl"]
 
 [node name="ToiletMiniGame" type="Control" unique_id=1440177789]
@@ -53,9 +53,7 @@ patch_margin_bottom = 2
 stream = ExtResource("5_txe2f")
 volume_db = -12.923
 
-[node name="SuccessSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1430469066]
-stream = ExtResource("6_cexss")
-volume_db = -6.351
+[node name="SuccessSoundPlayer" parent="." unique_id=1829076226 instance=ExtResource("4_fkv0n")]
 
 [node name="VSplitContainer" type="VSplitContainer" parent="." unique_id=1266338739]
 layout_mode = 1
