@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bnfpp1bfg02u5"]
+
+[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="1_64ut3"]
+[ext_resource type="ArrayMesh" uid="uid://br0ypkktw4a5b" path="res://models/rusty_key.res" id="1_pisfm"]
+[ext_resource type="Resource" uid="uid://di8u5rhuab2b1" path="res://resources/assets/itemsForPickup/rustyKey/rusty_key.tres" id="2_wh6t6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ph1j"]
+size = Vector3(0.061584473, 1.8012695, 0.7497864)
+
+[node name="RustyKey" type="StaticBody3D" unique_id=40439100 groups=["item_for_pickup"]]
+script = ExtResource("1_64ut3")
+data = ExtResource("2_wh6t6")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1656464491]
+transform = Transform3D(0.65, 0, 0, 0, -2.8412401e-08, 0.65, 0, -0.65, -2.8412401e-08, -0.0040664673, 0.17879725, -0.04776611)
+shape = SubResource("BoxShape3D_3ph1j")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1319936679]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, 0, 0)
+mesh = ExtResource("1_pisfm")

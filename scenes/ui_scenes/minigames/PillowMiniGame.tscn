@@ -11,9 +11,6 @@ _data = {
 }
 point_count = 20
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rt70"]
-size = Vector2(126.17865, 128.75916)
-
 [node name="Control" type="Node2D" unique_id=279312631]
 script = ExtResource("1_22xrx")
 
@@ -32,14 +29,6 @@ rotation = -0.43070233
 [node name="Sprite2D" type="Sprite2D" parent="CuttingLine/FollowCuttingLine" unique_id=1970079766]
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_wcg77")
-
-[node name="Area2D" type="Area2D" parent="CuttingLine/FollowCuttingLine/Sprite2D" unique_id=310385461]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingLine/FollowCuttingLine/Sprite2D/Area2D" unique_id=50092867]
-position = Vector2(0.51708984, 2.729248)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_8rt70")
-debug_color = Color(0.86997205, 0.00051076355, 0.85160697, 0.41960785)
 
 [node name="SuccessSoundPlayer" parent="." unique_id=1829076226 instance=ExtResource("3_d4e38")]
 stream = ExtResource("4_8rt70")

@@ -34,6 +34,7 @@ directories/dtl_directory={
 "cell_lock_timeline": "res://resources/dialog/timeline/cell_lock_timeline.dtl",
 "cellmate": "res://resources/dialog/timeline/cellmate.dtl",
 "item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
+"pillow_minigame_timeline": "res://resources/dialog/timeline/pillow_minigame_timeline.dtl",
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
 "toilet_minigame_timeline": "res://resources/dialog/timeline/toilet_minigame_timeline.dtl",
 "welcome_timeline": "res://resources/dialog/timeline/welcome_timeline.dtl"
@@ -46,8 +47,10 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://resources/dialog/style/default_style.tres"]
 layout/default_style="res://resources/dialog/style/default_style.tres"
 variables={
+"checked_pillow": false,
 "dialog_played": false,
 "first_conversation": true,
+"has_key": false,
 "has_sharp": false,
 "item_strings": {
 "item_description": "",

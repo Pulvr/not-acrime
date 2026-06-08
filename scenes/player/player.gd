@@ -182,7 +182,7 @@ func check_interaction():
 			if collider.has_signal("PillowMiniGameStarted"):
 				if not collider.PillowMiniGameStarted.is_connected(_on_minigame_started):
 					collider.PillowMiniGameStarted.connect(_on_minigame_started)
-					collider.PillowMiniGameStarted.connect(_on_pillow_mini_game_ended)
+					collider.PillowMiniGameEnded.connect(_on_pillow_mini_game_ended)
 			collider.interact()
 
 func pick_up_item(item_node):
@@ -272,17 +272,15 @@ func _on_minigame_started():
 func _on_toilet_mini_game_ended():
 	can_move = true
 	hint_checker = true
-	var sharp_metal_object = load("res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tres")
 	Dialogic.VAR.set_variable("has_sharp", true)
-	item_added_with_dialog(sharp_metal_object)
+	item_added_with_dialog(load("res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tres")
+)
 
 func _on_pillow_mini_game_ended():
 	can_move = true
 	hint_checker = true
-	# ---- ADD KEY item ----
-	#var sharp_metal_object = load("res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tres")
-	#Dialogic.VAR.set_variable("has_sharp", true)
-	#item_added_with_dialog(sharp_metal_object)
+	Dialogic.VAR.set_variable("has_key", true)
+	item_added_with_dialog(load("res://resources/assets/itemsForPickup/rustyKey/rusty_key.tres"))
 		
 
 func item_added_with_dialog(item:ItemData):
@@ -291,3 +289,18 @@ func item_added_with_dialog(item:ItemData):
 	add_item_to_inventory(item)
 	if Dialogic.current_timeline == null:
 		Dialogic.start("item_received_timeline")
+
+
+
+#---- UNUSED -----
+func remove_item(item_name):
+	pass
+	#for item in inventory:
+	#	if item.name == item_name:
+			
+# would be nicer, cannot figure out how to call this function on a signal with arguments atm
+func _on_minigame_ended(dialogic_var,item_resource):
+	can_move = true
+	hint_checker = true
+	Dialogic.VAR.set_variable(dialogic_var,true)
+	item_added_with_dialog(load(item_resource))

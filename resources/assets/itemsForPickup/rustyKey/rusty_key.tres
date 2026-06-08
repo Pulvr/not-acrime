@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://di8u5rhuab2b1"]
+
+[ext_resource type="Texture2D" uid="uid://by1dxtkavdpwv" path="res://resources/ui_elements/rustyKey64.png" id="1_brjqc"]
+[ext_resource type="ArrayMesh" uid="uid://br0ypkktw4a5b" path="res://models/rusty_key.res" id="2_x4ca4"]
+[ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/scripts/itemScripts/item_data.gd" id="3_eq1kp"]
+
+[resource]
+script = ExtResource("3_eq1kp")
+name = "Rusty Key"
+icon = ExtResource("1_brjqc")
+description = "is it going to be that easy?"
+item_mesh = ExtResource("2_x4ca4")
+metadata/_custom_type_script = "uid://k257ssevnehw"
