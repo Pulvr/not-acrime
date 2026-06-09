@@ -41,7 +41,11 @@ const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventoryS
 @onready var pause_menu = $"../PauseLayer/PauseMenu"
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Captures the mouse and hides it
+	
+	if GlobalSettings.last_scene == "Settings Menu":
+		toggle_pause()
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Captures the mouse and hides it
 
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
