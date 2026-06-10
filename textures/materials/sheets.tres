@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dkqms4u615ry3"]
 
-[ext_resource type="Texture2D" uid="uid://croft1uyvowle" path="res://models/bunkbed_sheets_pixelated.png" id="1_qq4gn"]
+[ext_resource type="Texture2D" uid="uid://cmoboqgmgrpj1" path="res://models/bunkbed_pillow_sheets_pixelated.png" id="1_qq4gn"]
 
 [resource]
 resource_name = "sheets"
+cull_mode = 2
 albedo_texture = ExtResource("1_qq4gn")
-albedo_texture_force_srgb = true
 roughness = 0.5
