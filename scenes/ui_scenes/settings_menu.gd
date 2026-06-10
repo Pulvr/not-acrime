@@ -19,7 +19,7 @@ func _check_last_scene():
 	if GlobalSettings.last_scene == "Main Menu":
 		back_to_menu_label.text = "Back to Menu"
 	elif GlobalSettings.last_scene == "Main Scene":
-		back_to_menu_label.text = "Back to Game"
+		back_to_menu_label.text = "Back"
 
 func _set_label_texts():
 		scaling_label.text = GlobalSettings.last_render_scale_text
