@@ -42,7 +42,6 @@ theme_override_constants/separation = 16
 layout_mode = 2
 tooltip_text = "Start game"
 text = "Continue"
-disabled = false
 
 [node name="Label" parent="VBoxContainer/Continue/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
 text = "Continue"
@@ -52,7 +51,6 @@ layout_mode = 2
 size_flags_vertical = 3
 tooltip_text = "Change Settings"
 text = "Settings"
-disabled = false
 
 [node name="Label" parent="VBoxContainer/Settings/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(750628868, 1921324632) index="0" unique_id=871164474]
 text = "Settings"
@@ -60,28 +58,26 @@ text = "Settings"
 [node name="MainMenu" parent="VBoxContainer" unique_id=1278143999 instance=ExtResource("2_ggsj7")]
 layout_mode = 2
 tooltip_text = "Start game"
-text = "Back to main menu"
-disabled = false
+text = "Back to Main Menu"
 
 [node name="Label" parent="VBoxContainer/MainMenu/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1278143999, 1921324632) index="0" unique_id=871164474]
-text = "Back to main menu"
+text = "Back to Main Menu"
 
 [node name="Quit" parent="VBoxContainer" unique_id=1186671215 instance=ExtResource("2_ggsj7")]
 layout_mode = 2
 tooltip_text = "Quit game"
 text = "Quit"
-disabled = false
 
 [node name="Label" parent="VBoxContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1186671215, 1921324632) index="0" unique_id=871164474]
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Continue/Click Logic" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenu/Click Logic" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings/Click Logic" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings/Click Logic" to="VBoxContainer/Settings" method="_on_click_logic_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu/Click Logic" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
 
 [editable path="VBoxContainer/Continue"]
-[editable path="VBoxContainer/MainMenu"]
 [editable path="VBoxContainer/Settings"]
+[editable path="VBoxContainer/MainMenu"]
 [editable path="VBoxContainer/Quit"]
