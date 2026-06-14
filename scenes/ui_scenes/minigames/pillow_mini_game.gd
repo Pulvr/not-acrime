@@ -1,11 +1,12 @@
 extends Control
 
 signal PillowMiniGameUiDeleted()
-signal PillowMiniGameNotAccurateEnough()
 
 @onready var cutting_line_progress = $"CuttingLine/FollowCuttingLine"
 @onready var success_player = $SuccessSoundPlayer
 @onready var path_2d: Path2D = $CuttingLine
+@onready var instruct_label : Label = $Instructions
+@onready var reset_label_timer : Timer = $Instructions/Timer
 
 var is_tracking: bool = false
 var total_samples: int = 0
@@ -37,14 +38,19 @@ func _process(delta: float) -> void:
 		if is_tracking: # Wenn abgebrochen wurde, bevor das Ziel erreicht wurde
 			cancel_tracking()
 
-	cutting_line_progress.progress_ratio += 0.12 * delta # Anzeiger für CuttingLine
+	cutting_line_progress.progress_ratio += 0.2 * delta # Anzeiger für CuttingLine
+
+
+	
 
 
 func start_tracking() -> void:
 	is_tracking = true
 	total_samples = 0
 	accumulated_score = 0.0
-	print("Minispiel gestartet. Folge dem Pfad zum Ziel!")
+	instruct_label.text = "stay on track"
+	reset_label_timer.stop()
+	reset_label_timer.wait_time = 3.0
 
 func track_mouse_performance(mouse_pos: Vector2) -> void:
 	var closest_offset = path_2d.curve.get_closest_offset(mouse_pos)
@@ -70,11 +76,13 @@ func complete_tracking() -> void:
 	if final_percentage >= 80.0:
 		endMiniGame()
 	else:
-		PillowMiniGameNotAccurateEnough.emit();
+		instruct_label.text = "not accurate enough"
+		reset_label_timer.start()
 
 func cancel_tracking() -> void:
 	is_tracking = false
-	PillowMiniGameNotAccurateEnough.emit();
+	instruct_label.text = "cut from start to finish"
+	reset_label_timer.start()
 
 func get_final_percentage() -> float:
 	if total_samples == 0:
@@ -83,7 +91,11 @@ func get_final_percentage() -> float:
 
 func endMiniGame():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	instruct_label.text = "congrats"
 	success_player.play()
 	await success_player.finished
 	PillowMiniGameUiDeleted.emit()
 	queue_free()
+
+func _on_timer_timeout() -> void:
+	instruct_label.text = "Cut it open"

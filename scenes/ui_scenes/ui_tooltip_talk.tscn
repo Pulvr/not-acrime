@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://d0iiaocop6n68"]
 
-[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/ui_background.png" id="1_m6gv0"]
-[ext_resource type="Texture2D" uid="uid://wgpofgwb1m8g" path="res://resources/ui_elements/ui_frame.png" id="2_0sl4t"]
-[ext_resource type="Texture2D" uid="uid://oeguatxuj6y2" path="res://resources/ui_elements/ui_button2.png" id="3_aq6go"]
+[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="1_m6gv0"]
+[ext_resource type="Texture2D" uid="uid://wgpofgwb1m8g" path="res://resources/ui_elements/UI_frame.png" id="2_0sl4t"]
+[ext_resource type="Texture2D" uid="uid://oeguatxuj6y2" path="res://resources/ui_elements/UI_button2.png" id="3_aq6go"]
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="4_utmt6"]
+[ext_resource type="LabelSettings" uid="uid://bl0bmjrcym03y" path="res://resources/fonts/Special_Elite/default_label_settings.tres" id="5_0sl4t"]
 
 [node name="Interaction UI" type="MarginContainer" unique_id=840447008]
 anchors_preset = 8
@@ -77,7 +78,6 @@ theme_override_constants/margin_top = 5
 
 [node name="Label Interact" type="Label" parent="Content/HBoxContainer/MarginContainer" unique_id=1104849513]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_utmt6")
 theme_override_font_sizes/font_size = 24
 text = "Talk"
+label_settings = ExtResource("5_0sl4t")

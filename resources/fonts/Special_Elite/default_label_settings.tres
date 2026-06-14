@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bl0bmjrcym03y"]
+
+[ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="1_w5dw1"]
+
+[resource]
+font = ExtResource("1_w5dw1")
+font_size = 32
+font_color = Color(0, 0, 0, 1)

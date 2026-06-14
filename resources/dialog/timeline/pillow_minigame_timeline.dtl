@@ -4,5 +4,11 @@ if {talked_to_cellmate_1} == false:
 	set {checked_pillow} = true
 	[end_timeline]
 if {checked_pillow} == true:
+	if {has_key} == true:
+		jump has_key
 	Cellmate: Stop doing weird shit with my pillow, get lost!
+	[end_timeline]
+if {has_key} == true:
+	label has_key
+	Cellmate: You're gonna pay for this, you freak
 	[end_timeline]
