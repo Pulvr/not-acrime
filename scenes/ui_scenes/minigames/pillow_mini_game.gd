@@ -2,11 +2,17 @@ extends Control
 
 signal PillowMiniGameUiDeleted()
 
-@onready var cutting_line_progress = $"CuttingLine/FollowCuttingLine"
+# sound during cutting
+# maybe particle effects
+# show lmb icon in UI
+# remove sharp object from inventory
+
 @onready var success_player = $SuccessSoundPlayer
 @onready var path_2d: Path2D = $CuttingLine
+@onready var drawn_line:Line2D = $LineDisplayedDuringCut
 @onready var instruct_label : Label = $Instructions
 @onready var reset_label_timer : Timer = $Instructions/Timer
+
 
 var is_tracking: bool = false
 var total_samples: int = 0
@@ -16,13 +22,15 @@ var accumulated_score: float = 0.0
 @export var max_allowed_distance: float = 30.0  # Maximale Abweichung vom Pfad
 @export var start_tolerance: float = 20.0       # Wie nah die Maus an Punkt A sein muss
 @export var end_tolerance: float = 20.0         # Wie nah die Maus an Punkt B sein muss
+@export var knife_icon:Texture2D
+@export var win_percentage = 80
 
 var path_length: float = 0.0
 
 func _ready() -> void:
 	path_length = path_2d.curve.get_baked_length()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var mouse_pos = get_local_mouse_position()
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -38,25 +46,21 @@ func _process(delta: float) -> void:
 		if is_tracking: # Wenn abgebrochen wurde, bevor das Ziel erreicht wurde
 			cancel_tracking()
 
-	cutting_line_progress.progress_ratio += 0.2 * delta # Anzeiger für CuttingLine
-
-
-	
-
-
 func start_tracking() -> void:
 	is_tracking = true
 	total_samples = 0
 	accumulated_score = 0.0
 	instruct_label.text = "stay on track"
+	Input.set_custom_mouse_cursor(knife_icon)
 	reset_label_timer.stop()
 	reset_label_timer.wait_time = 3.0
 
 func track_mouse_performance(mouse_pos: Vector2) -> void:
+	drawn_line.add_point(mouse_pos)
+
 	var closest_offset = path_2d.curve.get_closest_offset(mouse_pos)
 	var closest_point = path_2d.curve.sample_baked(closest_offset)
 	
-	# 1. Distanz und Score berechnen
 	var distance = mouse_pos.distance_to(closest_point)
 	var current_score = clamp(1.0 - (distance / max_allowed_distance), 0.0, 1.0)
 	
@@ -72,17 +76,20 @@ func track_mouse_performance(mouse_pos: Vector2) -> void:
 func complete_tracking() -> void:
 	is_tracking = false
 	var final_percentage = get_final_percentage()
-	print("Ziel erreicht! Erfolgreich beendet. Genauigkeit: ", final_percentage, "%")
-	if final_percentage >= 80.0:
+	if final_percentage >= win_percentage:
 		endMiniGame()
 	else:
 		instruct_label.text = "not accurate enough"
+		drawn_line.clear_points()
 		reset_label_timer.start()
+		Input.set_custom_mouse_cursor(null) #reset mouseicon
 
 func cancel_tracking() -> void:
 	is_tracking = false
 	instruct_label.text = "cut from start to finish"
+	drawn_line.clear_points()
 	reset_label_timer.start()
+	Input.set_custom_mouse_cursor(null) #reset mouseicon
 
 func get_final_percentage() -> float:
 	if total_samples == 0:
@@ -90,6 +97,7 @@ func get_final_percentage() -> float:
 	return (accumulated_score / total_samples) * 100.0
 
 func endMiniGame():
+	Input.set_custom_mouse_cursor(null) #reset mouseicon
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	instruct_label.text = "congrats"
 	success_player.play()

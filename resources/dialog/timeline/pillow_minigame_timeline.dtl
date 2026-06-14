@@ -1,8 +1,4 @@
 [style name="default_style"]
-if {talked_to_cellmate_1} == false:
-	Cellmate: What are you doing?
-	set {checked_pillow} = true
-	[end_timeline]
 if {checked_pillow} == true:
 	if {has_key} == true:
 		jump has_key
@@ -12,3 +8,6 @@ if {has_key} == true:
 	label has_key
 	Cellmate: You're gonna pay for this, you freak
 	[end_timeline]
+Cellmate: What are you doing?
+set {checked_pillow} = true
+[end_timeline]
