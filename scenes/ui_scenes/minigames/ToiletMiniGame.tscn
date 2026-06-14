@@ -17,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0h08m")
+click_reward = 4
 
 [node name="ProgressBarContainer" type="MarginContainer" parent="." unique_id=955068251]
 layout_mode = 1

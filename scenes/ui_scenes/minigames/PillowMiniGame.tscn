@@ -4,27 +4,67 @@
 [ext_resource type="Texture2D" uid="uid://b3i2pamap8np5" path="res://icon.svg" id="2_wcg77"]
 [ext_resource type="PackedScene" uid="uid://de5ujvqn3t45e" path="res://scenes/ui_scenes/minigames/success_sound_player.tscn" id="3_d4e38"]
 [ext_resource type="AudioStream" uid="uid://cyusidnsnwfmf" path="res://sounds/sfx/nac-sfx-lvl1-small-toilet-splash.ogg" id="4_8rt70"]
+[ext_resource type="ArrayMesh" uid="uid://bk57lskeefo2j" path="res://models/bunkbed_pillow.res" id="5_eerwy"]
 
 [sub_resource type="Curve2D" id="Curve2D_dx5a2"]
 _data = {
-"points": PackedVector2Array(-0.49499512, 0.22743511, 0.49499512, -0.22743511, 269, 20, 0, 0, 0, 0, 319, 16, 0, 0, 0, 0, 262, 82, 0, 0, 0, 0, 284, 158, 0, 0, 0, 0, 379, 288, 0, 0, 0, 0, 229, 325, 0, 0, 0, 0, 291, 402, 0, 0, 0, 0, 401, 433, 0, 0, 0, 0, 570, 343, 0, 0, 0, 0, 601, 270, 0, 0, 0, 0, 678, 221, 0, 0, 0, 0, 699, 153, 0, 0, 0, 0, 680, 106, 0, 0, 0, 0, 640, 96, 0, 0, 0, 0, 589, 103, 0, 0, 0, 0, 544, 125, 0, 0, 0, 0, 495, 134, 0, 0, 0, 0, 544, 218, 0, 0, 0, 0, 458, 219, 0, 0, 0, 0, 449, 237)
+"points": PackedVector2Array(-0.49499512, 0.22743511, 0.49499512, -0.22743511, 265, 173, 0, 0, 0, 0, 385, 327, 0, 0, 0, 0, 385, 182, 0, 0, 0, 0, 471, 256, 0, 0, 0, 0, 544, 189, 0, 0, 0, 0, 575, 260, 0, 0, 0, 0, 510, 324, 0, 0, 0, 0, 640, 439, 0, 0, 0, 0, 707, 178, 0, 0, 0, 0, 843, 348)
 }
-point_count = 20
+point_count = 10
 
-[node name="Control" type="Node2D" unique_id=279312631]
+[node name="Control" type="Control" unique_id=1722263246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_22xrx")
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2035766552]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -315.5
+offset_right = 576.0
+offset_bottom = 315.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1301321859]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+debug_draw = 1
+use_hdr_2d = true
+size = Vector2i(1152, 631)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1970295805]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=547561565]
+transform = Transform3D(-1.3113417e-08, 0, 1.73, 0, 0.715, 0, -0.3, 0, -7.5620704e-08, 0, 0, -1.6325891)
+mesh = ExtResource("5_eerwy")
+
 [node name="Line2D" type="Line2D" parent="." unique_id=1602981177]
-position = Vector2(261, 23)
-points = PackedVector2Array(0, 0, 58, -5, 0, 62.015, 22, 138, 118, 268, -33, 306, 29, 382, 138, 412, 308, 321, 339, 249, 417, 198, 436, 133, 418, 84, 378, 75, 328, 82, 282, 103, 232, 113, 284, 199, 196, 198, 187, 216)
+position = Vector2(263, 169)
+points = PackedVector2Array(0, 0, 124, 163, 123, 11, 209, 90, 283, 21, 315, 94, 247, 157, 379, 275, 443, 6, 585, 184)
 default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
 
 [node name="CuttingLine" type="Path2D" parent="." unique_id=1607225608]
 curve = SubResource("Curve2D_dx5a2")
 
 [node name="FollowCuttingLine" type="PathFollow2D" parent="CuttingLine" unique_id=1093176709]
-position = Vector2(269, 20)
-rotation = -0.43070233
+position = Vector2(265, 173)
+rotation = -0.43069598
 
 [node name="Sprite2D" type="Sprite2D" parent="CuttingLine/FollowCuttingLine" unique_id=1970079766]
 scale = Vector2(0.18, 0.18)

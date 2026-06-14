@@ -6,6 +6,7 @@ Also helpful to load Dialogic stuff
 """
 @onready var ToiletUi = preload("res://scenes/ui_scenes/minigames/ToiletMiniGame.tscn")
 @onready var mainScene = get_tree().get_root().get_node("Main_Scene/Player/UILayer")
+var uiInstance = null
 
 signal ToiletMiniGameStarted()
 signal ToiletMiniGameEnded()
@@ -18,10 +19,11 @@ func interact():
 
 func startMinigame():
 	ToiletMiniGameStarted.emit()
-	var uiInstance = ToiletUi.instantiate()
-	mainScene.add_child(uiInstance)
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	uiInstance.ToiletMiniGameUiDeleted.connect(_on_toilet_minigame_ui_delete)
+	if uiInstance == null:
+		uiInstance = ToiletUi.instantiate()
+		mainScene.add_child(uiInstance)
+		uiInstance.ToiletMiniGameUiDeleted.connect(_on_toilet_minigame_ui_delete)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_toilet_minigame_ui_delete():
 	ToiletMiniGameEnded.emit()

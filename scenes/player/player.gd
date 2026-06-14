@@ -206,9 +206,6 @@ func change_selected_item(direction: int):
 
 	update_hand_display()
 
-	if debug_mode:
-		print(inventory[selected_index].name)
-
 func add_item_to_inventory(item_data:ItemData):
 	inventory.append(item_data)
 	item_in_hand = inventory[-1]

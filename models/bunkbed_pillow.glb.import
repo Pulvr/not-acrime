@@ -44,6 +44,17 @@ _subresources={
 "use_external/fallback_path": "res://textures/materials/sheets.tres",
 "use_external/path": "uid://dkqms4u615ry3"
 }
+},
+"meshes": {
+"bunkbed_pillow_Cube_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/bunkbed_pillow.res",
+"save_to_file/path": "uid://bk57lskeefo2j"
+}
 }
 }
 gltf/naming_version=2
