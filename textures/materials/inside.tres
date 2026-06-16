@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://t6jfmkhdmauq"]
+
+[resource]
+resource_name = "inside"
+albedo_color = Color(0.39255878, 0.39255878, 0.39255878, 1)
+albedo_texture_force_srgb = true

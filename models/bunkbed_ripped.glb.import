@@ -1,0 +1,65 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://0evgg2htgeij"
+path="res://.godot/imported/bunkbed_ripped.glb-44e366995a055af354c1e64ca5c0c1a7.scn"
+
+[deps]
+
+source_file="res://models/bunkbed_ripped.glb"
+dest_files=["res://.godot/imported/bunkbed_ripped.glb-44e366995a055af354c1e64ca5c0c1a7.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"bed_frame": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/materials/bed_frame.tres",
+"use_external/path": "uid://byawaudb0iwyl"
+},
+"inside": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/materials/inside.tres",
+"use_external/path": "uid://t6jfmkhdmauq"
+},
+"mattress": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/materials/mattress.tres",
+"use_external/path": "uid://bm6yyfumr6y5b"
+},
+"sheets": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/materials/sheets.tres",
+"use_external/path": "uid://dkqms4u615ry3"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

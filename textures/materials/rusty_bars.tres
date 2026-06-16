@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dkwc845o4mj64"]
+
+[ext_resource type="Texture2D" uid="uid://bivnm8nkmqqon" path="res://models/cell_bars_rust_pixelated.png" id="1_b67sw"]
+
+[resource]
+resource_name = "rusty_bars"
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_b67sw")
+albedo_texture_force_srgb = true
+roughness = 0.5

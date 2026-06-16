@@ -2,13 +2,13 @@ extends CharacterBody3D
 
 @export var SPEED = 5
 
-@export var mouse_sensitivity = 0.002
 @export var can_move = true
 @export var debug_mode = false
 @export var intro_target: Node3D
 
 @export var footstep_sounds: Array[AudioStream] = []
 
+var mouse_sensitivity = GlobalSettings.mouse_sensitivity
 var target_velocity = Vector3.ZERO
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -42,7 +42,11 @@ const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventoryS
 @onready var pause_menu = $"../PauseLayer/PauseMenu"
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Captures the mouse and hides it
+	
+	if GlobalSettings.last_scene == "Settings Menu":
+		toggle_pause()
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Captures the mouse and hides it
 
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bm6yyfumr6y5b"]
+
+[ext_resource type="Texture2D" uid="uid://bqc35vth62yu" path="res://models/bunkbed_ripped_cotton_pixelated.png" id="1_27a0p"]
+
+[resource]
+resource_name = "mattress"
+cull_mode = 2
+albedo_texture = ExtResource("1_27a0p")
+roughness = 0.5

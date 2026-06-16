@@ -64,3 +64,7 @@ func _on_click_logic_button_down() -> void:
 
 func _on_click_logic_button_up() -> void:
 	background.self_modulate = color_background_normal
+
+
+func _on_click_logic_pressed() -> void:
+	pass # Replace with function body.

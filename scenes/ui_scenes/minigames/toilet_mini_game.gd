@@ -1,9 +1,8 @@
 extends Control
 
-@onready var button = $"Menu Button/Click Logic"
+@onready var button = $"VSplitContainer/Menu Button/Click Logic"
 @onready var disgustBar = $"ProgressBarContainer/ProgressBar"
-@onready var lmb_icon = $"LeftMouse"
-@onready var rmb_icon = $"RightMouse"
+@onready var mouse_icon = %MouseIcon
 @onready var splash_player = $SplashSoundPlayer
 @onready var success_player = $SuccessSoundPlayer
 
@@ -44,16 +43,14 @@ func _on_click_logic_gui_input(event: InputEvent) -> void:
 			disgustBar.value = current_bar_value
 			lmb_last_pressed = true
 			rmb_last_pressed = false
-			lmb_icon.visible = false
-			rmb_icon.visible = true
+			mouse_icon.flip_h = true
 			valid_click = true
 		if event.button_index == 2 and lmb_last_pressed and event.pressed: 
 			current_bar_value += click_reward
 			disgustBar.value = current_bar_value
 			rmb_last_pressed = true
 			lmb_last_pressed = false
-			lmb_icon.visible = true
-			rmb_icon.visible = false
+			mouse_icon.flip_h=false
 			valid_click = true
 		if valid_click:
 			click_count += 1

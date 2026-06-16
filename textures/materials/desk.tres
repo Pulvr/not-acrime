@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dkog1n5evdbpo"]
+
+[ext_resource type="Texture2D" uid="uid://c8ljahwdjrvcy" path="res://models/cell_table_metal_pixelated.png" id="1_ruh8w"]
+
+[resource]
+resource_name = "desk"
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_ruh8w")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.5

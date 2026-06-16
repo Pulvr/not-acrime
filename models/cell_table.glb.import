@@ -37,6 +37,19 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"desk": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/materials/desk.tres",
+"use_external/path": "uid://dkog1n5evdbpo"
+},
+"wall_hold": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/materials/wall_hold.tres",
+"use_external/path": "uid://ddb5yoi8focr"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

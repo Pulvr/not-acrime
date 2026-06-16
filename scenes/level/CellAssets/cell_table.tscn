@@ -6,7 +6,7 @@
 size = Vector3(2.1409912, 0.12988281, 1.0107422)
 
 [node name="Cell_Table" type="StaticBody3D" unique_id=1986315210]
-transform = Transform3D(-5.2453668e-08, 0, -1.4, 0, 1.2, 0, 1.2, 0, -6.119594e-08, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="cell_table" parent="." unique_id=2087265353 instance=ExtResource("1_rw62b")]
 

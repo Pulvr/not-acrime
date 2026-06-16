@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://clmqlqrncnb0y"]
+
+[ext_resource type="Texture2D" uid="uid://bpr0qyt2rr1um" path="res://models/cell_stool_cast_iron_pixelated.png" id="1_jtpiu"]
+
+[resource]
+resource_name = "stool_structure"
+albedo_color = Color(4.415934, 4.415934, 4.415934, 1)
+albedo_texture = ExtResource("1_jtpiu")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.5

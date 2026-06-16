@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://don308tfp1y4j"]
+
+[ext_resource type="Texture2D" uid="uid://dv8mtnh1f1ilx" path="res://models/toilet_metal_pixelated.png" id="1_1y827"]
+
+[resource]
+resource_name = "toilet_metal"
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_1y827")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.3

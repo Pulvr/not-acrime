@@ -38,6 +38,13 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"metal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/materials/metal.tres",
+"use_external/path": "uid://dw255mxro0328"
+}
+},
 "meshes": {
 "sharp_metal_Cube": {
 "generate/lightmap_uv": 0,

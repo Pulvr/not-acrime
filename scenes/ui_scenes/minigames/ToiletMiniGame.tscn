@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://ce4aq7rx0o53" path="res://scenes/ui_scenes/minigames/toilet_mini_game.gd" id="1_0h08m"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_6e8ty"]
-[ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/ui_frame2.png" id="4_64am8"]
-[ext_resource type="Texture2D" uid="uid://b3i2pamap8np5" path="res://icon.svg" id="4_ee4xr"]
+[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="4_8wi7n"]
+[ext_resource type="Texture2D" uid="uid://b0pmtdcrpm674" path="res://resources/ui_elements/UI_frame2.png" id="4_64am8"]
 [ext_resource type="AudioStream" uid="uid://cyusidnsnwfmf" path="res://sounds/sfx/nac-sfx-lvl1-small-toilet-splash.ogg" id="5_txe2f"]
+[ext_resource type="Texture2D" uid="uid://wgpofgwb1m8g" path="res://resources/ui_elements/UI_frame.png" id="6_8wi7n"]
 [ext_resource type="AudioStream" uid="uid://iemwsnnwccch" path="res://sounds/sfx/nac-sfx-lvl1-toilet-splash.ogg" id="6_cexss"]
+[ext_resource type="Texture2D" uid="uid://dngxbtxecnpv5" path="res://resources/ui_elements/left-click.svg" id="6_n22yl"]
 
 [node name="ToiletMiniGame" type="Control" unique_id=1440177789]
 layout_mode = 3
@@ -15,21 +17,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0h08m")
-
-[node name="Menu Button" parent="." unique_id=183917302 instance=ExtResource("1_6e8ty")]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -420.0
-offset_top = -25.0
-offset_right = -120.0
-offset_bottom = 25.0
-grow_horizontal = 0
-script = null
-
-[node name="Label" parent="Menu Button/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
-text = "Overcome disgust"
 
 [node name="ProgressBarContainer" type="MarginContainer" parent="." unique_id=955068251]
 layout_mode = 1
@@ -62,39 +49,6 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="LeftMouse" type="TextureRect" parent="." unique_id=943707267]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -416.0
-offset_top = -105.0
-offset_right = -288.0
-offset_bottom = 23.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_ee4xr")
-
-[node name="RightMouse" type="TextureRect" parent="." unique_id=124950886]
-visible = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -182.76501
-offset_top = -105.0
-offset_right = -54.765015
-offset_bottom = 23.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_ee4xr")
-
 [node name="SplashSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1019851788]
 stream = ExtResource("5_txe2f")
 volume_db = -12.923
@@ -103,6 +57,65 @@ volume_db = -12.923
 stream = ExtResource("6_cexss")
 volume_db = -6.351
 
-[connection signal="gui_input" from="Menu Button/Click Logic" to="." method="_on_click_logic_gui_input"]
+[node name="VSplitContainer" type="VSplitContainer" parent="." unique_id=1266338739]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -391.0
+offset_top = -19.0
+offset_right = -95.0
+offset_bottom = 133.00009
+grow_horizontal = 0
+grow_vertical = 2
+dragging_enabled = false
+dragger_visibility = 1
 
-[editable path="Menu Button"]
+[node name="MouseIconContainer" type="MarginContainer" parent="VSplitContainer" unique_id=1933712362]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Background" type="NinePatchRect" parent="VSplitContainer/MouseIconContainer" unique_id=1654414373]
+layout_mode = 2
+texture = ExtResource("4_8wi7n")
+
+[node name="Border" type="NinePatchRect" parent="VSplitContainer/MouseIconContainer" unique_id=196669326]
+layout_mode = 2
+texture = ExtResource("6_8wi7n")
+
+[node name="CenterContainer" type="CenterContainer" parent="VSplitContainer/MouseIconContainer" unique_id=943853010]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/MouseIconContainer/CenterContainer" unique_id=766697614]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MouseIcon" type="TextureRect" parent="VSplitContainer/MouseIconContainer/CenterContainer/MarginContainer" unique_id=261062180]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_n22yl")
+expand_mode = 1
+
+[node name="Menu Button" parent="VSplitContainer" unique_id=183917302 instance=ExtResource("1_6e8ty")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+script = null
+
+[node name="MarginContainer" parent="VSplitContainer/Menu Button/CenterContainer" parent_id_path=PackedInt32Array(183917302, 1863224066) index="0" unique_id=1921324632]
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Label" parent="VSplitContainer/Menu Button/CenterContainer/MarginContainer" index="0" unique_id=871164474]
+text = "Overcome disgust"
+
+[connection signal="gui_input" from="VSplitContainer/Menu Button/Click Logic" to="." method="_on_click_logic_gui_input"]
+
+[editable path="VSplitContainer/Menu Button"]

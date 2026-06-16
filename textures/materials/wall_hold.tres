@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ddb5yoi8focr"]
+
+[ext_resource type="Texture2D" uid="uid://d1mrl7qpmdylj" path="res://models/cell_table_cast_iron_pixelated.png" id="1_ymmbp"]
+
+[resource]
+resource_name = "wall_hold"
+cull_mode = 2
+albedo_color = Color(4.415934, 4.415934, 4.415934, 1)
+albedo_texture = ExtResource("1_ymmbp")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.7
