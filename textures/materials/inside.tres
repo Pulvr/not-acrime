@@ -1,6 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://t6jfmkhdmauq"]
 
+[ext_resource type="Texture2D" uid="uid://b5ttrd0m4f1ru" path="res://models/bunkbed_ripped_sheets_pixelated.png" id="1_pft5l"]
+
 [resource]
 resource_name = "inside"
-albedo_color = Color(0.39255878, 0.39255878, 0.39255878, 1)
+albedo_color = Color(0.735357, 0.735357, 0.735357, 1)
+albedo_texture = ExtResource("1_pft5l")
 albedo_texture_force_srgb = true
