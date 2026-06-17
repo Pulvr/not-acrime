@@ -1,8 +1,18 @@
 if {item_strings.item_in_hand} == "":
-	It's a lock
+	It's a lock. And it's locked.
+	[signal arg="start_cell_lock_minigame"]
 	[end_timeline]
 elif {item_strings.item_in_hand} == "Pill":
-	It's a Pill
+	Whoa, where did you get this from?
+	...
+	*beep*
+	*chrrt* "911, what's your emergency?"
+	Someone here has a highly illegal item
+	"We gonna send a unit to arrest them..."
+	They... are already arrested. *hangs up*
 	[end_timeline]
 elif {item_strings.item_in_hand} == "Sharp Metal Object":
-	Sharp Metal Object
+	It doesn't quite fit in there.
+elif {item_strings.item_in_hand} == "Cell Key":
+	It might actually fit...
+	[signal arg="start_cell_lock_minigame"]
