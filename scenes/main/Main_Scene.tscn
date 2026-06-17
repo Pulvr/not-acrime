@@ -38,7 +38,7 @@ fog_density = 0.0512
 transform = Transform3D(1, 0, 0, 0, -0.7372774, 0.67559016, 0, -0.67559016, -0.7372774, 14.795, 18.22, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=1995347876 node_paths=PackedStringArray("intro_target") instance=ExtResource("3_iip3i")]
+[node name="Player" parent="." unique_id=1995347876 node_paths=PackedStringArray("intro_target") groups=["player"] instance=ExtResource("3_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040748417, 1.6036769, 2.2569623)
 debug_mode = true
 intro_target = NodePath("../LevelAssets/CellWithAssets/cellmate/CollisionShape3D")
