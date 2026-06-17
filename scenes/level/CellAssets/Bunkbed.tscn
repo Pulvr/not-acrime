@@ -10,7 +10,6 @@ size = Vector3(1.8358154, 2.7472534, 3.6538696)
 
 [node name="bunkbed" parent="." unique_id=565169352 instance=ExtResource("1_8ynpf")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1911656725]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80426025, 1.365267, 0.009979248)
@@ -18,3 +17,4 @@ shape = SubResource("BoxShape3D_bh0qp")
 
 [node name="bunkbed_ripped" parent="." unique_id=1758081411 instance=ExtResource("2_yylsn")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
