@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d0m8xctf8gfh1"]
+
+[resource]
+resource_name = "letter_outer"
+albedo_color = Color(0.8235294, 0.79607844, 0.7607843, 1)
+albedo_texture_force_srgb = true

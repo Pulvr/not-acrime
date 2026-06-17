@@ -108,6 +108,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 item_for_pickup=""
 interactable=""
 talk_to=""
+player="Only for finding Player globally"
 
 [input]
 

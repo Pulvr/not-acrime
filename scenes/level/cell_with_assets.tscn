@@ -11,6 +11,10 @@
 [ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="9_nrknf"]
 [ext_resource type="Resource" uid="uid://c2b6ajaku4re4" path="res://resources/dialog/timeline/cellmate.dtl" id="10_dy5ib"]
 [ext_resource type="PackedScene" uid="uid://f8jdklu0dey3" path="res://scenes/level/CellAssets/prisoner_cellmate_4.tscn" id="11_nrknf"]
+[ext_resource type="PackedScene" uid="uid://cdv06lpjyhjua" path="res://scenes/level/CellAssets/newspaper.tscn" id="12_1d6nu"]
+[ext_resource type="PackedScene" uid="uid://c2j824wcbaxan" path="res://scenes/level/CellAssets/letter.tscn" id="13_iw8i2"]
+[ext_resource type="PackedScene" uid="uid://c0lxytaeoy544" path="res://models/desk_lamp.glb" id="14_iw8i2"]
+[ext_resource type="Script" uid="uid://cwb7wk1dww1wy" path="res://scenes/level/CellAssets/letter.gd" id="14_owmyw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1d6nu"]
 radius = 0.5205078
@@ -51,3 +55,15 @@ timeline = ExtResource("10_dy5ib")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cellmate" unique_id=1022954079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032293558, 0.7244541, 0.12283492)
 shape = SubResource("CapsuleShape3D_1d6nu")
+
+[node name="Props" type="Node" parent="." unique_id=2129189246]
+
+[node name="Newspaper" parent="." unique_id=962529539 instance=ExtResource("12_1d6nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8674812, 2.4877648, 1.2747726)
+
+[node name="Letter" parent="." unique_id=2021050042 instance=ExtResource("13_iw8i2")]
+transform = Transform3D(-0.4472695, 0, -0.14439517, 0, 0.47, 0, 0.14439517, 0, -0.4472695, 1.9717782, 1.5952156, 1.7118204)
+script = ExtResource("14_owmyw")
+
+[node name="desk_lamp" parent="." unique_id=1071635935 instance=ExtResource("14_iw8i2")]
+transform = Transform3D(-0.76495516, 0, -0.64408356, 0, 1, 0, 0.64408356, 0, -0.76495516, 2.3623502, 1.6451895, 2.502836)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2j824wcbaxan"]
+
+[ext_resource type="PackedScene" uid="uid://c5vvgysoff3il" path="res://models/letter.glb" id="1_1e5h1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1djnp"]
+size = Vector3(1.5645752, 0.16388321, 1.219635)
+
+[node name="Letter" type="StaticBody3D" unique_id=2021050042 groups=["interactable"]]
+transform = Transform3D(-0.4472695, 0, -0.14439517, 0, 0.47, 0, 0.14439517, 0, -0.4472695, 0, 0, 0)
+
+[node name="letter" parent="." unique_id=789510842 instance=ExtResource("1_1e5h1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1275066139]
+transform = Transform3D(0.9999997, 0, 2.9802322e-07, 0, 0.99999315, 0, -2.9802322e-07, 0, 0.9999997, -0.36444086, 0.08261865, -0.0040435717)
+shape = SubResource("BoxShape3D_1djnp")

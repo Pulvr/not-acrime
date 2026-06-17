@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dw77ueuxmvkcl"]
+
+[ext_resource type="Texture2D" uid="uid://c07nljohhytoc" path="res://models/newspaper_full-resolution-pixelated(5).png" id="1_kup2g"]
+
+[resource]
+resource_name = "Material"
+albedo_texture = ExtResource("1_kup2g")
+albedo_texture_force_srgb = true
+roughness = 0.5

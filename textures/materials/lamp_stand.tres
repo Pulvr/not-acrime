@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cvi2ts1beheh1"]
+
+[ext_resource type="Texture2D" uid="uid://dkn5weqdnbqno" path="res://models/desk_lamp_metal_pixelated.png" id="1_cudy1"]
+
+[resource]
+resource_name = "lamp_stand"
+albedo_texture = ExtResource("1_cudy1")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.3

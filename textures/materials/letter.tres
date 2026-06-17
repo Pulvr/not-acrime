@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://38sq74ugpqfi"]
+
+[ext_resource type="Texture2D" uid="uid://cucdjald0gpnx" path="res://models/letter_full-resolution-pixelated(9).png" id="1_5ag66"]
+
+[resource]
+resource_name = "letter"
+cull_mode = 2
+albedo_texture = ExtResource("1_5ag66")
