@@ -56,17 +56,24 @@ size_flags_vertical = 3
 tooltip_text = "Start game"
 theme_override_constants/margin_top = 50
 text = "Start"
-disabled = false
 
 [node name="Label" parent="MainContainer/ButtonContainer/Start/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(183917302, 1921324632) index="0" unique_id=871164474]
 text = "Start"
+
+[node name="Controls" parent="MainContainer/ButtonContainer" unique_id=1493567022 instance=ExtResource("1_sey8n")]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Change Settings"
+text = "Controls"
+
+[node name="Label" parent="MainContainer/ButtonContainer/Controls/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1493567022, 1921324632) index="0" unique_id=871164474]
+text = "Controls"
 
 [node name="Settings" parent="MainContainer/ButtonContainer" unique_id=749661097 instance=ExtResource("1_sey8n")]
 layout_mode = 2
 size_flags_vertical = 3
 tooltip_text = "Change Settings"
 text = "Settings"
-disabled = false
 
 [node name="Label" parent="MainContainer/ButtonContainer/Settings/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(749661097, 1921324632) index="0" unique_id=871164474]
 text = "Settings"
@@ -85,16 +92,18 @@ layout_mode = 2
 size_flags_vertical = 3
 tooltip_text = "Quit game"
 text = "Quit"
-disabled = false
 
 [node name="Label" parent="MainContainer/ButtonContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
 text = "Quit"
 
 [connection signal="pressed" from="MainContainer/ButtonContainer/Start/Click Logic" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Controls/Click Logic" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Controls/Click Logic" to="MainContainer/ButtonContainer/Controls" method="_on_click_logic_pressed"]
 [connection signal="pressed" from="MainContainer/ButtonContainer/Settings/Click Logic" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainContainer/ButtonContainer/Settings/Click Logic" to="MainContainer/ButtonContainer/Settings" method="_on_click_logic_pressed"]
 [connection signal="pressed" from="MainContainer/ButtonContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
 
 [editable path="MainContainer/ButtonContainer/Start"]
+[editable path="MainContainer/ButtonContainer/Controls"]
 [editable path="MainContainer/ButtonContainer/Settings"]
 [editable path="MainContainer/ButtonContainer/Quit"]

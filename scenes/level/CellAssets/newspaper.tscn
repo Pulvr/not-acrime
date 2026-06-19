@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cdv06lpjyhjua"]
+
+[ext_resource type="PackedScene" uid="uid://b3jy1fqj5or7f" path="res://models/newspaper.glb" id="1_2ec36"]
+[ext_resource type="Script" uid="uid://trgkkqjygh1r" path="res://scenes/level/CellAssets/newspaper.gd" id="1_d6s2e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1d6nu"]
+size = Vector3(0.24163818, 0.94247437, 1.3687744)
+
+[node name="Newspaper" type="StaticBody3D" unique_id=962529539 groups=["interactable"]]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+script = ExtResource("1_d6s2e")
+
+[node name="newspaper" parent="." unique_id=1476467818 instance=ExtResource("1_2ec36")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=698599760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.098480225, 0.4828949, -0.0060424805)
+shape = SubResource("BoxShape3D_1d6nu")

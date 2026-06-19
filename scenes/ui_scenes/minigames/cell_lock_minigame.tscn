@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bco01icoiyp4b"]
+
+[ext_resource type="Script" uid="uid://c4he8mx8dif2u" path="res://cell_lock_minigame.gd" id="1_ib5kj"]
+
+[node name="CellLockMinigame" type="Control" unique_id=893389686]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ib5kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=478902513]

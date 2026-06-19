@@ -14,6 +14,7 @@ size = Vector3(6.022766, 4.015686, 0.12640381)
 [node name="CellBarsHome" type="StaticBody3D" unique_id=898825045 groups=["interactable"]]
 script = ExtResource("1_47nio")
 timeline = ExtResource("2_u3ofe")
+has_lock_minigame = true
 
 [node name="LockCollider" type="CollisionShape3D" parent="." unique_id=1550203559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7433406, 2.0480587, -0.018943071)

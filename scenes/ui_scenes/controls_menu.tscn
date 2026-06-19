@@ -1,0 +1,411 @@
+[gd_scene format=3 uid="uid://drl0uodv2l3p7"]
+
+[ext_resource type="Script" uid="uid://lw4ojgl3wf37" path="res://scenes/ui_scenes/controls_menu.gd" id="1_eskuk"]
+[ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="2_ml21r"]
+[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/ui_background.png" id="3_go7u5"]
+[ext_resource type="Texture2D" uid="uid://ctx722yjl6hqv" path="res://resources/ui_elements/ui_button.png" id="4_e5wf0"]
+[ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="5_hk20q"]
+
+[node name="ControlsMenu" type="Control" unique_id=1012169217]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eskuk")
+
+[node name="Background" type="ColorRect" parent="." unique_id=624612165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=1890865153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Title Label" type="RichTextLabel" parent="MainContainer" unique_id=1265678900]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.75
+theme_override_fonts/normal_font = ExtResource("2_ml21r")
+theme_override_font_sizes/normal_font_size = 80
+text = "Controls"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Input Overview" type="HBoxContainer" parent="MainContainer" unique_id=642810881]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_constants/separation = 128
+
+[node name="LeftContainer" type="VBoxContainer" parent="MainContainer/Input Overview" unique_id=1580342012]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Forward" type="HBoxContainer" parent="MainContainer/Input Overview/LeftContainer" unique_id=901383350]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="KeyVisual" type="Control" parent="MainContainer/Input Overview/LeftContainer/Forward" unique_id=1753531361]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Background" type="TextureRect" parent="MainContainer/Input Overview/LeftContainer/Forward/KeyVisual" unique_id=1016226224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_go7u5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/Input Overview/LeftContainer/Forward/KeyVisual" unique_id=2066983107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Frame" type="TextureRect" parent="MainContainer/Input Overview/LeftContainer/Forward/KeyVisual/MarginContainer" unique_id=980433970]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("4_e5wf0")
+
+[node name="Key" type="Label" parent="MainContainer/Input Overview/LeftContainer/Forward/KeyVisual" unique_id=280957695]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.5
+offset_top = -41.0
+offset_right = 14.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "W"
+
+[node name="ActionContainer" type="MarginContainer" parent="MainContainer/Input Overview/LeftContainer/Forward" unique_id=1960003158]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="Action" type="Label" parent="MainContainer/Input Overview/LeftContainer/Forward/ActionContainer" unique_id=1230320672]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "Forward"
+
+[node name="Backward" type="HBoxContainer" parent="MainContainer/Input Overview/LeftContainer" unique_id=1674353120]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="KeyVisual" type="Control" parent="MainContainer/Input Overview/LeftContainer/Backward" unique_id=1449773872]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Background" type="TextureRect" parent="MainContainer/Input Overview/LeftContainer/Backward/KeyVisual" unique_id=1464857266]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_go7u5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/Input Overview/LeftContainer/Backward/KeyVisual" unique_id=1178053216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Frame" type="TextureRect" parent="MainContainer/Input Overview/LeftContainer/Backward/KeyVisual/MarginContainer" unique_id=284271626]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("4_e5wf0")
+
+[node name="Key" type="Label" parent="MainContainer/Input Overview/LeftContainer/Backward/KeyVisual" unique_id=815435671]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.5
+offset_top = -41.0
+offset_right = 14.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "S"
+
+[node name="ActionContainer" type="MarginContainer" parent="MainContainer/Input Overview/LeftContainer/Backward" unique_id=999509891]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="Action" type="Label" parent="MainContainer/Input Overview/LeftContainer/Backward/ActionContainer" unique_id=1814661017]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "Backward"
+
+[node name="Left" type="HBoxContainer" parent="MainContainer/Input Overview/LeftContainer" unique_id=1542144787]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="KeyVisual" type="Control" parent="MainContainer/Input Overview/LeftContainer/Left" unique_id=1504937116]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Background" type="TextureRect" parent="MainContainer/Input Overview/LeftContainer/Left/KeyVisual" unique_id=501546216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_go7u5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/Input Overview/LeftContainer/Left/KeyVisual" unique_id=198133585]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Frame" type="TextureRect" parent="MainContainer/Input Overview/LeftContainer/Left/KeyVisual/MarginContainer" unique_id=1843122622]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("4_e5wf0")
+
+[node name="Key" type="Label" parent="MainContainer/Input Overview/LeftContainer/Left/KeyVisual" unique_id=967575372]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.5
+offset_top = -41.0
+offset_right = 14.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "A"
+
+[node name="ActionContainer" type="MarginContainer" parent="MainContainer/Input Overview/LeftContainer/Left" unique_id=580133998]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="Action" type="Label" parent="MainContainer/Input Overview/LeftContainer/Left/ActionContainer" unique_id=267759777]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "Left"
+
+[node name="Right" type="HBoxContainer" parent="MainContainer/Input Overview/LeftContainer" unique_id=300591232]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="KeyVisual" type="Control" parent="MainContainer/Input Overview/LeftContainer/Right" unique_id=184694184]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Background" type="TextureRect" parent="MainContainer/Input Overview/LeftContainer/Right/KeyVisual" unique_id=1135819867]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_go7u5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/Input Overview/LeftContainer/Right/KeyVisual" unique_id=2089868112]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Frame" type="TextureRect" parent="MainContainer/Input Overview/LeftContainer/Right/KeyVisual/MarginContainer" unique_id=969932915]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("4_e5wf0")
+
+[node name="Key" type="Label" parent="MainContainer/Input Overview/LeftContainer/Right/KeyVisual" unique_id=523271613]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.5
+offset_top = -41.0
+offset_right = 14.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "D"
+
+[node name="ActionContainer" type="MarginContainer" parent="MainContainer/Input Overview/LeftContainer/Right" unique_id=2041992444]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="Action" type="Label" parent="MainContainer/Input Overview/LeftContainer/Right/ActionContainer" unique_id=300070462]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "Right"
+
+[node name="RightContainer" type="VBoxContainer" parent="MainContainer/Input Overview" unique_id=1740566014]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Interact" type="HBoxContainer" parent="MainContainer/Input Overview/RightContainer" unique_id=1300180724]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="KeyVisual" type="Control" parent="MainContainer/Input Overview/RightContainer/Interact" unique_id=171669311]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Background" type="TextureRect" parent="MainContainer/Input Overview/RightContainer/Interact/KeyVisual" unique_id=1994605935]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_go7u5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/Input Overview/RightContainer/Interact/KeyVisual" unique_id=2037814532]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Frame" type="TextureRect" parent="MainContainer/Input Overview/RightContainer/Interact/KeyVisual/MarginContainer" unique_id=745499310]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("4_e5wf0")
+
+[node name="Key" type="Label" parent="MainContainer/Input Overview/RightContainer/Interact/KeyVisual" unique_id=524685952]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.5
+offset_top = -41.0
+offset_right = 14.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "E"
+
+[node name="ActionContainer" type="MarginContainer" parent="MainContainer/Input Overview/RightContainer/Interact" unique_id=510046660]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="Action" type="Label" parent="MainContainer/Input Overview/RightContainer/Interact/ActionContainer" unique_id=701699372]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_ml21r")
+theme_override_font_sizes/font_size = 45
+text = "Interact"
+
+[node name="Back To Menu" parent="MainContainer" unique_id=833004707 instance=ExtResource("5_hk20q")]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.63
+text = "Back to Menu"
+
+[node name="Label" parent="MainContainer/Back To Menu/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(833004707, 1921324632) index="0" unique_id=871164474]
+theme_override_font_sizes/font_size = 48
+text = "Back to Menu"
+
+[connection signal="pressed" from="MainContainer/Back To Menu/Click Logic" to="." method="_on_back_to_menu_pressed"]
+
+[editable path="MainContainer/Back To Menu"]

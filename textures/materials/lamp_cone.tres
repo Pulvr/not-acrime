@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d4mxewn0r3e7i"]
+
+[ext_resource type="Texture2D" uid="uid://brh554mcdpp" path="res://models/desk_lamp_cast_iron_pixelated.png" id="1_34ucg"]
+
+[resource]
+resource_name = "lamp_cone"
+albedo_texture = ExtResource("1_34ucg")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.5

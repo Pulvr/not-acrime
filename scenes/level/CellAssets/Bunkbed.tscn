@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwld0gtkqgqpq" path="res://resources/scripts/pillow_minigame_starter.gd" id="1_2rpgx"]
 [ext_resource type="PackedScene" uid="uid://cki43yveeero7" path="res://models/bunkbed.glb" id="1_8ynpf"]
-[ext_resource type="PackedScene" uid="uid://0evgg2htgeij" path="res://models/bunkbed_ripped.glb" id="2_yylsn"]
+[ext_resource type="PackedScene" uid="uid://csyvx1dcfpo3b" path="res://models/bunkbed_ripped.glb" id="2_yylsn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yylsn"]
 size = Vector3(0.19873047, 1.2607574, 1.0949707)

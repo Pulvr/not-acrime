@@ -4,6 +4,7 @@ extends CharacterBody3D
 
 @export var can_move = true
 @export var debug_mode = false
+@export var intro_target: Node3D
 
 @export var footstep_sounds: Array[AudioStream] = []
 
@@ -111,9 +112,11 @@ func _physics_process(delta):
 				interact_hint.visible = true
 
 func auto_start_intro_dialog():
-	if GlobalSettings.last_scene == "Settings Menu":
-		return
-	var cellmate = get_tree().get_first_node_in_group("talk_to")
+	var cellmate = intro_target
+	
+	if debug_mode:
+		print("Cellmate is: ", cellmate)
+	
 	if cellmate != null:
 		look_at_target_with_offset(cellmate, 0.2)
 		if Dialogic.current_timeline == null:

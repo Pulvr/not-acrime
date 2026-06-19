@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d20x02da721me"]
+
+[ext_resource type="Texture2D" uid="uid://bwvigyh27rpah" path="res://models/rusty_key_rust_pixelated.png" id="1_s11fx"]
+
+[resource]
+resource_name = "Material"
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_s11fx")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.5

@@ -25,7 +25,7 @@ size = Vector3(0.2, 4, 10)
 size = Vector3(0.2, 4.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_216ls"]
-size = Vector3(0.3, 4, 10)
+size = Vector3(0.27841797, 4, 10)
 
 [node name="Own_Cell" type="Node3D" unique_id=1328943470]
 
@@ -74,6 +74,7 @@ material_override = ExtResource("2_b6hc8")
 mesh = SubResource("BoxMesh_30imb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Left_Righ_Walls/Wall_Left" unique_id=15222998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010791063, 0, 0)
 shape = SubResource("BoxShape3D_216ls")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1219606833]

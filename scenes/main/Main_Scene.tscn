@@ -38,9 +38,10 @@ fog_density = 0.0512
 transform = Transform3D(1, 0, 0, 0, -0.7372774, 0.67559016, 0, -0.67559016, -0.7372774, 14.795, 18.22, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=1995347876 instance=ExtResource("3_iip3i")]
+[node name="Player" parent="." unique_id=1995347876 node_paths=PackedStringArray("intro_target") groups=["player"] instance=ExtResource("3_iip3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040748417, 1.6036769, 2.2569623)
 debug_mode = true
+intro_target = NodePath("../LevelAssets/CellWithAssets/cellmate/CollisionShape3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
 environment = SubResource("Environment_rcsjo")
@@ -76,6 +77,23 @@ light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.1
 shadow_enabled = true
 shadow_blur = 10.0
+
+[node name="desk_lamp_light" type="SpotLight3D" parent="Lighting/cell_own" unique_id=1642060430]
+transform = Transform3D(0.9073671, 0.35451043, -0.22584802, 0, 0.5372996, 0.8433915, 0.4203391, -0.7652657, 0.48752794, 2.0499015, -1.6569703, 2.1203687)
+light_color = Color(0.99215686, 0.95686275, 0.8627451, 1)
+light_energy = 2.5
+shadow_enabled = true
+shadow_blur = 10.0
+spot_range = 1.4215473
+spot_angle = 36.201534
+
+[node name="newspaper_light" type="SpotLight3D" parent="Lighting/cell_own" unique_id=960906663]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.3538136, -0.9009664, 1.3325219)
+light_energy = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+spot_range = 3.0
+spot_angle = 62.457508
 
 [node name="cell_left" type="Node3D" parent="Lighting" unique_id=1120844081]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.992, 4, -12.51)
