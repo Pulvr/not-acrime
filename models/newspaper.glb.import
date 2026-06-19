@@ -41,17 +41,17 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://textures/materials/Material.tres",
+"use_external/fallback_path": "res://textures/materials/duct_tape.tres",
 "use_external/path": "uid://dw77ueuxmvkcl"
 },
 "Material.001": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://textures/materials/Material.001.tres",
+"use_external/fallback_path": "res://textures/materials/newspaper_paper.tres",
 "use_external/path": "uid://bxj4go6uanqkl"
 },
 "full-resolution-pixelated(4)": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://textures/materials/full-resolution-pixelated(4).tres",
+"use_external/fallback_path": "res://textures/materials/newspaper_text.tres",
 "use_external/path": "uid://bmgfrquq7e54o"
 }
 }

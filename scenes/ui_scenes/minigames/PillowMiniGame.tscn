@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmfdg8cgjfyqf"]
 
 [ext_resource type="Script" uid="uid://dn300hnk6kt22" path="res://scenes/ui_scenes/minigames/pillow_mini_game.gd" id="1_22xrx"]
-[ext_resource type="Texture2D" uid="uid://drtk5mxvuocsv" path="res://resources/ui_elements/cut64.png" id="2_m0b87"]
+[ext_resource type="Texture2D" uid="uid://v676nsj120as" path="res://resources/ui_elements/sharp_metal64.png" id="2_m0b87"]
 [ext_resource type="PackedScene" uid="uid://de5ujvqn3t45e" path="res://scenes/ui_scenes/minigames/success_sound_player.tscn" id="3_d4e38"]
 [ext_resource type="AudioStream" uid="uid://cyusidnsnwfmf" path="res://sounds/sfx/nac-sfx-lvl1-small-toilet-splash.ogg" id="4_8rt70"]
 [ext_resource type="ArrayMesh" uid="uid://bk57lskeefo2j" path="res://models/bunkbed_pillow.res" id="5_eerwy"]
@@ -15,7 +15,7 @@ _data = {
 }
 point_count = 10
 
-[node name="Control" type="Control" unique_id=1722263246]
+[node name="PillowMiniGame" type="Control" unique_id=1722263246]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var SPEED = 5
 
 @export var can_move = true
+@export var minigame_started = false
 @export var debug_mode = false
 @export var intro_target: Node3D
 
@@ -63,9 +64,9 @@ func _on_timeline_ended():
 	#if Dialogic.VAR.talked_to_cellmate_with_sharp:
 	#	return_to_main_menu()
 	#	return
-	
-	can_move = true
-	hint_checker = true
+	if !minigame_started:
+		can_move = true
+		hint_checker = true
 
 func return_to_main_menu():
 	get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
@@ -269,11 +270,13 @@ func update_inventory_ui():
 		slot_instance.display_item(inventory[i], is_active)
 
 func _on_minigame_started():
+	minigame_started = true
 	can_move = false
 	hint_checker = false
 	interact_hint.visible = false
 
 func _on_toilet_mini_game_ended():
+	minigame_started = false
 	can_move = true
 	hint_checker = true
 	Dialogic.VAR.set_variable("has_sharp", true)
@@ -281,11 +284,11 @@ func _on_toilet_mini_game_ended():
 )
 
 func _on_pillow_mini_game_ended():
+	minigame_started = false
 	can_move = true
 	hint_checker = true
 	Dialogic.VAR.set_variable("has_key", true)
 	item_added_with_dialog(load("res://resources/assets/itemsForPickup/rustyKey/rusty_key.tres"))
-		
 
 func item_added_with_dialog(item:ItemData):
 	Dialogic.VAR.set_variable("item_strings.item_received", item.name) 
@@ -301,10 +304,3 @@ func remove_item(item_name):
 	pass
 	#for item in inventory:
 	#	if item.name == item_name:
-			
-# would be nicer, cannot figure out how to call this function on a signal with arguments atm
-func _on_minigame_ended(dialogic_var,item_resource):
-	can_move = true
-	hint_checker = true
-	Dialogic.VAR.set_variable(dialogic_var,true)
-	item_added_with_dialog(load(item_resource))

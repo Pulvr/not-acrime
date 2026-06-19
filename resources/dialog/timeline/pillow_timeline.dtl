@@ -1,5 +1,5 @@
 [style]
-if {item_strings.item_received} == "Cell Key":
+if {has_key} == true:
 	Cellmate: Don't you dare use that!
 	Cellmate: This is [b]MY[/b] exit plan.
 	Cellmate: And I won't let you ruin it for me!
@@ -7,7 +7,7 @@ if {item_strings.item_received} == "Cell Key":
 elif {item_strings.item_in_hand} == "Sharp Metal Object":
 	Cellmate: Ey, that's my pillow!
 	Cellmate: Don't take your frustration out on [b]my[/b] pillow!
-	HANDS OFF!
+	Cellmate: HANDS OFF!
 	[signal arg="start_pillow_minigame"]
 	[end_timeline]
 elif :

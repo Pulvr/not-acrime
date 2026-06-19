@@ -79,7 +79,7 @@ size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="HandCamera" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=1210829881]
-transform = Transform3D(0.99965733, 0.02617695, 0, -0.0257469, 0.9832344, 0.18051915, 0.004725441, -0.1804573, 0.98357147, 0, -33.76, 2)
+transform = Transform3D(0.99965733, 0.026176948, 0, -0.0257469, 0.98323435, 0.18051915, 0.004725441, -0.18045728, 0.98357147, 0.065, -33.745, 2)
 
 [node name="SubView" type="Camera3D" parent="UILayer/ItemInHandContainer/ItemInHand/HandCamera" unique_id=298489868]
 cull_mask = 2
@@ -87,7 +87,7 @@ current = true
 fov = 33.6
 
 [node name="HandSlot" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=2108169266]
-transform = Transform3D(0.48959512, -0.019025795, -0.005886588, 0.008829322, 0.3371782, -0.35543343, 0.017851494, 0.35503367, 0.3372424, 0.62, -34.35, 0.622)
+transform = Transform3D(0.488589, 0.031261392, -0.020087432, -0.033417873, 0.25383395, -0.41779372, -0.016248861, 0.4179606, 0.25523502, 0.55, -34.2, 0.787)
 
 [node name="HandMesh" type="MeshInstance3D" parent="UILayer/ItemInHandContainer/ItemInHand/HandSlot" unique_id=1875169817]
 transform = Transform3D(-1, -5.3702514e-08, -6.898392e-08, 0, 0.7890841, -0.6142852, 8.742278e-08, -0.6142852, -0.7890841, 0, 0, 0)

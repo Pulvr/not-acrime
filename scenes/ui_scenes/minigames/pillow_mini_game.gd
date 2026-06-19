@@ -13,10 +13,10 @@ signal PillowMiniGameUiDeleted()
 @onready var instruct_label : Label = $Instructions
 @onready var reset_label_timer : Timer = $Instructions/Timer
 
-
 var is_tracking: bool = false
 var total_samples: int = 0
 var accumulated_score: float = 0.0
+var minigame_ended = false
 
 # Einstellungen für die Toleranz (in Pixeln)
 @export var max_allowed_distance: float = 30.0  # Maximale Abweichung vom Pfad
@@ -32,8 +32,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	var mouse_pos = get_local_mouse_position()
+	if minigame_ended == true:
+		queue_free()
 	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if not is_tracking:
 			var start_point = path_2d.curve.sample_baked(0.0) # Prüfen, ob der Spieler am Startpunkt (Offset 0.0) anfängt
 			if mouse_pos.distance_to(start_point) <= start_tolerance:
@@ -45,6 +47,7 @@ func _process(_delta: float) -> void:
 	else:
 		if is_tracking: # Wenn abgebrochen wurde, bevor das Ziel erreicht wurde
 			cancel_tracking()
+	
 
 func start_tracking() -> void:
 	is_tracking = true
@@ -102,8 +105,9 @@ func endMiniGame():
 	instruct_label.text = "congrats"
 	success_player.play()
 	await success_player.finished
+
 	PillowMiniGameUiDeleted.emit()
-	queue_free()
+	minigame_ended=true
 
 func _on_timer_timeout() -> void:
 	instruct_label.text = "Cut it open"
