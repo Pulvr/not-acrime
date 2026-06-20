@@ -1,6 +1,6 @@
 extends Control
 
-@onready var button = $"VSplitContainer/Menu Button/Click Logic"
+@onready var button = $"Click Logic"
 @onready var disgustBar = $"ProgressBarContainer/ProgressBar"
 @onready var mouse_icon = %MouseIcon
 @onready var splash_player = $SplashSoundPlayer

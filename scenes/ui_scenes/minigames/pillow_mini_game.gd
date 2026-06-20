@@ -4,7 +4,6 @@ signal PillowMiniGameUiDeleted()
 
 # sound during cutting
 # maybe particle effects
-# show lmb icon in UI
 # remove sharp object from inventory
 
 @onready var success_player = $SuccessSoundPlayer
@@ -12,6 +11,7 @@ signal PillowMiniGameUiDeleted()
 @onready var drawn_line:Line2D = $LineDisplayedDuringCut
 @onready var instruct_label : Label = $Instructions
 @onready var reset_label_timer : Timer = $Instructions/Timer
+@onready var particles : GPUParticles2D = $LineDisplayedDuringCut/CutParticles
 
 var is_tracking: bool = false
 var total_samples: int = 0
@@ -60,6 +60,8 @@ func start_tracking() -> void:
 
 func track_mouse_performance(mouse_pos: Vector2) -> void:
 	drawn_line.add_point(mouse_pos)
+	particles.visible=true
+	particles.position = mouse_pos
 
 	var closest_offset = path_2d.curve.get_closest_offset(mouse_pos)
 	var closest_point = path_2d.curve.sample_baked(closest_offset)
@@ -85,6 +87,7 @@ func complete_tracking() -> void:
 		instruct_label.text = "not accurate enough"
 		drawn_line.clear_points()
 		reset_label_timer.start()
+		particles.visible= false
 		Input.set_custom_mouse_cursor(null) #reset mouseicon
 
 func cancel_tracking() -> void:
@@ -92,6 +95,7 @@ func cancel_tracking() -> void:
 	instruct_label.text = "cut from start to finish"
 	drawn_line.clear_points()
 	reset_label_timer.start()
+	particles.visible= false
 	Input.set_custom_mouse_cursor(null) #reset mouseicon
 
 func get_final_percentage() -> float:
@@ -102,7 +106,8 @@ func get_final_percentage() -> float:
 func endMiniGame():
 	Input.set_custom_mouse_cursor(null) #reset mouseicon
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	instruct_label.text = "congrats"
+	particles.visible= false
+	instruct_label.text = "success"
 	success_player.play()
 	await success_player.finished
 

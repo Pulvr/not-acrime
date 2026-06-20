@@ -3,17 +3,34 @@
 [ext_resource type="Script" uid="uid://dn300hnk6kt22" path="res://scenes/ui_scenes/minigames/pillow_mini_game.gd" id="1_22xrx"]
 [ext_resource type="Texture2D" uid="uid://v676nsj120as" path="res://resources/ui_elements/sharp_metal64.png" id="2_m0b87"]
 [ext_resource type="PackedScene" uid="uid://de5ujvqn3t45e" path="res://scenes/ui_scenes/minigames/success_sound_player.tscn" id="3_d4e38"]
-[ext_resource type="AudioStream" uid="uid://cyusidnsnwfmf" path="res://sounds/sfx/nac-sfx-lvl1-small-toilet-splash.ogg" id="4_8rt70"]
 [ext_resource type="ArrayMesh" uid="uid://bk57lskeefo2j" path="res://models/bunkbed_pillow.res" id="5_eerwy"]
+[ext_resource type="AudioStream" uid="uid://cffx4h865fcps" path="res://sounds/sfx/nac-sfx-lvl1-cutting-pillow_low_sample.mp3" id="5_xfy8v"]
 [ext_resource type="LabelSettings" uid="uid://bl0bmjrcym03y" path="res://resources/fonts/Special_Elite/default_label_settings.tres" id="6_f1agy"]
 [ext_resource type="Texture2D" uid="uid://b7qe6tdk5p5do" path="res://resources/ui_elements/ui_background_white.png" id="6_m0b87"]
 [ext_resource type="Texture2D" uid="uid://dviqa6v5os5ck" path="res://resources/ui_elements/ui_frame_white.png" id="7_ndea8"]
+[ext_resource type="Texture2D" uid="uid://c1bylsvqux77j" path="res://resources/ui_elements/UI_background.png" id="9_xfy8v"]
+[ext_resource type="Texture2D" uid="uid://wgpofgwb1m8g" path="res://resources/ui_elements/UI_frame.png" id="10_hdnt2"]
+[ext_resource type="Texture2D" uid="uid://dngxbtxecnpv5" path="res://resources/ui_elements/left-click.svg" id="11_127o8"]
 
 [sub_resource type="Curve2D" id="Curve2D_dx5a2"]
 _data = {
 "points": PackedVector2Array(-0.49499512, 0.22743511, 0.49499512, -0.22743511, 268, 176, -2.7320535, 4.7810936, 2.7320535, -4.7810936, 389, 334, -4.7810936, 2.7320535, 4.7810936, -2.7320535, 390, 188, 0, 0, 0, 0, 474, 264, -6.830134, -0.6830134, 6.830134, 0.6830134, 550, 199, 0, 0, 0, 0, 580, 268, 0, 0, 0, 0, 515, 332, 0, 0, 0, 0, 646, 451, 0, 0, 0, 0, 711, 182, 0, 0, 0, 0, 850, 357)
 }
 point_count = 10
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xfy8v"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+angular_velocity_min = -321.88
+angular_velocity_max = 420.70996
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 407.83997
+gravity = Vector3(0, 98, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 55.689995
+scale_min = 0.0
+scale_max = 10.0
+color = Color(1, 1, 1, 0.59607846)
 
 [node name="PillowMiniGame" type="Control" unique_id=1722263246]
 layout_mode = 3
@@ -66,12 +83,22 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
+[node name="StartArrow" type="Line2D" parent="CuttingLine/Line2D" unique_id=56860302]
+position = Vector2(-44.000004, 0)
+scale = Vector2(0.5, 0.5)
+points = PackedVector2Array(-35, 3, 36, 3, 3, -25, 36, 3, 3, 26)
+width = 8.0
+default_color = Color(0.2901961, 1, 0.33333334, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
 [node name="FollowCuttingLine" type="PathFollow2D" parent="CuttingLine" unique_id=1093176709]
 position = Vector2(268, 176)
 rotation = -0.43069598
 
 [node name="SuccessSoundPlayer" parent="." unique_id=1829076226 instance=ExtResource("3_d4e38")]
-stream = ExtResource("4_8rt70")
+stream = ExtResource("5_xfy8v")
 
 [node name="Background2" type="NinePatchRect" parent="." unique_id=696306973]
 self_modulate = Color(0.4392157, 0.4392157, 0.4392157, 1)
@@ -132,5 +159,53 @@ wait_time = 3.0
 one_shot = true
 
 [node name="LineDisplayedDuringCut" type="Line2D" parent="." unique_id=867339373]
+
+[node name="CutParticles" type="GPUParticles2D" parent="LineDisplayedDuringCut" unique_id=1732976793]
+visible = false
+position = Vector2(270, 177)
+lifetime = 0.32
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_xfy8v")
+
+[node name="MouseIconContainer" type="MarginContainer" parent="." unique_id=646826100]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -306.0
+offset_top = -129.0
+offset_right = -226.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Background" type="NinePatchRect" parent="MouseIconContainer" unique_id=1058350642]
+layout_mode = 2
+texture = ExtResource("9_xfy8v")
+
+[node name="Border" type="NinePatchRect" parent="MouseIconContainer" unique_id=18471997]
+layout_mode = 2
+texture = ExtResource("10_hdnt2")
+
+[node name="CenterContainer" type="CenterContainer" parent="MouseIconContainer" unique_id=803827440]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MouseIconContainer/CenterContainer" unique_id=1772356982]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MouseIcon" type="TextureRect" parent="MouseIconContainer/CenterContainer/MarginContainer" unique_id=545729544]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("11_127o8")
+expand_mode = 1
 
 [connection signal="timeout" from="Instructions/Timer" to="." method="_on_timer_timeout"]
