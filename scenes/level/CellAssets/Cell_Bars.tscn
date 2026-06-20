@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bftnbrifauhij"]
 
-[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="1_47nio"]
+[ext_resource type="Script" uid="uid://cv4idvbw6flim" path="res://resources/scripts/lock_minigame_starter.gd" id="1_47nio"]
 [ext_resource type="PackedScene" uid="uid://cfwklur56h5xj" path="res://models/cell_bars.glb" id="1_jpeyx"]
 [ext_resource type="PackedScene" uid="uid://ccgmst8510vwd" path="res://models/cell_door.glb" id="2_66b0h"]
 [ext_resource type="Resource" uid="uid://flrfe4r6gpwm" path="res://resources/dialog/timeline/cell_lock_timeline.dtl" id="2_u3ofe"]
@@ -14,7 +14,6 @@ size = Vector3(6.022766, 4.015686, 0.12640381)
 [node name="CellBarsHome" type="StaticBody3D" unique_id=898825045 groups=["interactable"]]
 script = ExtResource("1_47nio")
 timeline = ExtResource("2_u3ofe")
-has_lock_minigame = true
 
 [node name="LockCollider" type="CollisionShape3D" parent="." unique_id=1550203559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7433406, 2.0480587, -0.018943071)

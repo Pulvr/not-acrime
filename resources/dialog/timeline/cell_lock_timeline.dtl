@@ -13,6 +13,6 @@ elif {item_strings.item_in_hand} == "Pill":
 	[end_timeline]
 elif {item_strings.item_in_hand} == "Sharp Metal Object":
 	It doesn't quite fit in there.
-elif {item_strings.item_in_hand} == "Cell Key":
+elif {item_strings.item_in_hand} == "Rusty Key":
 	It might actually fit...
 	[signal arg="start_cell_lock_minigame"]

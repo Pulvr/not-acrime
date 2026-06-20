@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bco01icoiyp4b"]
 
-[ext_resource type="Script" uid="uid://c4he8mx8dif2u" path="res://cell_lock_minigame.gd" id="1_ib5kj"]
+[ext_resource type="Script" uid="uid://c4he8mx8dif2u" path="res://scenes/ui_scenes/minigames/cell_lock_minigame.gd" id="1_ib5kj"]
 
 [node name="CellLockMinigame" type="Control" unique_id=893389686]
 process_mode = 3
