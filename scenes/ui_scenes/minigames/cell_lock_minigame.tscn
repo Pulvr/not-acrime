@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bco01icoiyp4b"]
 
 [ext_resource type="Script" uid="uid://c4he8mx8dif2u" path="res://scenes/ui_scenes/minigames/cell_lock_minigame.gd" id="1_ib5kj"]
+[ext_resource type="AudioStream" uid="uid://bp2aprmcrj4jq" path="res://sounds/sfx/nac-sfx-lvl1-ring-break.ogg" id="2_lru02"]
+[ext_resource type="AudioStream" uid="uid://8g77oskrvk1o" path="res://sounds/sfx/nac-sfx-lvl1-lock-opened.ogg" id="3_omhbu"]
+[ext_resource type="AudioStream" uid="uid://cqu8666nbq6bv" path="res://sounds/sfx/failed.ogg" id="4_lru02"]
 
 [node name="CellLockMinigame" type="Control" unique_id=893389686]
 process_mode = 3
@@ -13,3 +16,13 @@ grow_vertical = 2
 script = ExtResource("1_ib5kj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=478902513]
+
+[node name="RingBrokenSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1125377201]
+stream = ExtResource("2_lru02")
+
+[node name="LockOpenedSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1951002941]
+stream = ExtResource("3_omhbu")
+
+[node name="FailSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2027024553]
+stream = ExtResource("4_lru02")
+volume_db = -6.887

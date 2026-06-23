@@ -1,5 +1,6 @@
 if {item_strings.item_in_hand} == "":
 	It's a lock. And it's locked.
+	[wait time="0.3"]
 	[signal arg="start_cell_lock_minigame"]
 	[end_timeline]
 elif {item_strings.item_in_hand} == "Pill":
@@ -13,6 +14,8 @@ elif {item_strings.item_in_hand} == "Pill":
 	[end_timeline]
 elif {item_strings.item_in_hand} == "Sharp Metal Object":
 	It doesn't quite fit in there.
+	[end_timeline]
 elif {item_strings.item_in_hand} == "Rusty Key":
 	It might actually fit...
 	[signal arg="start_cell_lock_minigame"]
+	[end_timeline]
