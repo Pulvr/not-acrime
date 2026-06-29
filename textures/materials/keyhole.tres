@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://d17gu1jo6f3c5"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://df42sjagtbulx"]
 
 [ext_resource type="Texture2D" uid="uid://cim7obgvcl3i" path="res://models/cell_door_full-resolution-pixelated(3).png" id="1_n48wd"]
 
@@ -8,5 +8,4 @@ transparency = 4
 cull_mode = 2
 albedo_texture = ExtResource("1_n48wd")
 albedo_texture_force_srgb = true
-roughness = 0.5
 texture_repeat = false

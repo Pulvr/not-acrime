@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ccgmst8510vwd"
-path="res://.godot/imported/cell_door.glb-de22d1d04ceb348c6d62baa19cf425a6.scn"
+uid="uid://dwcqigvt0433e"
+path="res://.godot/imported/cell_door.glb-11fb9410e3d74f77b8a226a45f50e4ff.scn"
 
 [deps]
 
-source_file="res://models/cell_door.glb"
-dest_files=["res://.godot/imported/cell_door.glb-de22d1d04ceb348c6d62baa19cf425a6.scn"]
+source_file="res://textures/materials/cell_door.glb"
+dest_files=["res://.godot/imported/cell_door.glb-11fb9410e3d74f77b8a226a45f50e4ff.scn"]
 
 [params]
 
@@ -37,19 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"full-resolution-pixelated(3)": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://textures/materials/keyhole.tres",
-"use_external/path": "uid://df42sjagtbulx"
-},
-"rusty_bars": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://textures/materials/rusty_bars.tres",
-"use_external/path": "uid://dkwc845o4mj64"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

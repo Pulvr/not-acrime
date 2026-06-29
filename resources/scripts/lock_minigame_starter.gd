@@ -22,8 +22,10 @@ func start_minigame():
 	get_tree().paused = true
 
 func _on_door_opened():
-	get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
-	#alternativ: get_tree().paused = false
+	var lock_collider = get_tree().get_first_node_in_group("lock_collider")
+	if lock_collider:
+		lock_collider.disabled = true
+	get_tree().paused = false
 
 func _on_door_still_closed():
 	Dialogic.start("door_lock_minigame_failed_timeline")
