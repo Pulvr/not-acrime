@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dhp5sbuug4hw2" path="res://sounds/sfx/nac-sfx-lvl1-background_hum.mp3" id="8_0ctos"]
 [ext_resource type="AudioStream" uid="uid://bwhxc5mhrq1k2" path="res://sounds/sfx/nac-sfx-lvl1-background_lamp.mp3" id="9_r52bg"]
 [ext_resource type="AudioStream" uid="uid://beex7ljrxsww2" path="res://sounds/sfx/nac-sfx-lvl1-background_water_dripping.mp3" id="10_557sa"]
+[ext_resource type="Script" uid="uid://crvi5b3qmby7j" path="res://scenes/main/canvas_layer.gd" id="10_r52bg"]
 [ext_resource type="PackedScene" uid="uid://d2gw4wfd1u8uh" path="res://scenes/ui_scenes/pause_menu.tscn" id="11_r52bg"]
 
 [node name="Main_Scene" type="Node" unique_id=1231392842]
@@ -129,7 +130,16 @@ volume_db = -7.619
 autoplay = true
 bus = &"Prison Reverb"
 
-[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=981054026]
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=981054026 groups=["canvas_layer"]]
+script = ExtResource("10_r52bg")
 
 [node name="PauseMenu" parent="PauseLayer" unique_id=551449788 instance=ExtResource("11_r52bg")]
 visible = false
+
+[node name="FadeRect" type="ColorRect" parent="PauseLayer" unique_id=1996899435]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
