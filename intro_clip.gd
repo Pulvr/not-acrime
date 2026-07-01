@@ -15,9 +15,11 @@ var idle_time = 1.0
 @export var text2 = "This could be one of their stories..."
 
 var current_tween: Tween
+var prompt_tween: Tween
 var current_step = 0 #0 = Text 1, 1 = Text 2, 2 = Fade Out
 var last_visible_chars = 0
 var is_typing = false
+var is_ending = false
 
 func _ready():
 	fade_overlay.modulate.a = 0.0
@@ -29,6 +31,10 @@ func start_text(text_context: String, playtime: float):
 	text_label.visible_ratio = 0.0
 	last_visible_chars = 0
 	is_typing = true
+	
+	if prompt_tween:
+		prompt_tween.kill()
+	
 	prompt_label.modulate.a = 0.0
 	
 	if current_tween:
@@ -41,9 +47,12 @@ func start_text(text_context: String, playtime: float):
 func on_text_finished():
 	is_typing = false
 	text_label.visible_ratio = 1.0
-	var prompt_tween = create_tween()
-	prompt_tween.tween_interval(idle_time)
-	prompt_tween.tween_property(prompt_label, "modulate:a", 1.0, 0.5)
+	if not is_ending:
+		if prompt_tween:
+			prompt_tween.kill()
+		prompt_tween = create_tween()
+		prompt_tween.tween_interval(idle_time)
+		prompt_tween.tween_property(prompt_label, "modulate:a", 1.0, 0.5)
 
 func _input(event):
 	var is_skip_button = event.is_action_pressed("ui_accept") or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)
@@ -58,9 +67,12 @@ func _input(event):
 			if current_step == 1:
 				start_text(text2, text2_playtime)
 			elif current_step == 2:
+				is_ending = true
 				start_fade_out()
 
 func start_fade_out():
+	if prompt_tween:
+		prompt_tween.kill()
 	prompt_label.modulate.a = 0.0
 	if current_tween:
 		current_tween.kill()
