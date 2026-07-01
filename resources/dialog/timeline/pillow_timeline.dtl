@@ -1,13 +1,12 @@
 [style]
 if {has_key} == true:
-	Cellmate: Don't you dare use that!
-	Cellmate: This is [b]MY[/b] exit plan.
-	Cellmate: And I won't let you ruin it for me!
+	Fortunately, your cellmates outbursts seem to be nothing more than empty threats.
 	[end_timeline]
+
 elif {item_strings.item_in_hand} == "Sharp Metal Object":
-	Cellmate: Ey, that's my pillow!
-	Cellmate: Don't take your frustration out on [b]my[/b] pillow!
-	Cellmate: HANDS OFF!
+	Cellmate: Hey, that's  [shake rate=15 level=5]my[/shake] pillow!
+	Cellmate: Don't take your frustration out on  [shake rate=15 level=5][lspeed=.3][b]MY[/b][lspeed][/shake] pillow! Or you're gonna get some!
+	Cellmate: [shake rate=30 level=7]HANDS OFF![/shake]
 	[signal arg="start_pillow_minigame"]
 	[end_timeline]
 elif :

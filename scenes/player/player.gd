@@ -53,7 +53,7 @@ func _ready():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 	await get_tree().process_frame
-	#auto_start_intro_dialog()
+	auto_start_intro_dialog()
 
 func _on_timeline_started():
 	can_move = false

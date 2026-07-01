@@ -1,8 +1,27 @@
 [style name="default_style"]
+if {item_strings.item_in_hand} == "Rusty Key":
+	It doesn't feel like throwing your only possible escape plan down the drain is the best option ...
+	[end_timeline]
+
 if {talked_to_cellmate_1} == false:
+	
+	if {toilet_talked_to_again} == true:
+		jump toilet_talked_to_again
+	elif {toilet_interacted_with} == true:
+		jump toilet_interacted_with
 	It's a rancid toilet, that looks like it hasn't been cleaned in months.
 	What did you expect?
+	set {toilet_interacted_with} = true
 	[end_timeline]
+
 if {has_sharp} == true:
 	You still feel wet leftover residue under your nails.
 	[end_timeline]
+
+label toilet_interacted_with
+You're still getting used to relieving yourself with someone else nearby
+set {toilet_talked_to_again} = true
+[end_timeline]
+label toilet_talked_to_again
+You don't need to go right now
+[end_timeline]

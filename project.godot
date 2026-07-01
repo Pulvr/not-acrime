@@ -35,7 +35,6 @@ directories/dtl_directory={
 "cellmate": "res://resources/dialog/timeline/cellmate.dtl",
 "door_lock_minigame_failed_timeline": "res://resources/dialog/timeline/door_lock_minigame_failed_timeline.dtl",
 "item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
-"pillow_minigame_timeline": "res://resources/dialog/timeline/pillow_minigame_timeline.dtl",
 "pillow_timeline": "res://resources/dialog/timeline/pillow_timeline.dtl",
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
 "toilet_minigame_timeline": "res://resources/dialog/timeline/toilet_minigame_timeline.dtl",
@@ -60,7 +59,9 @@ variables={
 "item_received": ""
 },
 "talked_to_cellmate_1": false,
-"talked_to_cellmate_with_sharp": false
+"talked_to_cellmate_with_sharp": false,
+"toilet_interacted_with": false,
+"toilet_talked_to_again": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.03
@@ -183,5 +184,3 @@ prev_item={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
