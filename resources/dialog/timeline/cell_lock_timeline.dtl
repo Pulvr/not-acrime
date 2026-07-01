@@ -7,6 +7,7 @@ elif {item_strings.item_in_hand} == "Sharp Metal Object":
 elif {item_strings.item_in_hand} == "Rusty Key":
 	It might actually fit...
 	[wait time="0.3"]
+	[signal arg="start_cell_lock_minigame"]
 	[end_timeline]
 elif {item_strings.item_in_hand} == "Pill":
 	Whoa, where did you get this from?
