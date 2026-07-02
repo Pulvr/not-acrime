@@ -130,16 +130,20 @@ volume_db = -7.619
 autoplay = true
 bus = &"Prison Reverb"
 
-[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=981054026 groups=["canvas_layer"]]
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=839411126 groups=["canvas_layer"]]
 script = ExtResource("10_r52bg")
 
-[node name="PauseMenu" parent="PauseLayer" unique_id=551449788 instance=ExtResource("11_r52bg")]
-visible = false
-
-[node name="FadeRect" type="ColorRect" parent="PauseLayer" unique_id=1996899435]
+[node name="FadeRect" type="ColorRect" parent="FadeLayer" unique_id=1996899435]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=981054026 groups=["canvas_layer"]]
+layer = 2
+
+[node name="PauseMenu" parent="PauseLayer" unique_id=551449788 instance=ExtResource("11_r52bg")]
+visible = false
