@@ -7,14 +7,16 @@ var triggered: bool = false
 var movement_tween: Tween
 
 @onready var fadeRect = get_tree().get_first_node_in_group("canvas_layer")
+@onready var gun_shot_sound = $GunShotAudioPlayer
+
 func _on_body_entered(body: Node3D) -> void:
 	if triggered or not body.is_in_group("player"):
 		return
 	triggered = true
-	print("Player entered the trigger!")
-	#Play sound
+	
 	_stop_player_smoothly(stop_player_duration)
 	await fadeRect.fade_to_black(fade_to_black_duration)
+	await gun_shot_sound.play()
 	get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
 
 func _stop_player_smoothly(duration: float) -> void:
