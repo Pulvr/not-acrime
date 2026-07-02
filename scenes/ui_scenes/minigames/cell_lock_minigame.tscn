@@ -14,7 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ib5kj")
-ring_gap_sizes = Array[float]([360.0, 360.0, 360.0, 360.0, 360.0, 360.0, 360.0])
+base_start_speed = 30.0
+ring_gap_sizes = Array[float]([30.0])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=478902513]
 

@@ -76,6 +76,7 @@ stretch_shrink = 3
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(384, 216)
+render_target_update_mode = 4
 
 [node name="HandCamera" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=1210829881]
 transform = Transform3D(0.99965733, 0.026176948, 0, -0.0257469, 0.98323435, 0.18051915, 0.004725441, -0.18045728, 0.98357147, 0.065, -33.745, 2)

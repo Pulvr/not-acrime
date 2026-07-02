@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dhhyqavgh3v2m" path="res://scenes/ui_scenes/main_menu.gd" id="1_jg0sh"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_sey8n"]
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="2_tgkk4"]
-[ext_resource type="Script" uid="uid://crvi5b3qmby7j" path="res://scenes/main/canvas_layer.gd" id="4_xqcya"]
 
 [node name="Main Menu" type="Control" unique_id=1012169217]
 layout_mode = 3
@@ -96,18 +95,6 @@ text = "Quit"
 
 [node name="Label" parent="MainContainer/ButtonContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
 text = "Quit"
-
-[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=2099993236 groups=["canvas_layer"]]
-script = ExtResource("4_xqcya")
-
-[node name="FadeRect" type="ColorRect" parent="FadeLayer" unique_id=1311547045]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="MainContainer/ButtonContainer/Start/Click Logic" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainContainer/ButtonContainer/Controls/Click Logic" to="." method="_on_controls_pressed"]

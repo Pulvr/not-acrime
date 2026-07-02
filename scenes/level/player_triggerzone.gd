@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var stop_player_duration = 2
+@export var stop_player_duration = 1
 @export var fade_to_black_duration = 1.5
 
 var triggered: bool = false
@@ -12,7 +12,6 @@ func _on_body_entered(body: Node3D) -> void:
 		return
 	triggered = true
 	print("Player entered the trigger!")
-	#Fadeout here
 	#Play sound
 	_stop_player_smoothly(stop_player_duration)
 	await fadeRect.fade_to_black(fade_to_black_duration)
