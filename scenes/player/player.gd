@@ -300,7 +300,7 @@ func item_added_with_dialog(item:ItemData):
 
 
 #---- UNUSED -----
-func remove_item(item_name):
+func remove_item(_item_name):
 	pass
 	#for item in inventory:
 	#	if item.name == item_name:

@@ -33,6 +33,8 @@ signal minigame_failed
 ##Sound played when hitting the impenetrable zone of a ring (+ reset).
 @onready var fail_sound = $FailSoundPlayer
 
+@onready var player = get_tree().get_first_node_in_group("player")
+
 @export_group("Other")
 ##Modifies the duration of the tutorial hint.
 @export var hint_animation_duration := 3.0
@@ -43,6 +45,11 @@ var hint_anim_timer := 0.0
 
 var rings: Array[Dictionary] = []
 var current_ring_index := 0
+
+
+var is_animation_running: bool = false
+var is_won: bool = false
+var door_tween: Tween
 
 func _ready() -> void:
 	center_pos = get_viewport_rect().size / 2.0
@@ -88,7 +95,8 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	draw_keyhole()
+	if not is_won:
+		draw_keyhole()
 	
 	for i in range(current_ring_index, rings.size()):
 		var ring = rings[i]
@@ -211,8 +219,12 @@ func success_hit() -> void:
 	
 	if current_ring_index >= rings.size():
 		#print("SCHLOSS GEÖFFNET!")
+		is_won = true
 		if lock_opened_sound:
+			player.can_move = false
 			lock_opened_sound.play()
+			await get_tree().create_timer(1.85).timeout
+			_animate_door(deg_to_rad(-50), 3.4 - 1.85)
 			await lock_opened_sound.finished
 		minigame_won.emit()
 		queue_free()
@@ -228,3 +240,23 @@ func fail_game() -> void:
 	# (Optional: Dem Spieler mitteilen, dass er verloren hat, oder das Fenster schließen)
 	# minigame_failed.emit()
 	# queue_free()
+
+func _animate_door(target_rot_y: float, duration: float):
+	is_animation_running = true
+	player.hint_checker = !player.hint_checker
+	player.interact_hint.visible = !player.interact_hint.visible
+	if door_tween:
+		door_tween.kill()
+
+	var cell_door = get_tree().get_first_node_in_group("door")
+	door_tween = create_tween()
+	door_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	door_tween.tween_property(cell_door, "rotation:y", target_rot_y, duration)
+	door_tween.finished.connect(_on_tween_completed.bind(), CONNECT_ONE_SHOT)
+	
+func _on_tween_completed():
+	var cell_door = get_tree().get_first_node_in_group("door")
+	cell_door.get_parent().get_node("CollisionShape3D").rotation.y -= cell_door.rotation.y
+	cell_door.get_parent().get_node("CollisionShape3D").position = Vector3(-2.05, 2, -0.8)
+	is_animation_running = false
+	player.can_move = true

@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y8sux")
+text5 = "Stand together in solidarity."
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=564310252]
 layout_mode = 1
@@ -49,3 +50,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="PromptLabel" type="RichTextLabel" parent="." unique_id=1926468296]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -621.0
+offset_top = -89.0
+offset_right = -59.5
+offset_bottom = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("2_6j3py")
+theme_override_font_sizes/normal_font_size = 16
+text = "Press LMB or space to continue."
+fit_content = true
+horizontal_alignment = 1

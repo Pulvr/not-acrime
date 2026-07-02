@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://w321un01bk1c" path="res://scenes/level/floor_and_ceiling.tscn" id="1_pe3qj"]
 [ext_resource type="PackedScene" uid="uid://bwgwlugypgrr8" path="res://scenes/level/walls.tscn" id="2_pg2d7"]
+[ext_resource type="Script" uid="uid://dqirysmxxldtu" path="res://scenes/level/player_triggerzone.gd" id="3_kguqh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibuok"]
+size = Vector3(19.44281, 3.7944946, 2.4040527)
 
 [node name="Hallway" type="Node3D" unique_id=91429455]
 
@@ -9,3 +13,14 @@
 
 [node name="Walls" parent="." unique_id=1495267124 instance=ExtResource("2_pg2d7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.070583, 0, -2.9430456)
+
+[node name="Player Triggerzone" type="Area3D" parent="." unique_id=1805389679]
+script = ExtResource("3_kguqh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player Triggerzone" unique_id=1178062200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054534912, 2.0845203, -0.5064697)
+shape = SubResource("BoxShape3D_ibuok")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=236647474]
+
+[connection signal="body_entered" from="Player Triggerzone" to="Player Triggerzone" method="_on_body_entered"]

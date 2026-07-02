@@ -12,7 +12,7 @@
 [node name="Other Cell" parent="." unique_id=1328943470 instance=ExtResource("1_gcnfg")]
 
 [node name="cell_door" parent="." unique_id=189420472 instance=ExtResource("4_h6bfm")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5031568, 0.100687265, 4.941773)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.4997578, 0.100687265, 4.910545)
 
 [node name="cell_bars" parent="." unique_id=1407827419 instance=ExtResource("5_2fvhx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.50168943, 0.101, 4.9418283)
