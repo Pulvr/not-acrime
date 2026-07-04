@@ -1,0 +1,5 @@
+Please delete the last build in the corresponding platform folder before exporting. You only need to upload a zip containing EVERY file the build gives you. If you do not provide players with every file, they can not start it.
+
+To export new web builds, you will need to rename the .html to index.html!
+
+This file does not explain how to export.
