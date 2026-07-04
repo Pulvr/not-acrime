@@ -17,6 +17,4 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func reset_game():
-	Dialogic.VAR.set_variable("has_sharp", false)
-	Dialogic.VAR.set_variable("talked_to_cellmate_1", false)
-	Dialogic.VAR.set_variable("talked_to_cellmate_with_sharp", false)
+	Dialogic.VAR.reset()

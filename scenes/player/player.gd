@@ -90,7 +90,7 @@ func _input(event):
 	elif event.is_action_pressed("prev_item"):
 		change_selected_item(-1)
 	
-	if event.is_action_pressed("ui_cancel") and Dialogic.current_timeline == null:
+	if event.is_action_pressed("ui_cancel") and Dialogic.current_timeline == null and !minigame_started:
 		toggle_pause()
 
 func _physics_process(delta):
