@@ -13,7 +13,7 @@ config_version=5
 config/name="notAcrime"
 run/main_scene="uid://dgftfyd3k8fyh"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://resources/Screenshot_20260704_092056.png"
 
 [audio]
 
