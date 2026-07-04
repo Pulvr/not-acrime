@@ -50,7 +50,7 @@ layout/default_style="res://resources/dialog/style/default_style.tres"
 variables={
 "checked_pillow": false,
 "dialog_played": false,
-"first_conversation": true,
+"end_reached": false,
 "has_key": false,
 "has_sharp": false,
 "item_strings": {
@@ -58,6 +58,7 @@ variables={
 "item_in_hand": "",
 "item_received": ""
 },
+"lock_solved": false,
 "talked_to_cellmate_1": false,
 "talked_to_cellmate_with_sharp": false,
 "toilet_interacted_with": false,

@@ -23,6 +23,7 @@ func start_minigame():
 
 func _on_door_opened():
 	var lock_collider = get_tree().get_first_node_in_group("lock_collider")
+	Dialogic.VAR.set_variable("lock_solved", true)
 	if lock_collider:
 		lock_collider.disabled = true
 	get_tree().paused = false

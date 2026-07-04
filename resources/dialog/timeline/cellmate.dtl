@@ -1,4 +1,8 @@
 [style name="default_style"]
+if {end_reached} == true:
+	jump end
+if {lock_solved} == true:
+	jump lock_solved
 if {has_key} == true:
 	Cellmate: Don't you [shake rate=15 level=5][b]DARE[/b][/shake] use that!
 	Cellmate: This is [shake rate=15 level=5][lspeed=.3][b] MY [/b][lspeed][/shake] escape plan.
@@ -23,3 +27,12 @@ elif {has_sharp} == true:
 elif {talked_to_cellmate_1} == true:
 	Cellmate: I saw something in the toilet [pause=1.0] — why don't you try fishing it out, [shake rate=15 level=5]hehe…[/shake]
 	[end_timeline]
+label lock_solved
+Cellmate: You know that once you're out there, nothing is gonna change.
+Cellmate: You would be better off, just accepting the facts!
+Cellmate: But you're not gonna listen ... just buzz off and find out the hard way...
+set {end_reached} = true
+[end_timeline]
+label end
+Cellmate: Just leave
+[end_timeline]
