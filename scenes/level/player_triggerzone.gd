@@ -16,7 +16,8 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	_stop_player_smoothly(stop_player_duration)
 	await fadeRect.fade_to_black(fade_to_black_duration)
-	await gun_shot_sound.play()
+	gun_shot_sound.play()
+	await gun_shot_sound.finished
 	get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
 
 func _stop_player_smoothly(duration: float) -> void:
