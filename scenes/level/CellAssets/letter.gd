@@ -30,15 +30,14 @@ func interact():
 		target_pos += Vector3(0.15, 1, 0)
 		target_rot *= Quaternion(Vector3.FORWARD, deg_to_rad(162))
 
-		player.can_move = false
+		player.set_state(Player.State.IN_DIALOGUE)
 		_animate_head(target_pos, target_rot, move_duration, false)
 		
 	is_focused = !is_focused
 
 func _animate_head(target_pos: Vector3, target_rot: Quaternion, duration: float, is_returning: bool):
 	is_animation_running = true
-	player.hint_checker = !player.hint_checker
-	player.interact_hint.visible = !player.interact_hint.visible
+	player.set_state(Player.State.IN_DIALOGUE)
 	if animation_tween:
 		animation_tween.kill()
 		
@@ -53,7 +52,7 @@ func _animate_head(target_pos: Vector3, target_rot: Quaternion, duration: float,
 func _on_tween_completed(is_returning: bool):
 	is_animation_running = false
 	if is_returning:
-		player.can_move = true
+		player.set_state(Player.State.FREE)
 
 func _apply_rotation(rot: Quaternion) -> void:
 	var pos = player_head.global_position

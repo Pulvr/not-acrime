@@ -32,7 +32,7 @@ func interact():
 		var target_rot = Basis.looking_at(forward, Vector3.UP).get_rotation_quaternion()
 		target_pos += Vector3(0, 0.75, 0)
 
-		player.can_move = false
+		player.set_state(Player.State.IN_DIALOGUE)
 		_animate_head(target_pos, target_rot, move_duration, false)
 		_toggle_newspaper_light(1)
 		
@@ -40,8 +40,7 @@ func interact():
 
 func _animate_head(target_pos: Vector3, target_rot: Quaternion, duration: float, is_returning: bool):
 	is_animation_running = true
-	player.hint_checker = !player.hint_checker
-	player.interact_hint.visible = !player.interact_hint.visible
+	player.set_state(Player.State.IN_DIALOGUE)
 	if animation_tween:
 		animation_tween.kill()
 		
@@ -56,7 +55,7 @@ func _animate_head(target_pos: Vector3, target_rot: Quaternion, duration: float,
 func _on_tween_completed(is_returning: bool):
 	is_animation_running = false
 	if is_returning:
-		player.can_move = true
+		player.set_state(Player.State.FREE)
 	
 func _apply_rotation(rot: Quaternion) -> void:
 	var pos = player_head.global_position

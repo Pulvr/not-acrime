@@ -1,8 +1,11 @@
 extends Control
 
+@onready var player = get_tree().get_first_node_in_group("player")
+
 const CONTROLS_MENU_SCENE = preload("res://scenes/ui_scenes/controls_menu.tscn")
 
 func _on_continue_pressed():
+	player.set_state(Player.State.FREE)
 	get_tree().paused = false
 	hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
