@@ -10,12 +10,12 @@ var main_menu_path = "res://scenes/ui_scenes/main_menu.tscn"
 var fade_out_time = 2.5
 var idle_time = 1.0
 
-@export var text1 = "There are still countries imposing the death penalty upon homosexuality.."
+@export var text1 = "There are still countries imposing the death penalty for homosexuality."
 @export var text2 = "Did you read the newspaper headlines on the wall?"
 @export var text3 = "Those were all real."
-@export var text4 = "Criminilization of LGBTIQ is rising still."
+@export var text4 = "Criminalization of LGBTIQ people is still on the rise."
 @export var text5 = "Stand together."
-@export var text6 = "Personality Rights are Human Rights."
+@export var text6 = "LGBTIQ Rights are Human Rights."
 @export var text7 = "..."
 @export var text8 = "Thank you for playing!"
 @export var text9 = "This is the end of our playtest demo..."
