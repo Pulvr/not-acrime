@@ -5,7 +5,6 @@ extends CharacterBody3D
 @export var can_move = true
 @export var minigame_started = false
 @export var debug_mode = false
-@export var intro_target: Node3D
 
 @export var footstep_sounds: Array[AudioStream] = []
 
@@ -41,6 +40,8 @@ const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventoryS
 @onready var footstep_timer = $FootstepPlayer/FootstepTimer
 
 @onready var pause_menu = $"../PauseLayer/PauseMenu"
+
+@onready var intro_target: Node3D = $"../LevelAssets/CellWithAssets/cellmate"
 
 func _ready():
 	
