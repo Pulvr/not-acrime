@@ -45,14 +45,14 @@ transform = Transform3D(-5.2453668e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.2453668e-
 [node name="Cell_Stool" parent="." unique_id=1372591696 instance=ExtResource("8_3hyd8")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8255761, 0.1077587, 1.7045822)
 
-[node name="cellmate" type="StaticBody3D" parent="." unique_id=579419085 groups=["talk_to"]]
+[node name="Cellmate" type="StaticBody3D" parent="." unique_id=579419085 groups=["talk_to"]]
 transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.020296805, 1.204, 0.07, -1.817)
 script = ExtResource("9_nrknf")
 timeline = ExtResource("10_dy5ib")
 
-[node name="prisoner_cellmate" parent="cellmate" unique_id=1617834967 instance=ExtResource("11_nrknf")]
+[node name="prisoner_cellmate" parent="Cellmate" unique_id=1617834967 instance=ExtResource("11_nrknf")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cellmate" unique_id=1022954079]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cellmate" unique_id=1022954079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032293558, 0.7244541, 0.12283492)
 shape = SubResource("CapsuleShape3D_1d6nu")
 

@@ -41,12 +41,12 @@ const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventoryS
 
 @onready var pause_menu = $"../PauseLayer/PauseMenu"
 
-@onready var intro_target: Node3D = $"../LevelAssets/CellWithAssets/cellmate"
+@onready var intro_target: Node3D = $"../LevelAssets/CellWithAssets/Cellmate"
 
 func _ready():
-	
 	if GlobalSettings.last_scene == "Settings Menu":
 		toggle_pause()
+		load_player_state()
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Captures the mouse and hides it
 
@@ -54,7 +54,8 @@ func _ready():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 	await get_tree().process_frame
-	auto_start_intro_dialog()
+	if GlobalSettings.last_scene != "Settings Menu":
+		auto_start_intro_dialog()
 
 func _on_timeline_started():
 	can_move = false
@@ -92,6 +93,7 @@ func _input(event):
 		change_selected_item(-1)
 	
 	if event.is_action_pressed("ui_cancel") and Dialogic.current_timeline == null and !minigame_started:
+		save_player_state()
 		toggle_pause()
 
 func _physics_process(delta):
@@ -120,7 +122,7 @@ func auto_start_intro_dialog():
 		print("Cellmate is: ", cellmate)
 	
 	if cellmate != null:
-		look_at_target_with_offset(cellmate, 0.2)
+		look_at_target_with_offset(cellmate)
 		if Dialogic.current_timeline == null:
 			var timeline = "welcome_timeline"
 			if "timeline_name" in cellmate:
@@ -129,7 +131,7 @@ func auto_start_intro_dialog():
 				timeline = cellmate.timeline_default
 			Dialogic.start(timeline)
 
-func look_at_target_with_offset(target_node: Node, vertical_offset_from_top: float):
+func look_at_target_with_offset(target_node: Node):
 	var collision_shape = target_node.get_node_or_null("CollisionShape3D")
 	var target_height = 0.0
 	if collision_shape:
@@ -138,7 +140,7 @@ func look_at_target_with_offset(target_node: Node, vertical_offset_from_top: flo
 		print("Target height: ", target_height)
 	var base_pos = target_node.global_position
 	var adjusted_target_pos = base_pos
-	adjusted_target_pos.y += (target_height / 2.0) # - (target_height * vertical_offset_from_top)
+	adjusted_target_pos.y += (target_height / 2.0)
 	
 	var look_pos_player = Vector3(adjusted_target_pos.x, global_position.y, adjusted_target_pos.z)
 	if global_position.distance_to(look_pos_player) > 0.1:
@@ -298,7 +300,23 @@ func item_added_with_dialog(item:ItemData):
 	if Dialogic.current_timeline == null:
 		Dialogic.start("item_received_timeline")
 
+func save_player_state():
+	GlobalSettings.last_player_position = global_position
+	GlobalSettings.last_player_rotation = rotation
+	GlobalSettings.last_head_rotation = head.rotation
+	GlobalSettings.last_inventory = inventory.duplicate()
+	GlobalSettings.last_selected_index = selected_index
 
+func load_player_state():
+	global_position = GlobalSettings.last_player_position
+	rotation = GlobalSettings.last_player_rotation
+	head.rotation = GlobalSettings.last_head_rotation
+	inventory = GlobalSettings.last_inventory.duplicate()
+	selected_index = GlobalSettings.last_selected_index
+	if not inventory.is_empty():
+		update_hand_display()
+	else:
+		update_inventory_ui()
 
 #---- UNUSED -----
 func remove_item(_item_name):
