@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var SPEED = 5
+@export var SPEED = 3
 
 @export var can_move = true
 @export var minigame_started = false

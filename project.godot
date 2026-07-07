@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://b2vjjfufwycpo"
 
 GlobalSettings="*uid://bk3geu78arhnf"
 Dialogic="*uid://ds2q0uclmolvu"
+FadeLayer="*uid://co4aq7qikr2sw"
 
 [dialogic]
 

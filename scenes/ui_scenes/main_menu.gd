@@ -3,7 +3,7 @@ extends Control
 func _on_start_pressed() -> void:
 	reset_game()
 	GlobalSettings.last_scene = "Main Menu"
-	get_tree().change_scene_to_file("res://scenes/main/intro_clip.tscn")
+	FadeLayer.change_scene("res://scenes/main/intro_clip.tscn", 2, false)
 
 func _on_controls_pressed() -> void:
 	GlobalSettings.last_scene = "Main Menu"

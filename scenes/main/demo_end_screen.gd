@@ -13,9 +13,9 @@ var idle_time = 1.0
 @export var text1 = "There are still countries imposing the death penalty for homosexuality."
 @export var text2 = "Did you read the newspaper headlines on the wall?"
 @export var text3 = "Those were all real."
-@export var text4 = "Criminalization of LGBTIQ people is still on the rise."
+@export var text4 = "Criminalization of LGBTIQ* people is still on the rise."
 @export var text5 = "Stand together."
-@export var text6 = "LGBTIQ Rights are Human Rights."
+@export var text6 = "LGBTIQ* Rights are Human Rights."
 @export var text7 = "..."
 @export var text8 = "Thank you for playing!"
 @export var text9 = "This is the end of our playtest demo..."
@@ -100,4 +100,4 @@ func _process(_delta):
 
 func switch_to_main_menu():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().change_scene_to_file(main_menu_path)
+	FadeLayer.change_scene(main_menu_path)

@@ -11,7 +11,7 @@ var text2_playtime = 2.0
 var fade_out_time = 2.5
 var idle_time = 1.0
 
-@export var text1 = "In more than 60 countries, members of the LGBTQIA+ community are criminalized and punished with imprisonment or the death penalty."
+@export var text1 = "In more than 60 countries, members of the LGBTIQ* community are criminalized and punished with imprisonment or the death penalty."
 @export var text2 = "This could be one of their stories..."
 
 var current_tween: Tween
@@ -22,6 +22,7 @@ var is_typing = false
 var is_ending = false
 
 func _ready():
+	FadeLayer.snap_from_black()
 	fade_overlay.modulate.a = 0.0
 	prompt_label.modulate.a = 0.0
 	start_text(text1, text1_playtime)
@@ -91,4 +92,4 @@ func _process(_delta):
 				audio_player.play()
 
 func start_game():
-	get_tree().change_scene_to_file(main_scene_path)
+	FadeLayer.change_scene_after_intro("res://scenes/main/Main_Scene.tscn", 2.0)
