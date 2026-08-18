@@ -1,6 +1,7 @@
 # Godot Naming Conventions
 
 Summarized from Docs
+https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html
 
 ## Naming Conventions
 
