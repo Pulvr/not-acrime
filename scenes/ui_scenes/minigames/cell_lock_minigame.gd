@@ -221,7 +221,7 @@ func success_hit() -> void:
 		#print("SCHLOSS GEÖFFNET!")
 		is_won = true
 		if lock_opened_sound:
-			player.can_move = false
+			player.set_state(Player.State.IN_MINIGAME)
 			lock_opened_sound.play()
 			await get_tree().create_timer(1.85).timeout
 			_animate_door(deg_to_rad(-50), 3.4 - 1.85)
@@ -243,8 +243,6 @@ func fail_game() -> void:
 
 func _animate_door(target_rot_y: float, duration: float):
 	is_animation_running = true
-	player.hint_checker = !player.hint_checker
-	player.interact_hint.visible = !player.interact_hint.visible
 	if door_tween:
 		door_tween.kill()
 
@@ -259,4 +257,4 @@ func _on_tween_completed():
 	cell_door.get_parent().get_node("CollisionShape3D").rotation.y -= cell_door.rotation.y
 	cell_door.get_parent().get_node("CollisionShape3D").position = Vector3(-2.05, 2, -0.8)
 	is_animation_running = false
-	player.can_move = true
+	player.set_state(Player.State.FREE)

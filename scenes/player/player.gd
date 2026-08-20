@@ -1,22 +1,27 @@
+class_name Player
 extends CharacterBody3D
 
-@export var SPEED = 3
+#Possible different Walk Modes
+enum MovementModes {
+	WALK
+}
+enum State {
+	FREE, IN_DIALOGUE, IN_MINIGAME, PAUSED
+}
 
-@export var can_move = true
-@export var minigame_started = false
+const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventorySlot.tscn")
+
+@export var speed: float = 5.0
+
 @export var debug_mode = false
-
 @export var footstep_sounds: Array[AudioStream] = []
 
 var mouse_sensitivity = GlobalSettings.mouse_sensitivity
 var target_velocity = Vector3.ZERO
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-#Possible different Walk Modes
-enum PLAYER_MODES {
-	WALK
-}
-var current_mode := PLAYER_MODES.WALK
+var current_mode := MovementModes.WALK
+var current_state := State.FREE
 
 #Player Visibility Stuff, Moving Head around, showing Items and UI Hints
 @onready var head = $Head
@@ -25,15 +30,13 @@ var current_mode := PLAYER_MODES.WALK
 @onready var pick_up_hint = $UILayer/UIHints/PickupHint
 @onready var talk_hint = $UILayer/UIHints/TalkHint
 @onready var interact_hint = $UILayer/UIHints/InteractHint
-var hint_checker = true
 var min_camera_x = deg_to_rad(-90)
 var max_camera_x = deg_to_rad(90)
 
 #Inventory
 var selected_index: int = 0
-var inventory: Array[ItemData]=[]
-var item_in_hand: ItemData 
-const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventorySlot.tscn")
+var inventory: Array[ItemData] = []
+var item_in_hand: ItemData
 @onready var slot_container = $UILayer/InventoryBar/SlotContainer
 
 @onready var footstep_player = $FootstepPlayer
@@ -48,7 +51,7 @@ func _ready():
 		toggle_pause()
 		load_player_state()
 	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Captures the mouse and hides it
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
 
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -58,23 +61,17 @@ func _ready():
 		auto_start_intro_dialog()
 
 func _on_timeline_started():
-	can_move = false
-	hint_checker = false
+	current_state = State.IN_DIALOGUE
 
 func _on_timeline_ended():
-	# This code enables the demo end when the toilet game is finished and the following dialogue has been displayed:
-	#if Dialogic.VAR.talked_to_cellmate_with_sharp:
-	#	return_to_main_menu()
-	#	return
-	if !minigame_started:
-		can_move = true
-		hint_checker = true
+	if !current_state == State.IN_MINIGAME:
+		current_state = State.FREE
 
 func return_to_main_menu():
 	get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
 
 func _input(event):
-	if event is InputEventMouseMotion and can_move:
+	if event is InputEventMouseMotion and current_state == State.FREE:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		head.rotate_x(-event.relative.y * mouse_sensitivity)
 		head.rotation.x = clamp(head.rotation.x, min_camera_x, max_camera_x)
@@ -82,30 +79,33 @@ func _input(event):
 	if event.is_action_pressed("interact"):
 		check_interaction()
 
-	if event.is_action_pressed("show_inventory"):
+	if event.is_action_pressed("show_inventory") and debug_mode:
 		for item in inventory:
 			print(item)
-			print("Item :"+item.name+"\nDescription: "+item.description)
+			print("Item :" + item.name + "\nDescription: " + item.description)
 
 	if event.is_action_pressed("next_item"):
 		change_selected_item(1)
 	elif event.is_action_pressed("prev_item"):
 		change_selected_item(-1)
 	
-	if event.is_action_pressed("ui_cancel") and Dialogic.current_timeline == null and !minigame_started:
+	if event.is_action_pressed("ui_cancel") and Dialogic.current_timeline == null and !current_state == State.IN_MINIGAME:
 		save_player_state()
 		toggle_pause()
 
-func _physics_process(delta):
+	if event.is_action_pressed("ui_cancel") and current_state == State.FREE:
+		toggle_pause()
+
+func _physics_process(_delta):
 	match current_mode:
-		PLAYER_MODES.WALK:
-			walk_process(delta)
+		MovementModes.WALK:
+			walk_process(_delta)
 
 	pick_up_hint.visible = false
 	talk_hint.visible = false
 	interact_hint.visible = false
 
-	if interaction_ray.is_colliding() and hint_checker:
+	if interaction_ray.is_colliding() and current_state == State.FREE:
 		var collider = interaction_ray.get_collider()
 		if collider != null:
 			if collider.is_in_group("item_for_pickup"):
@@ -149,30 +149,29 @@ func look_at_target_with_offset(target_node: Node):
 	var angle_x = atan2(head_target.y, -head_target.z)
 	head.rotation.x = clamp(angle_x, min_camera_x, max_camera_x)
 
-func walk_process(delta):
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+func walk_process(_delta):
+	match current_state:
+		State.FREE:
+			var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+			var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+			if direction :
+				velocity.x = direction.x * speed 
+				velocity.z = direction.z * speed 
+			else:
+				velocity.x = move_toward(velocity.x, 0, speed)
+				velocity.z = move_toward(velocity.z, 0, speed)
 
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction and can_move:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+			move_and_slide()
 
-	move_and_slide()
+			var horizontal_velocity = Vector2(velocity.x, velocity.z)
 
-	var horizontal_velocity = Vector2(velocity.x, velocity.z)
-
-	if is_on_floor() and horizontal_velocity.length() > 0.1:
-		if footstep_timer.is_stopped():
-			play_footstep_sound()
-			footstep_timer.start()
-	else:
-		if not footstep_timer.is_stopped():
-			footstep_timer.stop()
+			if is_on_floor() and horizontal_velocity.length() > 0.1:
+				if footstep_timer.is_stopped():
+					play_footstep_sound()
+					footstep_timer.start()
+			else:
+				if not footstep_timer.is_stopped():
+					footstep_timer.stop()
 
 func check_interaction():
 	if interaction_ray.is_colliding():
@@ -181,10 +180,10 @@ func check_interaction():
 		if collider.is_in_group("item_for_pickup"):
 			pick_up_item(collider)
 		
-		if collider.has_method("startDialog"):
+		elif collider.has_method("startDialog"):
 			collider.startDialog()
 		
-		if collider and collider.has_method("interact"):
+		elif collider and collider.has_method("interact"):
 			if collider.has_signal("ToiletMiniGameStarted"):
 				if not collider.ToiletMiniGameStarted.is_connected(_on_minigame_started):
 					collider.ToiletMiniGameStarted.connect(_on_minigame_started)
@@ -213,7 +212,7 @@ func change_selected_item(direction: int):
 
 	update_hand_display()
 
-func add_item_to_inventory(item_data:ItemData):
+func add_item_to_inventory(item_data: ItemData):
 	inventory.append(item_data)
 	item_in_hand = inventory[-1]
 	change_selected_item(1)
@@ -222,15 +221,15 @@ func add_item_to_inventory(item_data:ItemData):
 
 func update_hand_display():
 	item_in_hand = inventory[selected_index]
-	Dialogic.VAR.set_variable("item_strings.item_in_hand", item_in_hand.name) 
+	Dialogic.VAR.set_variable("item_strings.item_in_hand", item_in_hand.name)
 	if debug_mode:
 		print(Dialogic.VAR.get('item_strings').get('item_in_hand'))
 	
 	if item_in_hand and item_in_hand.item_mesh:
-		hand_mesh.mesh = item_in_hand.item_mesh #Just change the visual shape of the existing hand node
+		hand_mesh.mesh = item_in_hand.item_mesh # Just change the visual shape of the existing hand node
 		hand_mesh.visible = true
 	else:
-		hand_mesh.visible = false #Hide it if the slot is empty or has no mesh
+		hand_mesh.visible = false # Hide it if the slot is empty or has no mesh
 
 	update_inventory_ui()
 
@@ -249,6 +248,7 @@ func _on_footstep_timer_timeout() -> void:
 	play_footstep_sound()
 
 func toggle_pause():
+	current_state = State.PAUSED
 	var new_pause_state = !get_tree().paused
 	get_tree().paused = new_pause_state
 
@@ -273,28 +273,21 @@ func update_inventory_ui():
 		slot_instance.display_item(inventory[i], is_active)
 
 func _on_minigame_started():
-	minigame_started = true
-	can_move = false
-	hint_checker = false
-	interact_hint.visible = false
+	current_state = State.IN_MINIGAME
 
 func _on_toilet_mini_game_ended():
-	minigame_started = false
-	can_move = true
-	hint_checker = true
+	current_state = State.FREE
 	Dialogic.VAR.set_variable("has_sharp", true)
 	item_added_with_dialog(load("res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tres")
 )
 
 func _on_pillow_mini_game_ended():
-	minigame_started = false
-	can_move = true
-	hint_checker = true
+	current_state = State.FREE
 	Dialogic.VAR.set_variable("has_key", true)
 	item_added_with_dialog(load("res://resources/assets/itemsForPickup/rustyKey/rusty_key.tres"))
 
-func item_added_with_dialog(item:ItemData):
-	Dialogic.VAR.set_variable("item_strings.item_received", item.name) 
+func item_added_with_dialog(item: ItemData):
+	Dialogic.VAR.set_variable("item_strings.item_received", item.name)
 	Dialogic.VAR.set_variable("item_strings.item_description", item.description)
 	add_item_to_inventory(item)
 	if Dialogic.current_timeline == null:
@@ -317,6 +310,9 @@ func load_player_state():
 		update_hand_display()
 	else:
 		update_inventory_ui()
+
+func set_state(new_state: State) -> void:
+	current_state = new_state
 
 #---- UNUSED -----
 func remove_item(_item_name):
