@@ -19,7 +19,7 @@ var color_frame_hovered = Color("D3D3D3")
 
 @onready var background = $Background
 @onready var border = $Border
-@onready var click_logic = $"Click Logic"
+@onready var click_logic = $"ClickLogic"
 @onready var label = $CenterContainer/MarginContainer/Label
 @onready var hover_sound = $AudioStreamPlayer
 

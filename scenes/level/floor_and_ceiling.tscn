@@ -9,7 +9,7 @@ size = Vector3(30, 0.2, 4)
 [sub_resource type="BoxMesh" id="BoxMesh_ukw5w"]
 size = Vector3(30, 0.2, 4)
 
-[node name="Hallway_Floor_and_Ceiling" type="StaticBody3D" unique_id=2107571968]
+[node name="HallwayFloorAndCeiling" type="StaticBody3D" unique_id=2107571968]
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=1432540431]
 shape = SubResource("BoxShape3D_c41w6")
@@ -22,7 +22,7 @@ mesh = SubResource("BoxMesh_ukw5w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
 shape = SubResource("BoxShape3D_c41w6")
 
-[node name="Celing_Mesh2" type="MeshInstance3D" parent="." unique_id=1921772443]
+[node name="CelingMesh2" type="MeshInstance3D" parent="." unique_id=1921772443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
 material_override = ExtResource("2_mmwo4")
 mesh = SubResource("BoxMesh_ukw5w")

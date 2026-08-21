@@ -9,19 +9,23 @@ enum State {
 	FREE, IN_DIALOGUE, IN_MINIGAME, PAUSED
 }
 
-const INVENTORY_SLOT_SCENE = preload("res://scenes/player/InventoryUI/InventorySlot.tscn")
-
-@export var speed: float = 5.0
+const INVENTORY_SLOT_SCENE = preload("res://scenes/player/inventory_ui/inventory_slot.tscn")
 
 @export var debug_mode = false
+@export var speed: float = 5.0
 @export var footstep_sounds: Array[AudioStream] = []
 
 var mouse_sensitivity = GlobalSettings.mouse_sensitivity
-var target_velocity = Vector3.ZERO
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var min_camera_x = deg_to_rad(-90)
+var max_camera_x = deg_to_rad(90)
 
 var current_mode := MovementModes.WALK
 var current_state := State.FREE
+
+#Inventory
+var selected_index: int = 0
+var inventory: Array[ItemData] = []
+var item_in_hand: ItemData
 
 #Player Visibility Stuff, Moving Head around, showing Items and UI Hints
 @onready var head = $Head
@@ -30,13 +34,6 @@ var current_state := State.FREE
 @onready var pick_up_hint = $UILayer/UIHints/PickupHint
 @onready var talk_hint = $UILayer/UIHints/TalkHint
 @onready var interact_hint = $UILayer/UIHints/InteractHint
-var min_camera_x = deg_to_rad(-90)
-var max_camera_x = deg_to_rad(90)
-
-#Inventory
-var selected_index: int = 0
-var inventory: Array[ItemData] = []
-var item_in_hand: ItemData
 @onready var slot_container = $UILayer/InventoryBar/SlotContainer
 
 @onready var footstep_player = $FootstepPlayer
@@ -114,7 +111,6 @@ func _physics_process(_delta):
 				talk_hint.visible = true
 			elif collider.is_in_group("interactable"):
 				interact_hint.visible = true
-
 func auto_start_intro_dialog():
 	var cellmate = intro_target
 	
@@ -180,19 +176,19 @@ func check_interaction():
 		if collider.is_in_group("item_for_pickup"):
 			pick_up_item(collider)
 		
-		elif collider.has_method("startDialog"):
-			collider.startDialog()
+		elif collider.has_method("start_dialog"):
+			collider.start_dialog()
 		
 		elif collider and collider.has_method("interact"):
-			if collider.has_signal("ToiletMiniGameStarted"):
-				if not collider.ToiletMiniGameStarted.is_connected(_on_minigame_started):
-					collider.ToiletMiniGameStarted.connect(_on_minigame_started)
-					collider.ToiletMiniGameEnded.connect(_on_toilet_mini_game_ended)
+			if collider.has_signal("toilet_minigame_started"):
+				if not collider.toilet_minigame_started.is_connected(_on_minigame_started):
+					collider.toilet_minigame_started.connect(_on_minigame_started)
+					collider.toilet_minigame_ended.connect(_on_toilet_mini_game_ended)
 
-			if collider.has_signal("PillowMiniGameStarted"):
-				if not collider.PillowMiniGameStarted.is_connected(_on_minigame_started):
-					collider.PillowMiniGameStarted.connect(_on_minigame_started)
-					collider.PillowMiniGameEnded.connect(_on_pillow_mini_game_ended)
+			if collider.has_signal("pillow_minigame_started"):
+				if not collider.pillow_minigame_started.is_connected(_on_minigame_started):
+					collider.pillow_minigame_started.connect(_on_minigame_started)
+					collider.pillow_minigame_ended.connect(_on_pillow_mini_game_ended)
 			collider.interact()
 
 func pick_up_item(item_node):
@@ -244,8 +240,6 @@ func play_footstep_sound():
 	footstep_player.play()
 
 
-func _on_footstep_timer_timeout() -> void:
-	play_footstep_sound()
 
 func toggle_pause():
 	current_state = State.PAUSED
@@ -272,19 +266,6 @@ func update_inventory_ui():
 
 		slot_instance.display_item(inventory[i], is_active)
 
-func _on_minigame_started():
-	current_state = State.IN_MINIGAME
-
-func _on_toilet_mini_game_ended():
-	current_state = State.FREE
-	Dialogic.VAR.set_variable("has_sharp", true)
-	item_added_with_dialog(load("res://resources/assets/itemsForPickup/sharpMetalObject/metal_object.tres")
-)
-
-func _on_pillow_mini_game_ended():
-	current_state = State.FREE
-	Dialogic.VAR.set_variable("has_key", true)
-	item_added_with_dialog(load("res://resources/assets/itemsForPickup/rustyKey/rusty_key.tres"))
 
 func item_added_with_dialog(item: ItemData):
 	Dialogic.VAR.set_variable("item_strings.item_received", item.name)
@@ -314,7 +295,24 @@ func load_player_state():
 func set_state(new_state: State) -> void:
 	current_state = new_state
 
-#---- UNUSED -----
+func _on_minigame_started():
+	current_state = State.IN_MINIGAME
+
+func _on_toilet_mini_game_ended():
+	current_state = State.FREE
+	Dialogic.VAR.set_variable("has_sharp", true)
+	item_added_with_dialog(load("res://resources/assets/items_for_pickup/sharp_metal_object/metal_object.tres")
+)
+
+func _on_pillow_mini_game_ended():
+	current_state = State.FREE
+	Dialogic.VAR.set_variable("has_key", true)
+	item_added_with_dialog(load("res://resources/assets/items_for_pickup/rusty_key/rusty_key.tres"))
+
+func _on_footstep_timer_timeout() -> void:
+	play_footstep_sound()
+
+#---- Currently UNUSED -----
 func remove_item(_item_name):
 	pass
 	#for item in inventory:

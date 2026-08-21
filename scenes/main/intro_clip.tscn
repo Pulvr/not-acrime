@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="2_2kpq4"]
 [ext_resource type="AudioStream" uid="uid://dpylhnhxve8vv" path="res://sounds/sfx/nac-sfx-intro-typewriter.mp3" id="3_14lwq"]
 
-[node name="Intro Clip" type="Control" unique_id=1609180122]
+[node name="IntroClip" type="Control" unique_id=1609180122]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

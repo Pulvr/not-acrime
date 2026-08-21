@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://capyg2odmtkqg" path="res://pause_menu.gd" id="1_o8qos"]
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="2_ggsj7"]
 
-[node name="Pause Menu" type="Control" unique_id=551449788]
+[node name="PauseMenu" type="Control" unique_id=551449788]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o8qos")
 
-[node name="Background black" type="ColorRect" parent="." unique_id=1098483515]
+[node name="BackgroundBlack" type="ColorRect" parent="." unique_id=1098483515]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,13 +80,13 @@ text = "Quit"
 [node name="Label" parent="VBoxContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(1186671215, 1921324632) index="0" unique_id=871164474]
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/Continue/Click Logic" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="VBoxContainer/Controls/Click Logic" to="." method="_on_controls_pressed"]
-[connection signal="pressed" from="VBoxContainer/Controls/Click Logic" to="VBoxContainer/Controls" method="_on_click_logic_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings/Click Logic" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings/Click Logic" to="VBoxContainer/Settings" method="_on_click_logic_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenu/Click Logic" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Continue/ClickLogic" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls/ClickLogic" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls/ClickLogic" to="VBoxContainer/Controls" method="_on_click_logic_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings/ClickLogic" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings/ClickLogic" to="VBoxContainer/Settings" method="_on_click_logic_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu/ClickLogic" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit/ClickLogic" to="." method="_on_quit_pressed"]
 
 [editable path="VBoxContainer/Continue"]
 [editable path="VBoxContainer/Controls"]

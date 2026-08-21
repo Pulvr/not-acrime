@@ -1,17 +1,18 @@
 extends StaticBody3D
-"""
-Toilet Minigame starter, needed because the collider is checked for interact
-so we have to extend the staticbody3d which then loads the UI Scene
-Also helpful to load Dialogic stuff
-"""
-@onready var PIllowUi = preload("res://scenes/ui_scenes/minigames/PillowMiniGame.tscn")
-@onready var mainScene = get_tree().get_root().get_node("Main_Scene/Player/UILayer")
-@onready var pillow= $Bunkbed/bunkbed
-@onready var pillow_ripped = $Bunkbed/bunkbed_ripped
-var uiInstance = null
 
-signal PillowMiniGameStarted()
-signal PillowMiniGameEnded()
+## Toilet Minigame starter, needed because the collider is checked for interact
+## so we have to extend the staticbody3d which then loads the UI Scene
+## Also helpful to load Dialogic stuff
+
+var ui_instance = null
+
+@onready var PillowUi = preload("res://scenes/ui_scenes/minigames/pillow_minigame.tscn")
+@onready var main_scene = get_tree().get_root().get_node("MainScene/Player/UILayer")
+@onready var pillow= $Bunkbed/Bunkbed
+@onready var pillow_ripped = $Bunkbed/BunkbedRipped
+
+signal pillow_minigame_started()
+signal pillow_minigame_ended()
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -25,18 +26,18 @@ func interact():
 		Dialogic.start("pillow_timeline")
 
 func _on_start_pillow_minigame():
-	for child in mainScene.get_children(): #needed check in main tree, for whatever reason the scene is instatiated three times???
-			if child.name == "PillowMiniGame":
+	for child in main_scene.get_children(): #needed check in main tree, for whatever reason the scene is instatiated three times???
+			if child.name == "PillowMinigame":
 				return
 				
-	PillowMiniGameStarted.emit()
-	uiInstance = PIllowUi.instantiate()
-	mainScene.add_child(uiInstance)
+	pillow_minigame_started.emit()
+	ui_instance = PillowUi.instantiate()
+	main_scene.add_child(ui_instance)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	uiInstance.PillowMiniGameUiDeleted.connect(_on_pillow_minigame_ui_delete)
+	ui_instance.pillow_minigame_ui_deleted.connect(_on_pillow_minigame_ui_delete)
 
 func _on_pillow_minigame_ui_delete():
 	Dialogic.signal_event.disconnect(_on_dialogic_signal)
-	PillowMiniGameEnded.emit()
+	pillow_minigame_ended.emit()
 	pillow_ripped.visible=true
 	pillow.visible=false

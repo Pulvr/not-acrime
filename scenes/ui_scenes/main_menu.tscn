@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbsjklprvdqqu" path="res://scenes/ui_scenes/ui_funct_menu_button.tscn" id="1_sey8n"]
 [ext_resource type="FontFile" uid="uid://gdfuriee8x3o" path="res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf" id="2_tgkk4"]
 
-[node name="Main Menu" type="Control" unique_id=1012169217]
+[node name="MainMenu" type="Control" unique_id=1012169217]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jg0sh")
 
-[node name="Background black" type="ColorRect" parent="." unique_id=624612165]
+[node name="BackgroundBlack" type="ColorRect" parent="." unique_id=624612165]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,7 +36,7 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title Label" type="RichTextLabel" parent="MainContainer" unique_id=1265678900]
+[node name="TitleLabel" type="RichTextLabel" parent="MainContainer" unique_id=1265678900]
 clip_contents = false
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_tgkk4")
@@ -96,12 +96,12 @@ text = "Quit"
 [node name="Label" parent="MainContainer/ButtonContainer/Quit/CenterContainer/MarginContainer" parent_id_path=PackedInt32Array(637283414, 1921324632) index="0" unique_id=871164474]
 text = "Quit"
 
-[connection signal="pressed" from="MainContainer/ButtonContainer/Start/Click Logic" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MainContainer/ButtonContainer/Controls/Click Logic" to="." method="_on_controls_pressed"]
-[connection signal="pressed" from="MainContainer/ButtonContainer/Controls/Click Logic" to="MainContainer/ButtonContainer/Controls" method="_on_click_logic_pressed"]
-[connection signal="pressed" from="MainContainer/ButtonContainer/Settings/Click Logic" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MainContainer/ButtonContainer/Settings/Click Logic" to="MainContainer/ButtonContainer/Settings" method="_on_click_logic_pressed"]
-[connection signal="pressed" from="MainContainer/ButtonContainer/Quit/Click Logic" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Start/ClickLogic" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Controls/ClickLogic" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Controls/ClickLogic" to="MainContainer/ButtonContainer/Controls" method="_on_click_logic_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Settings/ClickLogic" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Settings/ClickLogic" to="MainContainer/ButtonContainer/Settings" method="_on_click_logic_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/Quit/ClickLogic" to="." method="_on_quit_pressed"]
 
 [editable path="MainContainer/ButtonContainer/Start"]
 [editable path="MainContainer/ButtonContainer/Controls"]

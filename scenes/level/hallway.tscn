@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ba25gny5t6uec"]
+
+[ext_resource type="PackedScene" uid="uid://w321un01bk1c" path="res://scenes/level/floor_and_ceiling.tscn" id="1_37da6"]
+[ext_resource type="PackedScene" uid="uid://bwgwlugypgrr8" path="res://scenes/level/walls.tscn" id="2_8gp4t"]
+[ext_resource type="Script" uid="uid://dqirysmxxldtu" path="res://scenes/level/player_triggerzone.gd" id="3_j8gnm"]
+[ext_resource type="AudioStream" uid="uid://c0mupmv3lxq75" path="res://sounds/sfx/nac-sfx-lvl1-gunshot-1.ogg" id="4_0uqe6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibuok"]
+size = Vector3(19.44281, 3.7944946, 2.4040527)
+
+[node name="Hallway" type="Node3D" unique_id=91429455]
+
+[node name="FloorAndCeiling" parent="." unique_id=2107571968 instance=ExtResource("1_37da6")]
+
+[node name="Walls" parent="." unique_id=1495267124 instance=ExtResource("2_8gp4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.070583, 0, -2.9430456)
+
+[node name="PlayerTriggerzone" type="Area3D" parent="." unique_id=1805389679]
+script = ExtResource("3_j8gnm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerTriggerzone" unique_id=1178062200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054534912, 2.0845203, -0.5064697)
+shape = SubResource("BoxShape3D_ibuok")
+
+[node name="GunShotAudioPlayer" type="AudioStreamPlayer3D" parent="PlayerTriggerzone" unique_id=236647474]
+stream = ExtResource("4_0uqe6")
+volume_db = -6.0
+bus = &"Prison Reverb"
+
+[connection signal="body_entered" from="PlayerTriggerzone" to="PlayerTriggerzone" method="_on_body_entered"]

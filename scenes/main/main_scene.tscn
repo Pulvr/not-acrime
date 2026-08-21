@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cgodu8m8qwk4j"]
+
+[ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="1_w4lj1"]
+[ext_resource type="Environment" uid="uid://chmjwuakjib3d" path="res://default_environment.tres" id="2_0h7de"]
+[ext_resource type="PackedScene" uid="uid://dsqa847tnoi0a" path="res://scenes/level/cell_with_assets.tscn" id="3_3mcv8"]
+[ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/other_cells/other_cell_left.tscn" id="4_a1617"]
+[ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/other_cells/other_cell_right.tscn" id="5_cf2is"]
+[ext_resource type="PackedScene" uid="uid://ba25gny5t6uec" path="res://scenes/level/hallway.tscn" id="6_wlnme"]
+[ext_resource type="AudioStream" uid="uid://dhp5sbuug4hw2" path="res://sounds/sfx/nac-sfx-lvl1-background_hum.mp3" id="7_fnvwe"]
+[ext_resource type="AudioStream" uid="uid://bwhxc5mhrq1k2" path="res://sounds/sfx/nac-sfx-lvl1-background_lamp.mp3" id="8_kdg7e"]
+[ext_resource type="AudioStream" uid="uid://beex7ljrxsww2" path="res://sounds/sfx/nac-sfx-lvl1-background_water_dripping.mp3" id="9_2sral"]
+[ext_resource type="PackedScene" uid="uid://d2gw4wfd1u8uh" path="res://scenes/ui_scenes/pause_menu.tscn" id="10_3co8r"]
+
+[node name="MainScene" type="Node" unique_id=1231392842]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=170147085]
+transform = Transform3D(1, 0, 0, 0, -0.7372774, 0.67559016, 0, -0.67559016, -0.7372774, 14.795, 18.22, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1995347876 groups=["player"] instance=ExtResource("1_w4lj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040748417, 1.6036769, 2.2569623)
+debug_mode = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087413421]
+environment = ExtResource("2_0h7de")
+
+[node name="LevelAssets" type="Node" parent="." unique_id=666042714]
+
+[node name="CellWithAssets" parent="LevelAssets" unique_id=772185796 instance=ExtResource("3_3mcv8")]
+
+[node name="OtherCellLeft" parent="LevelAssets" unique_id=601514559 instance=ExtResource("4_a1617")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -14)
+
+[node name="OtherCellRight" parent="LevelAssets" unique_id=1434795788 instance=ExtResource("5_cf2is")]
+transform = Transform3D(1.0063823, 0, 0, 0, 1.0063823, 0, 0, 0, 1.0063823, 5, -0.026666641, -14)
+
+[node name="Hallway" parent="LevelAssets" unique_id=91429455 instance=ExtResource("6_wlnme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.0370703)
+
+[node name="Lighting" type="Node" parent="." unique_id=491820501]
+
+[node name="CellOwn" type="Node3D" parent="Lighting" unique_id=442579602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="OwnCellLight1" type="OmniLight3D" parent="Lighting/CellOwn" unique_id=419083301]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_specular = 0.1
+shadow_enabled = true
+shadow_blur = 10.0
+
+[node name="OwnCellLight2" type="OmniLight3D" parent="Lighting/CellOwn" unique_id=712101461]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -1.4)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_specular = 0.1
+shadow_enabled = true
+shadow_blur = 10.0
+
+[node name="DeskLampLight" type="SpotLight3D" parent="Lighting/CellOwn" unique_id=1642060430]
+transform = Transform3D(0.9073671, 0.35451043, -0.22584802, 0, 0.5372996, 0.8433915, 0.4203391, -0.7652657, 0.48752794, 2.0499015, -1.6569703, 2.1203687)
+light_color = Color(0.99215686, 0.95686275, 0.8627451, 1)
+light_energy = 2.5
+shadow_enabled = true
+shadow_blur = 10.0
+spot_range = 1.4215473
+spot_angle = 36.201534
+
+[node name="NewspaperLight" type="SpotLight3D" parent="Lighting/CellOwn" unique_id=960906663]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.3538136, -0.9009664, 1.3325219)
+light_energy = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+spot_range = 3.0
+spot_angle = 62.457508
+
+[node name="CellLeft" type="Node3D" parent="Lighting" unique_id=1120844081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.992, 4, -12.51)
+
+[node name="LeftCellLight1" type="OmniLight3D" parent="Lighting/CellLeft" unique_id=1202007800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+
+[node name="LeftCellLight2" type="OmniLight3D" parent="Lighting/CellLeft" unique_id=720047987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+
+[node name="CellRight" type="Node3D" parent="Lighting" unique_id=315275978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.998449, 4, -12.51)
+
+[node name="LeftCellLight1" type="OmniLight3D" parent="Lighting/CellRight" unique_id=1832920164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+
+[node name="LeftCellLight2" type="OmniLight3D" parent="Lighting/CellRight" unique_id=1494807424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+
+[node name="Sound" type="Node" parent="." unique_id=1437625111]
+
+[node name="BackgroundHum" type="AudioStreamPlayer" parent="Sound" unique_id=946446809]
+stream = ExtResource("7_fnvwe")
+volume_db = -6.93
+autoplay = true
+
+[node name="Lamps" type="AudioStreamPlayer3D" parent="Sound" unique_id=69413523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050781667, 4.01021, -0.17969704)
+stream = ExtResource("8_kdg7e")
+volume_db = -16.327
+autoplay = true
+bus = &"Prison Reverb"
+
+[node name="WaterDripping" type="AudioStreamPlayer3D" parent="Sound" unique_id=1190629963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1392136, 1.5260719, -15.476542)
+stream = ExtResource("9_2sral")
+volume_db = -7.619
+autoplay = true
+bus = &"Prison Reverb"
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=981054026 groups=["canvas_layer"]]
+layer = 2
+
+[node name="PauseMenu" parent="PauseLayer" unique_id=551449788 instance=ExtResource("10_3co8r")]
+visible = false
