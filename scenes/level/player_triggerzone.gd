@@ -20,11 +20,10 @@ func _on_body_entered(body: Node3D) -> void:
 
 func _stop_player_smoothly(duration: float) -> void:
 	var player = get_tree().get_first_node_in_group("player")
-	player.hint_checker = !player.hint_checker
-	player.interact_hint.visible = !player.interact_hint.visible
+	player.set_state(Player.State.IN_DIALOGUE)
 	if movement_tween:
 		movement_tween.kill()
 	movement_tween = create_tween()
 	movement_tween.set_parallel(true)
 	movement_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	movement_tween.tween_property(player, "SPEED", 0.0, duration)
+	movement_tween.tween_property(player, "speed", 0.0, duration)

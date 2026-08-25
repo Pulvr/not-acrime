@@ -6,38 +6,20 @@ signal minigame_failed
 @export_category("Settings")
 
 @export_group("Difficulty")
-##Initial speed value for rings [Deg/s]. Real values differ up to 20% from this value.
-@export var base_start_speed := 45.0
-##The higher the factor, the faster the rings will get.
-@export var difficulty_factor := 0.6
-##The exponent influences the raise of speed. 1.0 is linear, > 1.0 is exponential. If the value is higher, the inner rings will be faster.
-@export var difficulty_exponent := 1.6
-##Size of each ring's gap [deg]. From outer to inner ring.
-@export var ring_gap_sizes: Array[float] = [45.0, 40.0, 35.0, 35.0, 30.0, 30.0, 25.0]
+@export var base_start_speed := 45.0 	##Initial speed value for rings [Deg/s] 
+@export var difficulty_factor := 0.6	##The higher the factor, the faster the rings will get.
+@export var difficulty_exponent := 1.6 	##The exponent influences the raise of speed. 1.0 is linear, > 1.0 is exponential. If the value is higher, the inner rings will be faster.
+@export var ring_gap_sizes: Array[float] = [45.0, 40.0, 35.0, 35.0, 30.0, 30.0, 25.0] ##Size of each ring's gap [deg]. From outer to inner ring.
 
 @export_group("Design")
-##Do not change unless you know what you are doing!
-@export var center_pos := Vector2(0, 0)
-##Changes the angle from where the key is inserted. 0.0 is the right side.
-@export var input_angle := 0.0
-##Color of the rings (impenetrable).
-@export var ring_color := Color(0.6, 0.6, 0.6)
-##Color of the ring gap (penetrable).
-@export var gap_color := Color(0.2, 0.8, 0.2, 0.5)
+@export var center_pos := Vector2(0, 0) 			##Do not change unless you know what you are doing!
+@export var input_angle := 0.0			 			##Changes the angle from where the key is inserted. 0.0 is the right side.
+@export var ring_color := Color(0.6, 0.6, 0.6) 		##Color of the rings (impenetrable).
+@export var gap_color := Color(0.2, 0.8, 0.2, 0.5) 	##Color of the ring gap (penetrable).
 
-#Audio
-##Sound played with every broken ring.
-@onready var ring_broken_sound = $RingBrokenSoundPlayer
-##Sound played when last ring broken.
-@onready var lock_opened_sound = $LockOpenedSoundPlayer
-##Sound played when hitting the impenetrable zone of a ring (+ reset).
-@onready var fail_sound = $FailSoundPlayer
-
-@onready var player = get_tree().get_first_node_in_group("player")
 
 @export_group("Other")
-##Modifies the duration of the tutorial hint.
-@export var hint_animation_duration := 3.0
+@export var hint_animation_duration := 3.0 			##Modifies the duration of the tutorial hint.
 @export var default_font := preload("res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf")
 @export var input_key_displayed = "A"
 var current_visual_radius := 0.0
@@ -46,22 +28,28 @@ var hint_anim_timer := 0.0
 var rings: Array[Dictionary] = []
 var current_ring_index := 0
 
-
 var is_animation_running: bool = false
 var is_won: bool = false
 var door_tween: Tween
+
+#Audio
+@onready var ring_broken_sound = $RingBrokenSoundPlayer
+@onready var lock_opened_sound = $LockOpenedSoundPlayer
+@onready var fail_sound = $FailSoundPlayer
+
+@onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:
 	center_pos = get_viewport_rect().size / 2.0
 	
 	rings = [
-		{"radius": 260.0, "width": 12.0, "base_speed": deg_to_rad(base_start_speed * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(0), "rotation": randf() * TAU},
+		{"radius": 260.0, "width": 12.0, "base_speed": deg_to_rad(base_start_speed  * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(0), "rotation": randf() * TAU},
 		{"radius": 230.0, "width": 12.0, "base_speed": deg_to_rad(-base_start_speed * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(1), "rotation": randf() * TAU},
-		{"radius": 200.0, "width": 12.0, "base_speed": deg_to_rad(base_start_speed * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(2), "rotation": randf() * TAU},
+		{"radius": 200.0, "width": 12.0, "base_speed": deg_to_rad(base_start_speed  * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(2), "rotation": randf() * TAU},
 		{"radius": 170.0, "width": 12.0, "base_speed": deg_to_rad(-base_start_speed * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(3), "rotation": randf() * TAU},
-		{"radius": 140.0, "width": 12.0, "base_speed": deg_to_rad(base_start_speed * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(4), "rotation": randf() * TAU},
+		{"radius": 140.0, "width": 12.0, "base_speed": deg_to_rad(base_start_speed  * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(4), "rotation": randf() * TAU},
 		{"radius": 110.0, "width": 12.0, "base_speed": deg_to_rad(-base_start_speed * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(5), "rotation": randf() * TAU},
-		{"radius": 80.0, "width": 12.0, "base_speed": deg_to_rad(base_start_speed * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(6), "rotation": randf() * TAU}
+		{"radius": 80.0,  "width": 12.0, "base_speed": deg_to_rad(base_start_speed  * randf_range(0.8, 1.2)), "gap_size": _get_gap_size(6), "rotation": randf() * TAU}
 	]
 	
 	if rings.size() > 0:
@@ -119,6 +107,19 @@ func _draw() -> void:
 		draw_arc(center_pos, ring["radius"], gap_start, gap_end, 16, current_gap_color, current_width, true)
 		
 	draw_key_and_arrow()
+
+func _input(event: InputEvent) -> void:
+	var is_a_key = event is InputEventKey and event.keycode == KEY_A and event.pressed and not event.echo
+	var is_lmb = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed
+	
+	if is_a_key or is_lmb:
+		check_hit()
+	
+	if event.is_action_pressed("ui_cancel"):
+		get_viewport().set_input_as_handled()
+		minigame_failed.emit()
+		queue_free()
+		return
 
 func draw_keyhole() -> void:
 	var hole_color = Color(0.12, 0.12, 0.12)
@@ -183,18 +184,6 @@ func draw_key_and_arrow() -> void:
 	draw_rect(Rect2(key_pos.x - 20, key_pos.y + 4, 8, 14), ring_color)
 	draw_rect(Rect2(key_pos.x - 8, key_pos.y + 4, 8, 8), ring_color)
 
-func _input(event: InputEvent) -> void:
-	var is_a_key = event is InputEventKey and event.keycode == KEY_A and event.pressed and not event.echo
-	var is_lmb = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed
-	
-	if is_a_key or is_lmb:
-		check_hit()
-	
-	if event.is_action_pressed("ui_cancel"):
-		get_viewport().set_input_as_handled()
-		minigame_failed.emit()
-		queue_free()
-		return
 
 func check_hit() -> void:
 	if current_ring_index >= rings.size():
@@ -221,7 +210,7 @@ func success_hit() -> void:
 		#print("SCHLOSS GEÖFFNET!")
 		is_won = true
 		if lock_opened_sound:
-			player.can_move = false
+			player.set_state(Player.State.IN_MINIGAME)
 			lock_opened_sound.play()
 			await get_tree().create_timer(1.85).timeout
 			_animate_door(deg_to_rad(-50), 3.4 - 1.85)
@@ -243,8 +232,6 @@ func fail_game() -> void:
 
 func _animate_door(target_rot_y: float, duration: float):
 	is_animation_running = true
-	player.hint_checker = !player.hint_checker
-	player.interact_hint.visible = !player.interact_hint.visible
 	if door_tween:
 		door_tween.kill()
 
@@ -259,4 +246,4 @@ func _on_tween_completed():
 	cell_door.get_parent().get_node("CollisionShape3D").rotation.y -= cell_door.rotation.y
 	cell_door.get_parent().get_node("CollisionShape3D").position = Vector3(-2.05, 2, -0.8)
 	is_animation_running = false
-	player.can_move = true
+	player.set_state(Player.State.FREE)

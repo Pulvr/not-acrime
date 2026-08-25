@@ -2,17 +2,19 @@ extends Control
 
 var audio_bus_id
 
-@onready var scaling_label = $"MainContainer/SettingsContainer/LeftContainer/Render Scale/CenterContainer/MarginContainer/Label"
-@onready var mouse_sensitivity_label = $"MainContainer/SettingsContainer/LeftContainer/Mouse Sensitivity/CenterContainer/MarginContainer/Label"
+@onready var scaling_label = $"MainContainer/SettingsContainer/LeftContainer/RenderScale/CenterContainer/MarginContainer/Label"
+@onready var mouse_sensitivity_label = $"MainContainer/SettingsContainer/LeftContainer/MouseSensitivity/CenterContainer/MarginContainer/Label"
 @onready var language_label = $"MainContainer/SettingsContainer/LeftContainer/Language/CenterContainer/MarginContainer/Label"
-@onready var window_mode_label = $"MainContainer/SettingsContainer/RightContainer/Window Mode/CenterContainer/MarginContainer/Label"
-@onready var fov_label = $"MainContainer/SettingsContainer/RightContainer/Field of View/CenterContainer/MarginContainer/Label"
+@onready var window_mode_label = $"MainContainer/SettingsContainer/RightContainer/WindowMode/CenterContainer/MarginContainer/Label"
+@onready var fov_label = $"MainContainer/SettingsContainer/RightContainer/FieldOfView/CenterContainer/MarginContainer/Label"
 @onready var volume_label = $"MainContainer/SettingsContainer/RightContainer/Volume/CenterContainer/MarginContainer/Label"
-@onready var back_to_menu_label = $"MainContainer/Back To Menu/CenterContainer/MarginContainer/Label"
+@onready var back_to_menu_label = $"MainContainer/BackToMenu/CenterContainer/MarginContainer/Label"
 
 func _ready():
+	print(GlobalSettings.last_scene)
 	audio_bus_id = AudioServer.get_bus_index("Master")
 	_check_last_scene()
+	print(GlobalSettings.last_scene)
 	_set_label_texts()
 
 func _check_last_scene():
@@ -36,7 +38,7 @@ func _on_back_to_menu_pressed() -> void:
 
 	elif GlobalSettings.last_scene == "Main Scene":
 		GlobalSettings.last_scene = "Settings Menu"
-		get_tree().change_scene_to_file("res://scenes/main/Main_Scene.tscn")
+		get_tree().change_scene_to_file("res://scenes/main/main_scene.tscn")
 
 
 func _on_scaling_pressed() -> void:

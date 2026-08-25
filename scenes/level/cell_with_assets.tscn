@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dsqa847tnoi0a"]
 
-[ext_resource type="PackedScene" uid="uid://c7vlv8yq4s18l" path="res://scenes/level/OwnCell/Own_Cell.tscn" id="1_86qqa"]
-[ext_resource type="PackedScene" uid="uid://bftnbrifauhij" path="res://scenes/level/CellAssets/Cell_Bars.tscn" id="5_btpx2"]
-[ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/CellAssets/Toilet.tscn" id="5_dysg5"]
-[ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/CellAssets/Bunkbed.tscn" id="6_btpx2"]
-[ext_resource type="PackedScene" uid="uid://c8c8c5qnfc21p" path="res://scenes/level/CellAssets/metal_sink.tscn" id="6_dysg5"]
-[ext_resource type="PackedScene" uid="uid://coge1kxobiu7w" path="res://scenes/level/CellAssets/cell_table.tscn" id="7_bh0qp"]
-[ext_resource type="PackedScene" uid="uid://bsttoujhhgchj" path="res://scenes/level/CellAssets/Ceiling_Light.tscn" id="7_dysg5"]
-[ext_resource type="PackedScene" uid="uid://cpcpy1d8j41fn" path="res://scenes/level/CellAssets/cell_stool.tscn" id="8_3hyd8"]
+[ext_resource type="PackedScene" uid="uid://c7vlv8yq4s18l" path="res://scenes/level/own_cell/own_cell.tscn" id="1_86qqa"]
+[ext_resource type="PackedScene" uid="uid://bftnbrifauhij" path="res://scenes/level/cell_assets/cell_bars.tscn" id="5_btpx2"]
+[ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/cell_assets/toilet.tscn" id="5_dysg5"]
+[ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/cell_assets/bunkbed.tscn" id="6_btpx2"]
+[ext_resource type="PackedScene" uid="uid://c8c8c5qnfc21p" path="res://scenes/level/cell_assets/metal_sink.tscn" id="6_dysg5"]
+[ext_resource type="PackedScene" uid="uid://coge1kxobiu7w" path="res://scenes/level/cell_assets/cell_table.tscn" id="7_bh0qp"]
+[ext_resource type="PackedScene" uid="uid://bsttoujhhgchj" path="res://scenes/level/cell_assets/ceiling_light.tscn" id="7_dysg5"]
+[ext_resource type="PackedScene" uid="uid://cpcpy1d8j41fn" path="res://scenes/level/cell_assets/cell_stool.tscn" id="8_3hyd8"]
 [ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="9_nrknf"]
 [ext_resource type="Resource" uid="uid://c2b6ajaku4re4" path="res://resources/dialog/timeline/cellmate.dtl" id="10_dy5ib"]
-[ext_resource type="PackedScene" uid="uid://f8jdklu0dey3" path="res://scenes/level/CellAssets/prisoner_cellmate_4.tscn" id="11_nrknf"]
-[ext_resource type="PackedScene" uid="uid://cdv06lpjyhjua" path="res://scenes/level/CellAssets/newspaper.tscn" id="12_1d6nu"]
-[ext_resource type="PackedScene" uid="uid://c2j824wcbaxan" path="res://scenes/level/CellAssets/letter.tscn" id="13_iw8i2"]
+[ext_resource type="PackedScene" uid="uid://f8jdklu0dey3" path="res://scenes/level/cell_assets/prisoner_cellmate.tscn" id="11_nrknf"]
+[ext_resource type="PackedScene" uid="uid://cdv06lpjyhjua" path="res://scenes/level/cell_assets/newspaper.tscn" id="12_1d6nu"]
+[ext_resource type="PackedScene" uid="uid://c2j824wcbaxan" path="res://scenes/level/cell_assets/letter.tscn" id="13_iw8i2"]
 [ext_resource type="PackedScene" uid="uid://c0lxytaeoy544" path="res://models/desk_lamp.glb" id="14_iw8i2"]
-[ext_resource type="Script" uid="uid://cwb7wk1dww1wy" path="res://scenes/level/CellAssets/letter.gd" id="14_owmyw"]
+[ext_resource type="Script" uid="uid://cwb7wk1dww1wy" path="res://scenes/level/cell_assets/letter.gd" id="14_owmyw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1d6nu"]
 radius = 0.5205078
@@ -22,9 +22,9 @@ height = 3.6547852
 
 [node name="CellWithAssets" type="Node3D" unique_id=930626341]
 
-[node name="Own_Cell" parent="." unique_id=1328943470 instance=ExtResource("1_86qqa")]
+[node name="OwnCell" parent="." unique_id=1328943470 instance=ExtResource("1_86qqa")]
 
-[node name="Cell_Bars" parent="." unique_id=1154751589 instance=ExtResource("5_btpx2")]
+[node name="CellBars" parent="." unique_id=1154751589 instance=ExtResource("5_btpx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09544784, -4.9181757)
 
 [node name="Toilet" parent="." unique_id=1757528361 instance=ExtResource("5_dysg5")]
@@ -33,16 +33,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.687, 0.1, 3.854)
 [node name="Bunkbed" parent="." unique_id=1708177036 instance=ExtResource("6_btpx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.1, -2.3)
 
-[node name="ceiling_light" parent="." unique_id=1823199513 instance=ExtResource("7_dysg5")]
+[node name="CeilingLight" parent="." unique_id=1823199513 instance=ExtResource("7_dysg5")]
 transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, 0, 4.2, 0)
 
-[node name="Metal_Sink" parent="." unique_id=119985792 instance=ExtResource("6_dysg5")]
+[node name="MetalSink" parent="." unique_id=119985792 instance=ExtResource("6_dysg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91, 1.3888273, -2)
 
-[node name="Cell_Table" parent="." unique_id=1986315210 instance=ExtResource("7_bh0qp")]
+[node name="CellTable" parent="." unique_id=1986315210 instance=ExtResource("7_bh0qp")]
 transform = Transform3D(-5.2453668e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.2453668e-08, 2.2505383, 0.36408842, 1.7045822)
 
-[node name="Cell_Stool" parent="." unique_id=1372591696 instance=ExtResource("8_3hyd8")]
+[node name="CellStool" parent="." unique_id=1372591696 instance=ExtResource("8_3hyd8")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8255761, 0.1077587, 1.7045822)
 
 [node name="Cellmate" type="StaticBody3D" parent="." unique_id=579419085 groups=["talk_to"]]
@@ -50,7 +50,7 @@ transform = Transform3D(0.020296805, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.02029
 script = ExtResource("9_nrknf")
 timeline = ExtResource("10_dy5ib")
 
-[node name="prisoner_cellmate" parent="Cellmate" unique_id=1617834967 instance=ExtResource("11_nrknf")]
+[node name="PrisonerCellmate" parent="Cellmate" unique_id=1617834967 instance=ExtResource("11_nrknf")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cellmate" unique_id=1022954079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032293558, 0.7244541, 0.12283492)
@@ -65,5 +65,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8674812, 2.4877648, 1.2747
 transform = Transform3D(-0.4472695, 0, -0.14439517, 0, 0.47, 0, 0.14439517, 0, -0.4472695, 1.9717782, 1.5952156, 1.7118204)
 script = ExtResource("14_owmyw")
 
-[node name="desk_lamp" parent="." unique_id=1071635935 instance=ExtResource("14_iw8i2")]
+[node name="DeskLamp" parent="." unique_id=1071635935 instance=ExtResource("14_iw8i2")]
 transform = Transform3D(-0.76495516, 0, -0.64408356, 0, 1, 0, 0.64408356, 0, -0.76495516, 2.3623502, 1.6451895, 2.502836)

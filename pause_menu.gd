@@ -2,13 +2,17 @@ extends Control
 
 const CONTROLS_MENU_SCENE = preload("res://scenes/ui_scenes/controls_menu.tscn")
 
+@onready var player = get_tree().get_first_node_in_group("player")
+
 func _on_continue_pressed():
 	get_tree().paused = false
 	hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	player.set_state(Player.State.FREE)
 
 func _on_controls_pressed() -> void:
 	GlobalSettings.last_scene = "Main Scene"
+	print(GlobalSettings.last_scene)
 	var controls = CONTROLS_MENU_SCENE.instantiate()
 	add_child(controls)
 

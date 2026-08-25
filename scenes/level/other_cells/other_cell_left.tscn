@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://btbej5rswodmx"]
+
+[ext_resource type="PackedScene" uid="uid://cg3owa3c1k8bj" path="res://scenes/level/other_cells/other_cell.tscn" id="1_gcnfg"]
+[ext_resource type="PackedScene" uid="uid://ccgmst8510vwd" path="res://models/cell_door.glb" id="4_h6bfm"]
+[ext_resource type="PackedScene" uid="uid://cfwklur56h5xj" path="res://models/cell_bars.glb" id="5_2fvhx"]
+[ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/cell_assets/bunkbed.tscn" id="6_2fvhx"]
+[ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/cell_assets/toilet.tscn" id="7_wxapq"]
+[ext_resource type="PackedScene" uid="uid://bwydqnnjb3cfv" path="res://scenes/level/cell_assets/usable_sink.tscn" id="8_buyuy"]
+
+[node name="OtherCellLeft" type="Node3D" unique_id=1166975858]
+
+[node name="OtherCell" parent="." unique_id=1328943470 instance=ExtResource("1_gcnfg")]
+
+[node name="CellDoor" parent="." unique_id=189420472 instance=ExtResource("4_h6bfm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.4997578, 0.100687265, 4.910545)
+
+[node name="CellBars" parent="." unique_id=1407827419 instance=ExtResource("5_2fvhx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.50168943, 0.101, 4.9418283)
+
+[node name="CellBars2" parent="." unique_id=1729872550 instance=ExtResource("5_2fvhx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.0016894, 0.101, 4.9418283)
+
+[node name="Bunkbed" parent="." unique_id=1708177036 instance=ExtResource("6_2fvhx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1748447, 0, 0)
+
+[node name="Toilet" parent="." unique_id=1757528361 instance=ExtResource("7_wxapq")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -3.85431, 0.099999905, -1.022383)
+
+[node name="Sink" parent="." unique_id=548424249 instance=ExtResource("8_buyuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9019265, 1, 1)

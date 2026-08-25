@@ -1,5 +1,7 @@
 extends StaticBody3D
+
 const LOCK_MINIGAME_SCENE = preload("res://scenes/ui_scenes/minigames/cell_lock_minigame.tscn")
+
 @export var timeline: DialogicTimeline
 
 func _ready() -> void:
