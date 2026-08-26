@@ -50,7 +50,7 @@ func _on_click_logic_gui_input(event: InputEvent) -> void:
 			disgustBar.value = current_bar_value
 			rmb_last_pressed = true
 			lmb_last_pressed = false
-			mouse_icon.flip_h=false
+			mouse_icon.flip_h = false
 			valid_click = true
 		if valid_click:
 			click_count += 1

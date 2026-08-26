@@ -1,8 +1,15 @@
 extends Node
 
+enum LastScenes {
+	MAIN_MENU,
+	MAIN_SCENE,
+	INPUT_MENU,
+	SETTINGS_MENU,
+}
+
 var mouse_sensitivity: float = 0.002
 var field_of_view: float = 90
-var last_scene: String
+var last_scene: LastScenes
 
 var last_render_scale_text: String = "Render Scale: 1.00"
 var last_mouse_sensitivity_text: String = "Mouse Sensitivity: 1.00"
@@ -18,3 +25,6 @@ var last_head_rotation: Vector3
 # I think this might be a persistent inventory, but it could also break very easily
 var last_inventory: Array[ItemData] = []
 var last_selected_index: int = 0
+
+func set_last_scene(new_last_scene: LastScenes) -> void:
+	last_scene = new_last_scene

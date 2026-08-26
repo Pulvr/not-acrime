@@ -9,7 +9,6 @@ func _ready() -> void:
 
 func _on_dialogic_signal(argument: String) -> void:
 	if argument == "start_cell_lock_minigame":
-		print("start")
 		start_minigame()
 
 func interact():

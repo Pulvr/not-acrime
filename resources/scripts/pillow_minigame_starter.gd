@@ -26,7 +26,7 @@ func interact():
 		Dialogic.start("pillow_timeline")
 
 func _on_start_pillow_minigame():
-	for child in main_scene.get_children(): #needed check in main tree, for whatever reason the scene is instatiated three times???
+	for child in main_scene.get_children(): #needed check in main tree, for whatever reason the scene is instantiated three times???
 			if child.name == "PillowMinigame":
 				return
 				

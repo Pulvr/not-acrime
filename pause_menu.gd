@@ -11,13 +11,12 @@ func _on_continue_pressed():
 	player.set_state(Player.State.FREE)
 
 func _on_controls_pressed() -> void:
-	GlobalSettings.last_scene = "Main Scene"
-	print(GlobalSettings.last_scene)
+	GlobalSettings.set_last_scene(GlobalSettings.LastScenes.MAIN_SCENE)
 	var controls = CONTROLS_MENU_SCENE.instantiate()
 	add_child(controls)
 
 func _on_settings_pressed() -> void:
-	GlobalSettings.last_scene = "Main Scene"
+	GlobalSettings.set_last_scene(GlobalSettings.LastScenes.MAIN_SCENE)
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/ui_scenes/settings_menu.tscn")
 
