@@ -41,7 +41,7 @@ current = true
 fov = 90.0
 script = ExtResource("12_8qjgm")
 
-[node name="Screen Shader Mesh" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1291474493]
+[node name="ScreenShaderMesh" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1291474493]
 mesh = SubResource("QuadMesh_c3xxp")
 
 [node name="InteractionRay" type="RayCast3D" parent="Head" unique_id=175050457]
