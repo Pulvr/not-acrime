@@ -16,7 +16,7 @@ extends Control
 	Dallara, A., Dallara, A., & Dallara, A. (2025, July 22). Trump administration hits shameful milestone of 300 Anti-LGBTQ actions, statements, and policies against the community. GLAAD | GLAAD Rewrites the Script for LGBTQ Acceptance. https://glaad.org/trump-administration-hits-shameful-milestone-of-300-anti-lgbtq-actions-statements-and-policies-against-the-community/ \n
 	Atuhaire, B. P. (2023, March 22). Uganda Anti-Homosexuality bill: Life in prison for saying you're gay. https://www.bbc.com/news/world-africa-65034343"
 
-var MAIN_MENU_PATH = "res://scenes/ui_scenes/main_menu.tscn"
+const MAIN_MENU_PATH = "res://scenes/ui_scenes/main_menu.tscn"
 
 var fade_out_time = 2.5
 var idle_time = 1.0
