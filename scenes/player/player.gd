@@ -9,6 +9,7 @@ enum State {
 	FREE, IN_DIALOGUE, IN_MINIGAME, PAUSED
 }
 
+
 const INVENTORY_SLOT_SCENE = preload("res://scenes/player/inventory_ui/inventory_slot.tscn")
 
 @export var debug_mode = false
@@ -44,7 +45,7 @@ var item_in_hand: ItemData
 @onready var intro_target: Node3D = $"../LevelAssets/CellWithAssets/Cellmate"
 
 func _ready():
-	if GlobalSettings.last_scene == "Settings Menu":
+	if GlobalSettings.last_scene == GlobalSettings.LastScenes.SETTINGS_MENU:
 		toggle_pause()
 		load_player_state()
 	else:
@@ -54,18 +55,17 @@ func _ready():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 	await get_tree().process_frame
-	if GlobalSettings.last_scene != "Settings Menu":
+	if GlobalSettings.last_scene != GlobalSettings.LastScenes.SETTINGS_MENU:
 		auto_start_intro_dialog()
 
+# DialogController? hat ja eigentlich nichts im "player" zu suchen der Dialog
 func _on_timeline_started():
 	current_state = State.IN_DIALOGUE
 
+# DialogController? hat ja eigentlich nichts im "player" zu suchen der Dialog
 func _on_timeline_ended():
 	if !current_state == State.IN_MINIGAME:
 		current_state = State.FREE
-
-func return_to_main_menu():
-	get_tree().change_scene_to_file("res://scenes/main/demo_end_screen.tscn")
 
 func _input(event):
 	if event is InputEventMouseMotion and current_state == State.FREE:
@@ -98,6 +98,7 @@ func _physics_process(_delta):
 		MovementModes.WALK:
 			walk_process(_delta)
 
+	# UI
 	pick_up_hint.visible = false
 	talk_hint.visible = false
 	interact_hint.visible = false
@@ -111,6 +112,8 @@ func _physics_process(_delta):
 				talk_hint.visible = true
 			elif collider.is_in_group("interactable"):
 				interact_hint.visible = true
+
+# Autostart, vielleicht auch ein Dialog Controller?
 func auto_start_intro_dialog():
 	var cellmate = intro_target
 	
@@ -127,6 +130,7 @@ func auto_start_intro_dialog():
 				timeline = cellmate.timeline_default
 			Dialogic.start(timeline)
 
+# helper Function for the Camera3D, does not belong to the player
 func look_at_target_with_offset(target_node: Node):
 	var collision_shape = target_node.get_node_or_null("CollisionShape3D")
 	var target_height = 0.0
@@ -191,6 +195,7 @@ func check_interaction():
 					collider.pillow_minigame_ended.connect(_on_pillow_mini_game_ended)
 			collider.interact()
 
+# Inventory?
 func pick_up_item(item_node):
 	if "data" in item_node:
 		add_item_to_inventory(item_node.data)
@@ -198,6 +203,7 @@ func pick_up_item(item_node):
 			print("Picked up: ", item_node)
 		item_node.queue_free()
 
+# UI
 func change_selected_item(direction: int):
 	if inventory.is_empty():
 		return
@@ -208,6 +214,7 @@ func change_selected_item(direction: int):
 
 	update_hand_display()
 
+# Inventory?
 func add_item_to_inventory(item_data: ItemData):
 	inventory.append(item_data)
 	item_in_hand = inventory[-1]
@@ -215,6 +222,7 @@ func add_item_to_inventory(item_data: ItemData):
 	update_inventory_ui()
 
 
+# UI
 func update_hand_display():
 	item_in_hand = inventory[selected_index]
 	Dialogic.VAR.set_variable("item_strings.item_in_hand", item_in_hand.name)
@@ -229,6 +237,7 @@ func update_hand_display():
 
 	update_inventory_ui()
 
+# Sound
 func play_footstep_sound():
 	if footstep_sounds.is_empty():
 		return
@@ -239,8 +248,7 @@ func play_footstep_sound():
 	footstep_player.pitch_scale = randf_range(0.95, 1.05)
 	footstep_player.play()
 
-
-
+# Pause Controller?
 func toggle_pause():
 	current_state = State.PAUSED
 	var new_pause_state = !get_tree().paused
@@ -254,6 +262,7 @@ func toggle_pause():
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+# UI
 func update_inventory_ui():
 	for child in slot_container.get_children():
 		child.queue_free()
@@ -266,7 +275,7 @@ func update_inventory_ui():
 
 		slot_instance.display_item(inventory[i], is_active)
 
-
+# Inventory
 func item_added_with_dialog(item: ItemData):
 	Dialogic.VAR.set_variable("item_strings.item_received", item.name)
 	Dialogic.VAR.set_variable("item_strings.item_description", item.description)
@@ -274,6 +283,7 @@ func item_added_with_dialog(item: ItemData):
 	if Dialogic.current_timeline == null:
 		Dialogic.start("item_received_timeline")
 
+# PlayerController
 func save_player_state():
 	GlobalSettings.last_player_position = global_position
 	GlobalSettings.last_player_rotation = rotation
@@ -281,6 +291,7 @@ func save_player_state():
 	GlobalSettings.last_inventory = inventory.duplicate()
 	GlobalSettings.last_selected_index = selected_index
 
+# PlayerController
 func load_player_state():
 	global_position = GlobalSettings.last_player_position
 	rotation = GlobalSettings.last_player_rotation
@@ -309,10 +320,11 @@ func _on_pillow_mini_game_ended():
 	Dialogic.VAR.set_variable("has_key", true)
 	item_added_with_dialog(load("res://resources/assets/items_for_pickup/rusty_key/rusty_key.tres"))
 
+# SoundController
 func _on_footstep_timer_timeout() -> void:
 	play_footstep_sound()
 
-#---- Currently UNUSED -----
+# Inventory
 func remove_item(_item_name):
 	pass
 	#for item in inventory:

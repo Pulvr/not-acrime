@@ -11,16 +11,14 @@ var audio_bus_id
 @onready var back_to_menu_label = $"MainContainer/BackToMenu/CenterContainer/MarginContainer/Label"
 
 func _ready():
-	print(GlobalSettings.last_scene)
 	audio_bus_id = AudioServer.get_bus_index("Master")
 	_check_last_scene()
-	print(GlobalSettings.last_scene)
 	_set_label_texts()
 
 func _check_last_scene():
-	if GlobalSettings.last_scene == "Main Menu":
+	if GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_MENU:
 		back_to_menu_label.text = "Back to Menu"
-	elif GlobalSettings.last_scene == "Main Scene":
+	elif GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_SCENE:
 		back_to_menu_label.text = "Back"
 
 func _set_label_texts():
@@ -32,12 +30,12 @@ func _set_label_texts():
 		volume_label.text = GlobalSettings.last_volume_text
 
 func _on_back_to_menu_pressed() -> void:
-	if GlobalSettings.last_scene == "Main Menu":
-		GlobalSettings.last_scene = "Settings Menu"
+	if GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_MENU:
+		GlobalSettings.set_last_scene(GlobalSettings.LastScenes.SETTINGS_MENU)
 		get_tree().change_scene_to_file("res://scenes/ui_scenes/main_menu.tscn")
 
-	elif GlobalSettings.last_scene == "Main Scene":
-		GlobalSettings.last_scene = "Settings Menu"
+	elif GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_SCENE:
+		GlobalSettings.set_last_scene(GlobalSettings.LastScenes.SETTINGS_MENU)
 		get_tree().change_scene_to_file("res://scenes/main/main_scene.tscn")
 
 

@@ -207,7 +207,6 @@ func success_hit() -> void:
 	current_ring_index += 1
 	
 	if current_ring_index >= rings.size():
-		#print("SCHLOSS GEÖFFNET!")
 		is_won = true
 		if lock_opened_sound:
 			player.set_state(Player.State.IN_MINIGAME)
@@ -225,10 +224,6 @@ func fail_game() -> void:
 	current_ring_index = 0
 	current_visual_radius = rings[0]["radius"]
 	hint_anim_timer = 0.0
-	
-	# (Optional: Dem Spieler mitteilen, dass er verloren hat, oder das Fenster schließen)
-	# minigame_failed.emit()
-	# queue_free()
 
 func _animate_door(target_rot_y: float, duration: float):
 	is_animation_running = true

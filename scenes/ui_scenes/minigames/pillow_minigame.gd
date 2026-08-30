@@ -19,9 +19,9 @@ var minigame_ended = false
 @onready var success_player = $SuccessSoundPlayer
 @onready var path_2d: Path2D = $CuttingLine
 @onready var drawn_line:Line2D = $LineDisplayedDuringCut
-@onready var instruct_label : Label = $Instructions
-@onready var reset_label_timer : Timer = $Instructions/Timer
-@onready var particles : GPUParticles2D = $LineDisplayedDuringCut/CutParticles
+@onready var instruct_label: Label = $Instructions
+@onready var reset_label_timer: Timer = $Instructions/Timer
+@onready var particles: GPUParticles2D = $LineDisplayedDuringCut/CutParticles
 
 func _ready() -> void:
 	path_length = path_2d.curve.get_baked_length()
@@ -56,7 +56,7 @@ func start_tracking() -> void:
 
 func track_mouse_performance(mouse_pos: Vector2) -> void:
 	drawn_line.add_point(mouse_pos)
-	particles.visible=true
+	particles.visible = true
 	particles.position = mouse_pos
 
 	var closest_offset = path_2d.curve.get_closest_offset(mouse_pos)
