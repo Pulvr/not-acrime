@@ -26,5 +26,6 @@ var last_head_rotation: Vector3
 var last_inventory: Array[ItemData] = []
 var last_selected_index: int = 0
 
+
 func set_last_scene(new_last_scene: LastScenes) -> void:
 	last_scene = new_last_scene

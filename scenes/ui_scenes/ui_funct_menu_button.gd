@@ -23,9 +23,11 @@ var color_frame_hovered = Color("D3D3D3")
 @onready var label = $CenterContainer/MarginContainer/Label
 @onready var hover_sound = $AudioStreamPlayer
 
+
 func _ready():
 	$CenterContainer/MarginContainer/Label.text = text
 	update_appearance()
+
 
 func update_appearance():
 	if not is_node_ready():
@@ -67,4 +69,4 @@ func _on_click_logic_button_up() -> void:
 
 
 func _on_click_logic_pressed() -> void:
-	pass # Replace with function body.
+	pass  # Replace with function body.
