@@ -1,3 +1,3 @@
 extends StaticBody3D
 
-@export var data:ItemData
+@export var data: ItemData
