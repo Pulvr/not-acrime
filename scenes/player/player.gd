@@ -32,9 +32,6 @@ var item_in_hand: ItemData
 @onready var head = $Head
 @onready var interaction_ray = $Head/InteractionRay
 @onready var hand_mesh = $UILayer/ItemInHandContainer/ItemInHand/HandSlot/HandMesh
-@onready var pick_up_hint = $UILayer/UIHints/PickupHint
-@onready var talk_hint = $UILayer/UIHints/TalkHint
-@onready var interact_hint = $UILayer/UIHints/InteractHint
 @onready var slot_container = $UILayer/InventoryBar/SlotContainer
 
 @onready var footstep_player = $FootstepPlayer
@@ -97,21 +94,6 @@ func _physics_process(_delta):
 	match current_mode:
 		MovementModes.WALK:
 			walk_process(_delta)
-
-	# UI
-	pick_up_hint.visible = false
-	talk_hint.visible = false
-	interact_hint.visible = false
-
-	if interaction_ray.is_colliding() and current_state == State.FREE:
-		var collider = interaction_ray.get_collider()
-		if collider != null:
-			if collider.is_in_group("item_for_pickup"):
-				pick_up_hint.visible = true
-			elif collider.is_in_group("talk_to"):
-				talk_hint.visible = true
-			elif collider.is_in_group("interactable"):
-				interact_hint.visible = true
 
 # Autostart, vielleicht auch ein Dialog Controller?
 func auto_start_intro_dialog():
@@ -305,6 +287,9 @@ func load_player_state():
 
 func set_state(new_state: State) -> void:
 	current_state = new_state
+
+func get_state() -> State:
+	return current_state
 
 func _on_minigame_started():
 	current_state = State.IN_MINIGAME
