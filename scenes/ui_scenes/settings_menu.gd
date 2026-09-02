@@ -2,18 +2,26 @@ extends Control
 
 var audio_bus_id
 
-@onready var scaling_label = $"MainContainer/SettingsContainer/LeftContainer/RenderScale/CenterContainer/MarginContainer/Label"
-@onready var mouse_sensitivity_label = $"MainContainer/SettingsContainer/LeftContainer/MouseSensitivity/CenterContainer/MarginContainer/Label"
-@onready var language_label = $"MainContainer/SettingsContainer/LeftContainer/Language/CenterContainer/MarginContainer/Label"
-@onready var window_mode_label = $"MainContainer/SettingsContainer/RightContainer/WindowMode/CenterContainer/MarginContainer/Label"
-@onready var fov_label = $"MainContainer/SettingsContainer/RightContainer/FieldOfView/CenterContainer/MarginContainer/Label"
-@onready var volume_label = $"MainContainer/SettingsContainer/RightContainer/Volume/CenterContainer/MarginContainer/Label"
+@onready
+var scaling_label = $"MainContainer/SettingsContainer/LeftContainer/RenderScale/CenterContainer/MarginContainer/Label"
+@onready
+var mouse_sensitivity_label = $"MainContainer/SettingsContainer/LeftContainer/MouseSensitivity/CenterContainer/MarginContainer/Label"
+@onready
+var language_label = $"MainContainer/SettingsContainer/LeftContainer/Language/CenterContainer/MarginContainer/Label"
+@onready
+var window_mode_label = $"MainContainer/SettingsContainer/RightContainer/WindowMode/CenterContainer/MarginContainer/Label"
+@onready
+var fov_label = $"MainContainer/SettingsContainer/RightContainer/FieldOfView/CenterContainer/MarginContainer/Label"
+@onready
+var volume_label = $"MainContainer/SettingsContainer/RightContainer/Volume/CenterContainer/MarginContainer/Label"
 @onready var back_to_menu_label = $"MainContainer/BackToMenu/CenterContainer/MarginContainer/Label"
+
 
 func _ready():
 	audio_bus_id = AudioServer.get_bus_index("Master")
 	_check_last_scene()
 	_set_label_texts()
+
 
 func _check_last_scene():
 	if GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_MENU:
@@ -21,13 +29,15 @@ func _check_last_scene():
 	elif GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_SCENE:
 		back_to_menu_label.text = "Back"
 
+
 func _set_label_texts():
-		scaling_label.text = GlobalSettings.last_render_scale_text
-		mouse_sensitivity_label.text = GlobalSettings.last_mouse_sensitivity_text
-		language_label.text = GlobalSettings.last_language_text
-		window_mode_label.text = GlobalSettings.last_window_mode_text
-		fov_label.text = GlobalSettings.last_fov_text
-		volume_label.text = GlobalSettings.last_volume_text
+	scaling_label.text = GlobalSettings.last_render_scale_text
+	mouse_sensitivity_label.text = GlobalSettings.last_mouse_sensitivity_text
+	language_label.text = GlobalSettings.last_language_text
+	window_mode_label.text = GlobalSettings.last_window_mode_text
+	fov_label.text = GlobalSettings.last_fov_text
+	volume_label.text = GlobalSettings.last_volume_text
+
 
 func _on_back_to_menu_pressed() -> void:
 	if GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_MENU:
@@ -75,6 +85,7 @@ func _on_mouse_sensitivity_pressed() -> void:
 
 func _on_language_pressed() -> void:
 	pass
+
 
 func _on_window_mode_pressed() -> void:
 	match DisplayServer.window_get_mode():

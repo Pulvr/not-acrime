@@ -4,8 +4,8 @@ extends StaticBody3D
 ## so we have to extend the staticbody3d which then loads the UI Scene
 ## Also helpful to load Dialogic stuff
 
-signal toilet_minigame_started()
-signal toilet_minigame_ended()
+signal toilet_minigame_started
+signal toilet_minigame_ended
 
 var ui_instance = null
 
@@ -19,6 +19,7 @@ func interact():
 	elif Dialogic.current_timeline == null:
 		Dialogic.start("toilet_minigame_timeline")
 
+
 func startMinigame():
 	toilet_minigame_started.emit()
 	if ui_instance == null:
@@ -26,6 +27,7 @@ func startMinigame():
 		main_scene.add_child(ui_instance)
 		ui_instance.toilet_minigame_ui_deleted.connect(_on_toilet_minigame_ui_delete)
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _on_toilet_minigame_ui_delete():
 	toilet_minigame_ended.emit()
