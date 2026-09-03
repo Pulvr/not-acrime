@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://2lslksnivd0u" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete8_raw.mp3" id="9_2xrq6"]
 [ext_resource type="AudioStream" uid="uid://ccblcfmwcclb0" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete9_raw.mp3" id="10_pi3ps"]
 [ext_resource type="AudioStream" uid="uid://4pcngphqpvu2" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete10_raw.mp3" id="11_kswpp"]
+[ext_resource type="Script" uid="uid://g61y5enhmu0h" path="res://scenes/player/head.gd" id="12_2xrq6"]
 [ext_resource type="Script" uid="uid://btwm68x3j0p4c" path="res://scenes/player/camera_3d.gd" id="12_8qjgm"]
 [ext_resource type="Script" uid="uid://i0auj4n6gepr" path="res://scenes/player/ui_hints.gd" id="14_ejd4k"]
 
@@ -35,6 +36,7 @@ shape = SubResource("CapsuleShape3D_wr5hl")
 
 [node name="Head" type="Node3D" parent="." unique_id=1481642959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("12_2xrq6")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=2054780268]
 keep_aspect = 0

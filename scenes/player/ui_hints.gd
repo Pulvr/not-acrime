@@ -1,12 +1,13 @@
 extends CenterContainer
 
-@onready var player = get_tree().get_first_node_in_group("player")
-@onready var interaction_ray = get_node("../../Head/InteractionRay")
-@onready var pick_up_hint = $PickupHint
-@onready var talk_hint = $TalkHint
-@onready var interact_hint = $InteractHint
+@onready var player: Node = get_tree().get_first_node_in_group("player")
+@onready var interaction_ray: Node = get_node("../../Head/InteractionRay")
+@onready var pick_up_hint: MarginContainer = $PickupHint
+@onready var talk_hint: MarginContainer = $TalkHint
+@onready var interact_hint: MarginContainer = $InteractHint
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 	pick_up_hint.visible = false
 	talk_hint.visible = false
 	interact_hint.visible = false

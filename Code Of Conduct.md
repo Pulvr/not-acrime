@@ -1,9 +1,17 @@
-# Godot Naming Conventions
+# Code of Conduct
+
+Godot Naming Conventions sind einzuhalten
+
+vorm Commit immer 
+
+`gdlint` und `gdformat` auf den geänderten Dateien ausführen
+
+## Godot Naming Conventions
 
 Summarized from Docs
 https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html
 
-## Naming Conventions
+### Naming Conventions
 
 |Type|Convention|Info|
 |---|---|---|
@@ -19,7 +27,7 @@ https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_sty
 
 *Prepend a single underscore (_) to virtual methods functions the user must override, private functions, and private variables:
 
-## Code Order
+### Code Order
 
 1. tool
 2. class_name

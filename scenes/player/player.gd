@@ -5,15 +5,17 @@ extends CharacterBody3D
 enum MovementModes { WALK }
 enum State { FREE, IN_DIALOGUE, IN_MINIGAME, PAUSED }
 
-const INVENTORY_SLOT_SCENE = preload("res://scenes/player/inventory_ui/inventory_slot.tscn")
+const INVENTORY_SLOT_SCENE: PackedScene = preload(
+	"res://scenes/player/inventory_ui/inventory_slot.tscn"
+)
 
-@export var debug_mode = false
+@export var debug_mode: bool = false
 @export var speed: float = 5.0
 @export var footstep_sounds: Array[AudioStream] = []
 
-var mouse_sensitivity = GlobalSettings.mouse_sensitivity
-var min_camera_x = deg_to_rad(-90)
-var max_camera_x = deg_to_rad(90)
+var mouse_sensitivity: float = GlobalSettings.mouse_sensitivity
+var min_camera_x: float = deg_to_rad(-90)
+var max_camera_x: float = deg_to_rad(90)
 
 var current_mode := MovementModes.WALK
 var current_state := State.FREE
@@ -24,16 +26,15 @@ var inventory: Array[ItemData] = []
 var item_in_hand: ItemData
 
 #Player Visibility Stuff, Moving Head around, showing Items and UI Hints
-@onready var head = $Head
-@onready var interaction_ray = $Head/InteractionRay
-@onready var hand_mesh = $UILayer/ItemInHandContainer/ItemInHand/HandSlot/HandMesh
-@onready var slot_container = $UILayer/InventoryBar/SlotContainer
+@onready var head: Node3D = $Head
+@onready var interaction_ray: RayCast3D = $Head/InteractionRay
+@onready var hand_mesh: MeshInstance3D = $UILayer/ItemInHandContainer/ItemInHand/HandSlot/HandMesh
+@onready var slot_container: VBoxContainer = $UILayer/InventoryBar/SlotContainer
 
-@onready var footstep_player = $FootstepPlayer
-@onready var footstep_timer = $FootstepPlayer/FootstepTimer
+@onready var footstep_player: AudioStreamPlayer3D = $FootstepPlayer
+@onready var footstep_timer: Timer = $FootstepPlayer/FootstepTimer
 
 @onready var pause_menu = $"../PauseLayer/PauseMenu"
-
 @onready var intro_target: Node3D = $"../LevelAssets/CellWithAssets/Cellmate"
 
 
@@ -99,49 +100,22 @@ func _physics_process(_delta):
 		MovementModes.WALK:
 			walk_process(_delta)
 
+
 # Autostart, vielleicht auch ein Dialog Controller?
 func auto_start_intro_dialog():
-	var cellmate = intro_target
-
-	if debug_mode:
-		print("Cellmate is: ", cellmate)
+	var cellmate: Node3D = intro_target
 
 	if cellmate != null:
-		look_at_target_with_offset(cellmate)
+		$Head.look_at_target_with_offset(cellmate, min_camera_x, max_camera_x)
 		if Dialogic.current_timeline == null:
-			var timeline = "welcome_timeline"
-			if "timeline_name" in cellmate:
-				timeline = cellmate.timeline_name
-			elif "timeline_default" in cellmate:
-				timeline = cellmate.timeline_default
-			Dialogic.start(timeline)
-
-
-# helper Function for the Camera3D, does not belong to the player
-func look_at_target_with_offset(target_node: Node):
-	var collision_shape = target_node.get_node_or_null("CollisionShape3D")
-	var target_height = 0.0
-	if collision_shape:
-		target_height = collision_shape.shape.height
-	if debug_mode:
-		print("Target height: ", target_height)
-	var base_pos = target_node.global_position
-	var adjusted_target_pos = base_pos
-	adjusted_target_pos.y += (target_height / 2.0)
-
-	var look_pos_player = Vector3(adjusted_target_pos.x, global_position.y, adjusted_target_pos.z)
-	if global_position.distance_to(look_pos_player) > 0.1:
-		look_at(look_pos_player, Vector3.UP)
-	var head_target = head.global_transform.affine_inverse() * adjusted_target_pos
-	var angle_x = atan2(head_target.y, -head_target.z)
-	head.rotation.x = clamp(angle_x, min_camera_x, max_camera_x)
+			Dialogic.start("welcome_timeline")
 
 
 func walk_process(_delta):
 	match current_state:
 		State.FREE:
-			var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-			var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+			var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+			var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 			if direction:
 				velocity.x = direction.x * speed
 				velocity.z = direction.z * speed
@@ -151,7 +125,7 @@ func walk_process(_delta):
 
 			move_and_slide()
 
-			var horizontal_velocity = Vector2(velocity.x, velocity.z)
+			var horizontal_velocity: Vector2 = Vector2(velocity.x, velocity.z)
 
 			if is_on_floor() and horizontal_velocity.length() > 0.1:
 				if footstep_timer.is_stopped():
@@ -164,7 +138,7 @@ func walk_process(_delta):
 
 func check_interaction():
 	if interaction_ray.is_colliding():
-		var collider = interaction_ray.get_collider()
+		var collider: Object = interaction_ray.get_collider()
 
 		if collider.is_in_group("item_for_pickup"):
 			pick_up_item(collider)
@@ -306,8 +280,10 @@ func load_player_state():
 func set_state(new_state: State) -> void:
 	current_state = new_state
 
+
 func get_state() -> State:
 	return current_state
+
 
 func _on_minigame_started():
 	current_state = State.IN_MINIGAME
