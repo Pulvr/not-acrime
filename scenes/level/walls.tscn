@@ -8,6 +8,12 @@ size = Vector3(12, 4.5, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qai87"]
 size = Vector3(4.1, 4, 0.2)
 
+[sub_resource type="BoxMesh" id="BoxMesh_rmcqv"]
+size = Vector3(30, 4.5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6vxk4"]
+size = Vector3(29.906473, 4, 0.2)
+
 [sub_resource type="BoxMesh" id="BoxMesh_v8f5v"]
 size = Vector3(4.1, 4.5, 0.2)
 
@@ -22,6 +28,15 @@ mesh = SubResource("BoxMesh_g6c7q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9460454, 2, 5)
 shape = SubResource("BoxShape3D_qai87")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=161822072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0663114, 2, 0.9343872)
+material_override = ExtResource("1_snavd")
+mesh = SubResource("BoxMesh_rmcqv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=872293738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.013893, 2, 0.9343872)
+shape = SubResource("BoxShape3D_6vxk4")
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1810360667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.124418, 2, 5)
 material_override = ExtResource("1_snavd")
@@ -29,15 +44,6 @@ mesh = SubResource("BoxMesh_g6c7q")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1760171871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.08066, 2, 5)
-shape = SubResource("BoxShape3D_qai87")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=460286947]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9363685, 2, 2.9209561)
-material_override = ExtResource("1_snavd")
-mesh = SubResource("BoxMesh_v8f5v")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1992073909]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.93613, 2, 2.9647145)
 shape = SubResource("BoxShape3D_qai87")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=781794623]
