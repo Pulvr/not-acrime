@@ -31,9 +31,6 @@ var item_in_hand: ItemData
 @onready var interaction_ray: RayCast3D = $Head/InteractionRay
 @onready var hand_mesh: MeshInstance3D = $UILayer/ItemInHandContainer/ItemInHand/HandSlot/HandMesh
 @onready var slot_container: VBoxContainer = $UILayer/InventoryBar/SlotContainer
-
-@onready var footstep_timer: Timer = $FootstepPlayer/FootstepTimer
-
 @onready var pause_menu = $"../PauseLayer/PauseMenu"
 @onready var intro_target: Node3D = $"../LevelAssets/CellWithAssets/Cellmate"
 
@@ -51,17 +48,6 @@ func _ready():
 	await get_tree().process_frame
 	if GlobalSettings.last_scene != GlobalSettings.LastScenes.SETTINGS_MENU:
 		auto_start_intro_dialog()
-
-
-# DialogController? hat ja eigentlich nichts im "player" zu suchen der Dialog
-func _on_timeline_started():
-	current_state = State.IN_DIALOGUE
-
-
-# DialogController? hat ja eigentlich nichts im "player" zu suchen der Dialog
-func _on_timeline_ended():
-	if !current_state == State.IN_MINIGAME:
-		current_state = State.FREE
 
 
 func _input(event):
@@ -126,12 +112,9 @@ func walk_process(_delta):
 			else:
 				velocity.x = move_toward(velocity.x, 0, speed)
 				velocity.z = move_toward(velocity.z, 0, speed)
-
 			move_and_slide()
 
-			var horizontal_velocity: Vector2 = Vector2(velocity.x, velocity.z)
-
-			if horizontal_velocity.length() > 0.1:
+			if Vector2(velocity.x, velocity.z).length() > 0.1:  #horizontal velocity
 				player_moved.emit()
 			else:
 				player_stopped.emit()
@@ -290,6 +273,17 @@ func _on_pillow_mini_game_ended():
 	current_state = State.FREE
 	Dialogic.VAR.set_variable("has_key", true)
 	item_added_with_dialog(load("res://resources/assets/items_for_pickup/rusty_key/rusty_key.tres"))
+
+
+# DialogController? hat ja eigentlich nichts im "player" zu suchen der Dialog
+func _on_timeline_started():
+	current_state = State.IN_DIALOGUE
+
+
+# DialogController? hat ja eigentlich nichts im "player" zu suchen der Dialog
+func _on_timeline_ended():
+	if !current_state == State.IN_MINIGAME:
+		current_state = State.FREE
 
 
 # Inventory
