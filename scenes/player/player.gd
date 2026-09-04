@@ -1,7 +1,9 @@
 class_name Player
 extends CharacterBody3D
 
-#Possible different Walk Modes
+signal player_moved
+signal player_stopped
+
 enum MovementModes { WALK }
 enum State { FREE, IN_DIALOGUE, IN_MINIGAME, PAUSED }
 
@@ -11,7 +13,6 @@ const INVENTORY_SLOT_SCENE: PackedScene = preload(
 
 @export var debug_mode: bool = false
 @export var speed: float = 5.0
-@export var footstep_sounds: Array[AudioStream] = []
 
 var mouse_sensitivity: float = GlobalSettings.mouse_sensitivity
 var min_camera_x: float = deg_to_rad(-90)
@@ -31,7 +32,6 @@ var item_in_hand: ItemData
 @onready var hand_mesh: MeshInstance3D = $UILayer/ItemInHandContainer/ItemInHand/HandSlot/HandMesh
 @onready var slot_container: VBoxContainer = $UILayer/InventoryBar/SlotContainer
 
-@onready var footstep_player: AudioStreamPlayer3D = $FootstepPlayer
 @onready var footstep_timer: Timer = $FootstepPlayer/FootstepTimer
 
 @onready var pause_menu = $"../PauseLayer/PauseMenu"
@@ -114,8 +114,12 @@ func auto_start_intro_dialog():
 func walk_process(_delta):
 	match current_state:
 		State.FREE:
-			var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-			var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+			var input_dir: Vector2 = Input.get_vector(
+				"move_left", "move_right", "move_forward", "move_back"
+			)
+			var direction: Vector3 = (
+				(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+			)
 			if direction:
 				velocity.x = direction.x * speed
 				velocity.z = direction.z * speed
@@ -127,13 +131,10 @@ func walk_process(_delta):
 
 			var horizontal_velocity: Vector2 = Vector2(velocity.x, velocity.z)
 
-			if is_on_floor() and horizontal_velocity.length() > 0.1:
-				if footstep_timer.is_stopped():
-					play_footstep_sound()
-					footstep_timer.start()
+			if horizontal_velocity.length() > 0.1:
+				player_moved.emit()
 			else:
-				if not footstep_timer.is_stopped():
-					footstep_timer.stop()
+				player_stopped.emit()
 
 
 func check_interaction():
@@ -202,18 +203,6 @@ func update_hand_display():
 		hand_mesh.visible = false  # Hide it if the slot is empty or has no mesh
 
 	update_inventory_ui()
-
-
-# Sound
-func play_footstep_sound():
-	if footstep_sounds.is_empty():
-		return
-
-	var random_index = randi() % footstep_sounds.size()
-	var chosen_sound = footstep_sounds[random_index]
-	footstep_player.stream = chosen_sound
-	footstep_player.pitch_scale = randf_range(0.95, 1.05)
-	footstep_player.play()
 
 
 # Pause Controller?
@@ -301,11 +290,6 @@ func _on_pillow_mini_game_ended():
 	current_state = State.FREE
 	Dialogic.VAR.set_variable("has_key", true)
 	item_added_with_dialog(load("res://resources/assets/items_for_pickup/rusty_key/rusty_key.tres"))
-
-
-# SoundController
-func _on_footstep_timer_timeout() -> void:
-	play_footstep_sound()
 
 
 # Inventory
