@@ -46,7 +46,7 @@ func _on_back_to_menu_pressed() -> void:
 
 	elif GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_SCENE:
 		GlobalSettings.set_last_scene(GlobalSettings.LastScenes.SETTINGS_MENU)
-		get_tree().change_scene_to_file("res://scenes/main/main_scene.tscn")
+		queue_free()
 
 
 func _on_scaling_pressed() -> void:

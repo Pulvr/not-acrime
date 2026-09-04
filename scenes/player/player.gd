@@ -38,7 +38,6 @@ var item_in_hand: ItemData
 func _ready():
 	if GlobalSettings.last_scene == GlobalSettings.LastScenes.SETTINGS_MENU:
 		toggle_pause()
-		load_player_state()
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -74,7 +73,6 @@ func _input(event):
 		and Dialogic.current_timeline == null
 		and !current_state == State.IN_MINIGAME
 	):
-		save_player_state()
 		toggle_pause()
 
 	if event.is_action_pressed("ui_cancel") and current_state == State.FREE:
@@ -191,7 +189,7 @@ func update_hand_display():
 # Pause Controller?
 func toggle_pause():
 	current_state = State.PAUSED
-	var new_pause_state = !get_tree().paused
+	var new_pause_state: bool = !get_tree().paused
 	get_tree().paused = new_pause_state
 
 	pause_menu.visible = new_pause_state
@@ -210,7 +208,7 @@ func update_inventory_ui():
 		child.queue_free()
 
 	for i in range(inventory.size()):
-		var slot_instance = INVENTORY_SLOT_SCENE.instantiate()
+		var slot_instance: Node = INVENTORY_SLOT_SCENE.instantiate()
 		slot_container.add_child(slot_instance)
 
 		var is_active = i == selected_index
@@ -225,28 +223,6 @@ func item_added_with_dialog(item: ItemData):
 	add_item_to_inventory(item)
 	if Dialogic.current_timeline == null:
 		Dialogic.start("item_received_timeline")
-
-
-# PlayerController
-func save_player_state():
-	GlobalSettings.last_player_position = global_position
-	GlobalSettings.last_player_rotation = rotation
-	GlobalSettings.last_head_rotation = head.rotation
-	GlobalSettings.last_inventory = inventory.duplicate()
-	GlobalSettings.last_selected_index = selected_index
-
-
-# PlayerController
-func load_player_state():
-	global_position = GlobalSettings.last_player_position
-	rotation = GlobalSettings.last_player_rotation
-	head.rotation = GlobalSettings.last_head_rotation
-	inventory = GlobalSettings.last_inventory.duplicate()
-	selected_index = GlobalSettings.last_selected_index
-	if not inventory.is_empty():
-		update_hand_display()
-	else:
-		update_inventory_ui()
 
 
 func set_state(new_state: State) -> void:
