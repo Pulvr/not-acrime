@@ -30,6 +30,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.49
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CellBars" unique_id=2095277585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2633485, 2.1015527, 0.0040457845)
 shape = SubResource("BoxShape3D_dysg5")
+disabled = true
 
 [node name="CellDoor" type="StaticBody3D" parent="." unique_id=615430700]
 
