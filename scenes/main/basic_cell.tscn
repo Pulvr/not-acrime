@@ -55,6 +55,7 @@ mesh = SubResource("BoxMesh_pn2xy")
 shape = SubResource("BoxShape3D_m0pmr")
 
 [node name="Ceiling" type="StaticBody3D" parent="." unique_id=1883226631]
+visible = false
 
 [node name="Mesh" type="MeshInstance3D" parent="Ceiling" unique_id=1204205246]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
