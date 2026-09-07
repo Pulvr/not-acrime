@@ -11,6 +11,7 @@ func _input(event: InputEvent) -> void:
 			print(item)
 			print("Item :" + item.name + "\nDescription: " + item.description)
 
+
 func pick_up_item(item_node):
 	if "data" in item_node:
 		add_item_to_inventory(item_node.data)

@@ -8,6 +8,7 @@ var selected_index: int = 0
 var item_in_hand: ItemData
 
 @onready var player: Node = owner
+@onready var inventory = $"../Inventory".inventory
 @onready var hand_mesh: MeshInstance3D = $ItemInHandContainer/ItemInHand/HandSlot/HandMesh
 @onready var slot_container: VBoxContainer = $InventoryBar/SlotContainer
 
@@ -29,18 +30,18 @@ func _input(event):
 
 
 func change_selected_item(direction: int):
-	if player.inventory.is_empty():
+	if inventory.is_empty():
 		return
 
-	selected_index = (selected_index + direction) % player.inventory.size() 
+	selected_index = (selected_index + direction) % inventory.size()
 	if selected_index < 0:
-		selected_index = player.inventory.size() - 1
+		selected_index = inventory.size() - 1
 
 	update_hand_display()
 
 
 func update_hand_display():
-	item_in_hand = player.inventory[selected_index]
+	item_in_hand = inventory[selected_index]
 	Dialogic.VAR.set_variable("item_strings.item_in_hand", item_in_hand.name)
 
 	if item_in_hand and item_in_hand.item_mesh:
@@ -56,13 +57,13 @@ func update_inventory_ui():
 	for child in slot_container.get_children():
 		child.queue_free()
 
-	for i in range(player.inventory.size()):
+	for i in range(inventory.size()):
 		var slot_instance: Node = INVENTORY_SLOT_SCENE.instantiate()
 		slot_container.add_child(slot_instance)
 
 		var is_active = i == selected_index
 
-		slot_instance.display_item(player.inventory[i], is_active)
+		slot_instance.display_item(inventory[i], is_active)
 
 
 func toggle_pause():
@@ -79,7 +80,7 @@ func toggle_pause():
 
 
 func _on_inventory_picked_up_item() -> void:
-	item_in_hand = player.inventory[-1]
+	item_in_hand = inventory[-1]
 	change_selected_item(1)
 	update_hand_display()
 	update_inventory_ui()

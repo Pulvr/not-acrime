@@ -17,7 +17,6 @@ var max_camera_x: float = deg_to_rad(90)
 var current_mode := MovementModes.WALK
 var current_state := State.FREE
 
-@onready var inventory: Array[ItemData] = $Inventory.get_inventory()
 @onready var head: Node3D = $Head
 @onready var intro_target: Node3D = $"../LevelAssets/CellWithAssets/Cellmate"
 

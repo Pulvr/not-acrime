@@ -9,18 +9,18 @@ signal toilet_minigame_ended
 
 var ui_instance = null
 
-@onready var ToiletUI = preload("res://scenes/ui_scenes/minigames/toilet_minigame.tscn")
-@onready var main_scene = get_tree().get_root().get_node("MainScene/Player/UILayer")
+@onready var ToiletUI: PackedScene = preload("res://scenes/ui_scenes/minigames/toilet_minigame.tscn")
+@onready var main_scene: Node = get_tree().get_root().get_node("MainScene/Player/UILayer")
 
 
 func interact():
 	if Dialogic.VAR.talked_to_cellmate_1 && !Dialogic.VAR.has_sharp:
-		startMinigame()
+		start_minigame()
 	elif Dialogic.current_timeline == null:
 		Dialogic.start("toilet_minigame_timeline")
 
 
-func startMinigame():
+func start_minigame():
 	toilet_minigame_started.emit()
 	if ui_instance == null:
 		ui_instance = ToiletUI.instantiate()
