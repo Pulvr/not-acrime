@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://t6s5infr0a83"]
+
+[ext_resource type="PackedScene" uid="uid://cg3owa3c1k8bj" path="res://scenes/level/other_cells/other_cell.tscn" id="1_ne2k3"]
+[ext_resource type="PackedScene" uid="uid://ccgmst8510vwd" path="res://models/cell_door.glb" id="2_7blpm"]
+[ext_resource type="PackedScene" uid="uid://cfwklur56h5xj" path="res://models/cell_bars.glb" id="3_ym3kn"]
+[ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/cell_assets/bunkbed.tscn" id="4_ufy4c"]
+[ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/cell_assets/toilet.tscn" id="5_amw3s"]
+[ext_resource type="PackedScene" uid="uid://bwydqnnjb3cfv" path="res://scenes/level/cell_assets/usable_sink.tscn" id="6_uxk83"]
+
+[node name="BasicCellWide" type="Node3D" unique_id=77335301]
+transform = Transform3D(1.0063823, 0, 0, 0, 1.0063823, 0, 0, 0, 1.0063823, 0, 0, 0)
+
+[node name="OtherCell" parent="." unique_id=1328943470 instance=ExtResource("1_ne2k3")]
+
+[node name="CellDoor" parent="." unique_id=1660964143 instance=ExtResource("2_7blpm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.0241375, 0.100687265, 4.9177904)
+
+[node name="CellBars" parent="." unique_id=1127131123 instance=ExtResource("3_ym3kn")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.97961336, 0.101, 4.9452014)
+
+[node name="CellBars2" parent="." unique_id=1012561670 instance=ExtResource("3_ym3kn")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4796133, 0.101, 4.9452014)
+
+[node name="Bunkbed" parent="." unique_id=1627439450 instance=ExtResource("4_ufy4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.696958, -0.006723523, 0.114683986)
+
+[node name="Toilet" parent="." unique_id=1757528361 instance=ExtResource("5_amw3s")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.8677254, 0.099999905, -0.14883226)
+
+[node name="Sink" parent="." unique_id=548424249 instance=ExtResource("6_uxk83")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 1, 2)
