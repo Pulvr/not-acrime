@@ -1,8 +1,9 @@
 extends Control
 
-const CONTROLS_MENU_SCENE = preload("res://scenes/ui_scenes/controls_menu.tscn")
+const CONTROLS_MENU_SCENE: PackedScene = preload("res://scenes/ui_scenes/controls_menu.tscn")
+const SETTINGS_MENU_SCENE: PackedScene = preload("res://scenes/ui_scenes/settings_menu.tscn")
 
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player: Node = get_tree().get_first_node_in_group("player")
 
 
 func _on_continue_pressed():
@@ -14,14 +15,14 @@ func _on_continue_pressed():
 
 func _on_controls_pressed() -> void:
 	GlobalSettings.set_last_scene(GlobalSettings.LastScenes.MAIN_SCENE)
-	var controls = CONTROLS_MENU_SCENE.instantiate()
+	var controls: Node = CONTROLS_MENU_SCENE.instantiate()
 	add_child(controls)
 
 
 func _on_settings_pressed() -> void:
 	GlobalSettings.set_last_scene(GlobalSettings.LastScenes.MAIN_SCENE)
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/ui_scenes/settings_menu.tscn")
+	var settings: Node = SETTINGS_MENU_SCENE.instantiate()
+	add_child(settings)
 
 
 func _on_quit_pressed():

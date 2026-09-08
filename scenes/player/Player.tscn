@@ -1,21 +1,26 @@
 [gd_scene format=3 uid="uid://dde3h81eyjbg3"]
 
 [ext_resource type="Script" uid="uid://6f4ifjijt2wf" path="res://scenes/player/player.gd" id="1_xhfnw"]
-[ext_resource type="AudioStream" uid="uid://bdoqldodvptee" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete1_raw.mp3" id="2_5stf6"]
 [ext_resource type="PackedScene" uid="uid://bnvtsx8kwmo1c" path="res://scenes/ui_scenes/ui_tooltip_pickup.tscn" id="2_gfjak"]
 [ext_resource type="Material" uid="uid://xtfht3ymr5w5" path="res://textures/shaders/pixelation_filter.tres" id="2_tpg5x"]
 [ext_resource type="PackedScene" uid="uid://d0iiaocop6n68" path="res://scenes/ui_scenes/ui_tooltip_talk.tscn" id="3_4kuee"]
-[ext_resource type="AudioStream" uid="uid://6b27nkyh5kdo" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete2_raw.mp3" id="3_180ig"]
-[ext_resource type="AudioStream" uid="uid://cjohwirsjcgub" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete3_raw.mp3" id="4_20koh"]
 [ext_resource type="PackedScene" uid="uid://7tg48w2fy4pu" path="res://scenes/ui_scenes/ui_tooltip_interact.tscn" id="4_524rm"]
-[ext_resource type="AudioStream" uid="uid://m6fvpjmpglke" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete4_raw.mp3" id="5_ov1oi"]
-[ext_resource type="AudioStream" uid="uid://bc7pvu88j2wwx" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete5_raw.mp3" id="6_rn7t0"]
-[ext_resource type="AudioStream" uid="uid://3krcgvjmg73t" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete6_raw.mp3" id="7_8qjgm"]
-[ext_resource type="AudioStream" uid="uid://bkfhqix8fl6oa" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete7_raw.mp3" id="8_ejd4k"]
-[ext_resource type="AudioStream" uid="uid://2lslksnivd0u" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete8_raw.mp3" id="9_2xrq6"]
-[ext_resource type="AudioStream" uid="uid://ccblcfmwcclb0" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete9_raw.mp3" id="10_pi3ps"]
-[ext_resource type="AudioStream" uid="uid://4pcngphqpvu2" path="res://sounds/sfx/nac-sfx-lvl1-step_on_concrete10_raw.mp3" id="11_kswpp"]
+[ext_resource type="Script" uid="uid://bs71b7c7xrlej" path="res://scenes/player/ui_layer.gd" id="6_v5i4m"]
+[ext_resource type="Script" uid="uid://dykt10hebemy7" path="res://scenes/player/footstep_player.gd" id="9_pn6s4"]
+[ext_resource type="AudioStream" uid="uid://bdoqldodvptee" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete1_raw.mp3" id="10_pi3ps"]
+[ext_resource type="AudioStream" uid="uid://6b27nkyh5kdo" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete2_raw.mp3" id="11_kswpp"]
+[ext_resource type="Script" uid="uid://g61y5enhmu0h" path="res://scenes/player/head.gd" id="12_2xrq6"]
 [ext_resource type="Script" uid="uid://btwm68x3j0p4c" path="res://scenes/player/camera_3d.gd" id="12_8qjgm"]
+[ext_resource type="AudioStream" uid="uid://cjohwirsjcgub" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete3_raw.mp3" id="12_v5i4m"]
+[ext_resource type="AudioStream" uid="uid://m6fvpjmpglke" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete4_raw.mp3" id="13_p1lr0"]
+[ext_resource type="Script" uid="uid://i0auj4n6gepr" path="res://scenes/player/ui_hints.gd" id="14_ejd4k"]
+[ext_resource type="AudioStream" uid="uid://bc7pvu88j2wwx" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete5_raw.mp3" id="14_ro0t8"]
+[ext_resource type="AudioStream" uid="uid://3krcgvjmg73t" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete6_raw.mp3" id="15_8nn5r"]
+[ext_resource type="AudioStream" uid="uid://bkfhqix8fl6oa" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete7_raw.mp3" id="16_kvwax"]
+[ext_resource type="AudioStream" uid="uid://2lslksnivd0u" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete8_raw.mp3" id="17_x3qp0"]
+[ext_resource type="AudioStream" uid="uid://ccblcfmwcclb0" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete9_raw.mp3" id="18_76i7i"]
+[ext_resource type="AudioStream" uid="uid://4pcngphqpvu2" path="res://sounds/sfx/player_footsteps/nac-sfx-lvl1-step_on_concrete10_raw.mp3" id="19_mndc6"]
+[ext_resource type="Script" uid="uid://blb14kf6ff3my" path="res://scenes/player/inventory.gd" id="20_kswpp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 height = 3.0
@@ -27,13 +32,13 @@ size = Vector2(2, 2)
 
 [node name="PlayerNode" type="CharacterBody3D" unique_id=1065406681]
 script = ExtResource("1_xhfnw")
-footstep_sounds = Array[AudioStream]([ExtResource("2_5stf6"), ExtResource("3_180ig"), ExtResource("4_20koh"), ExtResource("5_ov1oi"), ExtResource("6_rn7t0"), ExtResource("7_8qjgm"), ExtResource("8_ejd4k"), ExtResource("9_2xrq6"), ExtResource("10_pi3ps"), ExtResource("11_kswpp")])
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=428711341]
 shape = SubResource("CapsuleShape3D_wr5hl")
 
 [node name="Head" type="Node3D" parent="." unique_id=1481642959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("12_2xrq6")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=2054780268]
 keep_aspect = 0
@@ -47,7 +52,11 @@ mesh = SubResource("QuadMesh_c3xxp")
 [node name="InteractionRay" type="RayCast3D" parent="Head" unique_id=175050457]
 target_position = Vector3(0, 0, -3)
 
+[node name="Inventory" type="Node3D" parent="." unique_id=708115282]
+script = ExtResource("20_kswpp")
+
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1363723202]
+script = ExtResource("6_v5i4m")
 
 [node name="CrosshairContainer" type="CenterContainer" parent="UILayer" unique_id=1488337785]
 anchors_preset = 15
@@ -116,6 +125,7 @@ offset_top = 76.0
 offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("14_ejd4k")
 
 [node name="PickupHint" parent="UILayer/UIHints" unique_id=840447008 instance=ExtResource("2_gfjak")]
 visible = false
@@ -133,8 +143,13 @@ layout_mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2307707, 0)
 volume_db = -17.962
 bus = &"Cell Reverb"
+script = ExtResource("9_pn6s4")
+footstep_sounds = Array[AudioStream]([ExtResource("10_pi3ps"), ExtResource("11_kswpp"), ExtResource("12_v5i4m"), ExtResource("13_p1lr0"), ExtResource("14_ro0t8"), ExtResource("15_8nn5r"), ExtResource("16_kvwax"), ExtResource("17_x3qp0"), ExtResource("18_76i7i"), ExtResource("19_mndc6")])
 
 [node name="FootstepTimer" type="Timer" parent="FootstepPlayer" unique_id=319196038]
 wait_time = 0.65
 
-[connection signal="timeout" from="FootstepPlayer/FootstepTimer" to="." method="_on_footstep_timer_timeout"]
+[connection signal="player_moved" from="." to="FootstepPlayer" method="_on_player_node_player_moved"]
+[connection signal="player_stopped" from="." to="FootstepPlayer" method="_on_player_node_player_stopped"]
+[connection signal="picked_up_item" from="Inventory" to="UILayer" method="_on_inventory_picked_up_item"]
+[connection signal="timeout" from="FootstepPlayer/FootstepTimer" to="FootstepPlayer" method="_on_footstep_timer_timeout"]

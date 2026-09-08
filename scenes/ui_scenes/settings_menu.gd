@@ -23,6 +23,12 @@ func _ready():
 	_set_label_texts()
 
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_viewport().set_input_as_handled()
+		_on_back_to_menu_pressed()
+
+
 func _check_last_scene():
 	if GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_MENU:
 		back_to_menu_label.text = "Back to Menu"
@@ -46,7 +52,7 @@ func _on_back_to_menu_pressed() -> void:
 
 	elif GlobalSettings.last_scene == GlobalSettings.LastScenes.MAIN_SCENE:
 		GlobalSettings.set_last_scene(GlobalSettings.LastScenes.SETTINGS_MENU)
-		get_tree().change_scene_to_file("res://scenes/main/main_scene.tscn")
+		queue_free()
 
 
 func _on_scaling_pressed() -> void:

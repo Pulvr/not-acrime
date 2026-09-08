@@ -4,15 +4,15 @@ extends StaticBody3D
 ## so we have to extend the staticbody3d which then loads the UI Scene
 ## Also helpful to load Dialogic stuff
 
+signal pillow_minigame_started
+signal pillow_minigame_ended
+
 var ui_instance = null
 
 @onready var PillowUi = preload("res://scenes/ui_scenes/minigames/pillow_minigame.tscn")
 @onready var main_scene = get_tree().get_root().get_node("MainScene/Player/UILayer")
 @onready var pillow = $Bunkbed/Bunkbed
 @onready var pillow_ripped = $Bunkbed/BunkbedRipped
-
-signal pillow_minigame_started
-signal pillow_minigame_ended
 
 
 func _ready() -> void:
