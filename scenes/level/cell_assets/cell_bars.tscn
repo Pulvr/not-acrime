@@ -9,7 +9,7 @@
 size = Vector3(1, 1, 0.25024414)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dysg5"]
-size = Vector3(3.5455627, 4.015686, 0.12640381)
+size = Vector3(4.072712, 4.015686, 0.12640381)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47nio"]
 size = Vector3(2.5200195, 3.9723282, 0.11767578)

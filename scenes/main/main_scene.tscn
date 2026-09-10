@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dde3h81eyjbg3" path="res://scenes/player/Player.tscn" id="1_w4lj1"]
 [ext_resource type="Environment" uid="uid://chmjwuakjib3d" path="res://default_environment.tres" id="2_0h7de"]
-[ext_resource type="PackedScene" uid="uid://dsqa847tnoi0a" path="res://scenes/level/cell_with_assets.tscn" id="3_3mcv8"]
-[ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/other_cells/other_cell_left.tscn" id="4_a1617"]
-[ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/other_cells/other_cell_right.tscn" id="5_cf2is"]
+[ext_resource type="PackedScene" uid="uid://dsqa847tnoi0a" path="res://scenes/level/red_cell.tscn" id="3_3mcv8"]
+[ext_resource type="PackedScene" uid="uid://btbej5rswodmx" path="res://scenes/level/other_cells/orange_cell.tscn" id="4_a1617"]
+[ext_resource type="PackedScene" uid="uid://cc87dspl6t43x" path="res://scenes/level/other_cells/blue_cell.tscn" id="5_cf2is"]
 [ext_resource type="PackedScene" uid="uid://vmobnpxltuos" path="res://scenes/main/green_cell.tscn" id="6_vo0go"]
 [ext_resource type="AudioStream" uid="uid://dhp5sbuug4hw2" path="res://sounds/sfx/nac-sfx-lvl1-background_hum.mp3" id="7_fnvwe"]
 [ext_resource type="PackedScene" uid="uid://dpvu5c7kxsxu6" path="res://scenes/main/purple_cell.tscn" id="7_meece"]
