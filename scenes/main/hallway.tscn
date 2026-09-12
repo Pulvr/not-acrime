@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://c0mupmv3lxq75" path="res://sounds/sfx/nac-sfx-lvl1-gunshot-1.ogg" id="4_lk227"]
 [ext_resource type="PackedScene" uid="uid://b5cu28kvq53li" path="res://scenes/main/basic_cell.tscn" id="5_lr8yr"]
 [ext_resource type="PackedScene" uid="uid://t6s5infr0a83" path="res://scenes/main/basic_cell_wide.tscn" id="6_6ypec"]
+[ext_resource type="PackedScene" uid="uid://yrdjygai8741" path="res://scenes/level/drone/drone.tscn" id="7_sjh2e"]
+[ext_resource type="Script" uid="uid://balj0akdq0t5f" path="res://scenes/main/drone_path_follow.gd" id="7_w1ksv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdg7e"]
 size = Vector3(80.82139, 0.19, 54.996872)
@@ -141,6 +143,15 @@ size = Vector3(0.2, 4.5, 3.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ibuok"]
 size = Vector3(19.44281, 3.7944946, 2.4040527)
+
+[sub_resource type="Curve3D" id="Curve3D_sjh2e"]
+closed = true
+bake_interval = 2.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.739, -0.24, -0.222, 0, 0, 0, 0, 0, 0, 1.743, -0.24, -0.423, 0, 0, 0, 0, 0, 0, 1.793, -0.24, -15.599, 0, 0, 0, 0, 0, 0, 1.746, -0.24, -16.081, 0, 0, 0, 0, 0, 0, 1.272, -0.24, -16.255, 0, 0, 0, 0, 0, 0, -8.858, -0.24, -16.269, 0, 0, 0, 0, 0, 0, -9.253, -0.24, -16.483, 0, 0, 0, 0, 0, 0, -9.33449, -0.2397964, -16.80212, 0, 0, 0, 0, 0, 0, -9.345, -0.24, -25.783, 0, 0, 0, 0, 0, 0, -9.391, -0.24, -26.245, 0, 0, 0, 0, 0, 0, -9.809, -0.24, -26.365, 0, 0, 0, 0, 0, 0, -17.676, -0.24, -26.365, 0, 0, 0, 0, 0, 0, -18.139, -0.24, -26.305, 0, 0, 0, 0, 0, 0, -18.222, -0.24, -25.979, 0, 0, 0, 0, 0, 0, -18.272, -0.24, -0.868, 0, 0, 0, 0, 0, 0, -18.195, -0.24, 0.207, 0, 0, 0, 0, 0, 0, -17.413, -0.24, 0.327, 0, 0, 0, 0, 0, 0, 1.638, -0.24, 0.114),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 18
 
 [node name="Hallway" type="Node3D" unique_id=871673574]
 
@@ -420,5 +431,15 @@ transform = Transform3D(-1.0063823, 0, -8.798074e-08, 0, 1.0063823, 0, 8.798074e
 
 [node name="BasicCellWide3" parent="DecorativeCells" unique_id=1149430285 instance=ExtResource("6_6ypec")]
 transform = Transform3D(1.0063823, 0, 0, 0, 1.0063823, 0, 0, 0, 1.0063823, -33.224274, -0.026666641, 10.325046)
+
+[node name="DronePath3D" type="Path3D" parent="." unique_id=899981208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868488)
+curve = SubResource("Curve3D_sjh2e")
+
+[node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
+transform = Transform3D(0.9996731, 0, -0.019894479, 0, 0.99996567, 0, 0.01989433, 0, 0.99968064, 1.739, -0.24, -0.222)
+script = ExtResource("7_w1ksv")
+
+[node name="Drone" parent="DronePath3D/DronePathFollow" unique_id=17349681 instance=ExtResource("7_sjh2e")]
 
 [connection signal="body_entered" from="PlayerTriggerzone" to="PlayerTriggerzone" method="_on_body_entered"]
