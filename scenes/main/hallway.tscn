@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5cu28kvq53li" path="res://scenes/main/basic_cell.tscn" id="5_lr8yr"]
 [ext_resource type="PackedScene" uid="uid://t6s5infr0a83" path="res://scenes/main/basic_cell_wide.tscn" id="6_6ypec"]
 [ext_resource type="PackedScene" uid="uid://yrdjygai8741" path="res://scenes/level/drone/drone.tscn" id="7_sjh2e"]
-[ext_resource type="Script" uid="uid://balj0akdq0t5f" path="res://scenes/main/drone_path_follow.gd" id="7_w1ksv"]
+[ext_resource type="Script" uid="uid://balj0akdq0t5f" path="res://scenes/level/drone/drone_path_follow.gd" id="7_w1ksv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdg7e"]
 size = Vector3(80.82139, 0.19, 54.996872)
@@ -437,7 +437,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.9996731, 0, -0.019894479, 0, 0.99996567, 0, 0.01989433, 0, 0.99968064, 1.739, -0.24, -0.222)
+transform = Transform3D(0.9996729, 0, -0.019894477, 0, 0.9999656, 0, 0.019894324, 0, 0.9996806, 1.739, -0.24, -0.222)
 script = ExtResource("7_w1ksv")
 
 [node name="Drone" parent="DronePath3D/DronePathFollow" unique_id=17349681 instance=ExtResource("7_sjh2e")]
