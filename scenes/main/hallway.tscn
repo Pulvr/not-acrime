@@ -443,3 +443,4 @@ script = ExtResource("7_w1ksv")
 [node name="Drone" parent="DronePath3D/DronePathFollow" unique_id=17349681 instance=ExtResource("7_sjh2e")]
 
 [connection signal="body_entered" from="PlayerTriggerzone" to="PlayerTriggerzone" method="_on_body_entered"]
+[connection signal="player_detected" from="DronePath3D/DronePathFollow/Drone" to="DronePath3D/DronePathFollow" method="_on_drone_player_detected"]
