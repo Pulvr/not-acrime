@@ -21,14 +21,6 @@ var current_state := State.FREE
 @onready var intro_target: Node3D = $"../LevelAssets/RedCell/Cellmate"
 
 
-func _ready():
-	Dialogic.timeline_started.connect(_on_timeline_started)
-	Dialogic.timeline_ended.connect(_on_timeline_ended)
-
-	await get_tree().process_frame
-	if GlobalSettings.last_scene != GlobalSettings.LastScenes.SETTINGS_MENU:
-		auto_start_intro_dialog()
-
 
 func _input(event):
 	if event is InputEventMouseMotion and current_state == State.FREE:
@@ -50,7 +42,7 @@ func auto_start_intro_dialog():
 	var cellmate: Node3D = intro_target
 
 	if cellmate != null:
-		$Head.look_at_target_with_offset(cellmate, min_camera_x, max_camera_x)
+		head.look_at_target_with_offset(cellmate)
 		if Dialogic.current_timeline == null:
 			Dialogic.start("welcome_timeline")
 
@@ -129,10 +121,3 @@ func _on_pillow_mini_game_ended():
 	)
 
 
-func _on_timeline_started():
-	current_state = State.IN_DIALOGUE
-
-
-func _on_timeline_ended():
-	if !current_state == State.IN_MINIGAME:
-		current_state = State.FREE

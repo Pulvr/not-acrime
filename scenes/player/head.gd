@@ -1,7 +1,7 @@
 extends Node3D
 
 
-func look_at_target_with_offset(target_node: Node, min_camera_x: float, max_camera_x: float):
+func look_at_target_with_offset(target_node: Node, min_camera_x = -90.0 , max_camera_x = 90.0 ):
 	var collision_shape: Node = target_node.get_node_or_null("CollisionShape3D")
 	var target_height: float = 0.0
 	if collision_shape and collision_shape.shape:

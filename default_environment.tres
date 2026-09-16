@@ -20,4 +20,5 @@ glow_levels/4 = 0.5
 glow_levels/5 = 0.2
 fog_enabled = true
 fog_light_color = Color(0.11501526, 0.12512508, 0.1211571, 1)
-fog_density = 0.0512
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
