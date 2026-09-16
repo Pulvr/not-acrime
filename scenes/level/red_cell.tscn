@@ -20,7 +20,7 @@
 radius = 0.5205078
 height = 3.6547852
 
-[node name="CellWithAssets" type="Node3D" unique_id=930626341]
+[node name="RedCell" type="Node3D" unique_id=930626341]
 
 [node name="OwnCell" parent="." unique_id=1328943470 instance=ExtResource("1_86qqa")]
 
