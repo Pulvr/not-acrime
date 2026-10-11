@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://yrdjygai8741"]
+
+[ext_resource type="Script" uid="uid://cn76opw6olgpt" path="res://scenes/level/drone/drone.gd" id="1_8v4ya"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8v4ya"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8v4ya"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ned6"]
+size = Vector3(2.5, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb8xx"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.48127353, 7.099286e-07, 2.4065375e-07, 1)
+distance_fade_mode = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8v4ya"]
+top_radius = 0.0
+bottom_radius = 1.5
+height = 5.0
+
+[node name="Drone" type="StaticBody3D" unique_id=17349681]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_8v4ya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2088003606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.020324707, 0)
+shape = SubResource("CapsuleShape3D_8v4ya")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1072365900]
+mesh = SubResource("CapsuleMesh_8v4ya")
+
+[node name="PlayerDetectorShape" type="ShapeCast3D" parent="." unique_id=1286301247]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 2, 0, 0)
+shape = SubResource("BoxShape3D_6ned6")
+max_results = 10
+
+[node name="VisibleLight" type="SpotLight3D" parent="." unique_id=590521723]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.55490875, 0, 2.4255831e-08)
+light_color = Color(1, 0, 0, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 16.0
+spot_range = 8.0
+spot_angle = 12.128104
+
+[node name="FakeLightMesh" type="MeshInstance3D" parent="VisibleLight" unique_id=296212973]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2.3986244)
+visible = false
+material_override = SubResource("StandardMaterial3D_tb8xx")
+mesh = SubResource("CylinderMesh_8v4ya")

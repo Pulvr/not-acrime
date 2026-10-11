@@ -12,7 +12,7 @@ var light_tween: Tween
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var player_head = player.head
-@onready var newspaper_fake_light = get_node("../../../Lighting/CellOwn/NewspaperLight")
+@onready var newspaper_fake_light = get_node("../../../Lighting/CellRed/NewspaperLight")
 
 
 func interact():
