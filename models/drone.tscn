@@ -4,45 +4,60 @@
 [ext_resource type="Material" uid="uid://d4brexsrshmf7" path="res://textures/materials/steel_blue.tres" id="2_tmj1b"]
 [ext_resource type="Material" uid="uid://cdu8uu56eknkq" path="res://textures/materials/steel_black.tres" id="3_bfgak"]
 [ext_resource type="Material" uid="uid://b83qgab1oa6is" path="res://textures/materials/steel_gray.tres" id="4_oanvx"]
+[ext_resource type="Material" uid="uid://b1e8sj585ce7h" path="res://textures/materials/camera_lens.tres" id="5_oanvx"]
+[ext_resource type="Material" uid="uid://dfqykd7b2ut0w" path="res://textures/materials/drone_glow_red.tres" id="6_645h6"]
+[ext_resource type="Material" uid="uid://ct586qklpypyb" path="res://textures/materials/drone_glow_lightblue.tres" id="7_3a8m0"]
 
 [node name="Drone" type="Node3D" unique_id=1437281549]
 
-[node name="drone" parent="." unique_id=454651100 instance=ExtResource("1_sul2g")]
+[node name="drone" parent="." unique_id=2016751971 instance=ExtResource("1_sul2g")]
 
-[node name="Antenna" parent="drone" index="0" unique_id=1429356519]
+[node name="Antenna" parent="drone" index="0" unique_id=949933444]
 material_override = ExtResource("3_bfgak")
 
-[node name="Arm" parent="drone" index="1" unique_id=936500173]
+[node name="Arm" parent="drone" index="1" unique_id=423036444]
 material_override = ExtResource("4_oanvx")
 
-[node name="Body Main" parent="drone" index="2" unique_id=1014793803]
+[node name="Body Main" parent="drone" index="2" unique_id=78635061]
 material_override = ExtResource("2_tmj1b")
 
-[node name="Cam Lens" parent="drone" index="3" unique_id=1208264611]
+[node name="Cam Lens" parent="drone" index="3" unique_id=935325616]
+material_override = ExtResource("5_oanvx")
+
+[node name="Cam Lens Objektive" parent="drone" index="4" unique_id=36469627]
 material_override = ExtResource("3_bfgak")
 
-[node name="Claw4" parent="drone" index="5" unique_id=1460916419]
+[node name="Cam Light" parent="drone" index="5" unique_id=1640130789]
+material_override = ExtResource("6_645h6")
+
+[node name="Claw4" parent="drone" index="6" unique_id=1906041424]
 material_override = ExtResource("4_oanvx")
 
-[node name="Gun Barrels" parent="drone" index="7" unique_id=1012141794]
+[node name="Gun Barrels" parent="drone" index="8" unique_id=754809058]
 material_override = ExtResource("3_bfgak")
 
-[node name="Gun Mount" parent="drone" index="8" unique_id=253421553]
+[node name="Gun Mount" parent="drone" index="9" unique_id=652569500]
 material_override = ExtResource("3_bfgak")
 
-[node name="Jets" parent="drone" index="9" unique_id=1362684582]
+[node name="Jets" parent="drone" index="10" unique_id=1636722128]
 material_override = ExtResource("3_bfgak")
 
-[node name="Jets  Cylinder" parent="drone" index="10" unique_id=1444870912]
+[node name="Jets  Cylinder" parent="drone" index="11" unique_id=1934011696]
 material_override = ExtResource("3_bfgak")
 
-[node name="Shield Body" parent="drone" index="13" unique_id=946529578]
+[node name="Jets bottom" parent="drone" index="12" unique_id=893778967]
+material_override = ExtResource("7_3a8m0")
+
+[node name="Jets rear" parent="drone" index="13" unique_id=223924827]
+material_override = ExtResource("7_3a8m0")
+
+[node name="Shield Body" parent="drone" index="14" unique_id=1995525944]
 material_override = ExtResource("2_tmj1b")
 
-[node name="Shield Decal" parent="drone" index="14" unique_id=187714802]
+[node name="Shield Decal" parent="drone" index="15" unique_id=671601207]
 material_override = ExtResource("4_oanvx")
 
-[node name="Shield Sides" parent="drone" index="15" unique_id=1660543664]
+[node name="Shield Sides" parent="drone" index="16" unique_id=1758877403]
 material_override = ExtResource("2_tmj1b")
 
 [editable path="drone"]
