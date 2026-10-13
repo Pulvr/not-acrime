@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d4brexsrshmf7"]
+
+[ext_resource type="Texture2D" uid="uid://do7b1tj3eg418" path="res://textures/materials/gray_steel.png" id="1_lkthx"]
+
+[resource]
+albedo_color = Color(0.080943145, 0.34054795, 0.6532217, 1)
+albedo_texture = ExtResource("1_lkthx")
+metallic = 1.0
+roughness = 0.34
+uv1_triplanar = true
+texture_filter = 0
