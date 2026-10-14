@@ -355,7 +355,6 @@ mesh = SubResource("BoxMesh_sunwe")
 
 [node name="Ceiling" type="MeshInstance3D" parent="FloorAndCeiling" unique_id=1075906834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.841, 4.2, -1.209)
-visible = false
 material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_ybmnr")
 
