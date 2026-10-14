@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://crvbpv8l2usm6"]
+
+[ext_resource type="Texture2D" uid="uid://chnv7gltuckc0" path="res://models/button_door_rust_pixelated.png" id="1_a70vo"]
+
+[resource]
+resource_name = "button_podest"
+cull_mode = 2
+albedo_texture = ExtResource("1_a70vo")
+roughness = 0.5
