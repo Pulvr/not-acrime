@@ -119,5 +119,3 @@ func _on_pillow_mini_game_ended():
 	$Inventory.item_added_with_dialog(
 		load("res://resources/assets/items_for_pickup/rusty_key/rusty_key.tres")
 	)
-
-

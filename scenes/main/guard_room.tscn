@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://d254drr0hblaa"]
 
+[ext_resource type="Texture2D" uid="uid://cixrhhaycy2w0" path="res://textures/source images/concrete_floor_pixelated.png" id="1_452ac"]
 [ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/materials/concrete_wall.tres" id="1_ptqxc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2at7u"]
+albedo_color = Color(0.5370987, 0.5370987, 0.5370987, 1)
+albedo_texture = ExtResource("1_452ac")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(0.15, 0.15, 0.15)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_2t1qc"]
 size = Vector3(6.15, 0.2, 10)
@@ -32,6 +40,7 @@ size = Vector3(0.23403259, 4, 6.9362307)
 [node name="GuardRoom" type="Node3D" unique_id=1152577038]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1632215423]
+material_override = SubResource("StandardMaterial3D_2at7u")
 mesh = SubResource("BoxMesh_2t1qc")
 
 [node name="Walls" type="StaticBody3D" parent="." unique_id=1284163836]
