@@ -6,4 +6,5 @@
 resource_name = "button_podest"
 cull_mode = 2
 albedo_texture = ExtResource("1_a70vo")
+albedo_texture_force_srgb = true
 roughness = 0.5
