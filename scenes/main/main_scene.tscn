@@ -47,7 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0342655, 0.013441086, -15.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.007223, 0.013441086, -23.522533)
 
 [node name="GuardRoom" parent="LevelAssets" unique_id=1152577038 instance=ExtResource("8_vo0go")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.644672, -4.7683716e-07, -10.008528)
+transform = Transform3D(0.99990696, 0, 0, 0, 0.99990696, 0, 0, 0, 0.99990696, -38.644672, -4.7683716e-07, -10.008528)
 
 [node name="BreakRoom" parent="LevelAssets" unique_id=2126786495 instance=ExtResource("9_o5677")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.944124, -4.7683716e-07, -15.109953)
@@ -414,6 +414,23 @@ shadow_blur = 10.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
 light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
 light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+
+[node name="GuardRoom" type="Node3D" parent="Lighting" unique_id=1454655688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.64, 3.8, -10.035)
+
+[node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/GuardRoom" unique_id=1596258989]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_specular = 0.1
+shadow_enabled = true
+shadow_blur = 10.0
+
+[node name="BasicCellLight2" type="OmniLight3D" parent="Lighting/GuardRoom" unique_id=771793148]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -1.4)
+light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_specular = 0.1
 shadow_enabled = true
 shadow_blur = 10.0
 
