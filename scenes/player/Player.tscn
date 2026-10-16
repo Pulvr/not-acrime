@@ -84,7 +84,7 @@ stretch_shrink = 3
 [node name="ItemInHand" type="SubViewport" parent="UILayer/ItemInHandContainer" unique_id=715827172]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(384, 216)
+size = Vector2i(640, 360)
 render_target_update_mode = 4
 
 [node name="HandCamera" type="Node3D" parent="UILayer/ItemInHandContainer/ItemInHand" unique_id=1210829881]
