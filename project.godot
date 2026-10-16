@@ -35,6 +35,7 @@ directories/dtl_directory={
 "cell_lock_timeline": "res://resources/dialog/timeline/cell_lock_timeline.dtl",
 "cellmate": "res://resources/dialog/timeline/cellmate.dtl",
 "door_lock_minigame_failed_timeline": "res://resources/dialog/timeline/door_lock_minigame_failed_timeline.dtl",
+"drone_detect_timeline": "res://drone_detect_timeline.dtl",
 "item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
 "pillow_timeline": "res://resources/dialog/timeline/pillow_timeline.dtl",
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",

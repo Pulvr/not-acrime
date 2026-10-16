@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkkved7qub82m"]
 
-[ext_resource type="PackedScene" uid="uid://bia72e66yxt3a" path="res://models/drone.glb" id="1_sul2g"]
+[ext_resource type="PackedScene" uid="uid://bia72e66yxt3a" path="res://models/drone_model.glb" id="1_sul2g"]
 [ext_resource type="Material" uid="uid://d4brexsrshmf7" path="res://textures/materials/steel_blue.tres" id="2_tmj1b"]
 [ext_resource type="Material" uid="uid://cdu8uu56eknkq" path="res://textures/materials/steel_black.tres" id="3_bfgak"]
 [ext_resource type="Material" uid="uid://b83qgab1oa6is" path="res://textures/materials/steel_gray.tres" id="4_oanvx"]

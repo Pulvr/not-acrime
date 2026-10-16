@@ -24,4 +24,15 @@ func _on_timeline_ended():
 
 
 func _on_drone_player_detected() -> void:
+	_teleport_player_to_cell()
+
+
+func _teleport_player_to_cell() -> void:
 	player.head.look_at_target_with_offset(drone)
+	player.set_state(Player.State.IN_DIALOGUE)
+	await FadeLayer.fade_to_black(1.5)
+	player.set_position(Vector3(0, 1.6, 1.7))  # Home Pos in Cell
+	player.head.look_at_target_with_offset($LevelAssets/RedCell/CellBars)
+	await FadeLayer.fade_from_black(1.5)
+	if Dialogic.current_timeline == null:
+		Dialogic.start("drone_detect_timeline")

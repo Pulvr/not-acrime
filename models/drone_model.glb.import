@@ -4,16 +4,16 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bia72e66yxt3a"
-path="res://.godot/imported/drone.glb-15a9f87f066f105b89ed98c29391c9f4.scn"
+path="res://.godot/imported/drone_model.glb-5632a5a46c999f3ffa5347b454670835.scn"
 
 [deps]
 
-source_file="res://models/drone.glb"
-dest_files=["res://.godot/imported/drone.glb-15a9f87f066f105b89ed98c29391c9f4.scn"]
+source_file="res://models/drone_model.glb"
+dest_files=["res://.godot/imported/drone_model.glb-5632a5a46c999f3ffa5347b454670835.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
