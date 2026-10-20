@@ -17,7 +17,6 @@ func _physics_process(_delta: float) -> void:
 
 		if collider and collider.is_in_group("player"):
 			player_detected.emit()
-			print("detected")
 
 
 func set_state(new_mode: DroneState) -> void:

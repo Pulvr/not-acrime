@@ -64,8 +64,10 @@ emission_angle_degrees = 42.5
 parameters/looping = true
 
 [node name="DetectedPlayer" type="AudioStreamPlayer3D" parent="." unique_id=159296089]
-transform = Transform3D(-0.044630643, 0, -0.9990035, 0, 1, 0, 0.9990035, 0, -0.044630643, 0, 0, 0)
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 0, 0)
 stream = ExtResource("4_04qfh")
+volume_db = -6.875
+max_distance = 15.0
 bus = &"Prison Reverb"
 emission_angle_enabled = true
 
