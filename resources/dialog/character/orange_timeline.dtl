@@ -1,0 +1,25 @@
+if {orange_door_opened} == false:
+	if {orange_locked_encountered} == false:
+		join char_orange center
+		char_orange: Oh! Hello there, good to see you got out of your cell.
+		char_orange: Beware the guard that keeps patrolling, they can be quite the nuisance.
+		char_orange: You wanna get us out?[pause=0.3] Sounds rad!
+		char_orange: Hey, I trust you. We can get out of here together!
+		set {orange_locked_encountered} = true
+		[end_timeline]
+	elif {orange_locked_encountered} == true:
+		join char_orange center
+		char_orange: Hey, I trust you. We can get out of here together!
+		[end_timeline]
+elif {orange_door_opened} == true:
+	if {orange_opened_and_talked_to} == false:
+		join char_orange center
+		char_orange: Damn Partner, good job. I knew you could do it though.
+		char_orange: If you put your heart into it, even the challenges that feel unbeatable are possible to overcome!
+		char_orange: Go now, free the others and open the exit. I will handle the guard and catch up with you once we can leave!
+		set {orange_opened_and_talked_to} = true
+		[end_timeline]
+	elif {orange_opened_and_talked_to} == true:
+		join char_orange center
+		char_orange: Go now, free the others and open the exit. I will handle the guard and catch up with you once we can leave!
+		[end_timeline]

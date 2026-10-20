@@ -1,0 +1,28 @@
+if {prison_exit_open} == true:
+	join char_blue center
+	char_blue: Y-[pause=0.3]You really believe it’s okay for me to get out?
+	char_blue: ...
+	char_blue: I-[pause=0.3]I will try - but please stay by my side, okay?
+	set {orange_isfree} = true
+	[end_timeline]
+if {blue_door_opened} == true:
+	if {blue_talked_to_first_time} == true:
+		join char_blue center
+		char_blue: Y-[pause=0.3]You are persistent, I will give you that…
+		char_blue: Give me some space, I don’t have the confidence to leave just yet.
+		char_blue: Even if the law is against us, it would still be breaking the law, wouldn’t it?
+		[end_timeline]
+	elif {blue_talked_to_first_time} == false:
+		join char_blue center
+		char_blue: W- [pause=0.3] Why are you standing there?
+		char_blue: How did you get in here?! A- [pause=0.3] Are you a guard?
+		char_blue: Getting out? [pause=1.0] I do not think I can do that. I have been arrested for a reason, haven't I?
+		char_blue: I am scared of what might happen if I try to leave. Are you not scared?
+		char_blue: What good will leaving bring anyways? It’s not like the outside world is peaceful for people like us.
+		set {blue_talked_to_first_time} = true
+		[end_timeline]
+elif {blue_door_opened} == false:
+	char_blue: ...
+	char_blue: ...
+	[i]It seems they won’t engage in a conversation like this...[/i]
+	[end_timeline]

@@ -3,17 +3,17 @@ if {dialog_played} == true:
 	join Prisoner center
 	Prisoner: Whoa I've heard this before
 	[end_timeline]
-join Cellmate left
-Cellmate: Hello and welcome to this Cell
+join char_red left
+char_red: Hello and welcome to this Cell
 
 join Prisoner right
 Prisoner: Well, this is is awkward
 
-Cellmate: I thought this was a cool new feature?
+char_red: I thought this was a cool new feature?
 
 Prisoner: Nah, sorry.
 
-Cellmate: It's okay.
+char_red: It's okay.
 set {dialog_played} = true
 
 [end_timeline]

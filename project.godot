@@ -28,14 +28,18 @@ FadeLayer="*uid://co4aq7qikr2sw"
 [dialogic]
 
 directories/dch_directory={
-"Cellmate": "res://resources/dialog/character/Cellmate.dch",
-"Prisoner": "res://resources/dialog/character/Prisoner.dch"
+"Prisoner": "res://resources/dialog/character/Prisoner.dch",
+"char_blue": "res://resources/dialog/character/char_blue.dch",
+"char_orange": "res://resources/dialog/character/char_orange.dch",
+"char_red": "res://resources/dialog/character/char_red.dch"
 }
 directories/dtl_directory={
+"blue_timeline": "res://blue_timeline.dtl",
 "cell_lock_timeline": "res://resources/dialog/timeline/cell_lock_timeline.dtl",
-"cellmate": "res://resources/dialog/timeline/cellmate.dtl",
+"cellmate": "res://resources/dialog/timeline/char_red_timeline.dtl",
 "door_lock_minigame_failed_timeline": "res://resources/dialog/timeline/door_lock_minigame_failed_timeline.dtl",
 "item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
+"orange_timeline": "res://resources/dialog/character/orange_timeline.dtl",
 "pillow_timeline": "res://resources/dialog/timeline/pillow_timeline.dtl",
 "sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
 "toilet_minigame_timeline": "res://resources/dialog/timeline/toilet_minigame_timeline.dtl",
@@ -49,6 +53,8 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://resources/dialog/style/default_style.tres"]
 layout/default_style="res://resources/dialog/style/default_style.tres"
 variables={
+"blue_door_opened": false,
+"blue_talked_to_first_time": "",
 "checked_pillow": false,
 "dialog_played": false,
 "end_reached": false,
@@ -60,6 +66,11 @@ variables={
 "item_received": ""
 },
 "lock_solved": false,
+"orange_door_opened": "",
+"orange_isfree": "",
+"orange_locked_encountered": "",
+"orange_opened_and_talked_to": "",
+"prison_exit_open": false,
 "talked_to_cellmate_1": false,
 "talked_to_cellmate_with_sharp": false,
 "toilet_interacted_with": false,
@@ -110,6 +121,10 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [global_group]
 

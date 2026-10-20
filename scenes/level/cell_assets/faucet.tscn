@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c25k37pimxu03"]
+
+[ext_resource type="PackedScene" uid="uid://ctm61tjlqdkfg" path="res://models/faucet.glb" id="1_3y6rn"]
+[ext_resource type="Material" uid="uid://don308tfp1y4j" path="res://textures/materials/toilet_metal.tres" id="2_trv6a"]
+
+[node name="Faucet" type="Node3D" unique_id=367849050]
+
+[node name="faucet" parent="." unique_id=763668016 instance=ExtResource("1_3y6rn")]
+
+[node name="Faucet" parent="faucet" index="0" unique_id=1136354471]
+material_override = ExtResource("2_trv6a")
+
+[node name="Valve" parent="faucet" index="1" unique_id=1704175001]
+material_override = ExtResource("2_trv6a")
+
+[node name="Valve Shaft" parent="faucet" index="2" unique_id=163067813]
+material_override = ExtResource("2_trv6a")
+
+[editable path="faucet"]
