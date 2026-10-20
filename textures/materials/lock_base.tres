@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyprqgvt3dsgp"]
+
+[ext_resource type="Texture2D" uid="uid://c3fbtgd6l6d8h" path="res://models/key_box_cast_iron_pixelated.png" id="1_uec5c"]
+
+[resource]
+resource_name = "lock_base"
+cull_mode = 2
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_uec5c")
+albedo_texture_force_srgb = true
+metallic = 1.0
+roughness = 0.7

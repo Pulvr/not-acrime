@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dt10q5xjcks2k"]
+
+[ext_resource type="Texture2D" uid="uid://b1g5b1wclhodc" path="res://models/button_door_concrete_wall_pixelated.png" id="1_f4pte"]
+
+[resource]
+resource_name = "Door_Framing"
+cull_mode = 2
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_f4pte")
+albedo_texture_force_srgb = true
+roughness = 0.5
