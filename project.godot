@@ -38,7 +38,6 @@ directories/dtl_directory={
 "drone_detect_timeline": "res://drone_detect_timeline.dtl",
 "item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
 "pillow_timeline": "res://resources/dialog/timeline/pillow_timeline.dtl",
-"sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
 "toilet_minigame_timeline": "res://resources/dialog/timeline/toilet_minigame_timeline.dtl",
 "welcome_timeline": "res://resources/dialog/timeline/welcome_timeline.dtl"
 }
@@ -51,7 +50,6 @@ layout/style_list=["res://resources/dialog/style/default_style.tres"]
 layout/default_style="res://resources/dialog/style/default_style.tres"
 variables={
 "checked_pillow": false,
-"dialog_played": false,
 "end_reached": false,
 "has_key": false,
 "has_sharp": false,
