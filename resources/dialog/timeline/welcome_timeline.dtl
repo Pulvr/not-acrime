@@ -1,9 +1,9 @@
 [style]
-join Cellmate center
+join char_red center
 [wait time="2.0"]
-Cellmate: Take a look at our newcomer here. Didn't expect to get another cellmate so soon.
-Cellmate: Feel free to rot in here, like the rest of us does. If you wanna entertain the rest of us, though...
-Cellmate: I'd suggest using [b]W, A, S[/b] and [b]D[/b] to walk around aimlessly.
-Cellmate: Maybe you could interact with something using the [b]E[/b] key...
-Cellmate: I would suggest you do not ask how I learned this.
+char_red: Take a look at our newcomer here. Didn't expect to get another cellmate so soon.
+char_red: Feel free to rot in here, like the rest of us does. If you wanna entertain the rest of us, though...
+char_red: I'd suggest using [b]W, A, S[/b] and [b]D[/b] to walk around aimlessly.
+char_red: Maybe you could interact with something using the [b]E[/b] key...
+char_red: I would suggest you do not ask how I learned this.
 [end_timeline]

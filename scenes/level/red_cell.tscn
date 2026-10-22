@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bsttoujhhgchj" path="res://scenes/level/cell_assets/ceiling_light.tscn" id="7_dysg5"]
 [ext_resource type="PackedScene" uid="uid://cpcpy1d8j41fn" path="res://scenes/level/cell_assets/cell_stool.tscn" id="8_3hyd8"]
 [ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="9_nrknf"]
-[ext_resource type="Resource" uid="uid://c2b6ajaku4re4" path="res://resources/dialog/timeline/cellmate.dtl" id="10_dy5ib"]
+[ext_resource type="Resource" uid="uid://c2b6ajaku4re4" path="res://resources/dialog/timeline/char_red_timeline.dtl" id="10_dy5ib"]
 [ext_resource type="PackedScene" uid="uid://f8jdklu0dey3" path="res://scenes/level/cell_assets/prisoner_cellmate.tscn" id="11_nrknf"]
 [ext_resource type="PackedScene" uid="uid://cdv06lpjyhjua" path="res://scenes/level/cell_assets/newspaper.tscn" id="12_1d6nu"]
 [ext_resource type="PackedScene" uid="uid://c2j824wcbaxan" path="res://scenes/level/cell_assets/letter.tscn" id="13_iw8i2"]
