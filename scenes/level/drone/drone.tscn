@@ -10,7 +10,7 @@ radius = 0.21972656
 height = 1.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ned6"]
-size = Vector3(2.5, 5, 1)
+size = Vector3(2.5, 5, 1.13)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb8xx"]
 transparency = 1
