@@ -38,10 +38,10 @@ directories/dtl_directory={
 "cell_lock_timeline": "res://resources/dialog/timeline/cell_lock_timeline.dtl",
 "cellmate": "res://resources/dialog/timeline/char_red_timeline.dtl",
 "door_lock_minigame_failed_timeline": "res://resources/dialog/timeline/door_lock_minigame_failed_timeline.dtl",
+"drone_detect_timeline": "res://drone_detect_timeline.dtl",
 "item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
 "orange_timeline": "res://resources/dialog/character/orange_timeline.dtl",
 "pillow_timeline": "res://resources/dialog/timeline/pillow_timeline.dtl",
-"sample_timeline": "res://resources/dialog/timeline/sample_timeline.dtl",
 "toilet_minigame_timeline": "res://resources/dialog/timeline/toilet_minigame_timeline.dtl",
 "welcome_timeline": "res://resources/dialog/timeline/welcome_timeline.dtl"
 }
@@ -56,7 +56,6 @@ variables={
 "blue_door_opened": false,
 "blue_talked_to_first_time": "",
 "checked_pillow": false,
-"dialog_played": false,
 "end_reached": false,
 "has_key": false,
 "has_sharp": false,

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bm5h7au0i107"]
+
+[ext_resource type="Texture2D" uid="uid://dbaky433xc7ey" path="res://models/button_door_alt_keyhole_pixelated256.png" id="1_mhg5f"]
+
+[resource]
+resource_name = "red button"
+cull_mode = 2
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_mhg5f")
+albedo_texture_force_srgb = true
+roughness = 0.5
