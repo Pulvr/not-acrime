@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://t6s5infr0a83" path="res://scenes/main/basic_cell_wide.tscn" id="6_6ypec"]
 [ext_resource type="PackedScene" uid="uid://yrdjygai8741" path="res://scenes/level/drone/drone.tscn" id="7_sjh2e"]
 [ext_resource type="Script" uid="uid://balj0akdq0t5f" path="res://scenes/level/drone/drone_path_follow.gd" id="7_w1ksv"]
+[ext_resource type="Script" uid="uid://ba10vo6uhdm5n" path="res://scenes/main/start_animation_player_on_interact.gd" id="9_idr2k"]
 [ext_resource type="Material" uid="uid://dkwc845o4mj64" path="res://textures/materials/rusty_bars.tres" id="9_pqgbl"]
 [ext_resource type="Material" uid="uid://bm5h7au0i107" path="res://textures/materials/red button.tres" id="10_5op37"]
 [ext_resource type="Texture2D" uid="uid://chnv7gltuckc0" path="res://models/button_door_rust_pixelated.png" id="10_nkh0v"]
@@ -165,6 +166,9 @@ _data = {
 }
 point_count = 20
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6n7um"]
+size = Vector3(0.23483378, 0.2611022, 0.11073303)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idr2k"]
 resource_name = "red button"
 cull_mode = 2
@@ -255,6 +259,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u2413")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5op37"]
+size = Vector3(0.6701813, 3.3832397, 0.036376953)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wsw4h"]
+size = Vector3(1.9190102, 3.3832397, 0.036376953)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_3eysm"]
 _surfaces = [{
 "aabb": AABB(-1.6443937, 0, -0.10000005, 3.2887874, 4.200632, 0.20000005),
@@ -304,15 +314,6 @@ tracks/0/keys = PackedFloat32Array(0, 1, -0.89147985, 0, -2.3841858e-07, 0.03333
 _data = {
 &"door_open": SubResource("Animation_awc6f")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5op37"]
-size = Vector3(0.6701813, 3.3832397, 0.036376953)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wsw4h"]
-size = Vector3(1.9190102, 3.3832397, 0.036376953)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6n7um"]
-size = Vector3(0.09509683, 0.116918564, 0.06619263)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wj1kv"]
 _surfaces = [{
@@ -725,6 +726,7 @@ mesh = SubResource("BoxMesh_sunwe")
 
 [node name="Ceiling" type="MeshInstance3D" parent="FloorAndCeiling" unique_id=1075906834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.841, 4.2, -1.209)
+visible = false
 material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_ybmnr")
 
@@ -957,12 +959,28 @@ script = ExtResource("7_w1ksv")
 
 [node name="Drone" parent="DronePath3D/DronePathFollow" unique_id=17349681 instance=ExtResource("7_sjh2e")]
 
-[node name="DroneHallwayButtonDoor" type="StaticBody3D" parent="." unique_id=604433470]
+[node name="DroneHallwayButtonDoor" type="StaticBody3D" parent="." unique_id=604433470 groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.302807, 0.10844898, 2.5206773)
+script = ExtResource("9_idr2k")
+
+[node name="HallwayButtonCollider" type="CollisionShape3D" parent="DroneHallwayButtonDoor" unique_id=652478825 groups=["door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79346466, 1.567806, 0.08621979)
+shape = SubResource("BoxShape3D_6n7um")
 
 [node name="cell_wall_001" type="MeshInstance3D" parent="DroneHallwayButtonDoor" unique_id=886409082]
-transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, 0)
+transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, -2.3841858e-07)
 mesh = SubResource("ArrayMesh_x20jn")
+
+[node name="CellDoorColliderBucket" type="StaticBody3D" parent="DroneHallwayButtonDoor/cell_wall_001" unique_id=939343552]
+transform = Transform3D(0, 0, -1.3867403, 0, 1.3867403, 0, 1.3867403, 0, 0, -2.3841858e-07, 0, 1.2362518)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DroneHallwayButtonDoor/cell_wall_001/CellDoorColliderBucket" unique_id=481133342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2961655, 1.1916199, 0.009643555)
+shape = SubResource("BoxShape3D_5op37")
+
+[node name="CollisionShapeDoor" type="CollisionShape3D" parent="DroneHallwayButtonDoor/cell_wall_001/CellDoorColliderBucket" unique_id=2124356127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0034713745, 1.1916199, 0.009643555)
+shape = SubResource("BoxShape3D_wsw4h")
 
 [node name="Cube" type="MeshInstance3D" parent="DroneHallwayButtonDoor" unique_id=2081948546]
 mesh = SubResource("ArrayMesh_fajn7")
@@ -970,21 +988,11 @@ mesh = SubResource("ArrayMesh_fajn7")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DroneHallwayButtonDoor" unique_id=1487088033]
 libraries/ = SubResource("AnimationLibrary_d4xrv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DroneHallwayButtonDoor" unique_id=481133342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2961655, 1.1916199, 0.009643555)
-shape = SubResource("BoxShape3D_5op37")
+[node name="RightColliderBucket" type="StaticBody3D" parent="DroneHallwayButtonDoor" unique_id=223380174]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="DroneHallwayButtonDoor" unique_id=1733414285]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DroneHallwayButtonDoor/RightColliderBucket" unique_id=1733414285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2942276, 1.1916199, 0.009643555)
 shape = SubResource("BoxShape3D_5op37")
-
-[node name="CollisionShapeDoor" type="CollisionShape3D" parent="DroneHallwayButtonDoor" unique_id=2124356127]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0034713745, 1.1916199, 0.009643555)
-shape = SubResource("BoxShape3D_wsw4h")
-
-[node name="CollisionShapeButton" type="CollisionShape3D" parent="DroneHallwayButtonDoor" unique_id=652478825 groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7976284, 1.555901, 0.063949585)
-shape = SubResource("BoxShape3D_6n7um")
 
 [node name="NextAreaButtonDoor" type="StaticBody3D" parent="." unique_id=1639120077]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.974, 0.1, 0.339)
