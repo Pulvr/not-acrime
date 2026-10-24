@@ -1015,49 +1015,94 @@ shape = SubResource("BoxShape3D_wsw4h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7976284, 1.555901, 0.063949585)
 shape = SubResource("BoxShape3D_6n7um")
 
-[node name="key_box" type="StaticBody3D" parent="." unique_id=611671366]
+[node name="KeyBox" type="StaticBody3D" parent="." unique_id=611671366]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.741325, 1.6324553, 7.632394)
 
-[node name="Cube" type="MeshInstance3D" parent="key_box" unique_id=1322541528]
+[node name="Cube" type="MeshInstance3D" parent="KeyBox" unique_id=1322541528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69542605, 1.0997235, 0)
 mesh = SubResource("ArrayMesh_icgnl")
 
-[node name="Cube_001" type="MeshInstance3D" parent="key_box/Cube" unique_id=1829034255]
+[node name="Cube_001" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=1829034255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008673668, -0.000562191, 0.00011444092)
 mesh = SubResource("ArrayMesh_w1mr3")
 
-[node name="Cube_004" type="MeshInstance3D" parent="key_box/Cube" unique_id=296248016]
+[node name="Cube_004" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=296248016]
 mesh = SubResource("ArrayMesh_6gvas")
 
-[node name="Cube_005" type="MeshInstance3D" parent="key_box/Cube" unique_id=444855730]
+[node name="Cube_005" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=444855730]
 mesh = SubResource("ArrayMesh_0moq8")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="key_box" unique_id=692649315]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KeyBox" unique_id=692649315]
 libraries/ = SubResource("AnimationLibrary_4ropl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="key_box" unique_id=460603750]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyBox" unique_id=460603750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006667137, 1.0763092, -0.09555054)
 shape = SubResource("BoxShape3D_cear2")
 
-[node name="BlueKey" type="StaticBody3D" parent="key_box" unique_id=622391741]
+[node name="BlueKey" type="StaticBody3D" parent="KeyBox" unique_id=622391741]
 transform = Transform3D(-1.8958048e-08, 0.4337096, -1.8958048e-08, 0, -1.8958048e-08, -0.4337096, -0.4337096, -1.8958048e-08, 8.2868277e-16, -0.46019077, 1.282021, -0.117269516)
 
-[node name="Cube" type="MeshInstance3D" parent="key_box/BlueKey" unique_id=1018241337]
+[node name="Cube" type="MeshInstance3D" parent="KeyBox/BlueKey" unique_id=1018241337]
 mesh = SubResource("ArrayMesh_s62bm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="key_box/BlueKey" unique_id=68431027]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyBox/BlueKey" unique_id=68431027]
 transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.015117645, 0.16822815, 0)
 shape = SubResource("BoxShape3D_7gfyk")
 
-[node name="GateKey" type="StaticBody3D" parent="key_box" unique_id=1923818352]
+[node name="GateKey" type="StaticBody3D" parent="KeyBox" unique_id=1923818352]
 transform = Transform3D(-1.8958048e-08, 0.4337096, -1.8958048e-08, 0, -1.8958048e-08, -0.4337096, -0.4337096, -1.8958048e-08, 8.2868277e-16, 0.061537266, 1.282021, -0.117269516)
 
-[node name="Cube" type="MeshInstance3D" parent="key_box/GateKey" unique_id=1104797806]
+[node name="Cube" type="MeshInstance3D" parent="KeyBox/GateKey" unique_id=1104797806]
 mesh = SubResource("ArrayMesh_xo75y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="key_box/GateKey" unique_id=1423923098]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyBox/GateKey" unique_id=1423923098]
 transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.015117645, 0.16822815, 0)
 shape = SubResource("BoxShape3D_7gfyk")
+
+[node name="SecurityCameras" type="Node" parent="." unique_id=111188372]
+
+[node name="TopLeftCam" type="SubViewport" parent="SecurityCameras" unique_id=60123462 groups=["security_cams"]]
+size = Vector2i(300, 180)
+
+[node name="Camera3D" type="Camera3D" parent="SecurityCameras/TopLeftCam" unique_id=2080370426]
+transform = Transform3D(-0.88294756, -0.13333714, 0.4501386, 0, 0.95881975, 0.28401533, -0.46947157, 0.25077066, -0.8465875, 2.845, 3.584, -8.04)
+fov = 100.0
+size = 8.28
+
+[node name="MiddleLeftCam" type="SubViewport" parent="SecurityCameras" unique_id=478121409 groups=["security_cams"]]
+size = Vector2i(300, 180)
+
+[node name="Camera3D" type="Camera3D" parent="SecurityCameras/MiddleLeftCam" unique_id=1373769370]
+transform = Transform3D(0.6626202, 0.26840168, -0.6992102, 0, 0.9335804, 0.35836792, 0.7489556, -0.23746184, 0.61860913, -34.95, 3.859, -5.75)
+fov = 100.0
+
+[node name="BottomLeftCam" type="SubViewport" parent="SecurityCameras" unique_id=1627814541 groups=["security_cams"]]
+size = Vector2i(300, 180)
+
+[node name="Camera3D" type="Camera3D" parent="SecurityCameras/BottomLeftCam" unique_id=379355596]
+transform = Transform3D(0.64278764, -0.21756838, 0.73449856, 0, 0.95881975, 0.28401536, -0.76604444, -0.18256156, 0.61631745, -33.505, 3.644, -15.191)
+fov = 100.0
+
+[node name="TopRightCam" type="SubViewport" parent="SecurityCameras" unique_id=1931705908 groups=["security_cams"]]
+size = Vector2i(300, 180)
+
+[node name="Camera3D" type="Camera3D" parent="SecurityCameras/TopRightCam" unique_id=2126264923]
+transform = Transform3D(0.33227298, -0.3746068, 0.86560065, -0.9335804, -4.0808096e-08, 0.35836795, -0.13424702, -0.9271838, -0.34972554, -32.968, 3.864, -17.961)
+fov = 100.0
+
+[node name="MiddleRightCam" type="SubViewport" parent="SecurityCameras" unique_id=97562834 groups=["security_cams"]]
+size = Vector2i(300, 180)
+
+[node name="Camera3D" type="Camera3D" parent="SecurityCameras/MiddleRightCam" unique_id=646090728]
+transform = Transform3D(0.9832549, 0.05328051, -0.1742727, 0, 0.9563048, 0.2923717, 0.18223552, -0.2874759, 0.9402914, -44.113, 3.304, 17.759)
+fov = 100.0
+
+[node name="BottomRightCam" type="SubViewport" parent="SecurityCameras" unique_id=1119220325 groups=["security_cams"]]
+size = Vector2i(300, 180)
+
+[node name="Camera3D" type="Camera3D" parent="SecurityCameras/BottomRightCam" unique_id=247499472]
+transform = Transform3D(0.94551855, -0.09518692, 0.3113424, 0, 0.9563048, 0.2923717, -0.32556817, -0.27644286, 0.9042039, -22.773, 3.304, 17.494)
+fov = 100.0
 
 [connection signal="body_entered" from="PlayerTriggerzone" to="PlayerTriggerzone" method="_on_body_entered"]
 [connection signal="player_detected" from="DronePath3D/DronePathFollow/Drone" to="DronePath3D/DronePathFollow" method="_on_drone_player_detected"]
