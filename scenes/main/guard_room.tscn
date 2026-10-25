@@ -2,22 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://cixrhhaycy2w0" path="res://textures/source images/concrete_floor_pixelated.png" id="1_452ac"]
 [ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/materials/concrete_wall.tres" id="1_ptqxc"]
-[ext_resource type="Material" uid="uid://crqsa3kijjtc3" path="res://textures/materials/monitor glass.tres" id="3_o4ddj"]
 [ext_resource type="PackedScene" uid="uid://bsttoujhhgchj" path="res://scenes/level/cell_assets/ceiling_light.tscn" id="4_65480"]
-[ext_resource type="Material" uid="uid://dn2cn4m1qwqaq" path="res://textures/materials/monitor housing.tres" id="4_ddx6m"]
 [ext_resource type="Material" uid="uid://dkog1n5evdbpo" path="res://textures/materials/desk.tres" id="5_1ep31"]
 [ext_resource type="Material" uid="uid://ddb5yoi8focr" path="res://textures/materials/wall_hold.tres" id="6_o4ddj"]
 [ext_resource type="Material" uid="uid://dkf5yq1pfshkn" path="res://textures/materials/door_frame.tres" id="8_og6ge"]
 [ext_resource type="Material" uid="uid://cts7h1xcqqmnj" path="res://textures/materials/door_handle.tres" id="9_ydn2h"]
 [ext_resource type="Animation" uid="uid://1vp07ycq0k4y" path="res://animations/Cube_001Action.res" id="10_mffsq"]
 [ext_resource type="Animation" uid="uid://dw8s6qhebirlp" path="res://animations/Door_Open.res" id="11_nrcoj"]
+[ext_resource type="PackedScene" uid="uid://bb2oepbb6ctyx" path="res://scenes/main/guardroom_monitors.tscn" id="11_og6ge"]
 [ext_resource type="PackedScene" uid="uid://ck6ipt8r8iu7s" path="res://models/office_locker.glb" id="12_ydn2h"]
-[ext_resource type="Script" uid="uid://b2po3mbuwry88" path="res://scenes/main/top_left_monitor.gd" id="13_mffsq"]
-[ext_resource type="Script" uid="uid://dn51df7x0cwoj" path="res://scenes/main/bottom_left_monitor.gd" id="13_nrcoj"]
-[ext_resource type="Script" uid="uid://c3ewusfekn10i" path="res://scenes/main/bottom_right_monitor.gd" id="14_1ni5n"]
-[ext_resource type="Script" uid="uid://co5fsj2ujifqd" path="res://scenes/main/middle_left_monitor.gd" id="15_dv7lv"]
-[ext_resource type="Script" uid="uid://ckide4xar15uu" path="res://scenes/main/middle_right_monitor.gd" id="16_fqvmo"]
-[ext_resource type="Script" uid="uid://bdygepgvunevh" path="res://scenes/main/top_right_monitor.gd" id="18_p4wke"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2at7u"]
 albedo_color = Color(0.5370987, 0.5370987, 0.5370987, 1)
@@ -107,6 +100,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_iftkn")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fqvmo"]
+size = Vector3(4.026169, 0.30899048, 1.9335938)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_ojowr"]
 _surfaces = [{
 "aabb": AABB(-2, 0, -1, 2, 2, 2),
@@ -187,330 +183,6 @@ size = Vector3(3.1121826, 4.060875, 0.10310364)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ni5n"]
 size = Vector3(0.50827026, 0.3534038, 0.24771881)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1h7t5"]
-_surfaces = [{
-"aabb": AABB(-1.7349434, 0.58418083, 0.0073318407, 1.5907102, 0.83163834, 1e-05),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("//8AAAAAAAAAAP//AAAAAP////8AAAAAAAAAAAAAAAA=")
-}, {
-"aabb": AABB(-1.7802298, 0.53889436, -0.036064617, 1.681283, 0.9222112, 0.072129235),
-"format": 34896613377,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEAAQAEAAIABQAAAAIABQACAAQAAQAGAAQAAwAGAAEAAAAHAAMAAwAHAAYAAAAFAAcACAAEAAYACQAFAAQACQAEAAgACgAHAAUACgAFAAkACwAGAAcACwAHAAoACAAGAAsACQAMAAoACgAMAA0ACgANAAsACQAOAAwACAAOAAkACwANAA8ACAAPAA4ACwAPAAgA"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AAAAAAAAAAD/////AAAAAAAA//8AAAAA//8AAAAAAAAAAP////8AAAAAAAD//wAA////////AAD//wAA//8AAOUGbPP//wAA5QaSDP//AAAZ+ZIM//8AABn5bPP//wAAGfmSDAWaAAAZ+WzzBZoAAOUGkgwFmgAA5QZs8wWaAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_egoyp"]
-resource_name = "guardroom_monitors_Cube_006"
-_surfaces = [{
-"aabb": AABB(-1.7349434, 0.58418083, 0.0073318407, 1.5907102, 0.83163834, 1e-05),
-"attribute_data": PackedByteArray("z8SEoU43iVfPxIlXTjeEoQ=="),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"material": ExtResource("3_o4ddj"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("//8AAAAAAIAAAP//AAAAgP////8AAACAAAAAAAAAAID/f////3////9/////f///")
-}, {
-"aabb": AABB(-1.7802298, 0.53889436, -0.036064617, 1.681283, 0.9222112, 0.072129235),
-"attribute_data": PackedByteArray("CVJvagAA//8AAG9qCVL//xKkdCB9qn5yEqR+cn2qdCB39G9q4vr//3f0///i+m9qfap0IOewfnJ9qn5y57B0IHazfnLnsIModrODKOewfnJ39P//De5vanf0b2oN7v//EFb3+wlSb2oQVnZuEqRvaglS//8LoHZuC6D3+xKk//9w/f//4vp+cnD9fnLi+v//drODKAS2fnJ2s35yBLaDKHD9fnL+////cP3///7/fnI="),
-"format": 34896613399,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGgAZABsAGAAcABkAGgAbAB0AHgAcABgAHQAbAB8AHgAfABwAHQAfAB4AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkA"),
-"material": ExtResource("4_ddx6m"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 44,
-"vertex_data": PackedByteArray("AAAAAAAA////////AAD//wAA//8AAP////8AAAAA/////wAAAAD//////////////////wAA/////wAA/////wAAAAAAAFTV//8AAP//VNX//wAAAABU1QAAAAD//1TVAAAAAP////8AAP//AAD//wAA////////AAAAAAAA///lBmzz/////+UGkgwFmv//5QaSDP/////lBmzzBZr///////8AAFTVAAD/////VNUAAP//AABU1f///////1TVGfmSDP///78AAAAA////v+UGkgz///+/AAD//////7///wAA////v+UGbPP///+/Gfls8////7//////////vxn5bPP//1TV5QZs8wWaVNXlBmzz//9U1Rn5bPMFmlTVGfmSDP////8Z+WzzBZr//xn5bPP/////GfmSDAWa///lBpIM//9U1Rn5kgwFmlTVGfmSDP//VNXlBpIMBZpU1f8//7//P/+//z//v/8//7//v/9//7//f/+//3//v/9/qipU1aoqVNWqKlTVqipU1f8//3//P/9//z//f/8//3//v/9//7//f/+//3//v/9/VNWqKlTVqipU1aoqVNWqKv//////////////////////////////////////////qipU1aoqVNWqKlTVqipU1f8//3//P/9//z//f/8//39U1aoqVNWqKlTVqipU1aoq")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_1h7t5")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_nnheb"]
-_surfaces = [{
-"aabb": AABB(0.14423329, 0.58418083, 0.0073318407, 1.5907102, 0.83163834, 1e-05),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AAAAAAAAAAD/////AAAAAP//AAAAAAAAAAD//wAAAAA=")
-}, {
-"aabb": AABB(0.09894681, 0.53889436, -0.036064617, 1.681283, 0.9222112, 0.072129235),
-"format": 34896613377,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAAACAAUAAgAEAAUAAQAGAAQAAQADAAYABwADAAAAAAAFAAcABwAGAAMACAAFAAQACQAHAAUACAAJAAUACQAKAAcACgAGAAcACQAIAAsACQALAAwACgAJAAwACAANAAsACgAMAA4ACAAPAA0ACgAPAAYADwAOAA0ADwAKAA4ADwAEAAYADwAIAAQA"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("//8AAAAAAAAAAP//AAAAAAAAAAAAAAAA/////wAAAAAAAP////8AAAAAAAD//wAA////////AAD//wAA//8AAOUGbPP//wAA5QaSDP//AAAZ+ZIM//8AAOUGbPMFmgAA5QaSDAWaAAAZ+WzzBZoAABn5kgwFmgAAGfls8///AAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_y3kc7"]
-resource_name = "guardroom_monitors_Cube_003"
-_surfaces = [{
-"aabb": AABB(0.14423329, 0.58418083, 0.0073318407, 1.5907102, 0.83163834, 1e-05),
-"attribute_data": PackedByteArray("z8SEoU43iVfPxIlXTjeEoQ=="),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"material": ExtResource("3_o4ddj"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AAAAAAAA/7//////AAD/v///AAAAAP+/AAD//wAA/7//f/9//3//f/9//3//f/9/")
-}, {
-"aabb": AABB(0.09894681, 0.53889436, -0.036064617, 1.681283, 0.9222112, 0.072129235),
-"attribute_data": PackedByteArray("CVJvagAA//8AAG9qCVL//xKkdCB9qn5yEqR+cn2qdCB39G9q4vr//3f0///i+m9qfap0IOewfnJ9qn5y57B0IHazfnLnsIModrODKOewfnJ39P//De5vanf0b2oN7v//EFb3+wlSb2oQVnZuCVL//wugdm4SpP//C6D3+xKkb2oLoPf7CVL//xBW9/sSpP//EFZ2bhKkb2oLoHZuCVJvanD9///i+n5ycP1+cuL6//92s4MoBLZ+cnazfnIEtoMocP1+cv7///9w/f///v9+cg=="),
-"format": 34896613399,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEA"),
-"material": ExtResource("4_ddx6m"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 52,
-"vertex_data": PackedByteArray("//8AAAAA//8AAP//AAD//wAAAAAAAP///////wAA//8AAAAAAABU1QAA/////1TVAAAAAP//VNUAAP//AABU1f//AAAAAP//AAAAAP///////wAA/////wAAAAAAAP////8AAP//VNX/////AABU1f//AAAAAFTV////////VNUZ+Wzz//9U1Rn5kgwFmlTVGfls8wWaVNUZ+ZIM//9U1QAA//8AAP////////////8AAP////////////8AAP//5QaSDP//9////wAA///3/wAAAAD///f/GfmSDP//9v8Z+Wzz///3/wAA//////f/////////9v/lBmzz///2/+UGbPP//xWfAAAAAP//I50AAP/////+n+UGkgz///+fGfmSDP//FZ////////8jnf//AAD///6fGfls8////5/lBmzz/////xn5bPMFmv//5QZs8wWa//8Z+Wzz/////+UGkgz//1TV5QZs8wWaVNXlBpIMBZpU1eUGbPP//1TVGfmSDP/////lBpIMBZr//xn5kgwFmv//5QaSDP////////9/////f////3////9/VNVU1VTVVNVU1VTVVNVU1f9//z//f/8//3//P/9//z+qKqoqqiqqKqoqqiqqKqoqVNVU1VTVVNVU1VTVVNVU1f9//7//f/+//3//v/9//7//f/9///////9//3///////3//f///////f/9///////9//3///////3//f///////f/9///////9//3///////3//P/9//z//f/8//3//P6oqqiqqKqoqqiqqKqoqqir/f/+//3//v/9//7//f/+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_nnheb")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_eg8j6"]
-_surfaces = [{
-"aabb": AABB(-1.7389772, 1.6169386, -0.08648638, 1.5979502, 0.8168652, 0.345459),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AP0AAAAAAAD+Av////8AAP/////PcgAAAAAAAC+NAAA=")
-}, {
-"aabb": AABB(-1.790061, 1.5670649, -0.14266601, 1.6983926, 0.9193641, 0.44351882),
-"format": 34896613377,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEAAQAEAAIABQAAAAIABQACAAQAAQAGAAQAAwAGAAEAAAAHAAMAAwAHAAYAAAAFAAcACAAEAAYACQAFAAQACQAEAAgACgAHAAUACgAFAAkACwAGAAcACwAHAAoACAAGAAsACQAMAAoACgAMAA0ACgANAAsACQAOAAwACAAOAAkACwANAA8ACAAPAA4ACwAPAAgA"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AADEAzt0AAC3/v//KmMAAB8D//9l1wAAl/vEAwAAAABnBDr8//8AAEcBAADUnAAA//86/MOLAADf/AAAmSgAAAYL1+/+9wAANQhiDJGeAAA/9mIMmTAAABD51+8GigAAvfXjDW0gAACO+Ffx2nkAALMH4w1ljgAAhApX8dLnAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_pmn11"]
-resource_name = "guardroom_monitors_Cube_005"
-_surfaces = [{
-"aabb": AABB(-1.7389772, 1.6169386, -0.08648638, 1.5979502, 0.8168652, 0.345459),
-"attribute_data": PackedByteArray("z8SEoU43iVfPxIlXTjeEoQ=="),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"material": ExtResource("3_o4ddj"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AP0AAAAAG4n+Av////8bif/////PchuJAAAAAC+NG4l7NA5QezQOUHs0DlB7NA5Q")
-}, {
-"aabb": AABB(-1.790061, 1.5670649, -0.14266601, 1.6983926, 0.9193641, 0.44351882),
-"attribute_data": PackedByteArray("CVJvagAA//8AAG9qCVL//xKkdCB9qn5yEqR+cn2qdCB39G9q4vr//3f0///i+m9qfap0IOewfnJ9qn5y57B0IHazfnLnsIModrODKOewfnJ39P//De5vanf0b2oN7v//EFb3+wlSb2oQVnZuEqRvaglS//8LoHZuC6D3+xKk//9w/f//4vp+cnD9fnLi+v//drODKAS2fnJ2s35yBLaDKHD9fnL+////cP3///7/fnI="),
-"format": 34896613399,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGgAZABsAGAAcABkAGgAbAB0AHgAcABgAHQAbAB8AHgAfABwAHQAfAB4AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkA"),
-"material": ExtResource("4_ddx6m"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 44,
-"vertex_data": PackedByteArray("AADEAzt0BP63/v//KmME/h8D//9l1wT+l/vEAwAABP6X+8QDAADl+v//OvzDi+X6t/7//ypj5frf/AAAmSjl+gAAxAM7dPbW3/wAAJko9taX+8QDAAD21kcBAADUnPbWRwEAANScPvofA///Zdc++mcEOvz//z76AADEAzt0PvoGC9fv/vfl+rMH4w1ljuX6NQhiDJGe5fqEClfx0ufl+rf+//8qY7vTZwQ6/P//u9MfA///Zde70///OvzDi7vTP/ZiDJkwC8BHAQAA1JwLwDUIYgyRngvAZwQ6/P//C8Df/AAAmSgLwAYL1+/+9wvAEPnX7waKC8D//zr8w4sLwBD51+8GivbWhApX8dLn9tYGC9fv/vf21o74V/HaefbWP/ZiDJkwPvqO+Ffx2nk++hD51+8Gij76vfXjDW0gPvo1CGIMkZ6707314w1tILvTP/ZiDJkwu9OzB+MNZY6700HEEDtBxBA7QcQQO0HEEDuawOF5msDheZrA4XmawOF59itvz/Yrb8/2K2/P9itvz4v6aMaL+mjGi/poxov6aMaawOF5msDheZrA4XmawOF5/9VOJP/VTiT/1U4k/9VOJLwDQ++8A0PvvAND77wDQ++8A0PvvAND77wDQ++8A0Pv9itvz/Yrb8/2K2/P9itvz4v6aMaL+mjGi/poxov6aMb/1U4k/9VOJP/VTiT/1U4k")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_eg8j6")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_4ls28"]
-_surfaces = [{
-"aabb": AABB(0.14102697, 1.6169386, -0.08648638, 1.5979502, 0.8168652, 0.345459),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("/gIAAAAAAAAA/f////8AAP//AAAvjQAAAAD//89yAAA=")
-}, {
-"aabb": AABB(0.09166837, 1.5670649, -0.14266601, 1.6983926, 0.9193641, 0.44351882),
-"format": 34896613377,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAAACAAUAAgAEAAUAAQAGAAQAAQADAAYABwADAAAAAAAFAAcABwAGAAMACAAFAAQACQAHAAUACAAJAAUACQAKAAcACgAGAAcACQAIAAsACQALAAwACgAJAAwACAANAAsACgAMAA4ACAAPAA0ACgAPAAYADwAOAA0ADwAKAA4ADwAEAAYADwAIAAQA"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("///EAzt0AABHAf//KmMAAGcExAMAAAAA3/z//2XXAAAAADr8w4sAAB8DAACZKAAAl/s6/P//AAC3/gAA1JwAAO4G1+8GigAAvwliDJkwAADJ92IMkZ4AAHAHV/HaeQAAQQrjDW0gAAB69Vfx0ucAAEv44w1ljgAA+PTX7/73AAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_2bqei"]
-resource_name = "guardroom_monitors_Cube_002"
-_surfaces = [{
-"aabb": AABB(0.14102697, 1.6169386, -0.08648638, 1.5979502, 0.8168652, 0.345459),
-"attribute_data": PackedByteArray("z8SEoU43iVfPxIlXTjeEoQ=="),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"material": ExtResource("3_o4ddj"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("/gIAAAAAC8AA/f////8LwP//AAAvjQvAAAD//89yC8BEb0J8RG9CfERvQnxEb0J8")
-}, {
-"aabb": AABB(0.09166837, 1.5670649, -0.14266601, 1.6983926, 0.9193641, 0.44351882),
-"attribute_data": PackedByteArray("CVJvagAA//8AAG9qCVL//xKkdCB9qn5yEqR+cn2qdCB39G9q4vr//3f0///i+m9qfap0IOewfnJ9qn5y57B0IHazfnLnsIModrODKOewfnJ39P//De5vanf0b2oN7v//EFb3+wlSb2oQVnZuCVL//wugdm4SpP//C6D3+xKkb2oLoPf7CVL//xBW9/sSpP//EFZ2bhKkb2oLoHZuCVJvanD9///i+n5ycP1+cuL6//92s4MoBLZ+cnazfnIEtoMocP1+cv7///9w/f///v9+cg=="),
-"format": 34896613399,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEA"),
-"material": ExtResource("4_ddx6m"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 52,
-"vertex_data": PackedByteArray("///EAzt0UvhHAf//KmNS+GcExAMAAFL43/z//2XXUvhnBMQDAABF1AAAOvzDi0XUHwMAAJkoRdRHAf//KmNF1P//xAM7dDr8HwMAAJkoOvy3/gAA1Jw6/GcExAMAADr8t/4AANScfdff/P//Zdd91///xAM7dH3Xl/s6/P//fdf49Nfv/vdF1Ev44w1ljkXUevVX8dLnRdTJ92IMkZ5F1EcB//8qY+H8l/s6/P//4fwAADr8w4vh/N/8//9l1+H8vwliDJkwgf+3/gAA1JyQ/x8DAACZKIH/yfdiDJGekP/49Nfv/veB/wAAOvzDi5D/l/s6/P//gf/uBtfvBoqQ/+4G1+8GiuGfHwMAAJko6J4AADr8w4vBoL8JYgyZMKWhyfdiDJGe4Z+X+zr8///onrf+AADUnMGg+PTX7/73paHuBtfvBoo6/Hr1V/HS5zr8cAdX8dp5Ovz49Nfv/vc6/L8JYgyZMH3XcAdX8dp5fddBCuMNbSB91+4G1+8Gin3XyfdiDJGe4fxBCuMNbSDh/Ev44w1ljuH8vwliDJkw4fwY+K6AGPiugBj4roAY+K6AAM6m1gDOptYAzqbWAM6m1pt8yzubfMs7m3zLO5t8yzvTI1Ar0yNQK9MjUCvTI1ArAM6m1gDOptYAzqbWAM6m1ubHEwTmxxME5scTBObHEwRVeYJ1V3mBdVV5gnVXeYF1VXmCdVd5gXVVeYJ1V3mBdahjRoVVFhrvIGTdhJMV1vCoY0aFVRYa7yBk3YSTFdbwm3zLO5t8yzubfMs7m3zLO9MjUCvTI1Ar0yNQK9MjUCvmxxME5scTBObHEwTmxxME")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_4ls28")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_wnt3u"]
-_surfaces = [{
-"aabb": AABB(-1.7295377, 2.608153, -0.008407237, 1.5781426, 0.8514161, 0.71057576),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("kPneGAAAAABuBiDn//8AAP////9ucQAAAAAAAJCOAAA=")
-}, {
-"aabb": AABB(-1.7863297, 2.5530767, -0.0755066, 1.6880665, 0.96711206, 0.83170176),
-"format": 34896613377,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEAAQAEAAIABQAAAAIABQACAAQAAQAGAAQAAwAGAAEAAAAHAAMAAwAHAAYAAAAFAAcACAAEAAYACQAFAAQACQAEAAgACgAHAAUACgAFAAkACwAGAAcACwAHAAoACAAGAAsACQAMAAoACgAMAA0ACgANAAsACQAOAAwACAAOAAkACwANAA8ACAAPAA4ACwAPAAgA"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AAA3B7yAAABD/f//d2sAAKsG2+g07AAAmPZbHgAAAABmCaPh//8AALsCAACHlAAA///H+EJ/AABT+SMXyhMAALYPLtdA9wAAswm0C1aWAAAD85ghiRwAAAb5E+1zfQAA7PF4JKcUAADw9/PvkXUAAJwIlA50jgAAoA4O2l3vAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_mtvr7"]
-resource_name = "guardroom_monitors_Cube_004"
-_surfaces = [{
-"aabb": AABB(-1.7295377, 2.608153, -0.008407237, 1.5781426, 0.8514161, 0.71057576),
-"attribute_data": PackedByteArray("z8SEoU43iVfPxIlXTjeEoQ=="),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"material": ExtResource("3_o4ddj"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("kPneGAAAJpNuBiDn//8mk/////9ucSaTAAAAAJCOJpOnMudMpzLnTKcy50ynMudM")
-}, {
-"aabb": AABB(-1.7863297, 2.5530767, -0.0755066, 1.6880665, 0.96711206, 0.83170176),
-"attribute_data": PackedByteArray("CVJvagAA//8AAG9qCVL//xKkdCB9qn5yEqR+cn2qdCB39G9q4vr//3f0///i+m9qfap0IOewfnJ9qn5y57B0IHazfnLnsIModrODKOewfnJ39P//De5vanf0b2oN7v//EFb3+wlSb2oQVnZuEqRvaglS//8LoHZuC6D3+xKk//9w/f//4vp+cnD9fnLi+v//drODKAS2fnJ2s35yBLaDKHD9fnL+////cP3///7/fnI="),
-"format": 34896613399,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGgAZABsAGAAcABkAGgAbAB0AHgAcABgAHQAbAB8AHgAfABwAHQAfAB4AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkA"),
-"material": ExtResource("4_ddx6m"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 44,
-"vertex_data": PackedByteArray("AAA3B7yAK/xD/f//d2sr/KsG2+g07Cv8mPZbHgAAK/yY9lseAACw9P//x/hCf7D0Q/3//3drsPRT+SMXyhOw9AAANwe8gLvZU/kjF8oTu9mY9lseAAC72bsCAACHlLvZuwIAAIeU0fSrBtvoNOzR9GYJo+H//9H0AAA3B7yA0fS2Dy7XQPew9JwIlA50jrD0swm0C1aWsPSgDg7aXe+w9EP9//93a4rTZgmj4f//itOrBtvoNOyK0///x/hCf4rTA/OYIYkcS8K7AgAAh5RLwrMJtAtWlkvCZgmj4f//S8JT+SMXyhNLwrYPLtdA90vCBvkT7XN9S8L//8f4Qn9Lwgb5E+1zfbvZoA4O2l3vu9m2Dy7XQPe72fD38++RdbvZA/OYIYkc0fTw9/PvkXXR9Ab5E+1zfdH07PF4JKcU0fSzCbQLVpaK0+zxeCSnFIrTA/OYIYkcitOcCJQOdI6K0yrJ9DYqyfQ2Ksn0NirJ9DbgwWt04MFrdODBa3TgwWt0gCxpyIAsaciALGnIgCxpyEz0gc1M9IHNTPSBzUz0gc3gwWt04MFrdODBa3TgwWt0Ydc2HWHXNh1h1zYdYdc2HTwGseE8BrHhPAax4TwGseE8BrHhPAax4TwGseE8BrHhgCxpyIAsaciALGnIgCxpyEz0gc1M9IHNTPSBzUz0gc1h1zYdYdc2HWHXNh1h1zYd")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_wnt3u")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ioewd"]
-_surfaces = [{
-"aabb": AABB(0.15139502, 2.608153, -0.008407237, 1.5781426, 0.8514161, 0.71057576),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("bgbeGAAAAACQ+SDn//8AAP//AACQjgAAAAD//25xAAA=")
-}, {
-"aabb": AABB(0.09826326, 2.5530767, -0.0755066, 1.6880665, 0.96711206, 0.83170176),
-"format": 34896613377,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAAACAAUAAgAEAAUAAQAGAAQAAQADAAYABwADAAAAAAAFAAcABwAGAAMACAAFAAQACQAHAAUACAAJAAUACQAKAAcACgAGAAcACQAIAAsACQALAAwACgAJAAwACAANAAsACgAMAA4ACAAPAA0ACgAPAAYADwAOAA0ADwAKAA4ADwAEAAYADwAIAAQA"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("//83B7yAAAC7Av//d2sAAGYJWx4AAAAAU/nb6DTsAAAAAMf4Qn8AAKsGIxfKEwAAmPaj4f//AABD/QAAh5QAAPgGE+1zfQAA+wyYIYkcAABL9rQLVpYAAA4I8++RdQAAEg54JKcUAABe8Q7aXe8AAGL3lA50jgAASPAu10D3AAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_hkpar"]
-resource_name = "guardroom_monitors_Cube_001"
-_surfaces = [{
-"aabb": AABB(0.15139502, 2.608153, -0.008407237, 1.5781426, 0.8514161, 0.71057576),
-"attribute_data": PackedByteArray("z8SEoU43iVfPxIlXTjeEoQ=="),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"material": ExtResource("3_o4ddj"),
-"name": "monitor glass",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("bgbeGAAAS8KQ+SDn//9Lwv//AACQjkvCAAD//25xS8KxYcN5sWHDebFhw3mxYcN5")
-}, {
-"aabb": AABB(0.09826326, 2.5530767, -0.0755066, 1.6880665, 0.96711206, 0.83170176),
-"attribute_data": PackedByteArray("CVJvagAA//8AAG9qCVL//xKkdCB9qn5yEqR+cn2qdCB39G9q4vr//3f0///i+m9qfap0IOewfnJ9qn5y57B0IHazfnLnsIModrODKOewfnJ39P//De5vanf0b2oN7v//EFb3+wlSb2oQVnZuCVL//wugdm4SpP//C6D3+xKkb2oLoPf7CVL//xBW9/sSpP//EFZ2bhKkb2oLoHZuCVJvanD9///i+n5ycP1+cuL6//92s4MoBLZ+cnazfnIEtoMocP1+cv7///9w/f///v9+cg=="),
-"format": 34896613399,
-"index_count": 78,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEA"),
-"material": ExtResource("4_ddx6m"),
-"name": "monitor housing",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 52,
-"vertex_data": PackedByteArray("//83B7yAC/C7Av//d2sL8GYJWx4AAAvwU/nb6DTsC/BmCVseAABv0wAAx/hCf2/TqwYjF8oTb9O7Av//d2tv0///Nwe8gKr4qwYjF8oTqvhD/QAAh5Sq+GYJWx4AAKr4Q/0AAIeUodlT+dvoNOyh2f//Nwe8gKHZmPaj4f//odlI8C7XQPdv02L3lA50jm/TXvEO2l3vb9NL9rQLVpZv07sC//93a4r4mPaj4f//ivgAAMf4Qn+K+FP52+g07Ir4+wyYIYkc7/9D/QAAh5Tg/6sGIxfKE/D/S/a0C1aW4P9I8C7XQPfv/wAAx/hCf+D/mPaj4f//8P/4BhPtc33g//gGE+1zfVekqwYjF8oTkKIAAMf4Qn8cpfsMmCGJHPSkS/a0C1aWV6SY9qPh//+QokP9AACHlBylSPAu10D39aT4BhPtc32q+F7xDtpd76r4Dgjz75F1qvhI8C7XQPeq+PsMmCGJHKHZDgjz75F1odkSDngkpxSh2fgGE+1zfaHZS/a0C1aWivgSDngkpxSK+GL3lA50jor4+wyYIYkcivj78N5/+/Def/vw3n/78N5/4cVA1+HFQNfhxUDX4cVA1wZ4+zcGePs3Bnj7NwZ4+zfWG6As1hugLNYboCzWG6As4cVA1+HFQNfhxUDX4cVA1+/P2Afvz9gH78/YB+/P2AfH7FPzxOxX88fsU/PE7Ffzx+xT88TsV/PH7FPzxOxX8zJSVIk2JI3lqlK0iIYj6ucyUlSJNiSN5apStIiGI+vnBnj7NwZ4+zcGePs3Bnj7N9YboCzWG6As1hugLNYboCzvz9gH78/YB+/P2Afvz9gH")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ioewd")
-
 [node name="GuardRoom" type="Node3D" unique_id=1152577038]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1632215423]
@@ -542,6 +214,7 @@ mesh = SubResource("BoxMesh_kxgqw")
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="Walls" unique_id=1318527193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.278816, 2.0000005, 4.9546647)
 shape = SubResource("BoxShape3D_2sral")
+disabled = true
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="Walls" unique_id=55617668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017814636, 2.0000005, -4.6280627)
@@ -564,6 +237,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.3
 [node name="Cube" type="MeshInstance3D" parent="OfficeTable" unique_id=243135542]
 transform = Transform3D(1.8554537, 0, 0, 0, 1.8554537, 0, 0, 0, 1.8554537, -0.020219266, 0.7566854, 0.4598645)
 mesh = SubResource("ArrayMesh_xtgvc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable" unique_id=837896154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028298259, 0.71315, 0.46679688)
+shape = SubResource("BoxShape3D_fqvmo")
 
 [node name="OfficeDoor" type="StaticBody3D" parent="." unique_id=1680016837]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.0071216, 0, 3.3135388)
@@ -591,29 +268,5 @@ shape = SubResource("BoxShape3D_1ni5n")
 [node name="office_locker" parent="OfficeDoor" unique_id=1984221601 instance=ExtResource("12_ydn2h")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0.64698887, 0.0911386, -5.111068)
 
-[node name="guardroom_monitors" type="Node3D" parent="." unique_id=1061649080]
+[node name="GuardroomMonitors" parent="." unique_id=1858878755 instance=ExtResource("11_og6ge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38371968, -4.3350563)
-
-[node name="BottomLeft" type="MeshInstance3D" parent="guardroom_monitors" unique_id=848658325]
-mesh = SubResource("ArrayMesh_egoyp")
-script = ExtResource("13_nrcoj")
-
-[node name="BottomRight" type="MeshInstance3D" parent="guardroom_monitors" unique_id=1666542580]
-mesh = SubResource("ArrayMesh_y3kc7")
-script = ExtResource("14_1ni5n")
-
-[node name="MiddleLeft" type="MeshInstance3D" parent="guardroom_monitors" unique_id=1443663529]
-mesh = SubResource("ArrayMesh_pmn11")
-script = ExtResource("15_dv7lv")
-
-[node name="MiddleRight" type="MeshInstance3D" parent="guardroom_monitors" unique_id=1623090561]
-mesh = SubResource("ArrayMesh_2bqei")
-script = ExtResource("16_fqvmo")
-
-[node name="TopLeft" type="MeshInstance3D" parent="guardroom_monitors" unique_id=1405214100]
-mesh = SubResource("ArrayMesh_mtvr7")
-script = ExtResource("13_mffsq")
-
-[node name="TopRight" type="MeshInstance3D" parent="guardroom_monitors" unique_id=1017559068]
-mesh = SubResource("ArrayMesh_hkpar")
-script = ExtResource("18_p4wke")
