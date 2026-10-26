@@ -4,9 +4,8 @@ extends StaticBody3D
 
 func interact():
 	for child in get_children():
-		print(child.get_groups())
 		if child.is_in_group("door"):
-			child.queue_free()
+			child.disabled = true
 
 	for animation in animation_player.get_animation_list():
 		animation_player.play(animation)

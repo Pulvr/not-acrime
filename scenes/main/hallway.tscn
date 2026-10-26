@@ -18,9 +18,10 @@
 [ext_resource type="Material" uid="uid://bx05d4ri4ryxh" path="res://textures/materials/keybox_metal.tres" id="14_c0645"]
 [ext_resource type="Material" uid="uid://c1qma4vhvhjr6" path="res://textures/materials/lock_metal.tres" id="15_nkh0v"]
 [ext_resource type="Material" uid="uid://dyprqgvt3dsgp" path="res://textures/materials/lock_base.tres" id="16_idr2k"]
-[ext_resource type="Animation" uid="uid://b8ypyrmbwxd6a" path="res://animations/Cube_004Action.res" id="17_s62bm"]
-[ext_resource type="Animation" uid="uid://cmym5tskx1d8y" path="res://animations/Cube_004Action_001.res" id="18_7gfyk"]
 [ext_resource type="Animation" uid="uid://bufya02n61jgh" path="res://animations/keybox_open.res" id="19_enka8"]
+[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="19_nkh0v"]
+[ext_resource type="Resource" uid="uid://bl6vs763epw4x" path="res://resources/assets/items_for_pickup/blue_key/blue_key.tres" id="20_s62bm"]
+[ext_resource type="Resource" uid="uid://b4cc5cyrgkha8" path="res://resources/assets/items_for_pickup/gate_key/gate_key.tres" id="21_7gfyk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdg7e"]
 size = Vector3(80.82139, 0.19, 54.996872)
@@ -436,6 +437,9 @@ _data = {
 &"door_open": ExtResource("13_5op37")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_idr2k"]
+size = Vector3(0.10296631, 0.2964325, 0.22511292)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_wefmh"]
 _surfaces = [{
 "aabb": AABB(-1.3908521, -0.7951495, -0.1778531, 1.3908521, 1.5902991, 0.1778531),
@@ -504,6 +508,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ffl2i")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cear2"]
+size = Vector3(1.4040527, 1.6719666, 0.19072723)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_7y1iv"]
 _surfaces = [{
 "aabb": AABB(-1.4455372, 0.024710871, -0.015434355, 0.027984142, 0.16184476, 0.08772655),
@@ -569,16 +576,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0hn3q")
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ropl"]
-_data = {
-&"Cube_004Action": ExtResource("17_s62bm"),
-&"Cube_004Action_001": ExtResource("18_7gfyk"),
-&"keybox_open": ExtResource("19_enka8")
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cear2"]
-size = Vector3(1.440918, 1.6719666, 0.5619507)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c0645"]
 load_path = "res://.godot/imported/rusty_key_rust_pixelated.png-96f2080f4eb25a43dffec5517d3793cd.s3tc.ctex"
@@ -669,6 +666,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_n7x2n")
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ropl"]
+_data = {
+&"KeyBoxOpen": ExtResource("19_enka8")
+}
+
 [node name="Hallway" type="Node3D" unique_id=871673574]
 
 [node name="FloorAndCeiling" type="StaticBody3D" parent="." unique_id=709577982]
@@ -726,7 +728,6 @@ mesh = SubResource("BoxMesh_sunwe")
 
 [node name="Ceiling" type="MeshInstance3D" parent="FloorAndCeiling" unique_id=1075906834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.841, 4.2, -1.209)
-visible = false
 material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_ybmnr")
 
@@ -998,7 +999,7 @@ shape = SubResource("BoxShape3D_5op37")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.974, 0.1, 0.339)
 
 [node name="cell_wall_001" type="MeshInstance3D" parent="NextAreaButtonDoor" unique_id=265983350]
-transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, 0)
+transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, -2.3841858e-07)
 mesh = SubResource("ArrayMesh_pgfk2")
 
 [node name="Cube" type="MeshInstance3D" parent="NextAreaButtonDoor" unique_id=1295435023]
@@ -1023,49 +1024,61 @@ shape = SubResource("BoxShape3D_wsw4h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7976284, 1.555901, 0.063949585)
 shape = SubResource("BoxShape3D_6n7um")
 
-[node name="key_box" type="StaticBody3D" parent="." unique_id=611671366]
+[node name="key_box" type="StaticBody3D" parent="." unique_id=611671366 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.741325, 1.6324553, 7.632394)
+script = ExtResource("9_idr2k")
+
+[node name="LockCollider" type="CollisionShape3D" parent="key_box" unique_id=994413678 groups=["door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.745718, 1.1466525, 0.015464783)
+shape = SubResource("BoxShape3D_idr2k")
 
 [node name="Cube" type="MeshInstance3D" parent="key_box" unique_id=1322541528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69542605, 1.0997235, 0)
 mesh = SubResource("ArrayMesh_icgnl")
 
-[node name="Cube_001" type="MeshInstance3D" parent="key_box/Cube" unique_id=1829034255]
+[node name="KeyBoxDoor" type="MeshInstance3D" parent="key_box/Cube" unique_id=1829034255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008673668, -0.000562191, 0.00011444092)
 mesh = SubResource("ArrayMesh_w1mr3")
 
-[node name="Cube_004" type="MeshInstance3D" parent="key_box/Cube" unique_id=296248016]
-mesh = SubResource("ArrayMesh_6gvas")
+[node name="KeyBoxColliderBody" type="StaticBody3D" parent="key_box/Cube/KeyBoxDoor" unique_id=1346776771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69629335, -1.0991611, -0.00011444092)
 
-[node name="Cube_005" type="MeshInstance3D" parent="key_box/Cube" unique_id=444855730]
-mesh = SubResource("ArrayMesh_0moq8")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="key_box" unique_id=692649315]
-libraries/ = SubResource("AnimationLibrary_4ropl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="key_box" unique_id=460603750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006667137, 1.0763092, -0.09555054)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="key_box/Cube/KeyBoxDoor/KeyBoxColliderBody" unique_id=460603750]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.011760712, 1.0763092, 0.082956314)
 shape = SubResource("BoxShape3D_cear2")
 
-[node name="BlueKey" type="StaticBody3D" parent="key_box" unique_id=622391741]
+[node name="UpperLock" type="MeshInstance3D" parent="key_box/Cube" unique_id=296248016]
+mesh = SubResource("ArrayMesh_6gvas")
+
+[node name="LowerLock" type="MeshInstance3D" parent="key_box/Cube" unique_id=444855730]
+mesh = SubResource("ArrayMesh_0moq8")
+
+[node name="BlueKey" type="StaticBody3D" parent="key_box" unique_id=622391741 groups=["item_for_pickup"]]
 transform = Transform3D(-1.8958048e-08, 0.4337096, -1.8958048e-08, 0, -1.8958048e-08, -0.4337096, -0.4337096, -1.8958048e-08, 8.2868277e-16, -0.46019077, 1.282021, -0.117269516)
+script = ExtResource("19_nkh0v")
+data = ExtResource("20_s62bm")
 
 [node name="Cube" type="MeshInstance3D" parent="key_box/BlueKey" unique_id=1018241337]
 mesh = SubResource("ArrayMesh_s62bm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="key_box/BlueKey" unique_id=68431027]
-transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.015117645, 0.16822815, 0)
+transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.01512146, 0.16822815, 0)
 shape = SubResource("BoxShape3D_7gfyk")
 
-[node name="GateKey" type="StaticBody3D" parent="key_box" unique_id=1923818352]
+[node name="GateKey" type="StaticBody3D" parent="key_box" unique_id=1923818352 groups=["item_for_pickup"]]
 transform = Transform3D(-1.8958048e-08, 0.4337096, -1.8958048e-08, 0, -1.8958048e-08, -0.4337096, -0.4337096, -1.8958048e-08, 8.2868277e-16, 0.061537266, 1.282021, -0.117269516)
+script = ExtResource("19_nkh0v")
+data = ExtResource("21_7gfyk")
 
 [node name="Cube" type="MeshInstance3D" parent="key_box/GateKey" unique_id=1104797806]
 mesh = SubResource("ArrayMesh_xo75y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="key_box/GateKey" unique_id=1423923098]
-transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.015117645, 0.16822815, 0)
+transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.01512146, 0.16822815, 0)
 shape = SubResource("BoxShape3D_7gfyk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="key_box" unique_id=692649315]
+libraries/ = SubResource("AnimationLibrary_4ropl")
 
 [connection signal="body_entered" from="PlayerTriggerzone" to="PlayerTriggerzone" method="_on_body_entered"]
 [connection signal="player_detected" from="DronePath3D/DronePathFollow/Drone" to="DronePath3D/DronePathFollow" method="_on_drone_player_detected"]

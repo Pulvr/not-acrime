@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bl6vs763epw4x"]
+
+[ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/scripts/itemScripts/item_data.gd" id="1_bs6u1"]
+[ext_resource type="Texture2D" uid="uid://by1dxtkavdpwv" path="res://resources/ui_elements/rustyKey64.png" id="1_jn1aa"]
+[ext_resource type="ArrayMesh" uid="uid://br0ypkktw4a5b" path="res://models/rusty_key.res" id="2_rb1gb"]
+
+[resource]
+script = ExtResource("1_bs6u1")
+name = "Blue Key"
+icon = ExtResource("1_jn1aa")
+description = "a Blue Key"
+item_mesh = ExtResource("2_rb1gb")
+metadata/_custom_type_script = "uid://k257ssevnehw"

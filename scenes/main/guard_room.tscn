@@ -10,7 +10,6 @@
 [ext_resource type="Material" uid="uid://dkf5yq1pfshkn" path="res://textures/materials/door_frame.tres" id="8_og6ge"]
 [ext_resource type="Script" uid="uid://ba10vo6uhdm5n" path="res://scenes/main/start_animation_player_on_interact.gd" id="9_mffsq"]
 [ext_resource type="Material" uid="uid://cts7h1xcqqmnj" path="res://textures/materials/door_handle.tres" id="9_ydn2h"]
-[ext_resource type="Animation" uid="uid://1vp07ycq0k4y" path="res://animations/Cube_001Action.res" id="10_mffsq"]
 [ext_resource type="Animation" uid="uid://dw8s6qhebirlp" path="res://animations/Door_Open.res" id="11_nrcoj"]
 [ext_resource type="PackedScene" uid="uid://ck6ipt8r8iu7s" path="res://models/office_locker.glb" id="12_ydn2h"]
 
@@ -235,7 +234,6 @@ size = Vector3(3.1121826, 4.1031914, 0.10310364)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q088h"]
 _data = {
-&"Cube_001Action": ExtResource("10_mffsq"),
 &"Door_Open": ExtResource("11_nrcoj")
 }
 
@@ -314,18 +312,18 @@ script = ExtResource("9_mffsq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1290748, 2.228189, 0.10742068)
 shape = SubResource("BoxShape3D_1ni5n")
 
-[node name="Cube" type="MeshInstance3D" parent="OfficeDoor" unique_id=2021859237]
-transform = Transform3D(1.6, 0, 0, 0, 2.1, 0, 0, 0, 0.05, 1.6, 0, 0)
+[node name="Door" type="MeshInstance3D" parent="OfficeDoor" unique_id=2021859237]
+transform = Transform3D(1.599999, 0, -5.60406e-05, 0, 2.1, 0, 0.0017932992, 0, 0.049999967, 1.6, 0, 0)
 mesh = SubResource("ArrayMesh_w54r3")
 
-[node name="Cube_001" type="MeshInstance3D" parent="OfficeDoor/Cube" unique_id=1610912483]
+[node name="Handle" type="MeshInstance3D" parent="OfficeDoor/Door" unique_id=1610912483]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -1.7797035, 1.0667979, 3.4572659)
 mesh = SubResource("ArrayMesh_6qvhv")
 
-[node name="DummyBodyForDoorCollider" type="StaticBody3D" parent="OfficeDoor/Cube" unique_id=1083716136]
+[node name="DummyBodyForDoorCollider" type="StaticBody3D" parent="OfficeDoor/Door" unique_id=1083716136]
 transform = Transform3D(0.625, 0, 0, 0, 0.47619066, 0, 0, 0, 20, -1.0000007, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeDoor/Cube/DummyBodyForDoorCollider" unique_id=1509883826]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeDoor/Door/DummyBodyForDoorCollider" unique_id=1509883826]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -2.3841858e-07, 2.1518419, 0)
 shape = SubResource("BoxShape3D_ddx6m")
 debug_color = Color(0.85231143, 0.20127311, 0.7681799, 0.41960785)
