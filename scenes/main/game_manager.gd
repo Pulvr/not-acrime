@@ -12,7 +12,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	if GlobalSettings.last_scene != GlobalSettings.LastScenes.SETTINGS_MENU:
 		player.auto_start_intro_dialog()
-		
 
 
 func _on_timeline_started():

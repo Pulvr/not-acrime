@@ -21,7 +21,6 @@ var current_state := State.FREE
 @onready var intro_target: Node3D = $"../LevelAssets/RedCell/Cellmate"
 
 
-
 func _input(event):
 	if event is InputEventMouseMotion and current_state == State.FREE:
 		rotate_y(-event.relative.x * mouse_sensitivity)
