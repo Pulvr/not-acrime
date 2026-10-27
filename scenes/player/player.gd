@@ -4,11 +4,11 @@ extends CharacterBody3D
 signal player_moved
 signal player_stopped
 
-enum MovementModes { WALK }
+enum MovementModes { WALK, NOCLIP }
 enum State { FREE, IN_DIALOGUE, IN_MINIGAME, PAUSED }
 
-@export var debug_mode: bool = false
 @export var speed: float = 5.0
+@export var noclip_speed : float = 12.0
 
 var mouse_sensitivity: float = GlobalSettings.mouse_sensitivity
 var min_camera_x: float = deg_to_rad(-90)
@@ -17,10 +17,16 @@ var max_camera_x: float = deg_to_rad(90)
 var current_mode := MovementModes.WALK
 var current_state := State.FREE
 
+var _original_layer: int
+var _original_mask: int
+
 @onready var head: Node3D = $Head
 @onready var intro_target: Node3D = $"../LevelAssets/RedCell/Cellmate"
+@onready var collision_shape: CollisionShape3D = $Collider
 
-
+func _ready() -> void:
+	_original_layer = collision_layer
+	_original_mask = collision_mask
 
 func _input(event):
 	if event is InputEventMouseMotion and current_state == State.FREE:
@@ -33,9 +39,28 @@ func _input(event):
 
 
 func _physics_process(_delta):
+	_sync_debug_mode()
+
 	match current_mode:
 		MovementModes.WALK:
 			walk_process(_delta)
+		MovementModes.NOCLIP:
+			noclip_process(_delta)
+
+func _sync_debug_mode() -> void:
+	var wanted_mode := (
+		MovementModes.NOCLIP if DebugController.no_clip else MovementModes.WALK
+	)
+	if wanted_mode != current_mode:
+		set_mode(wanted_mode)
+
+func set_mode(new_mode: MovementModes) -> void:
+	current_mode = new_mode
+	velocity = Vector3.ZERO
+
+	var is_noclip := new_mode == MovementModes.NOCLIP
+	collision_layer = 0 if is_noclip else _original_layer
+	collision_mask = 0 if is_noclip else _original_mask
 
 
 func auto_start_intro_dialog():
@@ -68,6 +93,17 @@ func walk_process(_delta):
 				player_moved.emit()
 			else:
 				player_stopped.emit()
+
+func noclip_process(delta: float) -> void:
+	if current_state != State.FREE:
+		return
+
+	var input_dir: Vector2 = Input.get_vector(
+		"move_left", "move_right", "move_forward", "move_back"
+	)
+	var direction: Vector3 = transform.basis * Vector3(input_dir.x, 0, input_dir.y)
+
+	global_position += direction.normalized() * noclip_speed * delta
 
 
 func check_interaction():

@@ -4,7 +4,10 @@ extends Control
 func _on_start_pressed() -> void:
 	reset_game()
 	GlobalSettings.set_last_scene(GlobalSettings.LastScenes.MAIN_MENU)
-	FadeLayer.change_scene("res://scenes/main/intro_clip.tscn", 2, false)
+	if DebugController.skip_intro:
+		FadeLayer.change_scene("res://scenes/main/main_scene.tscn", 2.0)
+	else:
+		FadeLayer.change_scene("res://scenes/main/intro_clip.tscn", 2, false)
 
 
 func _on_controls_pressed() -> void:
