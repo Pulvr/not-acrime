@@ -61,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.0370703)
 [node name="Lighting" type="Node" parent="." unique_id=491820501]
 
 [node name="CellRed" type="Node3D" parent="Lighting" unique_id=442579602]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.721, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.72, 0)
 
 [node name="OwnCellLight1" type="OmniLight3D" parent="Lighting/CellRed" unique_id=419083301]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -95,7 +95,7 @@ spot_range = 3.0
 spot_angle = 62.457508
 
 [node name="CellBlue" type="Node3D" parent="Lighting" unique_id=315275978]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.715887, 3.7212534, -11.838042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.716, 3.72, -11.838)
 
 [node name="BasicCellWideLight1" type="OmniLight3D" parent="Lighting/CellBlue" unique_id=1832920164]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
@@ -112,24 +112,24 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellOrange" type="Node3D" parent="Lighting" unique_id=370503565]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.489567, 4, 15.17107)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.49, 3.72, 15.171)
 
 [node name="BasicCellWideLight1" type="OmniLight3D" parent="Lighting/CellOrange" unique_id=1417534166]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
-light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_color = Color(1, 0.4166667, 0, 1)
 light_specular = 0.0
 shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="BasicCellWideLight2" type="OmniLight3D" parent="Lighting/CellOrange" unique_id=1960650877]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
-light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_color = Color(1, 0.4166667, 0, 1)
 light_specular = 0.0
 shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellGreen" type="Node3D" parent="Lighting" unique_id=1546169845]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.068823, 4, -15.099768)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.068823, 3.72, -15.099768)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellGreen" unique_id=1923288067]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -146,7 +146,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellPurple" type="Node3D" parent="Lighting" unique_id=791092079]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.008362, 4, -23.552088)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.008362, 3.72, -23.552088)
 
 [node name="BasicCellWideLight1" type="OmniLight3D" parent="Lighting/CellPurple" unique_id=838135407]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
@@ -163,7 +163,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic" type="Node3D" parent="Lighting" unique_id=289941233]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.191, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.191, 3.72, 0)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic" unique_id=582141018]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -180,7 +180,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic2" type="Node3D" parent="Lighting" unique_id=453812134]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.382, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.382, 3.72, 0)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic2" unique_id=2054754776]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -197,7 +197,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic3" type="Node3D" parent="Lighting" unique_id=998828161]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.573, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.573, 3.72, 0)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic3" unique_id=675317625]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -214,7 +214,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic4" type="Node3D" parent="Lighting" unique_id=1857274708]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.935093, 4, 6.056372)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.935093, 3.72, 6.056372)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic4" unique_id=1906642090]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -231,7 +231,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic5" type="Node3D" parent="Lighting" unique_id=1931345069]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.935, 4, -0.13684249)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.935, 3.72, -0.13684249)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic5" unique_id=5999713]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -248,7 +248,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic6" type="Node3D" parent="Lighting" unique_id=1356498236]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.935, 4, -6.31421)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.935, 3.72, -6.31421)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic6" unique_id=1598256660]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -265,7 +265,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic7" type="Node3D" parent="Lighting" unique_id=1958904686]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.935, 4, -12.498154)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.935, 3.72, -12.498154)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic7" unique_id=2020271839]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -282,7 +282,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic8" type="Node3D" parent="Lighting" unique_id=792787090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.567139, 4, -30.131672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.567139, 3.72, -30.131672)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic8" unique_id=1763144933]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -299,7 +299,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic9" type="Node3D" parent="Lighting" unique_id=340672320]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.376138, 4, -30.131672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.376138, 3.72, -30.131672)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic9" unique_id=655256109]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -316,7 +316,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic10" type="Node3D" parent="Lighting" unique_id=197118918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2219176, 4, -30.131672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2219176, 3.72, -30.131672)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic10" unique_id=1198689323]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -333,7 +333,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasic11" type="Node3D" parent="Lighting" unique_id=1395106129]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.932922, 4, -30.132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.932922, 3.72, -30.132)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/CellBasic11" unique_id=770900148]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
@@ -350,7 +350,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasicWide" type="Node3D" parent="Lighting" unique_id=1120844081]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.507, 4, -11.841618)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.507, 3.72, -11.841618)
 
 [node name="BasicCellWideLight1" type="OmniLight3D" parent="Lighting/CellBasicWide" unique_id=1202007800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
@@ -367,7 +367,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasicWide2" type="Node3D" parent="Lighting" unique_id=1507981914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.30641, 4, -21.91929)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.30641, 3.72, -21.91929)
 
 [node name="BasicCellWideLight1" type="OmniLight3D" parent="Lighting/CellBasicWide2" unique_id=976704104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
@@ -384,7 +384,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasicWide3" type="Node3D" parent="Lighting" unique_id=1032869449]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.267784, 4, 4.841466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.267784, 3.72, 4.841466)
 
 [node name="BasicCellWideLight1" type="OmniLight3D" parent="Lighting/CellBasicWide3" unique_id=931826957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
@@ -401,7 +401,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="CellBasicWide4" type="Node3D" parent="Lighting" unique_id=397498817]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.70958, 4, 15.17107)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.70958, 3.72, 15.17107)
 
 [node name="BasicCellWideLight1" type="OmniLight3D" parent="Lighting/CellBasicWide4" unique_id=2145486126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
@@ -418,7 +418,7 @@ shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="GuardRoom" type="Node3D" parent="Lighting" unique_id=1454655688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.64, 3.8, -10.035)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.64, 3.72, -10.035)
 
 [node name="BasicCellLight1" type="OmniLight3D" parent="Lighting/GuardRoom" unique_id=1596258989]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
