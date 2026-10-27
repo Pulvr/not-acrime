@@ -135,6 +135,7 @@ player="Only for finding Player globally"
 door="find door to open after finished lock_minigame"
 lock_collider="find collider after finished lock_minigame to disable it"
 canvas_layer="Group for Canvas Layers"
+security_cams="used for transferring camera footage onto materials"
 
 [input]
 
