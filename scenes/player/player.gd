@@ -7,9 +7,8 @@ signal player_stopped
 enum MovementModes { WALK, NOCLIP }
 enum State { FREE, IN_DIALOGUE, IN_MINIGAME, PAUSED }
 
-@export var debug_mode: bool = false
 @export var speed: float = 5.0
-@export var noclip_speed := 12.0
+@export var noclip_speed : float = 12.0
 
 var mouse_sensitivity: float = GlobalSettings.mouse_sensitivity
 var min_camera_x: float = deg_to_rad(-90)
