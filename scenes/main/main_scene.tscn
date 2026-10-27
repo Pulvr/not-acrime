@@ -61,18 +61,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.0370703)
 [node name="Lighting" type="Node" parent="." unique_id=491820501]
 
 [node name="CellRed" type="Node3D" parent="Lighting" unique_id=442579602]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.721, 0)
 
 [node name="OwnCellLight1" type="OmniLight3D" parent="Lighting/CellRed" unique_id=419083301]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1.4)
-light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_color = Color(1, 0.16862746, 0.1764706, 1)
 light_specular = 0.1
 shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="OwnCellLight2" type="OmniLight3D" parent="Lighting/CellRed" unique_id=712101461]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -1.4)
-light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_color = Color(1, 0.16862746, 0.1764706, 1)
 light_specular = 0.1
 shadow_enabled = true
 shadow_blur = 10.0
@@ -95,18 +95,18 @@ spot_range = 3.0
 spot_angle = 62.457508
 
 [node name="CellBlue" type="Node3D" parent="Lighting" unique_id=315275978]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.715887, 4, -11.838042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.715887, 3.7212534, -11.838042)
 
 [node name="BasicCellWideLight1" type="OmniLight3D" parent="Lighting/CellBlue" unique_id=1832920164]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
-light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_color = Color(0.18, 0.54900026, 1, 1)
 light_specular = 0.0
 shadow_enabled = true
 shadow_blur = 10.0
 
 [node name="BasicCellWideLight2" type="OmniLight3D" parent="Lighting/CellBlue" unique_id=1494807424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
-light_color = Color(1.3319168, 1.3528494, 1.3528494, 1)
+light_color = Color(0.18, 0.54900026, 1, 1)
 light_specular = 0.0
 shadow_enabled = true
 shadow_blur = 10.0
