@@ -21,8 +21,7 @@ var _original_layer: int
 var _original_mask: int
 
 @onready var head: Node3D = $Head
-@onready var intro_target: Node3D = $"../LevelAssets/RedCell/Cellmate"
-@onready var collision_shape: CollisionShape3D = $Collider
+@onready var intro_target: Node3D = $"../LevelAssets/RedCell/RedCharacter"
 
 func _ready() -> void:
 	_original_layer = collision_layer
