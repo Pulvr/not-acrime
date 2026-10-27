@@ -125,6 +125,11 @@ func check_interaction():
 				if not collider.pillow_minigame_started.is_connected(_on_minigame_started):
 					collider.pillow_minigame_started.connect(_on_minigame_started)
 					collider.pillow_minigame_ended.connect(_on_pillow_mini_game_ended)
+
+			if collider.has_signal("keybox_minigame_started"):
+				if not collider.keybox_minigame_started.is_connected(_on_minigame_started):
+					collider.keybox_minigame_started.connect(_on_minigame_started)
+					collider.keybox_minigame_ended.connect(_on_keybox_mini_game_ended)
 			collider.interact()
 
 
@@ -154,3 +159,6 @@ func _on_pillow_mini_game_ended():
 	$Inventory.item_added_with_dialog(
 		load("res://resources/assets/items_for_pickup/rusty_key/rusty_key.tres")
 	)
+
+func _on_keybox_mini_game_ended():
+	current_state = State.FREE

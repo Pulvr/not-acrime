@@ -13,13 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://chnv7gltuckc0" path="res://models/button_door_rust_pixelated.png" id="10_nkh0v"]
 [ext_resource type="Material" uid="uid://crvbpv8l2usm6" path="res://textures/materials/button_podest.tres" id="11_wsw4h"]
 [ext_resource type="Material" uid="uid://dt10q5xjcks2k" path="res://textures/materials/Door_Framing.tres" id="12_6n7um"]
-[ext_resource type="Animation" uid="uid://btul4rqrrr8cb" path="res://animations/door_open.res" id="13_5op37"]
+[ext_resource type="Animation" uid="uid://btul4rqrrr8cb" path="res://animations/Door_Open.res" id="13_5op37"]
 [ext_resource type="Material" uid="uid://bx05d4ri4ryxh" path="res://textures/materials/keybox_metal.tres" id="14_c0645"]
 [ext_resource type="Material" uid="uid://c1qma4vhvhjr6" path="res://textures/materials/lock_metal.tres" id="15_nkh0v"]
 [ext_resource type="Material" uid="uid://dyprqgvt3dsgp" path="res://textures/materials/lock_base.tres" id="16_idr2k"]
 [ext_resource type="Animation" uid="uid://b8ypyrmbwxd6a" path="res://animations/Cube_004Action.res" id="17_s62bm"]
 [ext_resource type="Animation" uid="uid://cmym5tskx1d8y" path="res://animations/Cube_004Action_001.res" id="18_7gfyk"]
 [ext_resource type="Animation" uid="uid://bufya02n61jgh" path="res://animations/keybox_open.res" id="19_enka8"]
+[ext_resource type="Script" uid="uid://batjhleypea21" path="res://resources/scripts/key_box_lock_starter.gd" id="21_idr2k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdg7e"]
 size = Vector3(80.82139, 0.19, 54.996872)
@@ -1015,8 +1016,9 @@ shape = SubResource("BoxShape3D_wsw4h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7976284, 1.555901, 0.063949585)
 shape = SubResource("BoxShape3D_6n7um")
 
-[node name="key_box" type="StaticBody3D" parent="." unique_id=611671366]
+[node name="key_box" type="StaticBody3D" parent="." unique_id=611671366 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.741325, 1.6324553, 7.632394)
+script = ExtResource("21_idr2k")
 
 [node name="Cube" type="MeshInstance3D" parent="key_box" unique_id=1322541528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69542605, 1.0997235, 0)
