@@ -18,7 +18,7 @@ var current_mode := MovementModes.WALK
 var current_state := State.FREE
 
 @onready var head: Node3D = $Head
-@onready var intro_target: Node3D = $"../LevelAssets/RedCell/Cellmate"
+@onready var intro_target: Node3D = $"../LevelAssets/RedCell/RedCharacter"
 
 
 
