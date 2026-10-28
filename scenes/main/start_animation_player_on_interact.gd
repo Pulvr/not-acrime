@@ -6,7 +6,7 @@ extends StaticBody3D
 func interact():
 	for child in get_children():
 		if child.is_in_group("door"):
-			child.disabled = true
+			child.set_deferred("disabled", true)
 
 	for animation in animation_player.get_animation_list():
 		animation_player.play(animation)

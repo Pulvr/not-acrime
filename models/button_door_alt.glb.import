@@ -41,7 +41,7 @@ _subresources={
 "animations": {
 "door_open": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://animations/Door_Open.res",
+"save_to_file/fallback_path": "res://animations/door_open.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://btul4rqrrr8cb",
 "settings/loop_mode": 0,

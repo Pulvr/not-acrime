@@ -10,7 +10,10 @@ func _ready() -> void:
 	drone.player_detected.connect(_on_drone_player_detected)
 
 	await get_tree().process_frame
-	if GlobalSettings.last_scene != GlobalSettings.LastScenes.SETTINGS_MENU and !DebugController.skip_intro:
+	if (
+		GlobalSettings.last_scene != GlobalSettings.LastScenes.SETTINGS_MENU
+		and !DebugController.skip_intro
+	):
 		player.auto_start_intro_dialog()
 
 
