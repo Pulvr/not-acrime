@@ -8,7 +8,7 @@ enum MovementModes { WALK, NOCLIP }
 enum State { FREE, IN_DIALOGUE, IN_MINIGAME, PAUSED }
 
 @export var speed: float = 5.0
-@export var noclip_speed : float = 12.0
+@export var noclip_speed: float = 12.0
 
 var mouse_sensitivity: float = GlobalSettings.mouse_sensitivity
 var min_camera_x: float = deg_to_rad(-90)
@@ -23,9 +23,11 @@ var _original_mask: int
 @onready var head: Node3D = $Head
 @onready var intro_target: Node3D = $"../LevelAssets/RedCell/RedCharacter"
 
+
 func _ready() -> void:
 	_original_layer = collision_layer
 	_original_mask = collision_mask
+
 
 func _input(event):
 	if event is InputEventMouseMotion and current_state == State.FREE:
@@ -46,12 +48,12 @@ func _physics_process(_delta):
 		MovementModes.NOCLIP:
 			noclip_process(_delta)
 
+
 func _sync_debug_mode() -> void:
-	var wanted_mode := (
-		MovementModes.NOCLIP if DebugController.no_clip else MovementModes.WALK
-	)
+	var wanted_mode := MovementModes.NOCLIP if DebugController.no_clip else MovementModes.WALK
 	if wanted_mode != current_mode:
 		set_mode(wanted_mode)
+
 
 func set_mode(new_mode: MovementModes) -> void:
 	current_mode = new_mode
@@ -92,6 +94,7 @@ func walk_process(_delta):
 				player_moved.emit()
 			else:
 				player_stopped.emit()
+
 
 func noclip_process(delta: float) -> void:
 	if current_state != State.FREE:
@@ -159,6 +162,7 @@ func _on_pillow_mini_game_ended():
 	$Inventory.item_added_with_dialog(
 		load("res://resources/assets/items_for_pickup/rusty_key/rusty_key.tres")
 	)
+
 
 func _on_keybox_mini_game_ended():
 	current_state = State.FREE

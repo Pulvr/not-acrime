@@ -5,13 +5,12 @@ signal keybox_minigame_started
 signal keybox_minigame_ended
 
 @export var lock_ui_scene: PackedScene = preload("res://scenes/ui_scenes/minigames/key_box_number_lock.tscn")
-@export var open_animation_name: String = "keybox_open"
 
 var saved_combination: Array[int] = [0, 0, 0, 0]
 var is_unlocked: bool = false
 var active_ui: KeyBoxNumberLock = null
 
-@onready var collision_shape: CollisionShape3D = $CollisionShape3D
+@onready var collision_shape: CollisionShape3D = $LockCollider
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func interact() -> void:
@@ -57,7 +56,8 @@ func _on_lock_solved(canvas_layer: CanvasLayer) -> void:
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	if animation_player and animation_player.has_animation(open_animation_name):
-		animation_player.play(open_animation_name)
+	if animation_player and animation_player.get_animation_list() != null:
+		for animation in animation_player.get_animation_list():
+			animation_player.play(animation)
 
 	keybox_minigame_ended.emit()
