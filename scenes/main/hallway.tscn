@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="19_nkh0v"]
 [ext_resource type="Resource" uid="uid://bl6vs763epw4x" path="res://resources/assets/items_for_pickup/blue_key/blue_key.tres" id="20_s62bm"]
 [ext_resource type="Resource" uid="uid://b4cc5cyrgkha8" path="res://resources/assets/items_for_pickup/gate_key/gate_key.tres" id="21_7gfyk"]
+[ext_resource type="Script" uid="uid://batjhleypea21" path="res://resources/scripts/key_box_lock_starter.gd" id="21_idr2k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdg7e"]
 size = Vector3(80.82139, 0.19, 54.996872)
