@@ -151,5 +151,5 @@ wait_time = 0.65
 
 [connection signal="player_moved" from="." to="FootstepPlayer" method="_on_player_node_player_moved"]
 [connection signal="player_stopped" from="." to="FootstepPlayer" method="_on_player_node_player_stopped"]
-[connection signal="picked_up_item" from="Inventory" to="UILayer" method="_on_inventory_picked_up_item"]
+[connection signal="displayed_item_should_change" from="Inventory" to="UILayer" method="_on_inventory_displayed_item_should_change"]
 [connection signal="timeout" from="FootstepPlayer/FootstepTimer" to="FootstepPlayer" method="_on_footstep_timer_timeout"]

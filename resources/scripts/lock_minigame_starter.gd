@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-const LOCK_MINIGAME_SCENE = preload("res://scenes/ui_scenes/minigames/cell_lock_minigame.tscn")
+const LOCK_MINIGAME_SCENE: PackedScene = preload("res://scenes/ui_scenes/minigames/cell_lock_minigame.tscn")
 
 @export var timeline: DialogicTimeline
 
@@ -20,7 +20,7 @@ func interact():
 
 
 func start_minigame():
-	var minigame_instance = LOCK_MINIGAME_SCENE.instantiate()
+	var minigame_instance: Node = LOCK_MINIGAME_SCENE.instantiate()
 	minigame_instance.minigame_won.connect(_on_door_opened)
 	minigame_instance.minigame_failed.connect(_on_door_still_closed)
 	get_tree().root.add_child(minigame_instance)
@@ -28,8 +28,9 @@ func start_minigame():
 
 
 func _on_door_opened():
-	var lock_collider = get_tree().get_first_node_in_group("lock_collider")
+	var lock_collider: Node = get_tree().get_first_node_in_group("lock_collider")
 	Dialogic.VAR.set_variable("lock_solved", true)
+	Dialogic.start("rusty_key_removed_timeline")
 	if lock_collider:
 		lock_collider.disabled = true
 	get_tree().paused = false
