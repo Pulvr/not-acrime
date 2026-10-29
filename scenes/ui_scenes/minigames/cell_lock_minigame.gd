@@ -20,7 +20,7 @@ signal minigame_failed
 @export_group("Other")
 @export var hint_animation_duration := 3.0  ##Modifies the duration of the tutorial hint.
 @export var default_font := preload("res://resources/fonts/Special_Elite/SpecialElite-Regular.ttf")
-@export var input_key_displayed = "A"
+@export var input_key_displayed: String = "A"
 var current_visual_radius := 0.0
 var hint_anim_timer := 0.0
 
@@ -32,11 +32,11 @@ var is_won: bool = false
 var door_tween: Tween
 
 #Audio
-@onready var ring_broken_sound = $RingBrokenSoundPlayer
-@onready var lock_opened_sound = $LockOpenedSoundPlayer
-@onready var fail_sound = $FailSoundPlayer
+@onready var ring_broken_sound: AudioStreamPlayer = $RingBrokenSoundPlayer
+@onready var lock_opened_sound: AudioStreamPlayer = $LockOpenedSoundPlayer
+@onready var fail_sound: AudioStreamPlayer = $FailSoundPlayer
 
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player: Node = get_tree().get_first_node_in_group("player")
 
 
 func _ready() -> void:
@@ -105,11 +105,11 @@ func _get_gap_size(index: int) -> float:
 
 
 func _process(delta: float) -> void:
-	var speed_multiplier = (
+	var speed_multiplier: float = (
 		1.0 + (pow(float(current_ring_index), difficulty_exponent) * difficulty_factor)
 	)
 	for i in range(current_ring_index, rings.size()):
-		var ring = rings[i]
+		var ring: Dictionary = rings[i]
 		var current_speed = ring["base_speed"] * speed_multiplier
 		ring["rotation"] += current_speed * delta
 
@@ -120,7 +120,7 @@ func _process(delta: float) -> void:
 		if hint_anim_timer > hint_animation_duration:
 			hint_anim_timer -= hint_animation_duration
 
-	var target_radius = 0.0
+	var target_radius: float = 0.0
 	if current_ring_index < rings.size():
 		target_radius = rings[current_ring_index]["radius"]
 
@@ -134,7 +134,7 @@ func _draw() -> void:
 		draw_keyhole()
 
 	for i in range(current_ring_index, rings.size()):
-		var ring = rings[i]
+		var ring: Dictionary = rings[i]
 
 		var half_gap = ring["gap_size"] / 2.0
 		var solid_start = ring["rotation"] + half_gap
@@ -147,7 +147,7 @@ func _draw() -> void:
 		var gap_start = ring["rotation"] - half_gap
 		var gap_end = ring["rotation"] + half_gap
 
-		var current_gap_color = gap_color
+		var current_gap_color: Color = gap_color
 		var current_width = ring["width"]
 		if i == current_ring_index:
 			current_gap_color = Color(0.3, 1.0, 0.3, 0.8)
@@ -168,10 +168,10 @@ func _draw() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	var is_a_key = (
+	var is_a_key: bool = (
 		event is InputEventKey and event.keycode == KEY_A and event.pressed and not event.echo
 	)
-	var is_lmb = (
+	var is_lmb: bool = (
 		event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed
 	)
 
@@ -186,11 +186,11 @@ func _input(event: InputEvent) -> void:
 
 
 func draw_keyhole() -> void:
-	var hole_color = Color(0.12, 0.12, 0.12)
+	var hole_color: Color = Color(0.12, 0.12, 0.12)
 
 	draw_circle(center_pos + Vector2(0, -8), 20.0, hole_color)
 
-	var hole_points = PackedVector2Array(
+	var hole_points: PackedVector2Array = PackedVector2Array(
 		[
 			center_pos + Vector2(-12, 0),
 			center_pos + Vector2(12, 0),
@@ -202,15 +202,15 @@ func draw_keyhole() -> void:
 
 
 func draw_key_and_arrow() -> void:
-	var arrow_alpha = 0.0
-	var key_anim_offset = -45.0
+	var arrow_alpha: float = 0.0
+	var key_anim_offset: float = -45.0
 
 	if current_ring_index == 0:
 		if hint_anim_timer < 1.0:
 			arrow_alpha = 1.0
 			key_anim_offset = 0.0
 		else:
-			var anim_time = hint_anim_timer - 1.0
+			var anim_time: float = hint_anim_timer - 1.0
 
 			arrow_alpha = 1.0 - smoothstep(0.0, 0.6, anim_time)
 
@@ -219,15 +219,15 @@ func draw_key_and_arrow() -> void:
 			else:
 				key_anim_offset = -45.0
 
-	var base_x = current_visual_radius + 70.0
+	var base_x: float = current_visual_radius + 70.0
 
-	var arrow_pos = center_pos + Vector2(base_x, 0)
+	var arrow_pos: Vector2 = center_pos + Vector2(base_x, 0)
 
-	var current_arrow_color = Color(0.8, 0.8, 0.8, arrow_alpha * 0.5)
-	var outline_color = Color(1.0, 1.0, 1.0, arrow_alpha)
-	var text_color = Color(0.0, 0.0, 0.0, arrow_alpha)
+	var current_arrow_color: Color = Color(0.8, 0.8, 0.8, arrow_alpha * 0.5)
+	var outline_color: Color = Color(1.0, 1.0, 1.0, arrow_alpha)
+	var text_color: Color = Color(0.0, 0.0, 0.0, arrow_alpha)
 
-	var arrow_points = PackedVector2Array(
+	var arrow_points: PackedVector2Array = PackedVector2Array(
 		[
 			arrow_pos + Vector2(20, -15),
 			arrow_pos + Vector2(20, 15),
@@ -241,7 +241,7 @@ func draw_key_and_arrow() -> void:
 
 	if arrow_alpha > 0.0:
 		draw_colored_polygon(arrow_points, current_arrow_color)
-		var outline_points = arrow_points.duplicate()
+		var outline_points: PackedVector2Array = arrow_points.duplicate()
 		outline_points.append(arrow_points[0])
 		draw_polyline(outline_points, outline_color, 2.0)
 		draw_string(
@@ -254,7 +254,7 @@ func draw_key_and_arrow() -> void:
 			text_color
 		)
 
-	var key_pos = center_pos + Vector2(base_x + 85.0 + key_anim_offset, 0)
+	var key_pos: Vector2 = center_pos + Vector2(base_x + 85.0 + key_anim_offset, 0)
 
 	draw_rect(Rect2(key_pos.x + 10, key_pos.y - 15, 24, 30), ring_color, false, 4.0)
 	draw_rect(Rect2(key_pos.x - 30, key_pos.y - 4, 40, 8), ring_color)
@@ -266,11 +266,11 @@ func check_hit() -> void:
 	if current_ring_index >= rings.size():
 		return
 
-	var active_ring = rings[current_ring_index]
+	var active_ring: Dictionary = rings[current_ring_index]
 	var ring_rot = active_ring["rotation"]
 	var half_gap = active_ring["gap_size"] / 2.0
 
-	var diff = fposmod(deg_to_rad(input_angle) - ring_rot + PI, TAU) - PI
+	var diff: float = fposmod(deg_to_rad(input_angle) - ring_rot + PI, TAU) - PI
 
 	if abs(diff) <= half_gap:
 		success_hit()
@@ -308,7 +308,7 @@ func _animate_door(target_rot_y: float, duration: float):
 	if door_tween:
 		door_tween.kill()
 
-	var cell_door = get_tree().get_first_node_in_group("door")
+	var cell_door: Node = get_tree().get_first_node_in_group("door")
 	door_tween = create_tween()
 	door_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	door_tween.tween_property(cell_door, "rotation:y", target_rot_y, duration)
@@ -316,8 +316,9 @@ func _animate_door(target_rot_y: float, duration: float):
 
 
 func _on_tween_completed():
-	var cell_door = get_tree().get_first_node_in_group("door")
+	var cell_door: Node = get_tree().get_first_node_in_group("door")
 	cell_door.get_parent().get_node("CollisionShape3D").rotation.y -= cell_door.rotation.y
 	cell_door.get_parent().get_node("CollisionShape3D").position = Vector3(-2.05, 2, -0.8)
 	is_animation_running = false
 	player.set_state(Player.State.FREE)
+	player.inventory.remove_item("Rusty Key")

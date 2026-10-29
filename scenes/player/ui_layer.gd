@@ -79,7 +79,7 @@ func toggle_pause():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-func _on_inventory_picked_up_item() -> void:
+func _on_inventory_displayed_item_should_change() -> void:
 	item_in_hand = inventory[-1]
 	change_selected_item(1)
 	update_hand_display()
