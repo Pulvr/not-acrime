@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bip2hpvtsgbv5"]
+
+[resource]
+resource_name = "cam_record_light"
+cull_mode = 2
+albedo_color = Color(0.7400125, 0.004718443, 0, 1)
+albedo_texture_force_srgb = true
+roughness = 0.3
+emission_enabled = true
+emission = Color(0.31139627, 0.00087178504, 0.03349432, 1)
+emission_energy_multiplier = 16.0
