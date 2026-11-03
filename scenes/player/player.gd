@@ -22,6 +22,7 @@ var _original_mask: int
 
 @onready var head: Node3D = $Head
 @onready var intro_target: Node3D = $"../LevelAssets/RedCell/RedCharacter"
+@onready var inventory: Node3D = $Inventory
 
 
 func _ready() -> void:
@@ -113,7 +114,7 @@ func check_interaction():
 		var collider: Object = $Head/InteractionRay.get_collider()
 
 		if collider.is_in_group("item_for_pickup"):
-			$Inventory.pick_up_item(collider)
+			inventory.pick_up_item(collider)
 
 		elif collider.has_method("start_dialog"):
 			collider.start_dialog()
@@ -151,7 +152,7 @@ func _on_minigame_started():
 func _on_toilet_mini_game_ended():
 	current_state = State.FREE
 	Dialogic.VAR.set_variable("has_sharp", true)
-	$Inventory.item_added_with_dialog(
+	inventory.item_added_with_dialog(
 		load("res://resources/assets/items_for_pickup/sharp_metal_object/metal_object.tres")
 	)
 
@@ -159,7 +160,7 @@ func _on_toilet_mini_game_ended():
 func _on_pillow_mini_game_ended():
 	current_state = State.FREE
 	Dialogic.VAR.set_variable("has_key", true)
-	$Inventory.item_added_with_dialog(
+	inventory.item_added_with_dialog(
 		load("res://resources/assets/items_for_pickup/rusty_key/rusty_key.tres")
 	)
 

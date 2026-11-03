@@ -35,14 +35,15 @@ directories/dch_directory={
 "char_red": "res://resources/dialog/character/char_red.dch"
 }
 directories/dtl_directory={
-"blue_timeline": "res://blue_timeline.dtl",
+"blue_timeline": "res://resources/dialog/timeline/blue_timeline.dtl",
 "cell_lock_timeline": "res://resources/dialog/timeline/cell_lock_timeline.dtl",
 "cellmate": "res://resources/dialog/timeline/char_red_timeline.dtl",
 "door_lock_minigame_failed_timeline": "res://resources/dialog/timeline/door_lock_minigame_failed_timeline.dtl",
-"drone_detect_timeline": "res://drone_detect_timeline.dtl",
+"drone_detect_timeline": "res://resources/dialog/timeline/drone_detect_timeline.dtl",
 "item_received_timeline": "res://resources/dialog/timeline/item_received_timeline.dtl",
 "orange_timeline": "res://resources/dialog/character/orange_timeline.dtl",
 "pillow_timeline": "res://resources/dialog/timeline/pillow_timeline.dtl",
+"rusty_key_removed_timeline": "res://resources/dialog/timeline/rusty_key_removed_timeline.dtl",
 "toilet_minigame_timeline": "res://resources/dialog/timeline/toilet_minigame_timeline.dtl",
 "welcome_timeline": "res://resources/dialog/timeline/welcome_timeline.dtl"
 }

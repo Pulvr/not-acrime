@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cptb6i8wj8lhs"]
 
 [ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="1_mw4qk"]
-[ext_resource type="Resource" uid="uid://csxhe85phrebe" path="res://drone_detect_timeline.dtl" id="2_q6bdv"]
+[ext_resource type="Resource" uid="uid://csxhe85phrebe" path="res://resources/dialog/timeline/drone_detect_timeline.dtl" id="2_q6bdv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lanct"]
 
