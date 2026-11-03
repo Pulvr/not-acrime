@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b15exu8cqb4be" path="res://resources/ui_elements/ui_lock_slot_frame.png" id="4_evkq0"]
 [ext_resource type="Texture2D" uid="uid://deeomx8l1sa0b" path="res://resources/ui_elements/ui_lock_digits.svg" id="5_fap6i"]
 [ext_resource type="Texture2D" uid="uid://bt24gjyy3lt83" path="res://resources/ui_elements/ui_button_down.svg" id="6_xssb6"]
+[ext_resource type="AudioStream" uid="uid://bhs1vq5id0i02" path="res://sounds/sfx/nac-sfx-lvl2-keybox-lock.ogg" id="7_rneeh"]
 
 [node name="KeyBoxNumberLock" type="Control" unique_id=853776841]
 process_mode = 3
@@ -277,3 +278,7 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("6_xssb6")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="LockDialSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1908763892]
+stream = ExtResource("7_rneeh")
+volume_db = -12.081

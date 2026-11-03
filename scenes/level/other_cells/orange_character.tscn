@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://bc5gygpgh0erc"]
 
+[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="1_2ux76"]
+[ext_resource type="Resource" uid="uid://clcm7i3stm81v" path="res://resources/dialog/character/orange_timeline.dtl" id="2_ejtji"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmg2u"]
 albedo_color = Color(1.8247963, 0.7854145, 0, 1)
 albedo_texture_force_srgb = true
@@ -42,8 +45,10 @@ shadow_mesh = SubResource("ArrayMesh_xmplh")
 radius = 0.66259766
 height = 3.2348633
 
-[node name="OrangeCharacter" type="StaticBody3D" unique_id=863184577]
+[node name="OrangeCharacter" type="StaticBody3D" unique_id=863184577 groups=["talk_to"]]
 transform = Transform3D(0.8966256, 0, 0.44278952, 0, 1, 0, -0.44278952, 0, 0.8966256, 0, 0, 0)
+script = ExtResource("1_2ux76")
+timeline = ExtResource("2_ejtji")
 
 [node name="Circle_001" type="MeshInstance3D" parent="." unique_id=791940459]
 transform = Transform3D(0.31889692, 0.0041013192, -0.0076108356, -0.005470698, 0.31318566, -0.060455218, 0.0066945567, 0.06056353, 0.31314096, 0, 2.3884385, 0)

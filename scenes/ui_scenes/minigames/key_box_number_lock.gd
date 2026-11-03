@@ -33,6 +33,7 @@ var _active_tweens: Array[Tween] = [null, null, null, null]
 	$LockContainer/DigitColumn3/ButtonDown,
 	$LockContainer/DigitColumn4/ButtonDown
 ]
+@onready var lock_dial_sound_player: AudioStreamPlayer = $LockDialSoundPlayer
 
 
 func _ready() -> void:
@@ -91,6 +92,10 @@ func _set_strip_immediately(column_index: int, digit: int) -> void:
 func _on_arrow_pressed(column_index: int, direction: int) -> void:
 	if is_solved:
 		return
+
+	if lock_dial_sound_player:
+		lock_dial_sound_player.pitch_scale = randf_range(0.95, 1.05)
+		lock_dial_sound_player.play()
 
 	var old_digit: int = current_combination[column_index]
 	var new_digit: int = posmod(old_digit + direction, 10)

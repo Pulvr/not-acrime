@@ -24,7 +24,7 @@ buses/default_bus_layout="uid://b2vjjfufwycpo"
 GlobalSettings="*uid://bk3geu78arhnf"
 Dialogic="*uid://ds2q0uclmolvu"
 FadeLayer="*uid://co4aq7qikr2sw"
-DebugController="*uid://cil0un0jcwnkr"
+DebugController="*res://debug_controller.gd"
 
 [dialogic]
 
@@ -56,7 +56,7 @@ layout/style_list=["res://resources/dialog/style/default_style.tres"]
 layout/default_style="res://resources/dialog/style/default_style.tres"
 variables={
 "blue_door_opened": false,
-"blue_talked_to_first_time": "",
+"blue_talked_to_first_time": false,
 "checked_pillow": false,
 "end_reached": false,
 "has_key": false,
@@ -67,10 +67,10 @@ variables={
 "item_received": ""
 },
 "lock_solved": false,
-"orange_door_opened": "",
-"orange_isfree": "",
-"orange_locked_encountered": "",
-"orange_opened_and_talked_to": "",
+"orange_door_opened": false,
+"orange_isfree": false,
+"orange_locked_encountered": false,
+"orange_opened_and_talked_to": false,
 "prison_exit_open": false,
 "talked_to_cellmate_1": false,
 "talked_to_cellmate_with_sharp": false,

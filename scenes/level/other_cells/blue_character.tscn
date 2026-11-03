@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://ca7dx4ppsk7df"]
 
+[ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="1_d62k1"]
+[ext_resource type="Resource" uid="uid://7v3ccnjejrua" path="res://resources/dialog/timeline/blue_timeline.dtl" id="2_1q0nl"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14xdk"]
 albedo_color = Color(0.36372238, 1.0212061, 1.8247963, 1)
 albedo_texture_force_srgb = true
@@ -41,8 +44,10 @@ shadow_mesh = SubResource("ArrayMesh_0sxk3")
 [sub_resource type="BoxShape3D" id="BoxShape3D_rgr0l"]
 size = Vector3(0.86413574, 1.6084595, 1.6035156)
 
-[node name="CharacterBlue" type="StaticBody3D" unique_id=89624611]
+[node name="CharacterBlue" type="StaticBody3D" unique_id=89624611 groups=["talk_to"]]
 transform = Transform3D(-4.3648942e-08, 0.053433977, -0.9985714, 2.3356732e-09, 0.9985714, 0.053433977, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_d62k1")
+timeline = ExtResource("2_1q0nl")
 
 [node name="Circle_001" type="MeshInstance3D" parent="." unique_id=181387951]
 transform = Transform3D(0.31889692, 0.0041013192, -0.0076108356, -0.005470698, 0.31318566, -0.060455218, 0.0066945567, 0.06056353, 0.31314096, 0, 2.3884385, 0)
