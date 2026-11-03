@@ -1,6 +1,6 @@
 extends Node3D
 
-signal picked_up_item
+signal displayed_item_should_change
 
 @onready var inventory: Array[ItemData] = []
 
@@ -21,7 +21,15 @@ func pick_up_item(item_node):
 
 func add_item_to_inventory(item_data: ItemData):
 	inventory.append(item_data)
-	picked_up_item.emit()
+	displayed_item_should_change.emit()
+
+
+func remove_item(item_name: String):
+	for item in inventory:
+		if item_name.match(item.name):
+			print("remove " + item.name)
+			inventory.erase(item)
+			displayed_item_should_change.emit()
 
 
 func item_added_with_dialog(item: ItemData):
@@ -34,10 +42,3 @@ func item_added_with_dialog(item: ItemData):
 
 func get_inventory() -> Array[ItemData]:
 	return inventory
-
-
-# Inventory
-func remove_item(_item_name):
-	pass
-	#for item in inventory:
-	#	if item.name == item_name:

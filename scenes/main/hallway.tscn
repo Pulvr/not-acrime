@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://t6s5infr0a83" path="res://scenes/main/basic_cell_wide.tscn" id="6_6ypec"]
 [ext_resource type="PackedScene" uid="uid://yrdjygai8741" path="res://scenes/level/drone/drone.tscn" id="7_sjh2e"]
 [ext_resource type="Script" uid="uid://balj0akdq0t5f" path="res://scenes/level/drone/drone_path_follow.gd" id="7_w1ksv"]
+[ext_resource type="Script" uid="uid://ba10vo6uhdm5n" path="res://scenes/main/start_animation_player_on_interact.gd" id="9_idr2k"]
 [ext_resource type="Material" uid="uid://dkwc845o4mj64" path="res://textures/materials/rusty_bars.tres" id="9_pqgbl"]
 [ext_resource type="Material" uid="uid://bm5h7au0i107" path="res://textures/materials/red button.tres" id="10_5op37"]
 [ext_resource type="Texture2D" uid="uid://chnv7gltuckc0" path="res://models/button_door_rust_pixelated.png" id="10_nkh0v"]
@@ -20,9 +21,17 @@
 [ext_resource type="Animation" uid="uid://b8ypyrmbwxd6a" path="res://animations/Cube_004Action.res" id="17_s62bm"]
 [ext_resource type="Animation" uid="uid://cmym5tskx1d8y" path="res://animations/Cube_004Action_001.res" id="18_7gfyk"]
 [ext_resource type="Animation" uid="uid://bufya02n61jgh" path="res://animations/keybox_open.res" id="19_enka8"]
+[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="19_nkh0v"]
+[ext_resource type="Resource" uid="uid://bl6vs763epw4x" path="res://resources/assets/items_for_pickup/blue_key/blue_key.tres" id="20_s62bm"]
+[ext_resource type="Resource" uid="uid://b4cc5cyrgkha8" path="res://resources/assets/items_for_pickup/gate_key/gate_key.tres" id="21_7gfyk"]
+[ext_resource type="Script" uid="uid://batjhleypea21" path="res://resources/scripts/key_box_lock_starter.gd" id="21_idr2k"]
 [ext_resource type="Material" uid="uid://cadkvtcnh1q88" path="res://textures/materials/cam_lens.tres" id="21_7gfyk"]
 [ext_resource type="Material" uid="uid://bip2hpvtsgbv5" path="res://textures/materials/cam_record_light.tres" id="22_enka8"]
 [ext_resource type="Material" uid="uid://dtv8bd1ku7wcj" path="res://textures/materials/cam_housing.tres" id="23_cear2"]
+[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="19_nkh0v"]
+[ext_resource type="Resource" uid="uid://bl6vs763epw4x" path="res://resources/assets/items_for_pickup/blue_key/blue_key.tres" id="20_s62bm"]
+[ext_resource type="Resource" uid="uid://b4cc5cyrgkha8" path="res://resources/assets/items_for_pickup/gate_key/gate_key.tres" id="21_7gfyk"]
+[ext_resource type="Script" uid="uid://batjhleypea21" path="res://resources/scripts/key_box_lock_starter.gd" id="21_idr2k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdg7e"]
 size = Vector3(80.82139, 0.19, 54.996872)
@@ -168,6 +177,9 @@ _data = {
 }
 point_count = 20
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6n7um"]
+size = Vector3(0.23483378, 0.2611022, 0.11073303)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idr2k"]
 resource_name = "red button"
 cull_mode = 2
@@ -257,6 +269,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u2413")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5op37"]
+size = Vector3(0.6701813, 3.3832397, 0.036376953)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wsw4h"]
+size = Vector3(1.9190102, 3.3832397, 0.036376953)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3eysm"]
 _surfaces = [{
@@ -438,6 +456,9 @@ _data = {
 &"door_open": ExtResource("13_5op37")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_idr2k"]
+size = Vector3(0.10296631, 0.2964325, 0.22511292)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_wefmh"]
 _surfaces = [{
 "aabb": AABB(-1.3908521, -0.7951495, -0.1778531, 1.3908521, 1.5902991, 0.1778531),
@@ -505,6 +526,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ffl2i")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cear2"]
+size = Vector3(1.4040527, 1.6719666, 0.19072723)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7y1iv"]
 _surfaces = [{
@@ -671,6 +695,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_n7x2n")
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ropl"]
+_data = {
+&"KeyBoxOpen": ExtResource("19_enka8")
+}
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_meuac"]
 _surfaces = [{
 "aabb": AABB(-0.14881214, 0.83586484, 0.16544104, 0.2976243, 0.2976243, 0.2976243),
@@ -748,6 +777,10 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_meuac")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ropl"]
+_data = {
+&"KeyBoxOpen": ExtResource("19_enka8")
+}
 
 [node name="Hallway" type="Node3D" unique_id=871673574]
 
@@ -1038,12 +1071,28 @@ script = ExtResource("7_w1ksv")
 
 [node name="Drone" parent="DronePath3D/DronePathFollow" unique_id=17349681 instance=ExtResource("7_sjh2e")]
 
-[node name="DroneHallwayButtonDoor" type="StaticBody3D" parent="." unique_id=604433470]
+[node name="DroneHallwayButtonDoor" type="StaticBody3D" parent="." unique_id=604433470 groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.302807, 0.10844898, 2.5206773)
+script = ExtResource("9_idr2k")
+
+[node name="HallwayButtonCollider" type="CollisionShape3D" parent="DroneHallwayButtonDoor" unique_id=652478825 groups=["door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79346466, 1.567806, 0.08621979)
+shape = SubResource("BoxShape3D_6n7um")
 
 [node name="cell_wall_001" type="MeshInstance3D" parent="DroneHallwayButtonDoor" unique_id=886409082]
-transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, 0)
+transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, -2.3841858e-07)
 mesh = SubResource("ArrayMesh_x20jn")
+
+[node name="CellDoorColliderBucket" type="StaticBody3D" parent="DroneHallwayButtonDoor/cell_wall_001" unique_id=939343552]
+transform = Transform3D(0, 0, -1.3867403, 0, 1.3867403, 0, 1.3867403, 0, 0, -2.3841858e-07, 0, 1.2362518)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DroneHallwayButtonDoor/cell_wall_001/CellDoorColliderBucket" unique_id=481133342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2961655, 1.1916199, 0.009643555)
+shape = SubResource("BoxShape3D_5op37")
+
+[node name="CollisionShapeDoor" type="CollisionShape3D" parent="DroneHallwayButtonDoor/cell_wall_001/CellDoorColliderBucket" unique_id=2124356127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0034713745, 1.1916199, 0.009643555)
+shape = SubResource("BoxShape3D_wsw4h")
 
 [node name="Cube" type="MeshInstance3D" parent="DroneHallwayButtonDoor" unique_id=2081948546]
 mesh = SubResource("ArrayMesh_fajn7")
@@ -1051,11 +1100,9 @@ mesh = SubResource("ArrayMesh_fajn7")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DroneHallwayButtonDoor" unique_id=1487088033]
 libraries/ = SubResource("AnimationLibrary_d4xrv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DroneHallwayButtonDoor" unique_id=481133342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2961655, 1.1916199, 0.009643555)
-shape = SubResource("BoxShape3D_5op37")
+[node name="RightColliderBucket" type="StaticBody3D" parent="DroneHallwayButtonDoor" unique_id=223380174]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="DroneHallwayButtonDoor" unique_id=1733414285]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DroneHallwayButtonDoor/RightColliderBucket" unique_id=1733414285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2942276, 1.1916199, 0.009643555)
 shape = SubResource("BoxShape3D_5op37")
 
@@ -1071,7 +1118,7 @@ shape = SubResource("BoxShape3D_6n7um")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.974, 0.1, 0.339)
 
 [node name="cell_wall_001" type="MeshInstance3D" parent="NextAreaButtonDoor" unique_id=265983350]
-transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, 0)
+transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, -2.3841858e-07)
 mesh = SubResource("ArrayMesh_pgfk2")
 
 [node name="Cube" type="MeshInstance3D" parent="NextAreaButtonDoor" unique_id=1295435023]
@@ -1096,48 +1143,58 @@ shape = SubResource("BoxShape3D_wsw4h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7976284, 1.555901, 0.063949585)
 shape = SubResource("BoxShape3D_6n7um")
 
-[node name="KeyBox" type="StaticBody3D" parent="." unique_id=611671366]
+[node name="KeyBox" type="StaticBody3D" parent="." unique_id=611671366 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.741325, 1.6324553, 7.632394)
+script = ExtResource("21_idr2k")
+
+[node name="LockCollider" type="CollisionShape3D" parent="KeyBox" unique_id=994413678 groups=["door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.745718, 1.1466525, 0.015464783)
+shape = SubResource("BoxShape3D_idr2k")
 
 [node name="Cube" type="MeshInstance3D" parent="KeyBox" unique_id=1322541528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69542605, 1.0997235, 0)
 mesh = SubResource("ArrayMesh_icgnl")
 
-[node name="Cube_001" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=1829034255]
+[node name="KeyBoxDoor" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=1829034255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008673668, -0.000562191, 0.00011444092)
 mesh = SubResource("ArrayMesh_w1mr3")
 
-[node name="Cube_004" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=296248016]
-mesh = SubResource("ArrayMesh_6gvas")
+[node name="KeyBoxColliderBody" type="StaticBody3D" parent="KeyBox/Cube/KeyBoxDoor" unique_id=1346776771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69629335, -1.0991611, -0.00011444092)
 
-[node name="Cube_005" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=444855730]
-mesh = SubResource("ArrayMesh_0moq8")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KeyBox" unique_id=692649315]
-libraries/ = SubResource("AnimationLibrary_4ropl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyBox" unique_id=460603750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006667137, 1.0763092, -0.09555054)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyBox/Cube/KeyBoxDoor/KeyBoxColliderBody" unique_id=460603750]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.011760712, 1.0763092, 0.082956314)
 shape = SubResource("BoxShape3D_cear2")
 
-[node name="BlueKey" type="StaticBody3D" parent="KeyBox" unique_id=622391741]
+[node name="UpperLock" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=296248016]
+mesh = SubResource("ArrayMesh_6gvas")
+
+[node name="LowerLock" type="MeshInstance3D" parent="KeyBox/Cube" unique_id=444855730]
+mesh = SubResource("ArrayMesh_0moq8")
+
+[node name="BlueKey" type="StaticBody3D" parent="KeyBox" unique_id=622391741 groups=["item_for_pickup"]]
+[node name="BlueKey" type="StaticBody3D" parent="KeyBox" unique_id=622391741 groups=["item_for_pickup"]]
 transform = Transform3D(-1.8958048e-08, 0.4337096, -1.8958048e-08, 0, -1.8958048e-08, -0.4337096, -0.4337096, -1.8958048e-08, 8.2868277e-16, -0.46019077, 1.282021, -0.117269516)
+script = ExtResource("19_nkh0v")
+data = ExtResource("20_s62bm")
 
 [node name="Cube" type="MeshInstance3D" parent="KeyBox/BlueKey" unique_id=1018241337]
 mesh = SubResource("ArrayMesh_s62bm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KeyBox/BlueKey" unique_id=68431027]
-transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.015117645, 0.16822815, 0)
+transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.01512146, 0.16822815, 0)
 shape = SubResource("BoxShape3D_7gfyk")
 
-[node name="GateKey" type="StaticBody3D" parent="KeyBox" unique_id=1923818352]
+[node name="GateKey" type="StaticBody3D" parent="KeyBox" unique_id=1923818352 groups=["item_for_pickup"]]
 transform = Transform3D(-1.8958048e-08, 0.4337096, -1.8958048e-08, 0, -1.8958048e-08, -0.4337096, -0.4337096, -1.8958048e-08, 8.2868277e-16, 0.061537266, 1.282021, -0.117269516)
+script = ExtResource("19_nkh0v")
+data = ExtResource("21_7gfyk")
 
 [node name="Cube" type="MeshInstance3D" parent="KeyBox/GateKey" unique_id=1104797806]
 mesh = SubResource("ArrayMesh_xo75y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KeyBox/GateKey" unique_id=1423923098]
-transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.015117645, 0.16822815, 0)
+transform = Transform3D(1, -2.842171e-14, 0, 2.842171e-14, 1, 1.4210855e-14, -8.4703295e-22, -1.4210855e-14, 1, 0.01512146, 0.16822815, 0)
 shape = SubResource("BoxShape3D_7gfyk")
 
 [node name="SecurityCameras" type="Node" parent="." unique_id=111188372]
@@ -1235,6 +1292,9 @@ transform = Transform3D(-0.59821975, -0.040557742, 0.022095531, -0.045160145, 0.
 transform = Transform3D(0.90096116, 0.038247652, 0.43221134, -0.2184584, 0.9006313, 0.37568521, -0.3748941, -0.4328978, 0.819789, 0.37996292, 0.5279703, -0.6620412)
 layers = 4
 mesh = SubResource("ArrayMesh_iruur")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KeyBox" unique_id=692649315]
+libraries/ = SubResource("AnimationLibrary_4ropl")
 
 [connection signal="body_entered" from="PlayerTriggerzone" to="PlayerTriggerzone" method="_on_body_entered"]
 [connection signal="player_detected" from="DronePath3D/DronePathFollow/Drone" to="DronePath3D/DronePathFollow" method="_on_drone_player_detected"]

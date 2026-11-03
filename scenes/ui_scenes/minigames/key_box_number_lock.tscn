@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://dxdoemqalk1s4"]
+
+[ext_resource type="Script" uid="uid://21r7rql0bwad" path="res://scenes/ui_scenes/minigames/key_box_number_lock.gd" id="1_4slky"]
+[ext_resource type="Texture2D" uid="uid://dyphog8t66m7c" path="res://resources/ui_elements/ui_button_up.svg" id="2_hlet5"]
+[ext_resource type="Texture2D" uid="uid://bf0araobkejqw" path="res://resources/ui_elements/ui_lock_slot_background.png" id="3_rneeh"]
+[ext_resource type="Texture2D" uid="uid://b15exu8cqb4be" path="res://resources/ui_elements/ui_lock_slot_frame.png" id="4_evkq0"]
+[ext_resource type="Texture2D" uid="uid://deeomx8l1sa0b" path="res://resources/ui_elements/ui_lock_digits.svg" id="5_fap6i"]
+[ext_resource type="Texture2D" uid="uid://bt24gjyy3lt83" path="res://resources/ui_elements/ui_button_down.svg" id="6_xssb6"]
+
+[node name="KeyBoxNumberLock" type="Control" unique_id=853776841]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4slky")
+digit_step_height = 184.0
+
+[node name="BackgroundDimmer" type="ColorRect" parent="." unique_id=187232562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="LockContainer" type="HBoxContainer" parent="." unique_id=479314146]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="DigitColumn1" type="VBoxContainer" parent="LockContainer" unique_id=32152706]
+layout_mode = 2
+
+[node name="ButtonUp" type="TextureButton" parent="LockContainer/DigitColumn1" unique_id=1634876481]
+texture_filter = 2
+custom_minimum_size = Vector2(138, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_hlet5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SlotRect" type="TextureRect" parent="LockContainer/DigitColumn1" unique_id=1773230267]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_rneeh")
+
+[node name="SlotFrameRect" type="TextureRect" parent="LockContainer/DigitColumn1/SlotRect" unique_id=815356388]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_evkq0")
+
+[node name="NumberStrip" type="TextureRect" parent="LockContainer/DigitColumn1/SlotRect/SlotFrameRect" unique_id=1114086276]
+show_behind_parent = true
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -1844.0
+offset_right = 67.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_fap6i")
+
+[node name="ButtonDown" type="TextureButton" parent="LockContainer/DigitColumn1" unique_id=220965026]
+custom_minimum_size = Vector2(138, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_xssb6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DigitColumn2" type="VBoxContainer" parent="LockContainer" unique_id=1152705556]
+layout_mode = 2
+
+[node name="ButtonUp" type="TextureButton" parent="LockContainer/DigitColumn2" unique_id=1641284515]
+texture_filter = 2
+custom_minimum_size = Vector2(138, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_hlet5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SlotRect" type="TextureRect" parent="LockContainer/DigitColumn2" unique_id=762576260]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_rneeh")
+
+[node name="SlotFrameRect" type="TextureRect" parent="LockContainer/DigitColumn2/SlotRect" unique_id=1118982157]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_evkq0")
+
+[node name="NumberStrip" type="TextureRect" parent="LockContainer/DigitColumn2/SlotRect/SlotFrameRect" unique_id=694488878]
+show_behind_parent = true
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -1844.0
+offset_right = 67.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_fap6i")
+
+[node name="ButtonDown" type="TextureButton" parent="LockContainer/DigitColumn2" unique_id=1867201666]
+custom_minimum_size = Vector2(138, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_xssb6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DigitColumn3" type="VBoxContainer" parent="LockContainer" unique_id=1275499315]
+layout_mode = 2
+
+[node name="ButtonUp" type="TextureButton" parent="LockContainer/DigitColumn3" unique_id=1760550239]
+texture_filter = 2
+custom_minimum_size = Vector2(138, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_hlet5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SlotRect" type="TextureRect" parent="LockContainer/DigitColumn3" unique_id=274023424]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_rneeh")
+
+[node name="SlotFrameRect" type="TextureRect" parent="LockContainer/DigitColumn3/SlotRect" unique_id=1004454850]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_evkq0")
+
+[node name="NumberStrip" type="TextureRect" parent="LockContainer/DigitColumn3/SlotRect/SlotFrameRect" unique_id=682214395]
+show_behind_parent = true
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -1844.0
+offset_right = 67.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_fap6i")
+
+[node name="ButtonDown" type="TextureButton" parent="LockContainer/DigitColumn3" unique_id=1630463771]
+custom_minimum_size = Vector2(138, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_xssb6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DigitColumn4" type="VBoxContainer" parent="LockContainer" unique_id=860050952]
+layout_mode = 2
+
+[node name="ButtonUp" type="TextureButton" parent="LockContainer/DigitColumn4" unique_id=1230669949]
+texture_filter = 2
+custom_minimum_size = Vector2(138, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_hlet5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SlotRect" type="TextureRect" parent="LockContainer/DigitColumn4" unique_id=1206043069]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_rneeh")
+
+[node name="SlotFrameRect" type="TextureRect" parent="LockContainer/DigitColumn4/SlotRect" unique_id=1205727634]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_evkq0")
+
+[node name="NumberStrip" type="TextureRect" parent="LockContainer/DigitColumn4/SlotRect/SlotFrameRect" unique_id=1740977398]
+show_behind_parent = true
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -1844.0
+offset_right = 67.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_fap6i")
+
+[node name="ButtonDown" type="TextureButton" parent="LockContainer/DigitColumn4" unique_id=716293834]
+custom_minimum_size = Vector2(138, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_xssb6")
+ignore_texture_size = true
+stretch_mode = 5
