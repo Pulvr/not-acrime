@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cadkvtcnh1q88"]
+
+[ext_resource type="Texture2D" uid="uid://candvrvmhiwdu" path="res://models/security_cam_rough_plastic_pixelated.png" id="1_wenf4"]
+
+[resource]
+resource_name = "cam_lens"
+cull_mode = 2
+albedo_color = Color(0.5062662, 0.5062662, 0.5062662, 1)
+albedo_texture = ExtResource("1_wenf4")
+albedo_texture_force_srgb = true
+roughness = 0.3
