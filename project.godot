@@ -117,7 +117,6 @@ text/input_action="dialogic_default_action"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/resizable=false
-window/size/no_focus=true
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -137,7 +136,6 @@ player="Only for finding Player globally"
 door="find door to open after finished lock_minigame"
 lock_collider="find collider after finished lock_minigame to disable it"
 canvas_layer="Group for Canvas Layers"
-security_cams="used for transferring camera footage onto materials"
 
 [input]
 
