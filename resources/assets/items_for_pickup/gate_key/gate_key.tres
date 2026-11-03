@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b4cc5cyrgkha8"]
+
+[ext_resource type="Texture2D" uid="uid://by1dxtkavdpwv" path="res://resources/ui_elements/rustyKey64.png" id="1_0weay"]
+[ext_resource type="Script" uid="uid://k257ssevnehw" path="res://resources/scripts/itemScripts/item_data.gd" id="1_o5mya"]
+[ext_resource type="ArrayMesh" uid="uid://br0ypkktw4a5b" path="res://models/rusty_key.res" id="2_2aemi"]
+
+[resource]
+script = ExtResource("1_o5mya")
+name = "Gate Key"
+icon = ExtResource("1_0weay")
+description = "A Key for a Gate"
+item_mesh = ExtResource("2_2aemi")
+metadata/_custom_type_script = "uid://k257ssevnehw"
