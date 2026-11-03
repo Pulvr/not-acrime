@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dtv8bd1ku7wcj"]
+
+[ext_resource type="Texture2D" uid="uid://candvrvmhiwdu" path="res://models/security_cam_rough_plastic_pixelated.png" id="1_1lskw"]
+
+[resource]
+resource_name = "cam_housing"
+cull_mode = 2
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_1lskw")
+albedo_texture_force_srgb = true
+roughness = 0.8
