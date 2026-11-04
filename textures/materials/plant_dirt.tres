@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2n8kny62y5i3"]
+
+[resource]
+resource_name = "plant_dirt"
+cull_mode = 2
+albedo_color = Color(0.27766177, 0.15466467, 0.10306779, 1)
+albedo_texture_force_srgb = true
+roughness = 0.5
