@@ -31,6 +31,7 @@ flip_faces = true
 size = Vector2(2, 2)
 
 [node name="PlayerNode" type="CharacterBody3D" unique_id=1065406681]
+collision_mask = 3
 script = ExtResource("1_xhfnw")
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=428711341]
