@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgq2u0biyg0qs"]
+
+[resource]
+resource_name = "plant_greens"
+cull_mode = 2
+albedo_color = Color(0.18803975, 0.31992027, 0.14825726, 1)
+albedo_texture_force_srgb = true
+roughness = 0.5

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccsmon4t3tqdt"]
+
+[ext_resource type="Texture2D" uid="uid://hfsb2dkt0w1b" path="res://models/window_concrete_wall_pixelated.png" id="1_mihem"]
+
+[resource]
+resource_name = "window_outer_rim"
+cull_mode = 2
+albedo_texture = ExtResource("1_mihem")

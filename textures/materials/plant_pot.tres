@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b6ywnne7ltpo3"]
+
+[ext_resource type="Texture2D" uid="uid://cwc0rfkqipwfn" path="res://models/potted_plant_office_door_pixelated.png" id="1_js438"]
+
+[resource]
+resource_name = "plant_pot"
+cull_mode = 2
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_js438")
+albedo_texture_force_srgb = true
