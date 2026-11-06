@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/cell_assets/toilet.tscn" id="7_wxapq"]
 [ext_resource type="PackedScene" uid="uid://bwydqnnjb3cfv" path="res://scenes/level/cell_assets/usable_sink.tscn" id="8_buyuy"]
 [ext_resource type="PackedScene" uid="uid://bc5gygpgh0erc" path="res://scenes/level/other_cells/orange_character.tscn" id="8_gmxyi"]
-[ext_resource type="PackedScene" uid="uid://ca3y0bmawyvii" path="res://scenes/level/other_cells/window.tscn" id="9_ejt3m"]
 [ext_resource type="PackedScene" uid="uid://bwmuvtcqm6vhn" path="res://models/cell_table.glb" id="10_0onkk"]
 [ext_resource type="Material" uid="uid://b6ywnne7ltpo3" path="res://textures/materials/plant_pot.tres" id="11_q8cea"]
 [ext_resource type="Material" uid="uid://b2n8kny62y5i3" path="res://textures/materials/plant_dirt.tres" id="12_di16e"]
+[ext_resource type="PackedScene" uid="uid://ca3y0bmawyvii" path="res://scenes/level/other_cells/window.tscn" id="13_ejt3m"]
 [ext_resource type="Material" uid="uid://cgq2u0biyg0qs" path="res://textures/materials/plant_greens.tres" id="13_kvrnq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gmg2u"]
@@ -147,9 +147,6 @@ shape = SubResource("BoxShape3D_gmxyi")
 [node name="OrangeCharacter" parent="." unique_id=381904924 instance=ExtResource("8_gmxyi")]
 transform = Transform3D(0.8966256, 0, 0.44278952, 0, 1, 0, -0.44278952, 0, 0.8966256, 0.92480564, -0.022301912, 4.501671)
 
-[node name="Window" parent="." unique_id=899976247 instance=ExtResource("9_ejt3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43026006, -1.9934697)
-
 [node name="CellTable" type="StaticBody3D" parent="." unique_id=1986315210]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.3577356, 2.274611, 2.608591)
 
@@ -179,3 +176,6 @@ mesh = SubResource("ArrayMesh_ujwwm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BigPottedPlant" unique_id=1548989847]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33935547, 0)
 shape = SubResource("CylinderShape3D_ejt3m")
+
+[node name="Window" parent="." unique_id=739890696 instance=ExtResource("13_ejt3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71576667, -2.1413045)

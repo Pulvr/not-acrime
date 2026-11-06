@@ -1,11 +1,13 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cjp688kvt2u0m"]
 
-[ext_resource type="Texture2D" uid="uid://cgqvn3fyi7uh2" path="res://models/window_broken_glass_pixelated.png" id="1_qq608"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nxbib"]
+load_path = "res://.godot/imported/window_broken_glass_pixelated.png-629816c85528bb7384c0f164b41f6506.s3tc.ctex"
 
 [resource]
 resource_name = "window_glass"
 cull_mode = 2
-albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
-albedo_texture = ExtResource("1_qq608")
+albedo_color = Color(2.454227, 2.454227, 2.454227, 1)
+albedo_texture = SubResource("CompressedTexture2D_nxbib")
 albedo_texture_force_srgb = true
 roughness = 0.3
+emission_enabled = true
