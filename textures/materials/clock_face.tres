@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cc8ukcno3p3e8"]
+
+[ext_resource type="Texture2D" uid="uid://baxr0weyjbh5l" path="res://models/wall_clock_clock_face_pixelated.png" id="1_1uxxv"]
+
+[resource]
+resource_name = "clock_face"
+cull_mode = 2
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_1uxxv")
+albedo_texture_force_srgb = true
+roughness = 0.5

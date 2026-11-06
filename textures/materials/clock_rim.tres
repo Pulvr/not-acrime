@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b6f1e1eqjmni4"]
+
+[ext_resource type="Texture2D" uid="uid://80q6lo5v3cph" path="res://models/wall_clock_rough_plastic_pixelated.png" id="1_6rii1"]
+
+[resource]
+resource_name = "clock_rim"
+cull_mode = 2
+albedo_texture = ExtResource("1_6rii1")
+albedo_texture_force_srgb = true
+roughness = 0.8

@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bwydqnnjb3cfv" path="res://scenes/level/cell_assets/usable_sink.tscn" id="6_11tdx"]
 [ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/cell_assets/bunkbed.tscn" id="6_irbo7"]
 [ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/cell_assets/toilet.tscn" id="7_11tdx"]
+[ext_resource type="PackedScene" uid="uid://cykf60awghrw5" path="res://scenes/level/other_cells/wall_clock.tscn" id="9_jg2dc"]
 [ext_resource type="PackedScene" uid="uid://ca7dx4ppsk7df" path="res://scenes/level/other_cells/blue_character.tscn" id="10_8i6g7"]
+[ext_resource type="PackedScene" uid="uid://d1roe3xpnkhxe" path="res://scenes/level/other_cells/broken_mirror.tscn" id="11_8i6g7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_14xdk"]
 size = Vector3(2.5200195, 3.9723282, 0.11767578)
@@ -59,3 +61,9 @@ transform = Transform3D(-4.3586404e-08, 0.053433977, -0.9985714, 2.3356732e-09, 
 [node name="InteractableDoorShape" type="CollisionShape3D" parent="BlueCharacter" unique_id=1794619480 groups=["talk_to"]]
 transform = Transform3D(1, 2.4753362e-09, -7.0439654e-11, -2.4753466e-09, 0.9983907, -0.056710202, -7.0048856e-11, 0.056710202, 0.9983907, 1.3743408, 1.4071381, -0.57846045)
 shape = SubResource("BoxShape3D_wo2hl")
+
+[node name="WallClock" parent="." unique_id=1004943010 instance=ExtResource("9_jg2dc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.040945172, 1.0363331, -1.6235305)
+
+[node name="BrokenMirror" parent="." unique_id=1707027835 instance=ExtResource("11_8i6g7")]
+transform = Transform3D(0.09335658, -0.29357123, 0.9513678, 0.009878382, 0.95576704, 0.29395938, -0.9955837, -0.018045068, 0.092127144, -3.8821416, 0.112492025, 3.5160704)
