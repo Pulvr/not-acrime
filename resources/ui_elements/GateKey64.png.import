@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3tiuufwfqxnl"
-path="res://.godot/imported/GateKey1080.png-6500cfed1ff8120f2436f1632d721f61.ctex"
+uid="uid://bh1lvec8xgnln"
+path.s3tc="res://.godot/imported/GateKey64.png-3e021393f83df458c878ec9378cb8d63.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://resources/ui_elements/GateKey1080.png"
-dest_files=["res://.godot/imported/GateKey1080.png-6500cfed1ff8120f2436f1632d721f61.ctex"]
+source_file="res://resources/ui_elements/GateKey64.png"
+dest_files=["res://.godot/imported/GateKey64.png-3e021393f83df458c878ec9378cb8d63.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

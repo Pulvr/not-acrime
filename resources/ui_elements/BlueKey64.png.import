@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by2opgtpm815o"
-path="res://.godot/imported/BlueKey1080.png-80ed47fb125ea62cb4d4a6601bb37093.ctex"
+uid="uid://d0ot8kvbi6isw"
+path="res://.godot/imported/BlueKey64.png-44f529b178b33bca32fd7f2f224a4862.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/ui_elements/BlueKey1080.png"
-dest_files=["res://.godot/imported/BlueKey1080.png-80ed47fb125ea62cb4d4a6601bb37093.ctex"]
+source_file="res://resources/ui_elements/BlueKey64.png"
+dest_files=["res://.godot/imported/BlueKey64.png-44f529b178b33bca32fd7f2f224a4862.ctex"]
 
 [params]
 
