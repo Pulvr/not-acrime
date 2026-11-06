@@ -16,7 +16,7 @@ size = Vector3(2.5200195, 3.9723282, 0.11767578)
 size = Vector3(7.56958, 3.9723282, 0.11767578)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wo2hl"]
-size = Vector3(0.175, 1.84, 1.21)
+size = Vector3(0.22531739, 1.84, 1.21)
 
 [node name="BlueCell" type="Node3D" unique_id=1434795788]
 
@@ -57,5 +57,5 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 1
 transform = Transform3D(-4.3586404e-08, 0.053433977, -0.9985714, 2.3356732e-09, 0.9985714, 0.053433977, 1, -3.3415493e-12, -4.3648942e-08, 3.5783668, 0.12623894, 3.5112739)
 
 [node name="InteractableDoorShape" type="CollisionShape3D" parent="BlueCharacter" unique_id=1794619480 groups=["talk_to"]]
-transform = Transform3D(1, 2.4753362e-09, -7.0439654e-11, -2.4753466e-09, 0.9983907, -0.056710202, -7.0048856e-11, 0.056710202, 0.9983907, 1.3491819, 1.4071379, -0.5784614)
+transform = Transform3D(1, 2.4753362e-09, -7.0439654e-11, -2.4753466e-09, 0.9983907, -0.056710202, -7.0048856e-11, 0.056710202, 0.9983907, 1.3743408, 1.4071381, -0.57846045)
 shape = SubResource("BoxShape3D_wo2hl")
