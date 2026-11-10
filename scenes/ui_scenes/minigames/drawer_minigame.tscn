@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://l1jpetxqhpbu"]
+
+[ext_resource type="Script" uid="uid://ckpexp4n0rw77" path="res://scenes/ui_scenes/minigames/drawer_minigame.gd" id="1_3dadj"]
+
+[node name="DrawerMinigame" type="CanvasLayer" unique_id=1494143455]
+process_mode = 3
+layer = 10
+script = ExtResource("1_3dadj")
+
+[node name="RootUI" type="Control" parent="." unique_id=1014313317]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="RootUI" unique_id=475919496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="BoardCenter" type="CenterContainer" parent="RootUI" unique_id=815078877]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SlotsContainer" type="HBoxContainer" parent="RootUI/BoardCenter" unique_id=873097845]
+layout_mode = 2
+
+[node name="BottomBar" type="CenterContainer" parent="RootUI" unique_id=1144369491]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="InventoryContainer" type="HBoxContainer" parent="RootUI/BottomBar" unique_id=1194727290]
+layout_mode = 2
+
+[node name="NoteSheet" type="PanelContainer" parent="RootUI" unique_id=188649735]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NoteTexture" type="TextureRect" parent="RootUI/NoteSheet" unique_id=1334003462]
+layout_mode = 2
+
+[node name="NoteText" type="Label" parent="RootUI/NoteSheet" unique_id=1557348369]
+layout_mode = 2
+
+[node name="DragPreview" type="PanelContainer" parent="RootUI" unique_id=987367054]
+top_level = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="PreviewTexture" type="TextureRect" parent="RootUI/DragPreview" unique_id=622708324]
+layout_mode = 2
+
+[node name="PreviewLabel" type="Label" parent="RootUI/DragPreview" unique_id=2056415112]
+layout_mode = 2
