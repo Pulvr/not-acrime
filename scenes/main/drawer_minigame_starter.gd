@@ -44,12 +44,20 @@ func _focus_camera_and_start() -> void:
 	original_position = player_head.global_position
 	original_rotation = player_head.global_transform.basis.get_rotation_quaternion()
 
-	var target_node: Node3D = target_mesh if target_mesh else self
+	var target_node: Node3D
+	if target_mesh:
+		target_node = target_mesh
+	else:
+		target_node = self
+
 	var origin = target_node.global_position
-	var basis = target_node.global_transform.basis
+	var node_basis = target_node.global_transform.basis
 
 	var target_pos = (
-		origin + (basis.x * x_distance) + (basis.y * fine_tune_y) + (basis.z * fine_tune_z)
+		origin
+		+ (node_basis.x * x_distance)
+		+ (node_basis.y * fine_tune_y)
+		+ (node_basis.z * fine_tune_z)
 	)
 
 	var temp_transform = Transform3D()
