@@ -7,11 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cdqgg1rkep6rk" path="res://models/office_table.glb" id="5_nrcoj"]
 [ext_resource type="Material" uid="uid://bx05d4ri4ryxh" path="res://textures/materials/keybox_metal.tres" id="6_1ni5n"]
 [ext_resource type="Material" uid="uid://dn2cn4m1qwqaq" path="res://textures/materials/monitor housing.tres" id="7_dv7lv"]
+[ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="8_dv7lv"]
 [ext_resource type="Material" uid="uid://dw255mxro0328" path="res://textures/materials/metal.tres" id="8_fqvmo"]
 [ext_resource type="Material" uid="uid://dkf5yq1pfshkn" path="res://textures/materials/door_frame.tres" id="8_og6ge"]
+[ext_resource type="Resource" uid="uid://bl6vs763epw4x" path="res://resources/assets/items_for_pickup/blue_key/blue_key.tres" id="9_fqvmo"]
 [ext_resource type="Script" uid="uid://ba10vo6uhdm5n" path="res://scenes/main/start_animation_player_on_interact.gd" id="9_mffsq"]
 [ext_resource type="Script" uid="uid://b3h8qaq1c3h87" path="res://scenes/main/drawer_minigame_starter.gd" id="9_p4wke"]
 [ext_resource type="Material" uid="uid://cts7h1xcqqmnj" path="res://textures/materials/door_handle.tres" id="9_ydn2h"]
+[ext_resource type="ArrayMesh" uid="uid://br0ypkktw4a5b" path="res://models/rusty_key.res" id="10_fqvmo"]
 [ext_resource type="PackedScene" uid="uid://bb2oepbb6ctyx" path="res://scenes/main/guardroom_monitors.tscn" id="11_og6ge"]
 [ext_resource type="Animation" uid="uid://dw8s6qhebirlp" path="res://animations/Door_Open.res" id="16_fqvmo"]
 
@@ -51,6 +54,9 @@ size = Vector3(0.23403259, 4, 6.9362307)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yk6lk"]
 size = Vector3(1.3873119, 0.35790634, 1.1887665)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p4wke"]
+size = Vector3(0.85839844, 1.5719604, 1.6004639)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mffsq"]
 size = Vector3(4.0370483, 1.4512634, 1.9028168)
@@ -190,7 +196,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9602947, 0.82301104, -0.67
 [node name="office_table" parent="OfficeTable" unique_id=2002259295 instance=ExtResource("5_nrcoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7163868, 0)
 
-[node name="Drawer" parent="OfficeTable/office_table" index="0" unique_id=769736160]
+[node name="Drawer" parent="OfficeTable/office_table" index="0" unique_id=1930903662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011386818, 0, 0)
 material_override = ExtResource("6_1ni5n")
 
@@ -198,27 +204,39 @@ material_override = ExtResource("6_1ni5n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9429717, 0.7163868, 0)
 script = ExtResource("9_p4wke")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable/office_table/Drawer/DrawerInteractable" unique_id=293909099 groups=["interactable"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable/office_table/Drawer/DrawerInteractable" unique_id=293909099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2666799, 0.45683336, 1.2923812)
 shape = SubResource("BoxShape3D_yk6lk")
 
-[node name="DrawerCase" parent="OfficeTable/office_table" index="1" unique_id=597567292]
+[node name="BlueKey" type="StaticBody3D" parent="OfficeTable/office_table/Drawer" index="1" unique_id=1794880556 groups=["item_for_pickup"]]
+transform = Transform3D(-1.6429144e-08, -0.375855, 0.217, 0.434, -1.8970741e-08, 0, 9.485371e-09, 0.217, 0.375855, 0.42832446, 1.0462818, 1.4238214)
+script = ExtResource("8_dv7lv")
+data = ExtResource("9_fqvmo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="OfficeTable/office_table/Drawer/BlueKey" unique_id=712628388]
+mesh = ExtResource("10_fqvmo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable/office_table/Drawer/BlueKey" unique_id=622546953]
+transform = Transform3D(1.0000002, -8.881784e-16, -1.2310153e-12, 7.371881e-13, 1, 0, 3.623768e-13, 0, 1, 0.36733913, 0.07601917, -0.11700463)
+shape = SubResource("BoxShape3D_p4wke")
+
+[node name="DrawerCase" parent="OfficeTable/office_table" index="1" unique_id=1439315657]
 material_override = ExtResource("6_1ni5n")
 
-[node name="DrawerGame" parent="OfficeTable/office_table" index="2" unique_id=1098996611]
+[node name="DrawerGame" parent="OfficeTable/office_table" index="2" unique_id=1969569023]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011386818, 0, 0)
 material_override = ExtResource("7_dv7lv")
 
-[node name="LegsLeft" parent="OfficeTable/office_table" index="3" unique_id=2037899404]
+[node name="LegsLeft" parent="OfficeTable/office_table" index="3" unique_id=1224629963]
 material_override = ExtResource("8_fqvmo")
 
-[node name="LegsMid" parent="OfficeTable/office_table" index="4" unique_id=1610815082]
+[node name="LegsMid" parent="OfficeTable/office_table" index="4" unique_id=1428689062]
 material_override = ExtResource("8_fqvmo")
 
-[node name="LegsRight" parent="OfficeTable/office_table" index="5" unique_id=744453972]
+[node name="LegsRight" parent="OfficeTable/office_table" index="5" unique_id=404856834]
 material_override = ExtResource("8_fqvmo")
 
-[node name="Plate" parent="OfficeTable/office_table" index="6" unique_id=1413889771]
+[node name="Plate" parent="OfficeTable/office_table" index="6" unique_id=1030313721]
 material_override = ExtResource("6_1ni5n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable" unique_id=405926162]
