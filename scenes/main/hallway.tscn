@@ -957,7 +957,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.99958247, 0, -0.028742442, 0, 0.9999961, 0, 0.028742421, 0, 0.9995832, 1.7603168, -0.24000001, 0.076963425)
+transform = Transform3D(0.9995824, 0, -0.02874244, 0, 0.9999961, 0, 0.02874242, 0, 0.9995831, 1.7603168, -0.24000001, 0.076963425)
 rotation_mode = 2
 script = ExtResource("7_w1ksv")
 
