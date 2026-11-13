@@ -48,8 +48,8 @@ shadow_mesh = SubResource("ArrayMesh_idr2k")
 
 [resource]
 script = ExtResource("3_6fuyw")
-name = "Blue Key"
+name = "Orange Key"
 icon = ExtResource("1_bnfvj")
-description = "a Blue Key"
+description = "an orange colored Key"
 item_mesh = SubResource("ArrayMesh_bnfvj")
 metadata/_custom_type_script = "uid://k257ssevnehw"
