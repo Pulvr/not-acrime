@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cc87dspl6t43x"]
 
 [ext_resource type="PackedScene" uid="uid://bhp2xfpb5x0lf" path="res://scenes/level/other_cells/blue_cell_shell.tscn" id="1_fo3d7"]
-[ext_resource type="Script" uid="uid://dsfgja0h20f2p" path="res://scenes/level/other_cells/open_cell_door_key_checker.gd" id="2_d0p08"]
 [ext_resource type="PackedScene" uid="uid://ct2dvpfj2mw5u" path="res://models/cell_bars_wide.glb" id="4_14xdk"]
 [ext_resource type="PackedScene" uid="uid://ccgmst8510vwd" path="res://models/cell_door.glb" id="4_due1u"]
 [ext_resource type="PackedScene" uid="uid://cfwklur56h5xj" path="res://models/cell_bars.glb" id="5_irbo7"]
@@ -11,9 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cykf60awghrw5" path="res://scenes/level/other_cells/wall_clock.tscn" id="9_jg2dc"]
 [ext_resource type="PackedScene" uid="uid://ca7dx4ppsk7df" path="res://scenes/level/other_cells/blue_character.tscn" id="10_8i6g7"]
 [ext_resource type="PackedScene" uid="uid://d1roe3xpnkhxe" path="res://scenes/level/other_cells/broken_mirror.tscn" id="11_8i6g7"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jg2dc"]
-size = Vector3(0.52978516, 0.7982788, 0.1932373)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_14xdk"]
 size = Vector3(2.5200195, 3.9723282, 0.11767578)
@@ -28,19 +24,12 @@ size = Vector3(0.22531739, 1.84, 1.21)
 
 [node name="BlueCellShell" parent="." unique_id=1215383299 instance=ExtResource("1_fo3d7")]
 
-[node name="CellDoor" type="StaticBody3D" parent="." unique_id=1808971188 groups=["interactable"]]
-script = ExtResource("2_d0p08")
+[node name="CellDoor" type="StaticBody3D" parent="." unique_id=1808971188]
 
 [node name="CellDoor" parent="CellDoor" unique_id=189420472 instance=ExtResource("4_due1u")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.022884, 0.100687265, 4.9006305)
 
-[node name="LockInteractCollider" type="CollisionShape3D" parent="CellDoor" unique_id=144588667]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7558315, 2.109881, 4.9268627)
-shape = SubResource("BoxShape3D_jg2dc")
-
-[node name="DummyBodyForCellDoorCollider" type="StaticBody3D" parent="CellDoor" unique_id=395569526]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CellDoor/DummyBodyForCellDoorCollider" unique_id=1964298496]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellDoor" unique_id=1964298496]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.7452044, 2.001377, 4.9006786)
 shape = SubResource("BoxShape3D_14xdk")
 

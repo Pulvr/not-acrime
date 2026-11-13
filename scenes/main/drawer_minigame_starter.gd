@@ -29,10 +29,7 @@ func interact() -> void:
 
 
 func _get_target_animation() -> String:
-	if (
-		not drawer_animation_name.is_empty()
-		and animation_player.has_animation(drawer_animation_name)
-	):
+	if not drawer_animation_name.is_empty() and animation_player.has_animation(drawer_animation_name):
 		return drawer_animation_name
 
 	for anim in animation_player.get_animation_list():

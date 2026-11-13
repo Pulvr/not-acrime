@@ -8,6 +8,6 @@
 script = ExtResource("1_bs6u1")
 name = "Blue Key"
 icon = ExtResource("1_jn1aa")
-description = "a key with a light blueish tone, emits a sad aura"
+description = "a Blue Key"
 item_mesh = ExtResource("2_rb1gb")
 metadata/_custom_type_script = "uid://k257ssevnehw"
