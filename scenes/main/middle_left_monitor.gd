@@ -2,6 +2,7 @@ extends MeshInstance3D
 
 @export var viewport_name: StringName = &"MiddleLeftCam"
 
+
 func _ready():
 	await get_tree().process_frame
 
