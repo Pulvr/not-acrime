@@ -810,7 +810,7 @@ material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_k3hja")
 
 [node name="SecurityNoticeDecal" type="Decal" parent="Walls/Meshes/MeshInstance3D5" unique_id=1907021486]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.8690262, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2.1364632, 0.41475844, 0)
 size = Vector3(1.557251, 0.5137329, 1.9082642)
 texture_albedo = ExtResource("3_cear2")
 modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
@@ -987,7 +987,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.9995824, 0, -0.02874244, 0, 0.9999961, 0, 0.02874242, 0, 0.9995831, 1.7603168, -0.24000001, 0.076963425)
+transform = Transform3D(0.9995823, 0, -0.028742436, 0, 0.9999961, 0, 0.028742416, 0, 0.999583, 1.7603168, -0.24000001, 0.076963425)
 rotation_mode = 2
 script = ExtResource("7_w1ksv")
 
