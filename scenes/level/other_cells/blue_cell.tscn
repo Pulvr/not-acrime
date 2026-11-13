@@ -34,7 +34,7 @@ script = ExtResource("2_d0p08")
 [node name="CellDoor" parent="CellDoor" unique_id=189420472 instance=ExtResource("4_due1u")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.022884, 0.100687265, 4.9006305)
 
-[node name="LockInteractCollider" type="CollisionShape3D" parent="CellDoor" unique_id=144588667]
+[node name="LockInteractCollider" type="CollisionShape3D" parent="CellDoor" unique_id=144588667 groups=["door"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7558315, 2.109881, 4.9268627)
 shape = SubResource("BoxShape3D_jg2dc")
 
