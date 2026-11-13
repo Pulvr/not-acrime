@@ -2,8 +2,10 @@
 
 [ext_resource type="Material" uid="uid://bavd7n76h8y4g" path="res://textures/materials/concrete_floor.tres" id="1_aktlh"]
 [ext_resource type="Material" uid="uid://q41k8wfscbrq" path="res://textures/materials/concrete_wall.tres" id="2_sjh2e"]
+[ext_resource type="Texture2D" uid="uid://u4qk77r3n1ku" path="res://resources/decals/Security Notice.png" id="3_cear2"]
 [ext_resource type="Script" uid="uid://dqirysmxxldtu" path="res://scenes/level/player_triggerzone.gd" id="3_w1ksv"]
 [ext_resource type="AudioStream" uid="uid://c0mupmv3lxq75" path="res://sounds/sfx/nac-sfx-lvl1-gunshot-1.ogg" id="4_lk227"]
+[ext_resource type="Texture2D" uid="uid://c33hd3s820vry" path="res://resources/decals/Propaganda-4-Digits_pixelated.png" id="4_n7x2n"]
 [ext_resource type="PackedScene" uid="uid://b5cu28kvq53li" path="res://scenes/main/basic_cell.tscn" id="5_lr8yr"]
 [ext_resource type="PackedScene" uid="uid://t6s5infr0a83" path="res://scenes/main/basic_cell_wide.tscn" id="6_6ypec"]
 [ext_resource type="PackedScene" uid="uid://yrdjygai8741" path="res://scenes/level/drone/drone.tscn" id="7_sjh2e"]
@@ -807,10 +809,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.419846, 2, 1.621994)
 material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_k3hja")
 
+[node name="SecurityNoticeDecal" type="Decal" parent="Walls/Meshes/MeshInstance3D5" unique_id=1907021486]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.8690262, 0, 0)
+size = Vector3(1.557251, 0.5137329, 1.9082642)
+texture_albedo = ExtResource("3_cear2")
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+cull_mask = 1048573
+
 [node name="MeshInstance3D31" type="MeshInstance3D" parent="Walls/Meshes" unique_id=1690687789]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.454634, 2, 18.212538)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.45469, 1.9921114, 18.212412)
 material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_ojl0l")
+
+[node name="SecurityNoticeDecal2" type="Decal" parent="Walls/Meshes/MeshInstance3D31" unique_id=1821022161]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0399189, 0.14137912, 0)
+size = Vector3(2.2567444, 0.5137329, 2.820343)
+texture_albedo = ExtResource("4_n7x2n")
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+cull_mask = 1048573
 
 [node name="MeshInstance3D32" type="MeshInstance3D" parent="Walls/Meshes" unique_id=1360471141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.886974, 2, 18.212538)
@@ -852,6 +868,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.3600445, 2, 1.621994)
 material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_d3v0f")
 
+[node name="SecurityNoticeDecal" type="Decal" parent="Walls/Meshes/MeshInstance3D2" unique_id=1023023989]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -5.6192074, 0.3852234, 0.14901948)
+size = Vector3(1.557251, 0.5137329, 1.9082642)
+texture_albedo = ExtResource("3_cear2")
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+cull_mask = 1048573
+
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Walls/Meshes" unique_id=376578934]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.047146, 1.9999998, -0.20368981)
 material_override = ExtResource("2_sjh2e")
@@ -881,6 +904,13 @@ mesh = SubResource("BoxMesh_t0lad")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.049084, 1.9999998, 20.529764)
 material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_d0262")
+
+[node name="SecurityNoticeDecal" type="Decal" parent="Walls/Meshes/MeshInstance3D28" unique_id=1629199255]
+transform = Transform3D(-4.371139e-08, 1, 0, 4.371139e-08, 1.9106855e-15, -1, -1, -4.371139e-08, -4.371139e-08, 0, 0, -0.42758942)
+size = Vector3(1.557251, 0.5137329, 1.9082642)
+texture_albedo = ExtResource("3_cear2")
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+cull_mask = 1048573
 
 [node name="MeshInstance3D29" type="MeshInstance3D" parent="Walls/Meshes" unique_id=142901340]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.498541, 1.9999998, 18.347994)
@@ -957,7 +987,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.99958247, 0, -0.028742442, 0, 0.9999961, 0, 0.028742421, 0, 0.9995832, 1.7603168, -0.24000001, 0.076963425)
+transform = Transform3D(0.9995824, 0, -0.02874244, 0, 0.9999961, 0, 0.02874242, 0, 0.9995831, 1.7603168, -0.24000001, 0.076963425)
 rotation_mode = 2
 script = ExtResource("7_w1ksv")
 
