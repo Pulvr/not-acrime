@@ -80,8 +80,7 @@ func toggle_pause():
 
 
 func _on_inventory_displayed_item_should_change() -> void:
-	if inventory.is_empty():
-		return
-
 	item_in_hand = inventory[-1]
 	change_selected_item(1)
+	update_hand_display()
+	update_inventory_ui()
