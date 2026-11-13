@@ -914,7 +914,7 @@ material_override = ExtResource("2_sjh2e")
 mesh = SubResource("BoxMesh_d0262")
 
 [node name="SecurityNoticeDecal2" type="Decal" parent="Walls/Meshes/MeshInstance3D28" unique_id=187757513]
-transform = Transform3D(-3.7365197e-08, 1.195, -3.8130498e-08, 0, -5.2235112e-08, -0.8723241, -0.854816, -5.2235112e-08, 1.666737e-15, 0.51753616, 0.51925063, -0.50073814)
+transform = Transform3D(-3.7365197e-08, 1.195, -3.8130498e-08, 0, -5.2235112e-08, -0.8723241, -0.854816, -5.2235112e-08, 1.666737e-15, 0.51753616, 0.51925063, -0.5217495)
 size = Vector3(1.6499023, 2, 2)
 texture_albedo = SubResource("CompressedTexture2D_xo75y")
 modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
