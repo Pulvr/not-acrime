@@ -3,7 +3,7 @@ if {item_strings.item_in_hand} == "Rusty Key":
 	It doesn't feel like throwing your only possible escape plan down the drain is the best option ...
 	[end_timeline]
 
-if {talked_to_cellmate_1} == false:
+if {characters.red.talked_to_1} == false:
 	
 	if {toilet_talked_to_again} == true:
 		jump toilet_talked_to_again

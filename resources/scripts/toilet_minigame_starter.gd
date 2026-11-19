@@ -14,7 +14,7 @@ var ui_instance = null
 
 
 func interact():
-	if Dialogic.VAR.talked_to_cellmate_1 && !Dialogic.VAR.has_sharp:
+	if Dialogic.VAR.characters.red.talked_to_1 && !Dialogic.VAR.has_sharp:
 		start_minigame()
 	elif Dialogic.current_timeline == null:
 		Dialogic.start("toilet_minigame_timeline")

@@ -50,6 +50,6 @@ shadow_mesh = SubResource("ArrayMesh_idr2k")
 script = ExtResource("3_eq1kp")
 name = "Rusty Key"
 icon = ExtResource("1_brjqc")
-description = "is it going to be that easy?"
+description = "why did they have this?"
 item_mesh = SubResource("ArrayMesh_oquns")
 metadata/_custom_type_script = "uid://k257ssevnehw"

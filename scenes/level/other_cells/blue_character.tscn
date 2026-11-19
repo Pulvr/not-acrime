@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ca7dx4ppsk7df"]
 
 [ext_resource type="Script" uid="uid://bbmetweyiqgj3" path="res://resources/scripts/dialog_interactable.gd" id="1_d62k1"]
-[ext_resource type="Resource" uid="uid://7v3ccnjejrua" path="res://resources/dialog/timeline/blue_timeline.dtl" id="2_1q0nl"]
+[ext_resource type="Resource" uid="uid://7v3ccnjejrua" path="res://resources/dialog/character/blue_timeline.dtl" id="2_1q0nl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14xdk"]
 albedo_color = Color(0.36372238, 1.0212061, 1.8247963, 1)
