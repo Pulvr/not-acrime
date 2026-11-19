@@ -1,11 +1,27 @@
 [gd_scene format=3 uid="uid://l1jpetxqhpbu"]
 
 [ext_resource type="Script" uid="uid://ckpexp4n0rw77" path="res://scenes/ui_scenes/minigames/drawer_minigame.gd" id="1_3dadj"]
+[ext_resource type="Texture2D" uid="uid://be6upesivenqn" path="res://resources/ui_elements/drawer_minigame/drawer_shard_triangle.svg" id="2_5878w"]
+[ext_resource type="Texture2D" uid="uid://qe0e2aoj4yxr" path="res://resources/ui_elements/drawer_minigame/shard_empty.svg" id="2_hyy3g"]
+[ext_resource type="Texture2D" uid="uid://bsxudv7a6pgg0" path="res://resources/ui_elements/drawer_minigame/drawer_shard_square.svg" id="3_c544m"]
+[ext_resource type="Texture2D" uid="uid://bw2xq3ha7sk0a" path="res://resources/ui_elements/drawer_minigame/shard_fixed.svg" id="3_ef0tl"]
+[ext_resource type="Texture2D" uid="uid://c2s8ybwhovod4" path="res://resources/ui_elements/drawer_minigame/drawer_shard_circle.svg" id="3_y3bve"]
+[ext_resource type="Texture2D" uid="uid://nxq015wlbahr" path="res://resources/ui_elements/drawer_minigame/shard_default.svg" id="4_tfv60"]
+[ext_resource type="Texture2D" uid="uid://cid8p0vuct2t3" path="res://resources/ui_elements/drawer_minigame/drawer_shard_star.svg" id="5_h10iv"]
 
 [node name="DrawerMinigame" type="CanvasLayer" unique_id=1494143455]
 process_mode = 3
 layer = 10
 script = ExtResource("1_3dadj")
+slot_background_texture = ExtResource("2_hyy3g")
+fixed_slot_background_texture = ExtResource("3_ef0tl")
+item_background_texture = ExtResource("4_tfv60")
+triangle_texture = ExtResource("2_5878w")
+circle_texture = ExtResource("3_y3bve")
+square_texture = ExtResource("3_c544m")
+star_texture = ExtResource("5_h10iv")
+slot_size = Vector2(120, 148)
+inventory_item_size = Vector2(120, 148)
 
 [node name="RootUI" type="Control" parent="." unique_id=1014313317]
 layout_mode = 3
@@ -64,9 +80,3 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
-
-[node name="PreviewTexture" type="TextureRect" parent="RootUI/DragPreview" unique_id=622708324]
-layout_mode = 2
-
-[node name="PreviewLabel" type="Label" parent="RootUI/DragPreview" unique_id=2056415112]
-layout_mode = 2

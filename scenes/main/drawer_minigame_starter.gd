@@ -7,9 +7,13 @@ extends StaticBody3D
 @export_group("Settings Camera focus point")
 @export var target_mesh: CollisionShape3D
 @export var x_distance: float = 1.5
-@export var fine_tune_y: float = -0.01
-@export var fine_tune_z: float = 0.0
+@export var y_rotation: float = -0.01
+@export var z_rotation: float = 0.0
 @export var move_duration: float = 1.5
+
+@export_group("Sounds")
+@export var open_sound: AudioStream
+@export var close_sound: AudioStream
 
 var is_open: bool = false
 var is_solved: bool = false
@@ -24,6 +28,7 @@ var _active_minigame: Node = null
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var player_head = player.head
+@onready var drawer_sound = $"../../DrawerSoundPlayer"
 
 
 func interact() -> void:
@@ -53,16 +58,13 @@ func _focus_camera_and_start() -> void:
 	var origin = target_node.global_position
 	var node_basis = target_node.global_transform.basis
 
-	var target_pos = (
-		origin
-		+ (node_basis.x * x_distance)
-		+ (node_basis.y * fine_tune_y)
-		+ (node_basis.z * fine_tune_z)
-	)
+	var offset = (node_basis.y * y_rotation) + (node_basis.z * z_rotation)
+	var look_target = origin + offset
+	var target_pos = look_target + (node_basis.x * x_distance)
 
 	var temp_transform = Transform3D()
 	temp_transform.origin = target_pos
-	temp_transform = temp_transform.looking_at(origin, Vector3.UP)
+	temp_transform = temp_transform.looking_at(look_target, Vector3.UP)
 
 	var target_rot = temp_transform.basis.get_rotation_quaternion()
 
@@ -141,9 +143,11 @@ func _toggle_drawer_animation() -> void:
 
 	if is_open:
 		animation_player.play_backwards(anim_to_play)
+		_play_drawer_sound(close_sound)
 		is_open = false
 	else:
 		animation_player.play(anim_to_play)
+		_play_drawer_sound(open_sound)
 		is_open = true
 
 
@@ -159,3 +163,10 @@ func _get_target_animation() -> String:
 			return anim
 
 	return ""
+
+
+func _play_drawer_sound(sound: AudioStream) -> void:
+	if not drawer_sound or not sound:
+		return
+	drawer_sound.stream = sound
+	drawer_sound.play()

@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://vmobnpxltuos" path="res://scenes/main/green_cell.tscn" id="6_vo0go"]
 [ext_resource type="AudioStream" uid="uid://dhp5sbuug4hw2" path="res://sounds/sfx/nac-sfx-lvl1-background_hum.mp3" id="7_fnvwe"]
 [ext_resource type="PackedScene" uid="uid://dpvu5c7kxsxu6" path="res://scenes/main/purple_cell.tscn" id="7_meece"]
-[ext_resource type="AudioStream" uid="uid://bwhxc5mhrq1k2" path="res://sounds/sfx/nac-sfx-lvl1-background_lamp.mp3" id="8_kdg7e"]
 [ext_resource type="PackedScene" uid="uid://d254drr0hblaa" path="res://scenes/main/guard_room.tscn" id="8_vo0go"]
 [ext_resource type="AudioStream" uid="uid://beex7ljrxsww2" path="res://sounds/sfx/nac-sfx-lvl1-background_water_dripping.mp3" id="9_2sral"]
 [ext_resource type="PackedScene" uid="uid://cusscwt1bdvo6" path="res://scenes/main/break_room.tscn" id="9_o5677"]
 [ext_resource type="PackedScene" uid="uid://d2gw4wfd1u8uh" path="res://scenes/ui_scenes/pause_menu.tscn" id="10_3co8r"]
 [ext_resource type="PackedScene" uid="uid://b34rsbq832174" path="res://scenes/main/gate_room.tscn" id="10_d8uwl"]
 [ext_resource type="PackedScene" uid="uid://dull52km7uodi" path="res://scenes/main/hallway.tscn" id="11_wlnme"]
+[ext_resource type="AudioStream" uid="uid://bvtf6lha4ciwx" path="res://sounds/sfx/nac-sfx-lvl1-lamp-on.ogg" id="13_fnvwe"]
 
 [node name="MainScene" type="Node" unique_id=1231392842]
 script = ExtResource("1_fnvwe")
@@ -440,105 +440,105 @@ shadow_blur = 10.0
 
 [node name="LampSoundGuardRoom" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=501601071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.730427, 3.9846072, -10.9975)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCellRed" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=69413523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9846072, 0)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCellBlue" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=1799796951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.51237, 3.9846072, -11.883034)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCellOrange" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=135603300]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.791151, 3.9846072, 15.173832)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell1" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=1185827702]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.908546, 3.9846072, -11.883034)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell2" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=1823724743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4007683, 3.9846072, 0)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell3" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=596673264]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4040365, 3.9846072, 0)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell4" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=458960409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.618542, 3.9846072, 0)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell5" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=1508987421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.039925, 3.9846072, 15.173832)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell6" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=1161949828]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.50153, 3.9846072, 4.924533)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell7" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=2140115771]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.508263, 3.9846072, 5.980381)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell8" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=243829572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.508263, 3.9846072, -0.1734457)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell9" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=181017793]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.508263, 3.9846072, -6.272574)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell10" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=133731202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.508263, 3.9846072, -12.535522)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"
 
 [node name="LampSoundCell11" type="AudioStreamPlayer3D" parent="Sound/LampSounds" unique_id=1883331175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.2388, 3.9846072, -22.042603)
-stream = ExtResource("8_kdg7e")
+stream = ExtResource("13_fnvwe")
 volume_db = -16.327
 autoplay = true
 bus = &"Prison Reverb"

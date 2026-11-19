@@ -13,8 +13,10 @@
 [ext_resource type="Script" uid="uid://ba10vo6uhdm5n" path="res://scenes/main/start_animation_player_on_interact.gd" id="9_mffsq"]
 [ext_resource type="Script" uid="uid://b3h8qaq1c3h87" path="res://scenes/main/drawer_minigame_starter.gd" id="9_p4wke"]
 [ext_resource type="Material" uid="uid://cts7h1xcqqmnj" path="res://textures/materials/door_handle.tres" id="9_ydn2h"]
+[ext_resource type="AudioStream" uid="uid://c2l5icj2vmqvj" path="res://sounds/sfx/nac-sfx-drawer-close.ogg" id="10_fqvmo"]
+[ext_resource type="AudioStream" uid="uid://hp5btikju2uy" path="res://sounds/sfx/nac-sfx-drawer-open.ogg" id="11_dv7lv"]
 [ext_resource type="PackedScene" uid="uid://bb2oepbb6ctyx" path="res://scenes/main/guardroom_monitors.tscn" id="11_og6ge"]
-[ext_resource type="Animation" uid="uid://btul4rqrrr8cb" path="res://animations/Door_Open.res" id="16_fqvmo"]
+[ext_resource type="Animation" uid="uid://btul4rqrrr8cb" path="res://animations/door_open.res" id="16_fqvmo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2at7u"]
 albedo_color = Color(0.5370987, 0.5370987, 0.5370987, 1)
@@ -200,6 +202,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9429717, 0.7163868, 0)
 script = ExtResource("9_p4wke")
 minigame_scene = ExtResource("8_1ni5n")
 target_mesh = NodePath("CollisionShape3D")
+open_sound = ExtResource("11_dv7lv")
+close_sound = ExtResource("10_fqvmo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable/office_table/Drawer/DrawerInteractable" unique_id=293909099 groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2666799, 0.45683336, 1.2923812)
@@ -226,6 +230,9 @@ material_override = ExtResource("6_1ni5n")
 
 [node name="AnimationPlayer" parent="OfficeTable/office_table" index="7" unique_id=1587010330]
 speed_scale = 1.2
+
+[node name="DrawerSoundPlayer" type="AudioStreamPlayer3D" parent="OfficeTable/office_table" unique_id=1193057876]
+stream = ExtResource("11_dv7lv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable" unique_id=405926162]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.024861693, 0.00291121, 0.0043730736)
