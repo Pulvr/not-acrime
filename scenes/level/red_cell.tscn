@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dsqa847tnoi0a"]
 
 [ext_resource type="PackedScene" uid="uid://c7vlv8yq4s18l" path="res://scenes/level/own_cell/own_cell.tscn" id="1_86qqa"]
+[ext_resource type="Script" uid="uid://bf6h64ei6n551" path="res://resources/scripts/toilet_minigame_starter.gd" id="4_crxrk"]
 [ext_resource type="PackedScene" uid="uid://bftnbrifauhij" path="res://scenes/level/cell_assets/cell_bars.tscn" id="5_btpx2"]
 [ext_resource type="PackedScene" uid="uid://bxymom34kgena" path="res://scenes/level/cell_assets/toilet.tscn" id="5_dysg5"]
 [ext_resource type="PackedScene" uid="uid://dos73x3yy81yw" path="res://scenes/level/cell_assets/bunkbed.tscn" id="6_btpx2"]
 [ext_resource type="PackedScene" uid="uid://c8c8c5qnfc21p" path="res://scenes/level/cell_assets/metal_sink.tscn" id="6_dysg5"]
+[ext_resource type="Script" uid="uid://cwld0gtkqgqpq" path="res://resources/scripts/pillow_minigame_starter.gd" id="6_sk5ru"]
 [ext_resource type="PackedScene" uid="uid://coge1kxobiu7w" path="res://scenes/level/cell_assets/cell_table.tscn" id="7_bh0qp"]
 [ext_resource type="PackedScene" uid="uid://cpcpy1d8j41fn" path="res://scenes/level/cell_assets/cell_stool.tscn" id="8_3hyd8"]
 [ext_resource type="PackedScene" uid="uid://ct2axbgf801j1" path="res://scenes/level/own_cell/red_character.tscn" id="8_x2nil"]
@@ -20,11 +22,13 @@
 [node name="CellBars" parent="." unique_id=1154751589 instance=ExtResource("5_btpx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09544784, -4.9181757)
 
-[node name="Toilet" parent="." unique_id=1757528361 instance=ExtResource("5_dysg5")]
+[node name="Toilet" parent="." unique_id=1757528361 groups=["interactable"] instance=ExtResource("5_dysg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.687, 0.1, 3.854)
+script = ExtResource("4_crxrk")
 
-[node name="Bunkbed" parent="." unique_id=1708177036 instance=ExtResource("6_btpx2")]
+[node name="Bunkbed" parent="." unique_id=1708177036 groups=["interactable"] instance=ExtResource("6_btpx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.1, -2.3)
+script = ExtResource("6_sk5ru")
 
 [node name="MetalSink" parent="." unique_id=119985792 instance=ExtResource("6_dysg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91, 1.3888273, -2)
