@@ -122,36 +122,54 @@ func _init_puzzle_state() -> void:
 
 
 func _setup_note_sheet() -> void:
-	var note_height: float = note_width * DIN_A4_PORTRAIT_RATIO
-	note_sheet.custom_minimum_size = Vector2(note_width, note_height)
-	note_sheet.size = Vector2(note_width, note_height)
-
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color.WHITE if note_paper_texture else note_color
-	style.set_content_margin_all(28)
-	note_sheet.add_theme_stylebox_override("panel", style)
+	var viewport_size: Vector2 = get_viewport().get_visible_rect().size
+	var aspect_ratio: float = DIN_A4_PORTRAIT_RATIO
 
 	if note_paper_texture:
+		var tex_size: Vector2 = note_paper_texture.get_size()
+		if tex_size.x > 0:
+			aspect_ratio = tex_size.y / tex_size.x
+
+	var target_width: float = note_width
+	var target_height: float = target_width * aspect_ratio
+
+	var max_height: float = viewport_size.y * 0.9
+	if target_height > max_height:
+		target_height = max_height
+		target_width = target_height / aspect_ratio
+
+	note_sheet.custom_minimum_size = Vector2(target_width, target_height)
+	note_sheet.size = Vector2(target_width, target_height)
+
+	if note_paper_texture:
+		note_sheet.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
 		note_texture_rect.texture = note_paper_texture
+		note_texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		note_texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		note_texture_rect.visible = true
+		note_label.visible = false
 	else:
+		var style := StyleBoxFlat.new()
+		style.bg_color = note_color
+		style.set_content_margin_all(28)
+		note_sheet.add_theme_stylebox_override("panel", style)
 		note_texture_rect.visible = false
+		note_label.visible = true
+		note_label.add_theme_color_override("font_color", Color(0.1, 0.1, 0.1))
+		note_label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+		note_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		note_label.text = (
+			"HINWEISE ZUM SCHLOSS\n\n"
+			+ "1. Alle Dreiecke (▲) hängen als eine einzige, ununterbrochene Gruppe zusammen. "
+			+ "Kein anderes Symbol darf direkt neben seinem gleichen Symbol liegen.\n\n"
+			+ "2. Jeder Stern (★) steht direkt zwischen einem Kreis (●) und einem Viereck (■).\n\n"
+			+ "3. Kreise (●) und Vierecke (■) dürfen sich niemals direkt berühren.\n\n\n"
+			+ "[ Klicken zum Lesen / Wegklicken ]"
+		)
 
-	note_label.add_theme_color_override("font_color", Color(0.1, 0.1, 0.1))
-	note_label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
-	note_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	note_label.text = (
-		"HINWEISE ZUM SCHLOSS\n\n"
-		+ "1. Alle Dreiecke (▲) hängen als eine einzige, ununterbrochene Gruppe zusammen. "
-		+ "Kein anderes Symbol darf direkt neben seinem gleichen Symbol liegen.\n\n"
-		+ "2. Jeder Stern (★) steht direkt zwischen einem Kreis (●) und einem Viereck (■).\n\n"
-		+ "3. Kreise (●) und Vierecke (■) dürfen sich niemals direkt berühren.\n\n\n"
-		+ "[ Klicken zum Lesen / Wegklicken ]"
-	)
-
-	var viewport_width: float = get_viewport().get_visible_rect().size.x
 	note_sheet.position = Vector2(
-		(viewport_width - note_width) * 0.5, -note_height + note_peek_height
+		(viewport_size.x - target_width) * 0.5,
+		-target_height + note_peek_height
 	)
 
 

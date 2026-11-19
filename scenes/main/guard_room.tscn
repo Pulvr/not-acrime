@@ -12,6 +12,8 @@
 [ext_resource type="ArrayMesh" uid="uid://br0ypkktw4a5b" path="res://models/rusty_key.res" id="9_1ni5n"]
 [ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="9_fqvmo"]
 [ext_resource type="Script" uid="uid://b3h8qaq1c3h87" path="res://scenes/main/drawer_minigame_starter.gd" id="9_p4wke"]
+[ext_resource type="AudioStream" uid="uid://hp5btikju2uy" path="res://sounds/sfx/nac-sfx-drawer-open.ogg" id="9_yk6lk"]
+[ext_resource type="AudioStream" uid="uid://c2l5icj2vmqvj" path="res://sounds/sfx/nac-sfx-drawer-close.ogg" id="10_elxre"]
 [ext_resource type="Resource" uid="uid://bl6vs763epw4x" path="res://resources/assets/items_for_pickup/blue_key/blue_key.tres" id="10_p4wke"]
 [ext_resource type="PackedScene" uid="uid://bb2oepbb6ctyx" path="res://scenes/main/guardroom_monitors.tscn" id="11_og6ge"]
 [ext_resource type="PackedScene" uid="uid://cmlupbndt60nw" path="res://scenes/main/office_door.tscn" id="14_nrcoj"]
@@ -127,7 +129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9602947, 0.82301104, -0.67
 [node name="office_table" parent="OfficeTable" unique_id=2002259295 instance=ExtResource("5_nrcoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7163868, 0)
 
-[node name="Drawer" parent="OfficeTable/office_table" index="0" unique_id=1930903662]
+[node name="Drawer" parent="OfficeTable/office_table" index="0" unique_id=2048315762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011386818, 0, 0)
 material_override = ExtResource("6_1ni5n")
 
@@ -136,8 +138,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9429717, 0.7163868, 0)
 script = ExtResource("9_p4wke")
 minigame_scene = ExtResource("8_1ni5n")
 target_mesh = NodePath("CollisionShape3D")
-open_sound = ExtResource("11_dv7lv")
-close_sound = ExtResource("10_fqvmo")
+open_sound = ExtResource("9_yk6lk")
+close_sound = ExtResource("10_elxre")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable/office_table/Drawer/DrawerInteractable" unique_id=293909099 groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2666799, 0.45683336, 1.2923812)
@@ -155,30 +157,30 @@ mesh = ExtResource("9_1ni5n")
 transform = Transform3D(1, 1.3835602e-12, 4.7967174e-14, -1.3835604e-12, 1, 3.993611e-06, -4.7961648e-14, -3.993611e-06, 1, 0.39628625, 0.13603187, -0.16741967)
 shape = SubResource("BoxShape3D_dv7lv")
 
-[node name="DrawerCase" parent="OfficeTable/office_table" index="1" unique_id=1439315657]
+[node name="DrawerCase" parent="OfficeTable/office_table" index="1" unique_id=1249713560]
 material_override = ExtResource("6_1ni5n")
 
-[node name="DrawerGame" parent="OfficeTable/office_table" index="2" unique_id=1969569023]
+[node name="DrawerGame" parent="OfficeTable/office_table" index="2" unique_id=943578654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011386818, 0, 0)
 material_override = ExtResource("7_dv7lv")
 
-[node name="LegsLeft" parent="OfficeTable/office_table" index="3" unique_id=1224629963]
+[node name="LegsLeft" parent="OfficeTable/office_table" index="3" unique_id=1715293273]
 material_override = ExtResource("8_fqvmo")
 
-[node name="LegsMid" parent="OfficeTable/office_table" index="4" unique_id=1428689062]
+[node name="LegsMid" parent="OfficeTable/office_table" index="4" unique_id=1840137946]
 material_override = ExtResource("8_fqvmo")
 
-[node name="LegsRight" parent="OfficeTable/office_table" index="5" unique_id=404856834]
+[node name="LegsRight" parent="OfficeTable/office_table" index="5" unique_id=269458663]
 material_override = ExtResource("8_fqvmo")
 
-[node name="Plate" parent="OfficeTable/office_table" index="6" unique_id=1030313721]
+[node name="Plate" parent="OfficeTable/office_table" index="6" unique_id=1836504185]
 material_override = ExtResource("6_1ni5n")
 
-[node name="AnimationPlayer" parent="OfficeTable/office_table" index="7" unique_id=635237046]
+[node name="AnimationPlayer" parent="OfficeTable/office_table" index="7" unique_id=1587010330]
 speed_scale = 1.2
 
-[node name="DrawerSoundPlayer" type="AudioStreamPlayer3D" parent="OfficeTable/office_table" unique_id=1193057876]
-stream = ExtResource("11_dv7lv")
+[node name="DrawerSoundPlayer" type="AudioStreamPlayer3D" parent="OfficeTable/office_table" unique_id=1151162373]
+stream = ExtResource("9_yk6lk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeTable" unique_id=405926162]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.024861693, 0.00291121, 0.0043730736)

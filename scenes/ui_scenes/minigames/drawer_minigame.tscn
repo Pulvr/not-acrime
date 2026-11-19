@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bw2xq3ha7sk0a" path="res://resources/ui_elements/drawer_minigame/shard_fixed.svg" id="3_ef0tl"]
 [ext_resource type="Texture2D" uid="uid://c2s8ybwhovod4" path="res://resources/ui_elements/drawer_minigame/drawer_shard_circle.svg" id="3_y3bve"]
 [ext_resource type="Texture2D" uid="uid://nxq015wlbahr" path="res://resources/ui_elements/drawer_minigame/shard_default.svg" id="4_tfv60"]
+[ext_resource type="Texture2D" uid="uid://drs2m4ik8fcr6" path="res://resources/decals/DrawerGameRules.png" id="5_ef0tl"]
 [ext_resource type="Texture2D" uid="uid://cid8p0vuct2t3" path="res://resources/ui_elements/drawer_minigame/drawer_shard_star.svg" id="5_h10iv"]
 
 [node name="DrawerMinigame" type="CanvasLayer" unique_id=1494143455]
@@ -16,12 +17,14 @@ script = ExtResource("1_3dadj")
 slot_background_texture = ExtResource("2_hyy3g")
 fixed_slot_background_texture = ExtResource("3_ef0tl")
 item_background_texture = ExtResource("4_tfv60")
+note_paper_texture = ExtResource("5_ef0tl")
 triangle_texture = ExtResource("2_5878w")
 circle_texture = ExtResource("3_y3bve")
 square_texture = ExtResource("3_c544m")
 star_texture = ExtResource("5_h10iv")
 slot_size = Vector2(120, 148)
 inventory_item_size = Vector2(120, 148)
+note_color = Color(0.9607843, 0.9490196, 0.92156863, 0)
 
 [node name="RootUI" type="Control" parent="." unique_id=1014313317]
 layout_mode = 3
