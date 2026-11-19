@@ -50,6 +50,6 @@ shadow_mesh = SubResource("ArrayMesh_idr2k")
 script = ExtResource("1_o5mya")
 name = "Gate Key"
 icon = ExtResource("1_6s8ri")
-description = "A Key for a Gate"
+description = "a key for a gate somewhere"
 item_mesh = SubResource("ArrayMesh_2aemi")
 metadata/_custom_type_script = "uid://k257ssevnehw"

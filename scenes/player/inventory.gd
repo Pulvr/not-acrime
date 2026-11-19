@@ -14,9 +14,16 @@ func _input(event: InputEvent) -> void:
 
 func pick_up_item(item_node):
 	if "data" in item_node:
-		add_item_to_inventory(item_node.data)
-		print("Picked up: ", item_node)
+		item_added_with_dialog(item_node.data)
 		item_node.queue_free()
+
+
+func item_added_with_dialog(item: ItemData):
+	Dialogic.VAR.set_variable("item_strings.item_received", item.name)
+	Dialogic.VAR.set_variable("item_strings.item_description", item.description)
+	add_item_to_inventory(item)
+	if Dialogic.current_timeline == null:
+		Dialogic.start("item_received_timeline")
 
 
 func add_item_to_inventory(item_data: ItemData):
@@ -30,14 +37,6 @@ func remove_item(item_name: String):
 			print("remove " + item.name)
 			inventory.erase(item)
 			displayed_item_should_change.emit()
-
-
-func item_added_with_dialog(item: ItemData):
-	Dialogic.VAR.set_variable("item_strings.item_received", item.name)
-	Dialogic.VAR.set_variable("item_strings.item_description", item.description)
-	add_item_to_inventory(item)
-	if Dialogic.current_timeline == null:
-		Dialogic.start("item_received_timeline")
 
 
 func get_inventory() -> Array[ItemData]:
