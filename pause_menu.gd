@@ -30,7 +30,7 @@ func _on_quit_pressed():
 
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel") and get_tree().paused:
+	if event.is_action_pressed("ui_cancel") and get_tree().paused and !player.get_state() == Player.State.IN_MINIGAME:
 		_on_continue_pressed()
 		get_viewport().set_input_as_handled()
 

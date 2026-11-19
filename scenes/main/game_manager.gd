@@ -19,11 +19,13 @@ func _ready() -> void:
 
 func _on_timeline_started():
 	player.set_state(Player.State.IN_DIALOGUE)
+	drone.set_state(Drone.DroneState.STOPPED)
 
 
 func _on_timeline_ended():
 	if !player.get_state() == Player.State.IN_MINIGAME:
 		player.set_state(Player.State.FREE)
+	drone.set_state(Drone.DroneState.DETECTING)
 
 
 func _on_drone_player_detected() -> void:
