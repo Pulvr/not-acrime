@@ -168,8 +168,7 @@ func _setup_note_sheet() -> void:
 		)
 
 	note_sheet.position = Vector2(
-		(viewport_size.x - target_width) * 0.5,
-		-target_height + note_peek_height
+		(viewport_size.x - target_width) * 0.5, -target_height + note_peek_height
 	)
 
 

@@ -119,6 +119,7 @@ func _on_fov_pressed() -> void:
 			GlobalSettings.field_of_view = 80
 			fov_label.text = "Field of View: 80"
 	GlobalSettings.last_fov_text = fov_label.text
+	GlobalSettings.global_settings_changed.emit()
 
 
 func _on_volume_pressed() -> void:

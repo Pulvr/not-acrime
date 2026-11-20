@@ -1,5 +1,7 @@
 extends Node
 
+signal global_settings_changed  #used by settings_menu.gd
+
 enum LastScenes {
 	MAIN_MENU,
 	MAIN_SCENE,
@@ -17,14 +19,6 @@ var last_language_text: String = "Language: English"
 var last_window_mode_text: String = "Window Mode: Windowed"
 var last_fov_text: String = "Field of View: 90"
 var last_volume_text: String = "Volume: 50%"
-
-# Player Position
-var last_player_position: Vector3
-var last_player_rotation: Vector3
-var last_head_rotation: Vector3
-# I think this might be a persistent inventory, but it could also break very easily
-var last_inventory: Array[ItemData] = []
-var last_selected_index: int = 0
 
 
 func set_last_scene(new_last_scene: LastScenes) -> void:
