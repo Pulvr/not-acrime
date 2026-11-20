@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ba10vo6uhdm5n" path="res://scenes/main/start_animation_player_on_interact.gd" id="1_hux1o"]
 [ext_resource type="Material" uid="uid://dkf5yq1pfshkn" path="res://textures/materials/door_frame.tres" id="2_3teix"]
 [ext_resource type="Material" uid="uid://cts7h1xcqqmnj" path="res://textures/materials/door_handle.tres" id="3_oq58v"]
-[ext_resource type="Animation" uid="uid://dw8s6qhebirlp" path="res://animations/Door_Open.res" id="4_oqwsw"]
+[ext_resource type="Animation" uid="uid://dw8s6qhebirlp" path="res://animations/guard_door_open.res" id="4_oqwsw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ni5n"]
 size = Vector3(0.50827026, 0.3534038, 0.32307816)
@@ -81,7 +81,7 @@ size = Vector3(3.1561127, 4.3011074, 0.106760025)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ggf4f"]
 _data = {
-&"Door_Open": ExtResource("4_oqwsw")
+&"guard_door_open": ExtResource("4_oqwsw")
 }
 
 [node name="OfficeDoor" type="StaticBody3D" unique_id=278968299 groups=["interactable"]]
@@ -93,7 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1290748, 2.228189, 0.10742
 shape = SubResource("BoxShape3D_1ni5n")
 
 [node name="Door" type="MeshInstance3D" parent="." unique_id=508108733]
-transform = Transform3D(1.5999988, 0, -5.6040597e-05, 0, 2.1, 0, 0.0017932991, 0, 0.049999963, 1.6, 0, 0)
+transform = Transform3D(1.5999985, 0, -5.6040586e-05, 0, 2.1, 0, 0.0017932988, 0, 0.049999952, 1.6, 0, 0)
 mesh = SubResource("ArrayMesh_yk6lk")
 
 [node name="Handle" type="MeshInstance3D" parent="Door" unique_id=42775934]
