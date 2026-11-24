@@ -19,7 +19,11 @@
 [ext_resource type="Animation" uid="uid://btul4rqrrr8cb" path="res://animations/gate_door_open.res" id="13_5op37"]
 [ext_resource type="Material" uid="uid://bx05d4ri4ryxh" path="res://textures/materials/keybox_metal.tres" id="14_c0645"]
 [ext_resource type="Material" uid="uid://c1qma4vhvhjr6" path="res://textures/materials/lock_metal.tres" id="15_nkh0v"]
+[ext_resource type="AudioStream" uid="uid://c3ywdvxs62vkf" path="res://sounds/sfx/nac-sfx-hallway-gate-open.ogg" id="16_edtj4"]
 [ext_resource type="Material" uid="uid://dyprqgvt3dsgp" path="res://textures/materials/lock_base.tres" id="16_idr2k"]
+[ext_resource type="AudioStream" uid="uid://bkw8s5xjovg34" path="res://sounds/sfx/nac-sfx-hallway-gate-rebound.ogg" id="17_mqpoy"]
+[ext_resource type="AudioStream" uid="uid://di8eg5t5o280u" path="res://sounds/sfx/nac-sfx-hallway-gate-lock.ogg" id="18_aubbe"]
+[ext_resource type="AudioStream" uid="uid://bgwrb6hkfqbgi" path="res://sounds/sfx/nac-sfx-hallway-gate-bump.ogg" id="19_b6bnl"]
 [ext_resource type="Animation" uid="uid://bufya02n61jgh" path="res://animations/keybox_open.res" id="19_enka8"]
 [ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="19_nkh0v"]
 [ext_resource type="Resource" uid="uid://b4cc5cyrgkha8" path="res://resources/assets/items_for_pickup/gate_key/gate_key.tres" id="21_7gfyk"]
@@ -314,6 +318,44 @@ tracks/0/path = NodePath("cell_wall_001")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, -0.89147985, 0, -2.3841858e-07, 0.033333335, 1, -0.89147985, 0, -2.3841858e-07, 0.06666667, 1, -0.93569237, 0, -2.3841858e-07, 0.1, 1, -0.9938307, 0, -2.3841858e-07, 0.13333334, 1, -1.0507567, 0, -2.3841858e-07, 0.16666667, 1, -1.1064808, 0, -2.3841858e-07, 0.2, 1, -1.1606237, 0, -2.3841858e-07, 0.23333333, 1, -1.2135963, 0, -2.3841858e-07, 0.26666668, 1, -1.2654092, 0, -2.3841858e-07, 0.3, 1, -1.3160728, 0, -2.3841858e-07, 0.33333334, 1, -1.3655977, 0, -2.3841858e-07, 0.36666667, 1, -1.4136256, 0, -2.3841858e-07, 0.4, 1, -1.460546, 0, -2.3841858e-07, 0.43333334, 1, -1.5063696, 0, -2.3841858e-07, 0.46666667, 1, -1.551107, 0, -2.3841858e-07, 0.5, 1, -1.594769, 0, -2.3841858e-07, 0.53333336, 1, -1.6370181, 0, -2.3841858e-07, 0.56666666, 1, -1.6782227, 0, -2.3841858e-07, 0.6, 1, -1.7183938, 0, -2.3841858e-07, 0.6333333, 1, -1.7575418, 0, -2.3841858e-07, 0.6666667, 1, -1.7956767, 0, -2.3841858e-07, 0.7, 1, -1.8324833, 0, -2.3841858e-07, 0.73333335, 1, -1.8683087, 0, -2.3841858e-07, 0.76666665, 1, -1.9031633, 0, -2.3841858e-07, 0.8, 1, -1.9370581, 0, -2.3841858e-07, 0.8333333, 1, -1.9700032, 0, -2.3841858e-07, 0.8666667, 1, -2.0017037, 0, -2.3841858e-07, 0.9, 1, -2.032486, 0, -2.3841858e-07, 0.93333334, 1, -2.0623608, 0, -2.3841858e-07, 0.96666664, 1, -2.0913386, 0, -2.3841858e-07, 1, 1, -2.11943, 0, -2.3841858e-07, 1.0333333, 1, -2.1463606, 0, -2.3841858e-07, 1.0666667, 1, -2.1724365, 0, -2.3841858e-07, 1.1, 1, -2.1976678, 0, -2.3841858e-07, 1.1333333, 1, -2.2220652, 0, -2.3841858e-07, 1.1666666, 1, -2.2456393, 0, -2.3841858e-07, 1.2, 1, -2.2681367, 0, -2.3841858e-07, 1.2333333, 1, -2.2898421, 0, -2.3841858e-07, 1.2666667, 1, -2.3107662, 0, -2.3841858e-07, 1.3, 1, -2.3309197, 0, -2.3841858e-07, 1.3333334, 1, -2.3503132, 0, -2.3841858e-07, 1.3666667, 1, -2.3687134, 0, -2.3841858e-07, 1.4, 1, -2.3863852, 0, -2.3841858e-07, 1.4333333, 1, -2.4033387, 0, -2.3841858e-07, 1.4666667, 1, -2.4195843, 0, -2.3841858e-07, 1.5, 1, -2.435133, 0, -2.3841858e-07, 1.5333333, 1, -2.449773, 0, -2.3841858e-07, 1.5666667, 1, -2.4637473, 0, -2.3841858e-07, 1.6, 1, -2.4770665, 0, -2.3841858e-07, 1.6333333, 1, -2.4897408, 0, -2.3841858e-07, 1.6666666, 1, -2.5017812, 0, -2.3841858e-07, 1.7, 1, -2.512997, 0, -2.3841858e-07, 1.7333333, 1, -2.5236104, 0, -2.3841858e-07, 1.7666667, 1, -2.5336318, 0, -2.3841858e-07, 1.8, 1, -2.5430713, 0, -2.3841858e-07, 1.8333334, 1, -2.55194, 0, -2.3841858e-07, 1.8666667, 1, -2.560068, 0, -2.3841858e-07, 1.9, 1, -2.5676565, 0, -2.3841858e-07, 1.9333333, 1, -2.5747163, 0, -2.3841858e-07, 1.9666667, 1, -2.5812576, 0, -2.3841858e-07, 2, 1, -2.5872908, 0, -2.3841858e-07, 2.0333333, 1, -2.5926678, 0, -2.3841858e-07, 2.0666666, 1, -2.5975683, 0, -2.3841858e-07, 2.1, 1, -2.6020029, 0, -2.3841858e-07, 2.1333334, 1, -2.6059818, 0, -2.3841858e-07, 2.1666667, 1, -2.6095161, 0, -2.3841858e-07, 2.2, 1, -2.612478, 0, -2.3841858e-07, 2.2333333, 1, -2.6150265, 0, -2.3841858e-07, 2.2666667, 1, -2.6171725, 0, -2.3841858e-07, 2.3, 1, -2.618926, 0, -2.3841858e-07, 2.3333333, 1, -2.6202974, 0, -2.3841858e-07, 2.4, 1, -2.621714, 0, -2.3841858e-07, 2.5333333, 1, -2.6204586, 0, -2.3841858e-07, 2.5666666, 1, -2.6193128, 0, -2.3841858e-07, 2.6, 1, -2.6178904, 0, -2.3841858e-07, 2.6333334, 1, -2.6162016, 0, -2.3841858e-07, 2.6666667, 1, -2.614257, 0, -2.3841858e-07, 2.7, 1, -2.6119928, 0, -2.3841858e-07, 2.7333333, 1, -2.6095042, 0, -2.3841858e-07, 2.7666667, 1, -2.606802, 0, -2.3841858e-07, 2.8, 1, -2.603897, 0, -2.3841858e-07, 2.8333333, 1, -2.600799, 0, -2.3841858e-07, 2.8666666, 1, -2.5974655, 0, -2.3841858e-07, 2.9, 1, -2.5939708, 0, -2.3841858e-07, 2.9333334, 1, -2.5903254, 0, -2.3841858e-07, 2.9666667, 1, -2.58654, 0, -2.3841858e-07, 3, 1, -2.5826252, 0, -2.3841858e-07, 3.0333333, 1, -2.5785584, 0, -2.3841858e-07, 3.0666666, 1, -2.574394, 0, -2.3841858e-07, 3.1, 1, -2.570142, 0, -2.3841858e-07, 3.1333334, 1, -2.5658128, 0, -2.3841858e-07, 3.1666667, 1, -2.5614176, 0, -2.3841858e-07, 3.4, 1, -2.5298395, 0, -2.3841858e-07, 3.4333334, 1, -2.5253832, 0, -2.3841858e-07, 3.4666667, 1, -2.5209758, 0, -2.3841858e-07, 3.5, 1, -2.5166283, 0, -2.3841858e-07, 3.5333333, 1, -2.5123813, 0, -2.3841858e-07, 3.5666666, 1, -2.5082254, 0, -2.3841858e-07, 3.6, 1, -2.5041714, 0, -2.3841858e-07, 3.6333334, 1, -2.5002298, 0, -2.3841858e-07, 3.6666667, 1, -2.4964108, 0, -2.3841858e-07, 3.7, 1, -2.4927764, 0, -2.3841858e-07, 3.7333333, 1, -2.4892964, 0, -2.3841858e-07, 3.7666667, 1, -2.4859812, 0, -2.3841858e-07, 3.8, 1, -2.482841, 0, -2.3841858e-07, 3.8333333, 1, -2.479887, 0, -2.3841858e-07, 3.8666666, 1, -2.477202, 0, -2.3841858e-07, 3.9, 1, -2.4747338, 0, -2.3841858e-07, 3.9333334, 1, -2.472494, 0, -2.3841858e-07, 3.9666667, 1, -2.4704924, 0, -2.3841858e-07, 4, 1, -2.4687395, 0, -2.3841858e-07, 4.0333333, 1, -2.4673398, 0, -2.3841858e-07, 4.0666666, 1, -2.4662204, 0, -2.3841858e-07, 4.133333, 1, -2.464865, 0, -2.3841858e-07, 4.1666665, 1, -2.46465, 0, -2.3841858e-07)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GateOpenSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_edtj4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_mqpoy")
+}],
+"times": PackedFloat32Array(0, 2.4)
+}
+tracks/1/use_blend = true
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GateLockSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("18_aubbe")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("19_b6bnl")
+}],
+"times": PackedFloat32Array(0, 2.3666666)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d4xrv"]
 _data = {
@@ -987,7 +1029,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.99958193, 0, -0.028742427, 0, 0.9999961, 0, 0.028742407, 0, 0.99958265, 1.7603168, -0.24000001, 0.076963425)
+transform = Transform3D(0.9995817, 0, -0.02874242, 0, 0.9999961, 0, 0.028742399, 0, 0.9995824, 1.7603168, -0.24000001, 0.076963425)
 rotation_mode = 2
 script = ExtResource("7_w1ksv")
 
@@ -1027,6 +1069,14 @@ libraries/ = SubResource("AnimationLibrary_d4xrv")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="DroneHallwayButtonDoor/RightColliderBucket" unique_id=1733414285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2942276, 1.1916199, 0.009643555)
 shape = SubResource("BoxShape3D_5op37")
+
+[node name="GateOpenSound" type="AudioStreamPlayer3D" parent="DroneHallwayButtonDoor" unique_id=1849996613]
+volume_db = -12.1
+bus = &"Prison Reverb"
+
+[node name="GateLockSound" type="AudioStreamPlayer3D" parent="DroneHallwayButtonDoor" unique_id=1449862989]
+volume_db = -6.0
+bus = &"Prison Reverb"
 
 [node name="NextAreaButtonDoor" type="StaticBody3D" parent="." unique_id=1639120077]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.974, 0.1, 0.339)
@@ -1112,6 +1162,9 @@ shape = SubResource("BoxShape3D_7gfyk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KeyBox" unique_id=692649315]
 libraries/ = SubResource("AnimationLibrary_4ropl")
+
+[node name="KeyBoxOpeningSound" type="AudioStreamPlayer3D" parent="KeyBox" unique_id=56275160]
+bus = &"Prison Reverb"
 
 [node name="SecurityCameras" parent="." unique_id=1700611172 instance=ExtResource("24_enka8")]
 

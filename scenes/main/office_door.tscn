@@ -93,7 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1290748, 2.228189, 0.10742
 shape = SubResource("BoxShape3D_1ni5n")
 
 [node name="Door" type="MeshInstance3D" parent="." unique_id=508108733]
-transform = Transform3D(1.5999985, 0, -5.6040586e-05, 0, 2.1, 0, 0.0017932988, 0, 0.049999952, 1.6, 0, 0)
+transform = Transform3D(1.5999984, 0, -5.6040582e-05, 0, 2.1, 0, 0.0017932986, 0, 0.04999995, 1.6, 0, 0)
 mesh = SubResource("ArrayMesh_yk6lk")
 
 [node name="Handle" type="MeshInstance3D" parent="Door" unique_id=42775934]
@@ -111,3 +111,6 @@ debug_color = Color(0.85231143, 0.20127311, 0.7681799, 0.41960785)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=314132060]
 libraries/ = SubResource("AnimationLibrary_ggf4f")
 playback_auto_capture = false
+
+[node name="DoorOpenSound" type="AudioStreamPlayer3D" parent="." unique_id=1686215260]
+bus = &"Cell Reverb"
