@@ -26,6 +26,7 @@
 [ext_resource type="Resource" uid="uid://dnjvovq6rngf5" path="res://resources/assets/items_for_pickup/orange_key/orange_key.tres" id="21_enka8"]
 [ext_resource type="Script" uid="uid://batjhleypea21" path="res://resources/scripts/key_box_lock_starter.gd" id="21_idr2k"]
 [ext_resource type="PackedScene" uid="uid://bpcv6qr1m0las" path="res://scenes/main/security_cameras.tscn" id="24_enka8"]
+[ext_resource type="PackedScene" uid="uid://bia72e66yxt3a" path="res://models/drone_model.glb" id="27_xo75y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdg7e"]
 size = Vector3(80.82139, 0.19, 54.996872)
@@ -675,6 +676,14 @@ _data = {
 &"KeyBoxOpen": ExtResource("19_enka8")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xo75y"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lgya0"]
+gravity = Vector3(0, 5, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tjxku"]
+size = Vector2(0.3, 0.3)
+
 [node name="Hallway" type="Node3D" unique_id=871673574]
 
 [node name="FloorAndCeiling" type="StaticBody3D" parent="." unique_id=709577982]
@@ -987,7 +996,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.99958193, 0, -0.028742427, 0, 0.9999961, 0, 0.028742407, 0, 0.99958265, 1.7603168, -0.24000001, 0.076963425)
+transform = Transform3D(0.9995817, 0, -0.02874242, 0, 0.9999961, 0, 0.028742399, 0, 0.9995824, 1.7603168, -0.24000001, 0.076963425)
 rotation_mode = 2
 script = ExtResource("7_w1ksv")
 
@@ -1114,6 +1123,27 @@ shape = SubResource("BoxShape3D_7gfyk")
 libraries/ = SubResource("AnimationLibrary_4ropl")
 
 [node name="SecurityCameras" parent="." unique_id=1700611172 instance=ExtResource("24_enka8")]
+
+[node name="DroneCrashed" type="StaticBody3D" parent="." unique_id=402036740]
+transform = Transform3D(0.467226, 0.21907336, -0.8565668, -0.2634287, 0.95930743, 0.10165918, 0.84398186, 0.17814645, 0.50592357, -44.27751, 0.30476826, -10.585311)
+visible = false
+
+[node name="DroneCrashedBody" type="CollisionShape3D" parent="DroneCrashed" unique_id=1153169555]
+transform = Transform3D(0.99999976, 0, -1.4901161e-07, 0, 0.9999998, 7.450581e-09, 0, 1.4901161e-08, 0.9999999, 0, 0, 0)
+shape = SubResource("BoxShape3D_xo75y")
+disabled = true
+
+[node name="DroneCrashedMesh" parent="DroneCrashed" unique_id=1442966249 instance=ExtResource("27_xo75y")]
+transform = Transform3D(0.99999976, 1.4901161e-08, -1.1920929e-07, -1.4901161e-08, 0.9999999, 1.4901161e-08, 0, 0, 0.9999998, 0, 0, 0)
+
+[node name="SmokeParticleUnfinished" type="GPUParticles3D" parent="DroneCrashed/DroneCrashedMesh" unique_id=647756820]
+transform = Transform3D(-0.4917813, -0.72744215, 0.4785177, -0.33396435, 0.6651207, 0.6678944, -0.80412614, 0.16865005, -0.5700338, -0.02012062, 0.25754166, -0.010444641)
+visible = false
+amount = 15
+lifetime = 3.5
+randomness = 0.35
+process_material = SubResource("ParticleProcessMaterial_lgya0")
+draw_pass_1 = SubResource("QuadMesh_tjxku")
 
 [connection signal="body_entered" from="PlayerTriggerzone" to="PlayerTriggerzone" method="_on_body_entered"]
 [connection signal="player_detected" from="DronePath3D/DronePathFollow/Drone" to="DronePath3D/DronePathFollow" method="_on_drone_player_detected"]

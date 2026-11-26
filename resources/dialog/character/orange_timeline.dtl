@@ -16,10 +16,12 @@ elif {characters.orange.door_opened} == true:
 		join char_orange center
 		char_orange: Damn Partner, good job. I knew you could do it though.
 		char_orange: If you put your heart into it, even the challenges that feel unbeatable are possible to overcome!
-		char_orange: Go now, free the others and open the exit. I will handle the guard and catch up with you once we can leave!
+		char_orange: Go now, free the others and open the exit.
+		char_orange: I will handle that guard drone and catch up with you!
 		set {characters.orange.opened_and_talked_to} = true
+		[signal arg="delete_drone"]
 		[end_timeline]
 	elif {characters.orange.opened_and_talked_to} == true:
 		join char_orange center
-		char_orange: Go now, free the others and open the exit. I will handle the guard and catch up with you once we can leave!
+		char_orange: Go now, free the others and open the exit. I will handle that guard drone and catch up with you!
 		[end_timeline]
