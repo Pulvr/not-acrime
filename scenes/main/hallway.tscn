@@ -20,6 +20,7 @@
 [ext_resource type="Material" uid="uid://bx05d4ri4ryxh" path="res://textures/materials/keybox_metal.tres" id="14_c0645"]
 [ext_resource type="Material" uid="uid://c1qma4vhvhjr6" path="res://textures/materials/lock_metal.tres" id="15_nkh0v"]
 [ext_resource type="Material" uid="uid://dyprqgvt3dsgp" path="res://textures/materials/lock_base.tres" id="16_idr2k"]
+[ext_resource type="Script" uid="uid://dsfgja0h20f2p" path="res://scenes/level/other_cells/open_cell_door_key_checker.gd" id="16_lgya0"]
 [ext_resource type="Animation" uid="uid://bufya02n61jgh" path="res://animations/keybox_open.res" id="19_enka8"]
 [ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="19_nkh0v"]
 [ext_resource type="Resource" uid="uid://b4cc5cyrgkha8" path="res://resources/assets/items_for_pickup/gate_key/gate_key.tres" id="21_7gfyk"]
@@ -996,7 +997,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.9995815, 0, -0.028742414, 0, 0.9999961, 0, 0.028742393, 0, 0.99958223, 1.7603168, -0.24000001, 0.076963425)
+transform = Transform3D(0.99958134, 0, -0.028742408, 0, 0.9999961, 0, 0.028742388, 0, 0.99958205, 1.7603168, -0.24000001, 0.076963425)
 rotation_mode = 2
 script = ExtResource("7_w1ksv")
 
@@ -1037,12 +1038,27 @@ libraries/ = SubResource("AnimationLibrary_d4xrv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2942276, 1.1916199, 0.009643555)
 shape = SubResource("BoxShape3D_5op37")
 
-[node name="NextAreaButtonDoor" type="StaticBody3D" parent="." unique_id=1639120077]
+[node name="NextAreaButtonDoor" type="StaticBody3D" parent="." unique_id=1639120077 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.974, 0.1, 0.339)
+script = ExtResource("16_lgya0")
+
+[node name="CollisionShapeButton" type="CollisionShape3D" parent="NextAreaButtonDoor" unique_id=1332063963 groups=["door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7976284, 1.555901, 0.063949585)
+shape = SubResource("BoxShape3D_6n7um")
 
 [node name="cell_wall_001" type="MeshInstance3D" parent="NextAreaButtonDoor" unique_id=265983350]
 transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, -2.3841858e-07)
 mesh = SubResource("ArrayMesh_pgfk2")
+
+[node name="NextAreaColliderBucket" type="StaticBody3D" parent="NextAreaButtonDoor/cell_wall_001" unique_id=112829934]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextAreaButtonDoor/cell_wall_001/NextAreaColliderBucket" unique_id=1990562537]
+transform = Transform3D(0, 0, -1.3867403, 0, 1.3867403, 0, 1.3867403, 0, 0, -0.013373375, 1.6524674, -0.56119394)
+shape = SubResource("BoxShape3D_5op37")
+
+[node name="CollisionShapeDoor" type="CollisionShape3D" parent="NextAreaButtonDoor/cell_wall_001/NextAreaColliderBucket" unique_id=712304069]
+transform = Transform3D(0, 0, -1.3867403, 0, 1.3867403, 0, 1.3867403, 0, 0, -0.013373375, 1.6524674, 1.2314372)
+shape = SubResource("BoxShape3D_wsw4h")
 
 [node name="Cube" type="MeshInstance3D" parent="NextAreaButtonDoor" unique_id=1295435023]
 mesh = SubResource("ArrayMesh_ho34f")
@@ -1050,21 +1066,11 @@ mesh = SubResource("ArrayMesh_ho34f")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NextAreaButtonDoor" unique_id=99791546]
 libraries/ = SubResource("AnimationLibrary_hljdp")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NextAreaButtonDoor" unique_id=1990562537]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2961655, 1.1916199, 0.009643555)
-shape = SubResource("BoxShape3D_5op37")
+[node name="RightColliderBucket" type="StaticBody3D" parent="NextAreaButtonDoor" unique_id=1557799649]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="NextAreaButtonDoor" unique_id=958779426]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="NextAreaButtonDoor/RightColliderBucket" unique_id=958779426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2942276, 1.1916199, 0.009643555)
 shape = SubResource("BoxShape3D_5op37")
-
-[node name="CollisionShapeDoor" type="CollisionShape3D" parent="NextAreaButtonDoor" unique_id=712304069]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0034713745, 1.1916199, 0.009643555)
-shape = SubResource("BoxShape3D_wsw4h")
-
-[node name="CollisionShapeButton" type="CollisionShape3D" parent="NextAreaButtonDoor" unique_id=1332063963 groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7976284, 1.555901, 0.063949585)
-shape = SubResource("BoxShape3D_6n7um")
 
 [node name="KeyBox" type="StaticBody3D" parent="." unique_id=611671366 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.741325, 1.6324553, 7.632394)
