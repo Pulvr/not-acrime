@@ -11,6 +11,10 @@ var current_state: DroneState = DroneState.DETECTING
 @onready var detect_player: AudioStreamPlayer3D = $DetectedPlayer
 
 
+func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+
 func _physics_process(_delta: float) -> void:
 	if shape_cast.is_colliding() and current_state == DroneState.DETECTING:
 		var collider: Object = shape_cast.get_collider(0)
@@ -32,3 +36,11 @@ func _on_player_detected() -> void:
 	detect_player.play()
 	await detect_player.finished
 	current_state = DroneState.DETECTING
+
+
+func _on_dialogic_signal(argument: String) -> void:
+	if argument == "delete_drone":
+		var drone_crashed = get_parent().get_parent().get_parent().get_node("DroneCrashed")
+		drone_crashed.visible = true
+		drone_crashed.get_child(0).set_deferred("disabled", false)
+		get_parent().get_parent().queue_free()

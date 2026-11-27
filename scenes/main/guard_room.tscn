@@ -129,7 +129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9602947, 0.82301104, -0.67
 [node name="office_table" parent="OfficeTable" unique_id=2002259295 instance=ExtResource("5_nrcoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7163868, 0)
 
-[node name="Drawer" parent="OfficeTable/office_table" index="0" unique_id=2048315762]
+[node name="Drawer" parent="OfficeTable/office_table" index="0" unique_id=1930903662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011386818, 0, 0)
 material_override = ExtResource("6_1ni5n")
 
@@ -157,26 +157,26 @@ mesh = ExtResource("9_1ni5n")
 transform = Transform3D(1, 1.3835602e-12, 4.7967174e-14, -1.3835604e-12, 1, 3.993611e-06, -4.7961648e-14, -3.993611e-06, 1, 0.39628625, 0.13603187, -0.16741967)
 shape = SubResource("BoxShape3D_dv7lv")
 
-[node name="DrawerCase" parent="OfficeTable/office_table" index="1" unique_id=1249713560]
+[node name="DrawerCase" parent="OfficeTable/office_table" index="1" unique_id=1439315657]
 material_override = ExtResource("6_1ni5n")
 
-[node name="DrawerGame" parent="OfficeTable/office_table" index="2" unique_id=943578654]
+[node name="DrawerGame" parent="OfficeTable/office_table" index="2" unique_id=1969569023]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011386818, 0, 0)
 material_override = ExtResource("7_dv7lv")
 
-[node name="LegsLeft" parent="OfficeTable/office_table" index="3" unique_id=1715293273]
+[node name="LegsLeft" parent="OfficeTable/office_table" index="3" unique_id=1224629963]
 material_override = ExtResource("8_fqvmo")
 
-[node name="LegsMid" parent="OfficeTable/office_table" index="4" unique_id=1840137946]
+[node name="LegsMid" parent="OfficeTable/office_table" index="4" unique_id=1428689062]
 material_override = ExtResource("8_fqvmo")
 
-[node name="LegsRight" parent="OfficeTable/office_table" index="5" unique_id=269458663]
+[node name="LegsRight" parent="OfficeTable/office_table" index="5" unique_id=404856834]
 material_override = ExtResource("8_fqvmo")
 
-[node name="Plate" parent="OfficeTable/office_table" index="6" unique_id=1836504185]
+[node name="Plate" parent="OfficeTable/office_table" index="6" unique_id=1030313721]
 material_override = ExtResource("6_1ni5n")
 
-[node name="AnimationPlayer" parent="OfficeTable/office_table" index="7" unique_id=1587010330]
+[node name="AnimationPlayer" parent="OfficeTable/office_table" index="7" unique_id=635237046]
 speed_scale = 1.2
 
 [node name="DrawerSoundPlayer" type="AudioStreamPlayer3D" parent="OfficeTable/office_table" unique_id=1151162373]
@@ -189,7 +189,7 @@ shape = SubResource("BoxShape3D_mffsq")
 [node name="GuardroomMonitors" parent="." unique_id=1858878755 instance=ExtResource("11_og6ge")]
 transform = Transform3D(1, 0, 0, 0, 0.9858472, 0.16764633, 0, -0.16764633, 0.9858472, 0, 0.38371968, -4.3350563)
 
-[node name="DrawergameRules" type="StaticBody3D" parent="." unique_id=592265231]
+[node name="DrawergameRules" type="StaticBody3D" parent="." unique_id=592265231 groups=["interactable"]]
 transform = Transform3D(0.28824633, -0.9575563, -4.185611e-08, 0, -4.371139e-08, 1, -0.9575563, -0.28824633, -1.2599647e-08, -1.9931049, 1.5416641, -0.66213816)
 script = ExtResource("16_p4wke")
 
