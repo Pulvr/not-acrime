@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://bgwrb6hkfqbgi" path="res://sounds/sfx/nac-sfx-hallway-gate-bump.ogg" id="19_b6bnl"]
 [ext_resource type="Animation" uid="uid://bufya02n61jgh" path="res://animations/keybox_open.res" id="19_enka8"]
 [ext_resource type="Script" uid="uid://c0vpaim18uwdc" path="res://resources/scripts/itemScripts/item.gd" id="19_nkh0v"]
+[ext_resource type="Script" uid="uid://dsfgja0h20f2p" path="res://scenes/level/other_cells/open_cell_door_key_checker.gd" id="20_mqpoy"]
 [ext_resource type="Resource" uid="uid://b4cc5cyrgkha8" path="res://resources/assets/items_for_pickup/gate_key/gate_key.tres" id="21_7gfyk"]
 [ext_resource type="Resource" uid="uid://dnjvovq6rngf5" path="res://resources/assets/items_for_pickup/orange_key/orange_key.tres" id="21_enka8"]
 [ext_resource type="Script" uid="uid://batjhleypea21" path="res://resources/scripts/key_box_lock_starter.gd" id="21_idr2k"]
@@ -1029,7 +1030,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.9995817, 0, -0.02874242, 0, 0.9999961, 0, 0.028742399, 0, 0.9995824, 1.7603168, -0.24000001, 0.076963425)
+transform = Transform3D(0.9995816, 0, -0.028742416, 0, 0.9999961, 0, 0.028742395, 0, 0.9995823, 1.7603168, -0.24000001, 0.076963425)
 rotation_mode = 2
 script = ExtResource("7_w1ksv")
 
@@ -1078,8 +1079,9 @@ bus = &"Prison Reverb"
 volume_db = -6.0
 bus = &"Prison Reverb"
 
-[node name="NextAreaButtonDoor" type="StaticBody3D" parent="." unique_id=1639120077]
+[node name="NextAreaButtonDoor" type="StaticBody3D" parent="." unique_id=1639120077 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.974, 0.1, 0.339)
+script = ExtResource("20_mqpoy")
 
 [node name="cell_wall_001" type="MeshInstance3D" parent="NextAreaButtonDoor" unique_id=265983350]
 transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, -2.3841858e-07)
