@@ -1039,7 +1039,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.900126, 2.5842257, 16.868
 curve = SubResource("Curve3D_sjh2e")
 
 [node name="DronePathFollow" type="PathFollow3D" parent="DronePath3D" unique_id=1229399425]
-transform = Transform3D(0.9995813, 0, -0.028742407, 0, 0.9999961, 0, 0.028742386, 0, 0.999582, 1.7603168, -0.24000001, 0.076963425)
+transform = Transform3D(0.9995812, 0, -0.028742407, 0, 0.9999961, 0, 0.028742386, 0, 0.99958193, 1.7603168, -0.24000001, 0.076963425)
 rotation_mode = 2
 script = ExtResource("7_w1ksv")
 
@@ -1054,7 +1054,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79346466, 1.567806, 0.08621
 shape = SubResource("BoxShape3D_6n7um")
 
 [node name="cell_wall_001" type="MeshInstance3D" parent="DroneHallwayButtonDoor" unique_id=886409082]
-transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -2.6020384, 0, -2.3841858e-07)
+transform = Transform3D(0, 0, 0.7211155, 0, 0.7211155, 0, -0.7211155, 0, 0, -0.89147985, 0, -2.3841858e-07)
 mesh = SubResource("ArrayMesh_x20jn")
 
 [node name="CellDoorColliderBucket" type="StaticBody3D" parent="DroneHallwayButtonDoor/cell_wall_001" unique_id=939343552]
